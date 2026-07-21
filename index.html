@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17242d" />
+    <title>脚踏包装成本实验台</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="脚踏包装成本实验台首页">
+          <span class="brand-logo">
+            <img src="assets/issyzone-logo.png" alt="ISSYZONE" />
+          </span>
+          <span>
+            <strong>脚踏包装成本实验台</strong>
+            <small>ISSYZONE · PACKAGING COST LAB · 2026</small>
+          </span>
+        </a>
+        <div class="topbar-meta">
+          <span class="contributor-chip">贡献人：Weldon</span>
+          <span class="source-chip">US FBA</span>
+          <span class="source-chip source-chip-light">DTC 130 in</span>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="intro">
+          <div>
+            <p class="eyebrow">包装尺寸决策工具</p>
+            <h1>一组尺寸，<em>两个渠道</em>判定。</h1>
+            <p class="intro-copy">输入外箱长、宽、高和包装重量，快速核对美国亚马逊 FBA 尾程费，以及独立站 130 in 围长红线。</p>
+          </div>
+          <div class="intro-stamp" aria-label="计算口径摘要">
+            <span>规则基准</span>
+            <strong>cm / kg → in / lb</strong>
+            <small>源自 FBA尾程计算器2026</small>
+          </div>
+        </section>
+
+        <section class="warm-notice" aria-label="温馨提示">
+          <span class="notice-mark" aria-hidden="true">!</span>
+          <div>
+            <strong>温馨提示</strong>
+            <span>FBA尾程费仅供参考，请以实际为准</span>
+          </div>
+        </section>
+
+        <section class="workspace-grid">
+          <form class="input-panel" id="calculator-form" novalidate>
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">01 / INPUT</p>
+                <h2>包装参数</h2>
+              </div>
+              <button class="text-button" type="button" id="reset-button">重置</button>
+            </div>
+
+            <div class="field-block">
+              <div class="field-label-row">
+                <label for="sku">SKU / 样例名称</label>
+                <span class="optional">可选</span>
+              </div>
+              <input id="sku" name="sku" type="text" placeholder="例如 A1333-00007-BK" autocomplete="off" />
+            </div>
+
+            <div class="field-block">
+              <div class="field-label-row">
+                <span class="field-label">输入单位</span>
+                <span class="unit-hint">实际值会自动换算</span>
+              </div>
+              <div class="segmented" role="group" aria-label="输入单位">
+                <button class="segment active" type="button" data-unit="metric" aria-pressed="true">公制 <small>cm / kg</small></button>
+                <button class="segment" type="button" data-unit="imperial" aria-pressed="false">英制 <small>in / lb</small></button>
+              </div>
+            </div>
+
+            <div class="field-block">
+              <div class="field-label-row">
+                <span class="field-label">外箱尺寸</span>
+                <span class="unit-hint" id="dimension-unit-label">cm</span>
+              </div>
+              <div class="dimension-fields">
+                <label class="number-field">
+                  <span>长</span>
+                  <input id="length" name="length" type="number" min="0.01" step="0.01" inputmode="decimal" value="217.5" required />
+                  <small id="length-unit">cm</small>
+                </label>
+                <span class="dimension-times">×</span>
+                <label class="number-field">
+                  <span>宽</span>
+                  <input id="width" name="width" type="number" min="0.01" step="0.01" inputmode="decimal" value="39" required />
+                  <small id="width-unit">cm</small>
+                </label>
+                <span class="dimension-times">×</span>
+                <label class="number-field">
+                  <span>高</span>
+                  <input id="height" name="height" type="number" min="0.01" step="0.01" inputmode="decimal" value="19" required />
+                  <small id="height-unit">cm</small>
+                </label>
+              </div>
+              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；围长计算时每边先向上取整到整数 in。</p>
+            </div>
+
+            <div class="two-column-fields">
+              <div class="field-block">
+                <div class="field-label-row">
+                  <label for="weight">包装重量</label>
+                  <span class="unit-hint" id="weight-unit-label">kg</span>
+                </div>
+                <div class="input-with-unit">
+                  <input id="weight" name="weight" type="number" min="0.001" step="0.01" inputmode="decimal" value="33.5" required />
+                  <span id="weight-unit">kg</span>
+                </div>
+              </div>
+              <div class="field-block">
+                <div class="field-label-row">
+                  <label for="price" class="field-label">商品售价</label>
+                  <span class="unit-hint">美元 USD</span>
+                </div>
+                <div class="input-with-unit">
+                  <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" value="100" required />
+                  <span>USD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preset-block">
+              <div class="field-label-row">
+                <span class="field-label">快速带入案例</span>
+                <span class="unit-hint">来自包装优化表</span>
+              </div>
+              <div class="preset-list">
+                <button type="button" class="preset" data-preset="tacoma-original">
+                  <span><strong>G507 Tacoma</strong><small>217.5 × 39 × 19 cm</small></span>
+                  <span class="preset-arrow">→</span>
+                </button>
+                <button type="button" class="preset" data-preset="tacoma-optimized">
+                  <span><strong>Tacoma 优化后</strong><small>215 × 35 × 19 cm</small></span>
+                  <span class="preset-arrow">→</span>
+                </button>
+                <button type="button" class="preset" data-preset="a474-original">
+                  <span><strong>A1333-00001-BK</strong><small>184 × 39 × 31 cm</small></span>
+                  <span class="preset-arrow">→</span>
+                </button>
+                <button type="button" class="preset" data-preset="a474-optimized">
+                  <span><strong>A1333-00001 优化后</strong><small>184 × 28.5 × 31 cm</small></span>
+                  <span class="preset-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <button class="calculate-button" type="submit">
+              <span>重新计算</span>
+              <span class="button-icon" aria-hidden="true">↗</span>
+            </button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+
+          <section class="results-panel" aria-live="polite">
+            <div class="panel-heading results-heading">
+              <div>
+                <p class="section-kicker">02 / OUTPUT</p>
+                <h2>渠道判定</h2>
+              </div>
+              <span class="live-indicator"><span></span>实时计算</span>
+            </div>
+
+            <div class="result-cards">
+              <article class="result-card fba-card">
+                <div class="result-card-topline">
+                  <span class="result-label">Amazon FBA · 尾程费</span>
+                  <span class="result-tag">USD</span>
+                </div>
+                <div class="result-value" id="fba-fee">$0.00</div>
+                <div class="result-subvalue" id="fba-rmb">约 ¥0.00</div>
+                <div class="result-detail-row">
+                  <span>尺寸分段</span>
+                  <strong id="fba-segment">等待输入</strong>
+                </div>
+                <div class="result-detail-row">
+                  <span>售价档位 / 费率口径</span>
+                  <strong><span id="fba-rate-number">—</span> · <span id="fba-price-tier">—</span></strong>
+                </div>
+              </article>
+
+              <article class="result-card perimeter-card" id="perimeter-card">
+                <div class="result-card-topline">
+                  <span class="result-label">独立站 · 围长</span>
+                  <span class="result-tag dark-tag">130 in</span>
+                </div>
+                <div class="result-value" id="perimeter-value">0.0 <small>in</small></div>
+                <div class="perimeter-track" aria-hidden="true">
+                  <span class="perimeter-fill" id="perimeter-fill"></span>
+                  <span class="perimeter-limit"></span>
+                </div>
+                <div class="result-status status-neutral" id="perimeter-status">等待输入</div>
+                <div class="result-detail-row">
+                  <span>安全余量</span>
+                  <strong id="perimeter-margin">—</strong>
+                </div>
+              </article>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric">
+                <span class="metric-label">实重</span>
+                <strong id="metric-real-weight">0.0 lb</strong>
+                <small id="metric-real-weight-secondary">0.0 kg</small>
+              </div>
+              <div class="metric accent-metric">
+                <span class="metric-label">体积重</span>
+                <strong id="metric-volume-weight">0.0 lb</strong>
+                <small>长 × 宽 × 高 ÷ 139</small>
+              </div>
+              <div class="metric">
+                <span class="metric-label">计费重</span>
+                <strong id="metric-billable-weight">0.0 lb</strong>
+                <small>取实重 / 体积重较大值</small>
+              </div>
+              <div class="metric">
+                  <span class="metric-label">费率计费重</span>
+                  <strong id="metric-shipping-weight">0.0 lb</strong>
+                  <small>按当前尺寸段进位</small>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <div class="detail-heading">
+                <h3>计算拆解</h3>
+                <span id="calculation-note">Amazon FBA · 2026 表</span>
+              </div>
+              <div class="calculation-table">
+                <div class="calc-row"><span>换算后尺寸</span><strong id="detail-dimensions">—</strong></div>
+                <div class="calc-row"><span>三边排序</span><strong id="detail-sorted-edges">—</strong></div>
+                <div class="calc-row"><span>围长公式（各边先取整）</span><strong id="detail-perimeter-formula">—</strong></div>
+                <div class="calc-row"><span>FBA 尺寸围长</span><strong id="detail-fba-perimeter">—</strong></div>
+                <div class="calc-row"><span>首重费 + 续重</span><strong id="detail-fee-formula">—</strong></div>
+              </div>
+            </div>
+
+            <div class="decision-note" id="decision-note">
+              <span class="decision-mark">i</span>
+              <div>
+                <strong>优化提示</strong>
+                <p>输入尺寸后，这里会告诉你距离 130 in 围长还剩多少空间。</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="reference-strip">
+          <div class="reference-title">
+            <p class="section-kicker">03 / REFERENCE</p>
+            <h2>包装优化案例库</h2>
+          </div>
+          <div class="reference-copy">
+            <p>案例中，Tacoma 包装由 <strong>217.5 × 39 × 19 cm</strong> 调整到 <strong>215 × 35 × 19 cm</strong>，独立站围长按每边向上取整后由 134 in 降到 129 in；FBA 费用按你提供的 Amazon 2026 非服装商品费率图表计算。</p>
+            <span class="official-source-link">费率依据：Amazon FBA 2026 非旺季配送费用截图</span>
+            <span>判定公式：最长边 + 2 ×（次长边 + 最短边）</span>
+          </div>
+          <div class="reference-rule">
+            <span>围长红线</span>
+            <strong>130 <small>in</small></strong>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>本地离线计算 · 费率口径来自 Amazon FBA 2026 非服装商品费率图表</span>
+        <span class="footer-contributor">贡献人：Weldon</span>
+        <span>内部决策工具</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
