@@ -482,10 +482,6 @@ input::placeholder { color: #a7b0b0; }
 
 .result-subvalue { margin-top: 8px; color: #9bb7b9; font-size: 12px; }
 
-.perimeter-card .result-value { color: var(--blue); }
-
-.perimeter-card .result-value { margin-top: 24px; }
-
 .fedex-card .result-value { color: var(--blue); margin-top: 24px; }
 
 .fedex-subvalue { color: var(--ink-soft); }
@@ -606,16 +602,6 @@ input::placeholder { color: #a7b0b0; }
 .fba-card .result-detail-row { color: #a9b8bb; }
 
 .fba-card .result-detail-row strong { color: var(--white); font-weight: 600; text-align: right; }
-
-.perimeter-card .result-detail-row { color: var(--muted); }
-
-.perimeter-card .result-detail-row strong { color: var(--ink); font-weight: 700; text-align: right; }
-
-.perimeter-track { position: relative; height: 6px; margin-top: 29px; overflow: hidden; background: #dfe8e6; }
-
-.perimeter-fill { width: 0; height: 100%; display: block; background: var(--green); transition: width 200ms ease, background 200ms ease; }
-
-.perimeter-limit { position: absolute; top: -3px; right: 0; width: 2px; height: 12px; background: var(--red); }
 
 .result-status { display: inline-block; margin-top: 15px; padding: 6px 8px; font-size: 11px; font-weight: 700; }
 
