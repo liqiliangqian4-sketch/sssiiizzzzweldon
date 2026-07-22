@@ -482,9 +482,67 @@ input::placeholder { color: #a7b0b0; }
 
 .result-subvalue { margin-top: 8px; color: #9bb7b9; font-size: 12px; }
 
-.fedex-card .result-value { color: var(--blue); margin-top: 24px; }
+.fedex-card .result-value { color: var(--blue); margin-top: 0; }
 
 .fedex-subvalue { color: var(--ink-soft); }
+
+.fedex-primary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fedex-primary-row > div:first-child { min-width: 0; }
+
+.fedex-girth-status {
+  flex: 0 0 148px;
+  padding: 11px 12px 10px;
+  border: 2px solid var(--muted);
+  background: var(--paper-deep);
+}
+
+.fedex-girth-status span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.fedex-girth-status strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 22px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.fedex-girth-status small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.fedex-girth-status.girth-over {
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+.fedex-girth-status.girth-over strong,
+.fedex-girth-status.girth-over small { color: var(--red); }
+
+.fedex-girth-status.girth-under {
+  border-color: var(--green);
+  background: var(--green-soft);
+}
+
+.fedex-girth-status.girth-under strong,
+.fedex-girth-status.girth-under small { color: var(--green); }
 
 .fedex-card .result-detail-row strong { max-width: 68%; }
 

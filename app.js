@@ -330,6 +330,9 @@ function renderEmpty() {
   $("fba-price-tier").textContent = "—";
   $("fedex-fee").textContent = "$0.00";
   $("fedex-rmb").textContent = "约 ¥0.00";
+  $("fedex-girth-status").className = "fedex-girth-status girth-waiting";
+  $("fedex-girth-value").textContent = "—";
+  $("fedex-girth-check").textContent = "等待输入";
   $("fedex-status").textContent = "等待输入";
   $("fedex-breakdown").textContent = "—";
   $("fedex-card").className = "result-card fedex-card fedex-waiting";
@@ -371,6 +374,10 @@ function calculate() {
   $("fba-price-tier").textContent = "2026 FBA";
   $("fedex-fee").textContent = fmtMoney(fedex.totalFee);
   $("fedex-rmb").textContent = `约 ¥${fmt(fedex.totalFee * RMB_PER_USD, 2)}`;
+  const girthExceeded = fedex.girthIn > PERIMETER_LIMIT;
+  $("fedex-girth-status").className = `fedex-girth-status ${girthExceeded ? "girth-over" : "girth-under"}`;
+  $("fedex-girth-value").textContent = `${fmt(fedex.girthIn, 2)} in`;
+  $("fedex-girth-check").textContent = girthExceeded ? "超出 130 in" : "未超出 130 in";
   $("fedex-status").textContent = fedex.status;
   $("fedex-breakdown").textContent = fedex.feeParts.length ? `${fedex.feeParts.join(" · ")} · 取最高项` : "无附加费";
   $("fedex-card").className = `result-card fedex-card fedex-${fedexSeverity.key}`;
