@@ -4,6 +4,7 @@ const US_VOLUME_DIVISOR = 139;
 const PERIMETER_LIMIT = 130;
 const RMB_PER_USD = 7.0759;
 const FEDEX_FEES = { overlength: 5, overweight: 8, oversize: 45 };
+const FEDEX_MAX_ADDITIONAL_FEE = Object.values(FEDEX_FEES).reduce((total, fee) => total + fee, 0);
 const FEDEX_RULES = {
   overlength: {
     longestMinIn: 48,
@@ -227,6 +228,25 @@ function evaluateFedex(inputs, edges, realWeightLb, billableWeightLb) {
   };
 }
 
+function getFedexSeverity(totalFee) {
+  if (!Number.isFinite(totalFee)) {
+    return { key: "waiting", label: "等待输入", description: "输入参数后评估", percent: 0 };
+  }
+  if (totalFee === 0) {
+    return { key: "none", label: "未触发", description: "无需支付 FedEx 附加费", percent: 0 };
+  }
+  if (totalFee <= FEDEX_FEES.overlength) {
+    return { key: "low", label: "轻微", description: "较低附加费", percent: (totalFee / FEDEX_MAX_ADDITIONAL_FEE) * 100 };
+  }
+  if (totalFee <= FEDEX_FEES.overlength + FEDEX_FEES.overweight) {
+    return { key: "medium", label: "中等", description: "中等附加费", percent: (totalFee / FEDEX_MAX_ADDITIONAL_FEE) * 100 };
+  }
+  if (totalFee < FEDEX_MAX_ADDITIONAL_FEE - FEDEX_FEES.overlength) {
+    return { key: "high", label: "较高", description: "较高附加费", percent: (totalFee / FEDEX_MAX_ADDITIONAL_FEE) * 100 };
+  }
+  return { key: "critical", label: "严重", description: "最高级别附加费", percent: 100 };
+}
+
 function getCanonicalCalculation() {
   const inputs = getCanonicalInputs();
   const required = ["length", "width", "height", "weight"];
@@ -309,6 +329,10 @@ function renderEmpty() {
   $("fedex-rmb").textContent = "约 ¥0.00";
   $("fedex-status").textContent = "等待输入";
   $("fedex-breakdown").textContent = "—";
+  $("fedex-card").className = "result-card fedex-card fedex-waiting";
+  $("fedex-severity-label").textContent = "等待输入";
+  $("fedex-severity-description").textContent = "输入参数后评估";
+  $("fedex-severity-fill").style.width = "0%";
   ["fedex-overlength", "fedex-overweight", "fedex-oversize"].forEach((id) => { $(id).textContent = "—"; });
   ["metric-real-weight", "metric-volume-weight", "metric-billable-weight", "metric-shipping-weight"].forEach((id) => { $(id).textContent = "0.0 lb"; });
   $("metric-real-weight-secondary").textContent = "0.0 kg";
@@ -335,6 +359,7 @@ function calculate() {
     ...fedex.overweightReasons,
     ...fedex.oversizeReasons
   ].join("；");
+  const fedexSeverity = getFedexSeverity(fedex.totalFee);
 
   $("fba-fee").textContent = fmtMoney(fbaFee);
   $("fba-rmb").textContent = `约 ¥${fmt(fbaFee * RMB_PER_USD, 2)}`;
@@ -345,6 +370,10 @@ function calculate() {
   $("fedex-rmb").textContent = `约 ¥${fmt(fedex.totalFee * RMB_PER_USD, 2)}`;
   $("fedex-status").textContent = fedex.status;
   $("fedex-breakdown").textContent = fedex.feeParts.join(" + ") || "无附加费";
+  $("fedex-card").className = `result-card fedex-card fedex-${fedexSeverity.key}`;
+  $("fedex-severity-label").textContent = fedexSeverity.label;
+  $("fedex-severity-description").textContent = `${fedexSeverity.description} · ${Math.round(fedexSeverity.percent)}% / 最高 $${FEDEX_MAX_ADDITIONAL_FEE}`;
+  $("fedex-severity-fill").style.width = `${fedexSeverity.percent}%`;
   $("fedex-overlength").textContent = fedex.overlength ? `${fmtMoney(FEDEX_FEES.overlength)} · 已触发` : "未触发";
   $("fedex-overweight").textContent = fedex.overweight ? `${fmtMoney(FEDEX_FEES.overweight)} · 已触发` : "未触发";
   $("fedex-oversize").textContent = fedex.oversize ? `${fmtMoney(FEDEX_FEES.oversize)} · 已触发` : "未触发";

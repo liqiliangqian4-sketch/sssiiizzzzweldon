@@ -492,6 +492,87 @@ input::placeholder { color: #a7b0b0; }
 
 .fedex-card .result-detail-row strong { max-width: 68%; }
 
+.fedex-card {
+  --fedex-severity: var(--muted);
+  --fedex-severity-soft: var(--paper-deep);
+  border-top: 3px solid var(--fedex-severity);
+  transition: border-color 180ms ease;
+}
+
+.fedex-card.fedex-none {
+  --fedex-severity: var(--green);
+  --fedex-severity-soft: var(--green-soft);
+}
+
+.fedex-card.fedex-low {
+  --fedex-severity: #8d9f39;
+  --fedex-severity-soft: #f1f4dd;
+}
+
+.fedex-card.fedex-medium {
+  --fedex-severity: #d19b2a;
+  --fedex-severity-soft: #fff5d9;
+}
+
+.fedex-card.fedex-high {
+  --fedex-severity: var(--orange);
+  --fedex-severity-soft: var(--orange-soft);
+}
+
+.fedex-card.fedex-critical {
+  --fedex-severity: #b53535;
+  --fedex-severity-soft: #f8e1e1;
+}
+
+.fedex-card .result-value,
+.fedex-card .fedex-severity-heading strong {
+  color: var(--fedex-severity);
+  transition: color 180ms ease;
+}
+
+.fedex-severity {
+  margin-top: 18px;
+  padding: 10px 12px 11px;
+  background: var(--fedex-severity-soft);
+  transition: background-color 180ms ease;
+}
+
+.fedex-severity-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.fedex-severity-heading strong {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.fedex-severity-track {
+  height: 5px;
+  margin-top: 9px;
+  overflow: hidden;
+  background: rgba(126, 150, 173, 0.18);
+}
+
+.fedex-severity-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--fedex-severity);
+  transition: width 220ms ease, background-color 180ms ease;
+}
+
+.fedex-severity small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
 .fedex-rules {
   margin-top: 15px;
   border-top: 1px solid var(--line);
@@ -515,6 +596,8 @@ input::placeholder { color: #a7b0b0; }
   font-weight: 700;
   text-align: right;
 }
+
+.fedex-card:not(.fedex-waiting) .fedex-rule-row strong { color: var(--fedex-severity); }
 
 .result-detail-row { gap: 16px; margin-top: 18px; font-size: 11px; }
 
