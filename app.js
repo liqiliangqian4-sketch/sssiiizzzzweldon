@@ -156,6 +156,10 @@ function sortEdges(length, width, height) {
   return [length, width, height].sort((a, b) => b - a);
 }
 
+function roundGirthEdges(edges) {
+  return sortEdges(...edges.map((value) => Math.ceil(value - 1e-9)));
+}
+
 function classifyFba(billable, longest, second, shortest, perimeter) {
   if (billable <= 1 && longest <= 15 && second <= 12 && shortest <= 0.75) return "smallStandard";
   if (billable < 20 - 1e-9 && longest <= 18 && second <= 14 && shortest <= 8) return "largeStandard";
@@ -181,7 +185,8 @@ function getPriceTier(price) {
 }
 
 function evaluateFedex(inputs, edges, realWeightLb, billableWeightLb) {
-  const [longest, second, shortest] = edges;
+  const girthEdges = roundGirthEdges(edges);
+  const [longest, second, shortest] = girthEdges;
   const girthIn = longest + 2 * (second + shortest);
   const volumeCm3 = inputs.length * inputs.width * inputs.height;
   const { overlength: overlengthRule, overweight: overweightRule, oversize: oversizeRule } = FEDEX_RULES;
@@ -218,6 +223,7 @@ function evaluateFedex(inputs, edges, realWeightLb, billableWeightLb) {
 
   return {
     girthIn,
+    girthEdges,
     volumeCm3,
     overlength,
     overweight,
@@ -376,7 +382,7 @@ function calculate() {
   $("fedex-rmb").textContent = `约 ¥${fmt(fedex.totalFee * RMB_PER_USD, 2)}`;
   const girthExceeded = fedex.girthIn > PERIMETER_LIMIT;
   $("fedex-girth-status").className = `fedex-girth-status ${girthExceeded ? "girth-over" : "girth-under"}`;
-  $("fedex-girth-value").textContent = `${fmt(fedex.girthIn, 2)} in`;
+  $("fedex-girth-value").textContent = `${fmt(fedex.girthIn, 0)} in`;
   $("fedex-girth-check").textContent = girthExceeded ? "超出 130 in" : "未超出 130 in";
   $("fedex-status").textContent = fedex.status;
   $("fedex-breakdown").textContent = fedex.feeParts.length ? `${fedex.feeParts.join(" · ")} · 取最高项` : "无附加费";
@@ -394,7 +400,8 @@ function calculate() {
   $("metric-shipping-weight").textContent = `${fmt(feeWeightLb, feeWeightLb < 1 ? 3 : 2)} lb`;
   $("detail-dimensions").textContent = dimsText;
   $("detail-sorted-edges").textContent = sortedText;
-  $("detail-perimeter-formula").textContent = `${fmt(longest, 2)} + 2 × (${fmt(second, 2)} + ${fmt(shortest, 2)}) = ${fmt(fedex.girthIn, 2)} in`;
+  const [girthLongest, girthSecond, girthShortest] = fedex.girthEdges;
+  $("detail-perimeter-formula").textContent = `${fmt(girthLongest, 0)} + 2 × (${fmt(girthSecond, 0)} + ${fmt(girthShortest, 0)}) = ${fmt(fedex.girthIn, 0)} in`;
   $("detail-fba-perimeter").textContent = `${fmt(fedex.volumeCm3, 2)} cm³`;
   $("detail-fee-formula").textContent = feeFormula;
 

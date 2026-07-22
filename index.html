@@ -101,7 +101,7 @@
                   <small id="height-unit">cm</small>
                 </label>
               </div>
-              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；FedEx 围长按原始英寸计算，130 in 是关键分界线，超出时优先调整宽度或高度。</p>
+              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；FedEx 各边英寸先分别向上取整，再计算围长，130 in 是关键分界线。</p>
             </div>
 
             <div class="two-column-fields">
@@ -261,7 +261,7 @@
               <div class="calculation-table">
                 <div class="calc-row"><span>换算后尺寸</span><strong id="detail-dimensions">—</strong></div>
                 <div class="calc-row"><span>三边排序</span><strong id="detail-sorted-edges">—</strong></div>
-                <div class="calc-row"><span>FedEx 围长公式（原始英寸）</span><strong id="detail-perimeter-formula">—</strong></div>
+                <div class="calc-row"><span>FedEx 围长公式（各边分别向上取整）</span><strong id="detail-perimeter-formula">—</strong></div>
                 <div class="calc-row"><span>FedEx 体积</span><strong id="detail-fba-perimeter">—</strong></div>
                 <div class="calc-row"><span>首重费 + 续重</span><strong id="detail-fee-formula">—</strong></div>
               </div>
