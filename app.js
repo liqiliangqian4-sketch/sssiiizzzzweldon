@@ -395,9 +395,9 @@ function calculate() {
   const decisionText = decisionNote.querySelector("p");
   decisionNote.className = `decision-note${fedex.totalFee > 0 ? " note-warning" : ""}`;
   if (fedex.totalFee > 0) {
-    decisionText.textContent = `${fedex.status}；${fedexReasonText}。多项同时触发时取最高项，估算 FedEx 附加费 ${fmtMoney(fedex.totalFee)}。`;
+    decisionText.textContent = `${fedex.status}；${fedexReasonText}。多项同时触发时取最高项，估算独立站 FedEx 附加费 ${fmtMoney(fedex.totalFee)}。`;
   } else {
-    decisionText.textContent = "当前未触发 FedEx 超长、超重或超大条件。";
+    decisionText.textContent = "当前未触发独立站 FedEx 超长、超重或超大附加费条件。";
   }
 }
 
