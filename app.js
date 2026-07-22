@@ -3,6 +3,29 @@ const LB_PER_KG = 2.20462262185;
 const US_VOLUME_DIVISOR = 139;
 const PERIMETER_LIMIT = 130;
 const RMB_PER_USD = 7.0759;
+const FEDEX_FEES = { overlength: 5, overweight: 8, oversize: 45 };
+const FEDEX_RULES = {
+  overlength: {
+    longestMinIn: 48,
+    longestMaxIn: 96,
+    secondMinIn: 30,
+    girthMinIn: 105,
+    girthMaxIn: 130,
+    volumeMinCm3: 169901.08
+  },
+  overweight: {
+    billableWeightMinLb: 50
+  },
+  oversize: {
+    actualWeightMaxLb: 150,
+    longestMinIn: 96,
+    longestMaxIn: 108,
+    girthMinIn: 130,
+    girthMaxIn: 165,
+    volumeMinCm3: 283168.47,
+    actualWeightMinLb: 110
+  }
+};
 
 const fbaRateTable = [
   { number: 1, segment: "smallStandard", maxWeightLb: 0.125, startWeightLb: 0, intervalLb: 0, continuation: 0, under10: 2.43, tenTo50: 3.32, over50: 3.58 },
@@ -156,6 +179,54 @@ function getPriceTier(price) {
   return { label: "<$10", key: "under10" };
 }
 
+function evaluateFedex(inputs, edges, realWeightLb, billableWeightLb) {
+  const [longest, second, shortest] = edges;
+  const girthIn = longest + 2 * (second + shortest);
+  const volumeCm3 = inputs.length * inputs.width * inputs.height;
+  const { overlength: overlengthRule, overweight: overweightRule, oversize: oversizeRule } = FEDEX_RULES;
+  const overlengthReasons = [];
+  const overweightReasons = [];
+  const oversizeReasons = [];
+
+  if (longest > overlengthRule.longestMinIn && longest <= overlengthRule.longestMaxIn) overlengthReasons.push("最长边 48–96 in");
+  if (second > overlengthRule.secondMinIn) overlengthReasons.push("第二长边 >30 in");
+  if (girthIn > overlengthRule.girthMinIn && girthIn <= overlengthRule.girthMaxIn) overlengthReasons.push("围长 105–130 in");
+  if (volumeCm3 > overlengthRule.volumeMinCm3) overlengthReasons.push("体积 >169,901.08 cm³");
+
+  if (billableWeightLb > overweightRule.billableWeightMinLb) overweightReasons.push("计费重 >50 lb");
+
+  if (realWeightLb <= oversizeRule.actualWeightMaxLb && longest > oversizeRule.longestMinIn && longest <= oversizeRule.longestMaxIn) oversizeReasons.push("实际重 ≤150 lb 且最长边 96–108 in");
+  if (realWeightLb <= oversizeRule.actualWeightMaxLb && girthIn > oversizeRule.girthMinIn && girthIn <= oversizeRule.girthMaxIn) oversizeReasons.push("实际重 ≤150 lb 且围长 130–165 in");
+  if (volumeCm3 > oversizeRule.volumeMinCm3) oversizeReasons.push("体积 >283,168.47 cm³");
+  if (realWeightLb > oversizeRule.actualWeightMinLb) oversizeReasons.push("实际重 >110 lb");
+
+  const overlength = overlengthReasons.length > 0;
+  const overweight = overweightReasons.length > 0;
+  const oversize = oversizeReasons.length > 0;
+  const feeParts = [];
+  if (overlength) feeParts.push(`超长 ${fmtMoney(FEDEX_FEES.overlength)}`);
+  if (overweight) feeParts.push(`超重 ${fmtMoney(FEDEX_FEES.overweight)}`);
+  if (oversize) feeParts.push(`超大 ${fmtMoney(FEDEX_FEES.oversize)}`);
+  const totalFee = (overlength ? FEDEX_FEES.overlength : 0)
+    + (overweight ? FEDEX_FEES.overweight : 0)
+    + (oversize ? FEDEX_FEES.oversize : 0);
+  const categories = [overlength && "超长", overweight && "超重", oversize && "超大"].filter(Boolean);
+
+  return {
+    girthIn,
+    volumeCm3,
+    overlength,
+    overweight,
+    oversize,
+    overlengthReasons,
+    overweightReasons,
+    oversizeReasons,
+    totalFee,
+    feeParts,
+    status: categories.length ? `触发 ${categories.join(" + ")}` : "未触发"
+  };
+}
+
 function getCanonicalCalculation() {
   const inputs = getCanonicalInputs();
   const required = ["length", "width", "height", "weight"];
@@ -175,6 +246,7 @@ function getCanonicalCalculation() {
   const feeWeightLb = billableWeightLb;
   const rate = findRate(segment, billableWeightLb);
   const priceTier = getPriceTier(inputs.price);
+  const fedex = evaluateFedex(inputs, edges, realWeightLb, billableWeightLb);
   if (!rate) return { error: "当前尺寸或重量超出 Amazon 2026 FBA费率表范围。" };
   const baseFee = rate[priceTier.key];
   const continuationRate = rate.continuation || 0;
@@ -200,6 +272,7 @@ function getCanonicalCalculation() {
     segment,
     rate,
     priceTier,
+    fedex,
     baseFee,
     continuationRate,
     continuationUnits,
@@ -232,17 +305,16 @@ function renderEmpty() {
   $("fba-segment").textContent = "等待输入";
   $("fba-rate-number").textContent = "—";
   $("fba-price-tier").textContent = "—";
-  $("perimeter-value").innerHTML = "0.0 <small>in</small>";
-  $("perimeter-status").textContent = "等待输入";
-  $("perimeter-status").className = "result-status status-neutral";
-  $("perimeter-margin").textContent = "—";
-  $("perimeter-fill").style.width = "0%";
-  $("perimeter-fill").style.background = "var(--green)";
+  $("fedex-fee").textContent = "$0.00";
+  $("fedex-rmb").textContent = "约 ¥0.00";
+  $("fedex-status").textContent = "等待输入";
+  $("fedex-breakdown").textContent = "—";
+  ["fedex-overlength", "fedex-overweight", "fedex-oversize"].forEach((id) => { $(id).textContent = "—"; });
   ["metric-real-weight", "metric-volume-weight", "metric-billable-weight", "metric-shipping-weight"].forEach((id) => { $(id).textContent = "0.0 lb"; });
   $("metric-real-weight-secondary").textContent = "0.0 kg";
   ["detail-dimensions", "detail-sorted-edges", "detail-perimeter-formula", "detail-fba-perimeter", "detail-fee-formula"].forEach((id) => { $(id).textContent = "—"; });
   $("decision-note").className = "decision-note";
-  $("decision-note").querySelector("p").textContent = "输入尺寸后，这里会告诉你距离 130 in 围长还剩多少空间。";
+  $("decision-note").querySelector("p").textContent = "输入尺寸、重量后，这里会展示 FedEx 超长、超重和超大触发项。";
 }
 
 function calculate() {
@@ -253,26 +325,29 @@ function calculate() {
     return;
   }
   $("form-status").textContent = "";
-  const { inputs, dimensionsIn, edges, perimeterEdges, fbaPerimeter, realWeightLb, volumeWeightLb, billableWeightLb, feeWeightLb, perimeter, segment, rate, priceTier, baseFee, continuationRate, continuationUnits, fbaFee } = result;
-  const withinLimit = perimeter <= PERIMETER_LIMIT;
-  const margin = PERIMETER_LIMIT - perimeter;
-  const marginText = withinLimit ? `余 ${fmt(margin, 1)} in` : `超 ${fmt(Math.abs(margin), 1)} in`;
+  const { inputs, dimensionsIn, edges, longest, second, shortest, fbaPerimeter, realWeightLb, volumeWeightLb, billableWeightLb, feeWeightLb, segment, rate, priceTier, baseFee, continuationRate, continuationUnits, fbaFee, fedex } = result;
   const dimsText = dimensionsIn.map((value) => fmt(value, 2)).join(" × ") + " in";
-  const sortedText = `${edges.map((value) => fmt(value, 2)).join(" / ")} → ${perimeterEdges.join(" / ")} in`;
+  const sortedText = `${edges.map((value) => fmt(value, 2)).join(" / ")} in`;
   const continuationLabel = rate.intervalLb < 1 ? " / 4 oz" : "";
   const feeFormula = `${fmtMoney(baseFee)} + ${continuationUnits} × ${fmtMoney(continuationRate)}${continuationLabel} = ${fmtMoney(fbaFee)}`;
+  const fedexReasonText = [
+    ...fedex.overlengthReasons,
+    ...fedex.overweightReasons,
+    ...fedex.oversizeReasons
+  ].join("；");
 
   $("fba-fee").textContent = fmtMoney(fbaFee);
   $("fba-rmb").textContent = `约 ¥${fmt(fbaFee * RMB_PER_USD, 2)}`;
   $("fba-segment").textContent = formatSegment(segment);
   $("fba-rate-number").textContent = priceTier.label;
   $("fba-price-tier").textContent = "2026 FBA";
-  $("perimeter-value").innerHTML = `${fmt(perimeter, 1)} <small>in</small>`;
-  $("perimeter-status").textContent = withinLimit ? "130 in 以内" : "超出 130 in";
-  $("perimeter-status").className = `result-status ${withinLimit ? "status-ok" : "status-warn"}`;
-  $("perimeter-margin").textContent = marginText;
-  $("perimeter-fill").style.width = `${Math.min(100, Math.max(0, perimeter / PERIMETER_LIMIT * 100))}%`;
-  $("perimeter-fill").style.background = withinLimit ? "var(--green)" : "var(--red)";
+  $("fedex-fee").textContent = fmtMoney(fedex.totalFee);
+  $("fedex-rmb").textContent = `约 ¥${fmt(fedex.totalFee * RMB_PER_USD, 2)}`;
+  $("fedex-status").textContent = fedex.status;
+  $("fedex-breakdown").textContent = fedex.feeParts.join(" + ") || "无附加费";
+  $("fedex-overlength").textContent = fedex.overlength ? `${fmtMoney(FEDEX_FEES.overlength)} · 已触发` : "未触发";
+  $("fedex-overweight").textContent = fedex.overweight ? `${fmtMoney(FEDEX_FEES.overweight)} · 已触发` : "未触发";
+  $("fedex-oversize").textContent = fedex.oversize ? `${fmtMoney(FEDEX_FEES.oversize)} · 已触发` : "未触发";
   $("metric-real-weight").textContent = `${fmt(realWeightLb, 1)} lb`;
   $("metric-real-weight-secondary").textContent = `${fmt(inputs.weight, 2)} kg`;
   $("metric-volume-weight").textContent = `${fmt(volumeWeightLb, 1)} lb`;
@@ -280,20 +355,17 @@ function calculate() {
   $("metric-shipping-weight").textContent = `${fmt(feeWeightLb, feeWeightLb < 1 ? 3 : 2)} lb`;
   $("detail-dimensions").textContent = dimsText;
   $("detail-sorted-edges").textContent = sortedText;
-  $("detail-perimeter-formula").textContent = `${perimeterEdges[0]} + 2 × (${perimeterEdges[1]} + ${perimeterEdges[2]}) = ${perimeter} in`;
-  $("detail-fba-perimeter").textContent = `${fmt(fbaPerimeter, 2)} in（原始英寸）`;
+  $("detail-perimeter-formula").textContent = `${fmt(longest, 2)} + 2 × (${fmt(second, 2)} + ${fmt(shortest, 2)}) = ${fmt(fedex.girthIn, 2)} in`;
+  $("detail-fba-perimeter").textContent = `${fmt(fedex.volumeCm3, 2)} cm³`;
   $("detail-fee-formula").textContent = feeFormula;
 
   const decisionNote = $("decision-note");
   const decisionText = decisionNote.querySelector("p");
-  decisionNote.className = `decision-note${withinLimit && margin <= 5 ? " note-warning" : ""}`;
-  if (!withinLimit) {
-    const totalReductionIn = Math.abs(margin) / 2;
-    decisionText.textContent = `已超出 ${fmt(Math.abs(margin), 1)} in；若最长边不变，另外两边合计至少再缩减 ${fmt(totalReductionIn, 1)} in。`;
-  } else if (margin <= 5) {
-    decisionText.textContent = `仅剩 ${fmt(margin, 1)} in 余量，建议保留实测误差和纸箱变形缓冲。`;
+  decisionNote.className = `decision-note${fedex.totalFee > 0 ? " note-warning" : ""}`;
+  if (fedex.totalFee > 0) {
+    decisionText.textContent = `${fedex.status}；${fedexReasonText}。按触发项合计估算 FedEx 附加费 ${fmtMoney(fedex.totalFee)}。`;
   } else {
-    decisionText.textContent = `当前距离红线还有 ${fmt(margin, 1)} in，围长处于可控范围。`;
+    decisionText.textContent = "当前未触发 FedEx 超长、超重或超大条件。";
   }
 }
 

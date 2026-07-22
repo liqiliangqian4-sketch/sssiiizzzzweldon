@@ -22,7 +22,7 @@
         <div class="topbar-meta">
           <span class="contributor-chip">贡献人：Weldon</span>
           <span class="source-chip">US FBA</span>
-          <span class="source-chip source-chip-light">DTC 130 in</span>
+          <span class="source-chip source-chip-light">FEDEX</span>
         </div>
       </header>
 
@@ -101,7 +101,7 @@
                   <small id="height-unit">cm</small>
                 </label>
               </div>
-              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；围长计算时每边先向上取整到整数 in。</p>
+              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；FedEx 围长按原始英寸计算。</p>
             </div>
 
             <div class="two-column-fields">
@@ -186,20 +186,25 @@
                 </div>
               </article>
 
-              <article class="result-card perimeter-card" id="perimeter-card">
+              <article class="result-card fedex-card" id="fedex-card">
                 <div class="result-card-topline">
-                  <span class="result-label">独立站 · 围长</span>
-                  <span class="result-tag dark-tag">130 in</span>
+                  <span class="result-label">FedEx · 独立站运输费估算</span>
+                  <span class="result-tag dark-tag">USD</span>
                 </div>
-                <div class="result-value" id="perimeter-value">0.0 <small>in</small></div>
-                <div class="perimeter-track" aria-hidden="true">
-                  <span class="perimeter-fill" id="perimeter-fill"></span>
-                  <span class="perimeter-limit"></span>
-                </div>
-                <div class="result-status status-neutral" id="perimeter-status">等待输入</div>
+                <div class="result-value" id="fedex-fee">$0.00</div>
+                <div class="result-subvalue fedex-subvalue" id="fedex-rmb">约 ¥0.00</div>
                 <div class="result-detail-row">
-                  <span>安全余量</span>
-                  <strong id="perimeter-margin">—</strong>
+                  <span>触发状态</span>
+                  <strong id="fedex-status">等待输入</strong>
+                </div>
+                <div class="result-detail-row">
+                  <span>估算组成</span>
+                  <strong id="fedex-breakdown">—</strong>
+                </div>
+                <div class="fedex-rules">
+                  <div class="fedex-rule-row"><span>超长</span><strong id="fedex-overlength">—</strong></div>
+                  <div class="fedex-rule-row"><span>超重</span><strong id="fedex-overweight">—</strong></div>
+                  <div class="fedex-rule-row"><span>超大</span><strong id="fedex-oversize">—</strong></div>
                 </div>
               </article>
             </div>
@@ -235,8 +240,8 @@
               <div class="calculation-table">
                 <div class="calc-row"><span>换算后尺寸</span><strong id="detail-dimensions">—</strong></div>
                 <div class="calc-row"><span>三边排序</span><strong id="detail-sorted-edges">—</strong></div>
-                <div class="calc-row"><span>围长公式（各边先取整）</span><strong id="detail-perimeter-formula">—</strong></div>
-                <div class="calc-row"><span>FBA 尺寸围长</span><strong id="detail-fba-perimeter">—</strong></div>
+                <div class="calc-row"><span>FedEx 围长公式（原始英寸）</span><strong id="detail-perimeter-formula">—</strong></div>
+                <div class="calc-row"><span>FedEx 体积</span><strong id="detail-fba-perimeter">—</strong></div>
                 <div class="calc-row"><span>首重费 + 续重</span><strong id="detail-fee-formula">—</strong></div>
               </div>
             </div>
@@ -257,14 +262,17 @@
             <h2>包装优化案例库</h2>
           </div>
           <div class="reference-copy">
-            <p>案例中，Tacoma 包装由 <strong>217.5 × 39 × 19 cm</strong> 调整到 <strong>215 × 35 × 19 cm</strong>，独立站围长按每边向上取整后由 134 in 降到 129 in；FBA 费用按你提供的 Amazon 2026 非服装商品费率图表计算。</p>
+            <p>案例中，Tacoma 包装由 <strong>217.5 × 39 × 19 cm</strong> 调整到 <strong>215 × 35 × 19 cm</strong>；FBA 费用按 2026 非服装商品费率图表计算，FedEx 则按超长、超重、超大规则估算渠道附加费。</p>
             <span class="official-source-link">费率依据：Amazon FBA 2026 非旺季配送费用截图</span>
             <span>FBA公式：计费重 = MAX(实际重，体积重)；尾程费 = 首重费 + CEILING(MAX(0，计费重 - 续重起重) ÷ 间隔单位) × 续重费</span>
-            <span>判定公式：最长边 + 2 ×（次长边 + 最短边）</span>
+            <span>FedEx估算：超长 $5 · 超重 $8 · 超大 $45；多个条件按触发项合计</span>
+            <span>超长：最长边 48–96 in，第二长边 &gt;30 in，围长 105–130 in，或体积 &gt;169,901.08 cm³</span>
+            <span>超重：计费重 &gt;50 lb</span>
+            <span>超大：实际重 ≤150 lb 且最长边 96–108 in，或围长 130–165 in，或体积 &gt;283,168.47 cm³，或实际重 &gt;110 lb</span>
           </div>
-          <div class="reference-rule">
-            <span>围长红线</span>
-            <strong>130 <small>in</small></strong>
+          <div class="reference-rule fedex-reference-rule">
+            <span>FedEx 附加费</span>
+            <strong>$5 / $8 / $45</strong>
           </div>
         </section>
       </main>
