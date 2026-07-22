@@ -29,9 +29,12 @@ const fbaRateTable = [
   { number: 22, segment: "smallOversize", maxWeightLb: 50, startWeightLb: 1, intervalLb: 1, continuation: 0.38, under10: 6.78, tenTo50: 7.55, over50: 7.55 },
   { number: 23, segment: "largeOversize", maxWeightLb: 50, startWeightLb: 1, intervalLb: 1, continuation: 0.38, under10: 8.58, tenTo50: 9.35, over50: 9.35 },
   { number: 24, segment: "oversize0to50", maxWeightLb: 50, startWeightLb: 1, intervalLb: 1, continuation: 0.38, under10: 25.56, tenTo50: 26.33, over50: 26.33 },
-  { number: 25, segment: "oversize50to70", maxWeightLb: 70, startWeightLb: 51, intervalLb: 1, continuation: 0.75, under10: 36.55, tenTo50: 37.32, over50: 37.32 },
-  { number: 26, segment: "oversize70to150", maxWeightLb: 150, startWeightLb: 71, intervalLb: 1, continuation: 0.75, under10: 50.55, tenTo50: 51.32, over50: 51.32 },
-  { number: 27, segment: "oversize150Plus", maxWeightLb: Infinity, startWeightLb: 151, intervalLb: 1, continuation: 0.19, under10: 194.18, tenTo50: 194.95, over50: 194.95 }
+  { number: 25, segment: "special0to50", maxWeightLb: 50, startWeightLb: 1, intervalLb: 1, continuation: 0.38, under10: 42.56, tenTo50: 43.33, over50: 43.33 },
+  { number: 26, segment: "oversize50to70", maxWeightLb: 70, startWeightLb: 51, intervalLb: 1, continuation: 0.75, under10: 36.55, tenTo50: 37.32, over50: 37.32 },
+  { number: 27, segment: "special50to70", maxWeightLb: 70, startWeightLb: 51, intervalLb: 1, continuation: 0.75, under10: 57.55, tenTo50: 58.32, over50: 58.32 },
+  { number: 28, segment: "oversize70to150", maxWeightLb: 150, startWeightLb: 71, intervalLb: 1, continuation: 0.75, under10: 50.55, tenTo50: 51.32, over50: 51.32 },
+  { number: 29, segment: "special70to150", maxWeightLb: 150, startWeightLb: 71, intervalLb: 1, continuation: 0.75, under10: 75.55, tenTo50: 76.32, over50: 76.32 },
+  { number: 30, segment: "oversize150Plus", maxWeightLb: Infinity, startWeightLb: 151, intervalLb: 1, continuation: 0.19, under10: 194.18, tenTo50: 194.95, over50: 194.95 }
 ];
 
 const presets = {
@@ -131,38 +134,20 @@ function sortEdges(length, width, height) {
 
 function classifyFba(billable, longest, second, shortest, perimeter) {
   if (billable <= 1 && longest <= 15 && second <= 12 && shortest <= 0.75) return "smallStandard";
-  if (billable <= 20 && longest <= 18 && second <= 14 && shortest <= 8) return "largeStandard";
+  if (billable < 20 - 1e-9 && longest <= 18 && second <= 14 && shortest <= 8) return "largeStandard";
   if (billable <= 50 && longest <= 37 && second <= 28 && shortest <= 20 && perimeter <= 130) return "smallOversize";
   if (billable <= 50 && longest <= 59 && second <= 33 && shortest <= 33 && perimeter <= 130) return "largeOversize";
-  if (billable <= 150 && (longest > 96 || perimeter > 130)) return "specialOversize";
   if (billable <= 50 && longest <= 96 && perimeter <= 130) return "oversize0to50";
-  if (billable <= 50) return "oversize0to50";
+  if (billable <= 50) return "special0to50";
   if (billable <= 70 && longest <= 96 && perimeter <= 130) return "oversize50to70";
-  if (billable <= 70) return "oversize50to70";
+  if (billable <= 70) return "special50to70";
   if (billable <= 150 && longest <= 96 && perimeter <= 130) return "oversize70to150";
-  if (billable <= 150) return "oversize70to150";
+  if (billable <= 150) return "special70to150";
   return "oversize150Plus";
 }
 
-function rateSegment(segment, billableWeightLb) {
-  if (segment !== "specialOversize") return segment;
-  if (billableWeightLb <= 50) return "oversize0to50";
-  if (billableWeightLb <= 70) return "oversize50to70";
-  return "oversize70to150";
-}
-
-function feeWeight(segment, billableWeightLb) {
-  if (segment === "smallStandard") return Math.ceil((billableWeightLb - 1e-9) * 8) / 8;
-  if (segment === "largeStandard") return billableWeightLb <= 3
-    ? Math.ceil((billableWeightLb - 1e-9) * 4) / 4
-    : 3 + Math.ceil((billableWeightLb - 3 - 1e-9) * 4) / 4;
-  return Math.ceil(billableWeightLb - 1e-9);
-}
-
 function findRate(segment, billableWeightLb) {
-  const effectiveSegment = rateSegment(segment, billableWeightLb);
-  const ratedWeightLb = feeWeight(segment, billableWeightLb);
-  return fbaRateTable.find((row) => row.segment === effectiveSegment && ratedWeightLb <= row.maxWeightLb + 1e-9) || null;
+  return fbaRateTable.find((row) => row.segment === segment && billableWeightLb <= row.maxWeightLb + 1e-9) || null;
 }
 
 function getPriceTier(price) {
@@ -187,7 +172,7 @@ function getCanonicalCalculation() {
   const fbaPerimeter = longest + 2 * (second + shortest);
   const perimeter = perimeterEdges[0] + 2 * (perimeterEdges[1] + perimeterEdges[2]);
   const segment = classifyFba(billableWeightLb, longest, second, shortest, fbaPerimeter);
-  const feeWeightLb = feeWeight(segment, billableWeightLb);
+  const feeWeightLb = billableWeightLb;
   const rate = findRate(segment, billableWeightLb);
   const priceTier = getPriceTier(inputs.price);
   if (!rate) return { error: "当前尺寸或重量超出 Amazon 2026 FBA费率表范围。" };
@@ -229,11 +214,13 @@ function formatSegment(segment) {
     largeStandard: "大号标准尺寸",
     smallOversize: "小号大件",
     largeOversize: "大号大件",
-    oversize0to50: "超大件 · 0–50 lb",
-    oversize50to70: "超大件 · 50–70 lb",
-    oversize70to150: "超大件 · 70–150 lb",
-    oversize150Plus: "超大件 · 150 lb以上",
-    specialOversize: "特大号 · 0–150 lb"
+    oversize0to50: "超大尺寸 · 0–50 lb",
+    special0to50: "特大号 · 0–50 lb",
+    oversize50to70: "超大尺寸 · 50–70 lb",
+    special50to70: "特大号 · 50–70 lb",
+    oversize70to150: "超大尺寸 · 70–150 lb",
+    special70to150: "特大号 · 70–150 lb",
+    oversize150Plus: "超大尺寸 · 150 lb以上"
   };
   return labels[segment] || segment;
 }

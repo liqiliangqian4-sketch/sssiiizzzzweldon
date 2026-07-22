@@ -221,16 +221,16 @@
                 <small>取实重 / 体积重较大值</small>
               </div>
               <div class="metric">
-                  <span class="metric-label">费率计费重</span>
+                  <span class="metric-label">FBA 计费重</span>
                   <strong id="metric-shipping-weight">0.0 lb</strong>
-                  <small>按当前尺寸段进位</small>
+                  <small>用于费率分段判断</small>
               </div>
             </div>
 
             <div class="detail-section">
               <div class="detail-heading">
                 <h3>计算拆解</h3>
-                <span id="calculation-note">Amazon FBA · 2026 表</span>
+                <span id="calculation-note">Amazon FBA · 计费重/尺寸/售价</span>
               </div>
               <div class="calculation-table">
                 <div class="calc-row"><span>换算后尺寸</span><strong id="detail-dimensions">—</strong></div>
@@ -259,6 +259,7 @@
           <div class="reference-copy">
             <p>案例中，Tacoma 包装由 <strong>217.5 × 39 × 19 cm</strong> 调整到 <strong>215 × 35 × 19 cm</strong>，独立站围长按每边向上取整后由 134 in 降到 129 in；FBA 费用按你提供的 Amazon 2026 非服装商品费率图表计算。</p>
             <span class="official-source-link">费率依据：Amazon FBA 2026 非旺季配送费用截图</span>
+            <span>FBA公式：计费重 = MAX(实际重，体积重)；尾程费 = 首重费 + CEILING(MAX(0，计费重 - 续重起重) ÷ 间隔单位) × 续重费</span>
             <span>判定公式：最长边 + 2 ×（次长边 + 最短边）</span>
           </div>
           <div class="reference-rule">
