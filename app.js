@@ -357,7 +357,11 @@ function calculate() {
   const result = getCanonicalCalculation();
   if (result.error) {
     renderEmpty();
-    $("form-status").textContent = result.error;
+    const hasInput = ["length", "width", "height", "weight", "price"].some((id) => {
+      const value = readInputValue(id);
+      return Number.isFinite(value) && value > 0;
+    });
+    $("form-status").textContent = hasInput ? result.error : "";
     return;
   }
   $("form-status").textContent = "";
@@ -427,7 +431,7 @@ function applyPreset(key) {
 
 function resetForm() {
   state.unit = "metric";
-  writeCanonicalInputs({ length: 217.5, width: 39, height: 19, weight: 33.5, price: 100 });
+  writeCanonicalInputs({ length: 0, width: 0, height: 0, weight: 0, price: 0 });
   $("sku").value = "";
   updateUnitLabels();
   calculate();
