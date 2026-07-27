@@ -327,6 +327,104 @@ function formatSegment(segment) {
   return labels[segment] || segment;
 }
 
+const FBA_NEXT_SEGMENTS = {
+  largeStandard: { segment: "smallStandard", maxDims: [15, 12, 0.75], maxBillable: 1 },
+  smallOversize: { segment: "largeStandard", maxDims: [18, 14, 8], maxBillable: 20, strictBillable: true },
+  largeOversize: { segment: "smallOversize", maxDims: [37, 28, 20], maxBillable: 50, maxPerimeter: 130 },
+  oversize0to50: { segment: "largeOversize", maxDims: [59, 33, 33], maxBillable: 50, maxPerimeter: 130 },
+  special0to50: { segment: "oversize0to50", maxDims: [96, Infinity, Infinity], maxBillable: 50, maxPerimeter: 130 },
+  oversize50to70: { segment: "oversize0to50", maxDims: [96, Infinity, Infinity], maxBillable: 50, maxPerimeter: 130 },
+  special50to70: { segment: "oversize50to70", maxDims: [96, Infinity, Infinity], maxBillable: 70, maxPerimeter: 130 },
+  oversize70to150: { segment: "oversize50to70", maxDims: [96, Infinity, Infinity], maxBillable: 70, maxPerimeter: 130 },
+  special70to150: { segment: "oversize70to150", maxDims: [96, Infinity, Infinity], maxBillable: 150, maxPerimeter: 130 },
+  oversize150Plus: { segment: "special70to150", maxBillable: 150 }
+};
+
+function getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb) {
+  const next = FBA_NEXT_SEGMENTS[segment];
+  if (!next) return { target: "当前最低档", text: "当前已处于可用的最低 FBA 尺寸分段。" };
+
+  const needs = [];
+  if (next.maxDims) {
+    ["最长边", "第二长边", "最短边"].forEach((label, index) => {
+      const limit = next.maxDims[index];
+      if (Number.isFinite(limit) && edges[index] > limit) {
+        needs.push(label + "≤" + fmt(limit, 2) + " in（当前 " + fmt(edges[index], 2) + " in，至少缩短 " + fmt(edges[index] - limit, 2) + " in）");
+      }
+    });
+  }
+  if (Number.isFinite(next.maxPerimeter) && fbaPerimeter > next.maxPerimeter) {
+    needs.push("围长≤" + fmt(next.maxPerimeter, 0) + " in（当前 " + fmt(fbaPerimeter, 2) + " in，至少减少 " + fmt(fbaPerimeter - next.maxPerimeter, 2) + " in）");
+  }
+  if (Number.isFinite(next.maxBillable)) {
+    const limitText = next.strictBillable ? "<" + fmt(next.maxBillable, 0) + " lb" : "≤" + fmt(next.maxBillable, 0) + " lb";
+    const overLimit = next.strictBillable ? billableWeightLb >= next.maxBillable : billableWeightLb > next.maxBillable;
+    if (overLimit) {
+      const reduction = Math.max(0, billableWeightLb - next.maxBillable);
+      needs.push("计费重" + limitText + "（当前 " + fmt(billableWeightLb, 1) + " lb，至少降低 " + fmt(reduction, 1) + " lb，约 " + fmt(reduction / LB_PER_KG, 1) + " kg）");
+    }
+  }
+
+  return {
+    target: "下一档：" + formatSegment(next.segment),
+    text: needs.length ? needs.join("；") + "。" : "当前尺寸和计费重已满足下一档条件。"
+  };
+}
+
+function getFedexGuidance(fedex, realWeightLb, billableWeightLb) {
+  if (fedex.totalFee === 0) {
+    return { target: "当前无附加费", text: "保持计费重≤50 lb，并将围长控制在 130 in 以内。" };
+  }
+
+  const remainingFees = fedex.oversize
+    ? [fedex.overlength && FEDEX_FEES.overlength, fedex.overweight && FEDEX_FEES.overweight].filter(Boolean)
+    : fedex.overweight
+      ? [fedex.overlength && FEDEX_FEES.overlength].filter(Boolean)
+      : [];
+  const nextFee = remainingFees.length ? Math.max(...remainingFees) : 0;
+  const nextLabel = nextFee ? "下一档：约 " + fmtMoney(nextFee) + " 附加费" : "下一档：无附加费";
+  const needs = [];
+
+  if (fedex.oversize) {
+    const [longest] = fedex.girthEdges;
+    if (realWeightLb > FEDEX_RULES.oversize.actualWeightMinLb) {
+      needs.push("实际重≤" + fmt(FEDEX_RULES.oversize.actualWeightMinLb, 0) + " lb（当前 " + fmt(realWeightLb, 1) + " lb，至少降低 " + fmt(realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb, 1) + " lb，约 " + fmt((realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb) / LB_PER_KG, 1) + " kg）");
+    }
+    if (realWeightLb <= FEDEX_RULES.oversize.actualWeightMaxLb && longest > FEDEX_RULES.oversize.longestMinIn && longest <= FEDEX_RULES.oversize.longestMaxIn) {
+      needs.push("最长边≤" + fmt(FEDEX_RULES.oversize.longestMinIn, 0) + " in（当前 " + fmt(longest, 0) + " in，至少缩短 " + fmt(longest - FEDEX_RULES.oversize.longestMinIn, 0) + " in）");
+    }
+    if (realWeightLb <= FEDEX_RULES.oversize.actualWeightMaxLb && fedex.girthIn > FEDEX_RULES.oversize.girthMinIn && fedex.girthIn <= FEDEX_RULES.oversize.girthMaxIn) {
+      needs.push("围长≤" + fmt(FEDEX_RULES.oversize.girthMinIn, 0) + " in（当前 " + fmt(fedex.girthIn, 0) + " in，至少减少 " + fmt(fedex.girthIn - FEDEX_RULES.oversize.girthMinIn, 0) + " in）");
+    }
+    if (fedex.volumeCm3 > FEDEX_RULES.oversize.volumeMinCm3) {
+      needs.push("体积≤" + fmt(FEDEX_RULES.oversize.volumeMinCm3, 2) + " cm³（当前 " + fmt(fedex.volumeCm3, 2) + " cm³）");
+    }
+    return {
+      target: nextLabel,
+      text: needs.length ? "解除 $45 超大附加费需同时满足：" + needs.join("；") + "。" : "请同时满足超大规则的所有尺寸、体积和重量上限。"
+    };
+  }
+
+  if (fedex.overweight) {
+    const reduction = Math.max(0, billableWeightLb - FEDEX_RULES.overweight.billableWeightMinLb);
+    return {
+      target: nextLabel,
+      text: "计费重降至≤" + fmt(FEDEX_RULES.overweight.billableWeightMinLb, 0) + " lb（当前 " + fmt(billableWeightLb, 1) + " lb，至少降低 " + fmt(reduction, 1) + " lb，约 " + fmt(reduction / LB_PER_KG, 1) + " kg）。"
+    };
+  }
+
+  const [longest, second] = fedex.girthEdges;
+  const overlengthNeeds = [];
+  if (longest > FEDEX_RULES.overlength.longestMinIn && longest <= FEDEX_RULES.overlength.longestMaxIn) overlengthNeeds.push("最长边≤" + fmt(FEDEX_RULES.overlength.longestMinIn, 0) + " in");
+  if (second > FEDEX_RULES.overlength.secondMinIn) overlengthNeeds.push("第二长边≤" + fmt(FEDEX_RULES.overlength.secondMinIn, 0) + " in");
+  if (fedex.girthIn > FEDEX_RULES.overlength.girthMinIn && fedex.girthIn <= FEDEX_RULES.overlength.girthMaxIn) overlengthNeeds.push("围长≤" + fmt(FEDEX_RULES.overlength.girthMinIn, 0) + " in");
+  if (fedex.volumeCm3 > FEDEX_RULES.overlength.volumeMinCm3) overlengthNeeds.push("体积≤" + fmt(FEDEX_RULES.overlength.volumeMinCm3, 2) + " cm³");
+  return {
+    target: nextLabel,
+    text: overlengthNeeds.length ? "解除 $5 超长附加费需满足：" + overlengthNeeds.join("；") + "。" : "请同时满足超长规则的所有尺寸和体积上限。"
+  };
+}
+
 function renderEmpty() {
   $("form-status").textContent = "";
   $("fba-fee").textContent = "$0.00";
@@ -334,6 +432,8 @@ function renderEmpty() {
   $("fba-segment").textContent = "等待输入";
   $("fba-rate-number").textContent = "—";
   $("fba-price-tier").textContent = "—";
+  $("fba-guidance-target").textContent = "等待输入";
+  $("fba-guidance-text").textContent = "输入参数后显示需要降低的尺寸或计费重。";
   $("fedex-fee").textContent = "$0.00";
   $("fedex-rmb").textContent = "约 ¥0.00";
   $("fedex-girth-status").className = "fedex-girth-status girth-waiting";
@@ -345,6 +445,8 @@ function renderEmpty() {
   $("fedex-severity-label").textContent = "等待输入";
   $("fedex-severity-description").textContent = "输入参数后评估";
   $("fedex-severity-fill").style.width = "0%";
+  $("fedex-guidance-target").textContent = "等待输入";
+  $("fedex-guidance-text").textContent = "输入参数后显示需要降低的尺寸或重量。";
   ["fedex-overlength", "fedex-overweight", "fedex-oversize"].forEach((id) => { $(id).textContent = "—"; });
   ["metric-real-weight", "metric-volume-weight", "metric-billable-weight", "metric-shipping-weight"].forEach((id) => { $(id).textContent = "0.0 lb"; });
   $("metric-real-weight-secondary").textContent = "0.0 kg";
@@ -376,12 +478,18 @@ function calculate() {
     ...fedex.oversizeReasons
   ].join("；");
   const fedexSeverity = getFedexSeverity(fedex.totalFee);
+  const fbaGuidance = getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb);
+  const fedexGuidance = getFedexGuidance(fedex, realWeightLb, billableWeightLb);
+  $("fedex-guidance-target").textContent = fedexGuidance.target;
+  $("fedex-guidance-text").textContent = fedexGuidance.text;
 
   $("fba-fee").textContent = fmtMoney(fbaFee);
   $("fba-rmb").textContent = `约 ¥${fmt(fbaFee * RMB_PER_USD, 2)}`;
   $("fba-segment").textContent = formatSegment(segment);
   $("fba-rate-number").textContent = priceTier.label;
   $("fba-price-tier").textContent = "2026 FBA";
+  $("fba-guidance-target").textContent = fbaGuidance.target;
+  $("fba-guidance-text").textContent = fbaGuidance.text;
   $("fedex-fee").textContent = fmtMoney(fedex.totalFee);
   $("fedex-rmb").textContent = `约 ¥${fmt(fedex.totalFee * RMB_PER_USD, 2)}`;
   const girthExceeded = fedex.girthIn > PERIMETER_LIMIT;

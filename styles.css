@@ -546,6 +546,58 @@ input::placeholder { color: #a7b0b0; }
 
 .fedex-card .result-detail-row strong { max-width: 68%; }
 
+.fba-guidance,
+.fedex-guidance {
+  margin-top: 16px;
+  padding: 11px 12px;
+}
+
+.fba-guidance {
+  border: 1px solid rgba(244, 202, 134, 0.55);
+  border-left: 3px solid #f4ca86;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fedex-guidance {
+  border: 1px solid #f0c273;
+  border-left: 3px solid var(--orange);
+  background: #fffaf2;
+}
+
+.guidance-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.guidance-heading span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.guidance-heading strong {
+  max-width: 72%;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.fba-guidance .guidance-heading span,
+.fba-guidance .guidance-heading strong { color: #f4ca86; }
+
+.fba-guidance p,
+.fedex-guidance p {
+  margin: 6px 0 0;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.fba-guidance p { color: #d4dfe9; }
+.fedex-guidance p { color: var(--ink-soft); }
+
 .fedex-card {
   --fedex-severity: var(--muted);
   --fedex-severity-soft: var(--paper-deep);
