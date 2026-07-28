@@ -31,7 +31,7 @@
           <div>
             <p class="eyebrow">包装尺寸决策工具</p>
             <h1>一组尺寸，<em>两个渠道</em>判定。</h1>
-            <p class="intro-copy">输入外箱长、宽、高和包装重量，快速核对美国亚马逊 FBA 尾程费，以及独立站 130 in 围长红线。</p>
+            <p class="intro-copy">输入外箱长、宽、高和包装重量，快速核对美国亚马逊 FBA 尾程费，以及 FedEx 渠道附加费，重点关注 130 in 围长门槛。</p>
           </div>
           <div class="intro-stamp" aria-label="计算口径摘要">
             <span>规则基准</span>
@@ -85,23 +85,23 @@
               <div class="dimension-fields">
                 <label class="number-field">
                   <span>长</span>
-                  <input id="length" name="length" type="number" min="0.01" step="0.01" inputmode="decimal" value="217.5" required />
+                  <input id="length" name="length" type="number" min="0" step="0.01" inputmode="decimal" value="0" required />
                   <small id="length-unit">cm</small>
                 </label>
                 <span class="dimension-times">×</span>
                 <label class="number-field">
                   <span>宽</span>
-                  <input id="width" name="width" type="number" min="0.01" step="0.01" inputmode="decimal" value="39" required />
+                  <input id="width" name="width" type="number" min="0" step="0.01" inputmode="decimal" value="0" required />
                   <small id="width-unit">cm</small>
                 </label>
                 <span class="dimension-times">×</span>
                 <label class="number-field">
                   <span>高</span>
-                  <input id="height" name="height" type="number" min="0.01" step="0.01" inputmode="decimal" value="19" required />
+                  <input id="height" name="height" type="number" min="0" step="0.01" inputmode="decimal" value="0" required />
                   <small id="height-unit">cm</small>
                 </label>
               </div>
-              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；FedEx 围长按原始英寸计算。</p>
+              <p class="field-note">以外箱实测最大尺寸为准，三边会自动排序；FedEx 各边英寸先分别向上取整，再计算围长，130 in 是关键分界线。</p>
             </div>
 
             <div class="two-column-fields">
@@ -111,7 +111,7 @@
                   <span class="unit-hint" id="weight-unit-label">kg</span>
                 </div>
                 <div class="input-with-unit">
-                  <input id="weight" name="weight" type="number" min="0.001" step="0.01" inputmode="decimal" value="33.5" required />
+                  <input id="weight" name="weight" type="number" min="0" step="0.01" inputmode="decimal" value="0" required />
                   <span id="weight-unit">kg</span>
                 </div>
               </div>
@@ -121,7 +121,7 @@
                   <span class="unit-hint">美元 USD</span>
                 </div>
                 <div class="input-with-unit">
-                  <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" value="100" required />
+                  <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" value="0" required />
                   <span>USD</span>
                 </div>
               </div>
@@ -184,15 +184,31 @@
                   <span>售价档位 / 费率口径</span>
                   <strong><span id="fba-rate-number">—</span> · <span id="fba-price-tier">—</span></strong>
                 </div>
+                <div class="fba-guidance" id="fba-guidance">
+                  <div class="guidance-heading">
+                    <span>下一档建议</span>
+                    <strong id="fba-guidance-target">等待输入</strong>
+                  </div>
+                  <p id="fba-guidance-text">输入参数后显示需要降低的尺寸或计费重。</p>
+                </div>
               </article>
 
               <article class="result-card fedex-card" id="fedex-card">
                 <div class="result-card-topline">
-                  <span class="result-label">FedEx · 独立站运输费估算</span>
+                  <span class="result-label">FedEx · 独立站附加费估算</span>
                   <span class="result-tag dark-tag">USD</span>
                 </div>
-                <div class="result-value" id="fedex-fee">$0.00</div>
-                <div class="result-subvalue fedex-subvalue" id="fedex-rmb">约 ¥0.00</div>
+                <div class="fedex-primary-row">
+                  <div>
+                    <div class="result-value" id="fedex-fee">$0.00</div>
+                    <div class="result-subvalue fedex-subvalue" id="fedex-rmb">约 ¥0.00</div>
+                  </div>
+                  <div class="fedex-girth-status girth-waiting" id="fedex-girth-status">
+                    <span>实际围长</span>
+                    <strong id="fedex-girth-value">—</strong>
+                    <small id="fedex-girth-check">等待输入</small>
+                  </div>
+                </div>
                 <div class="result-detail-row">
                   <span>触发状态</span>
                   <strong id="fedex-status">等待输入</strong>
@@ -209,10 +225,21 @@
                   <div class="fedex-severity-track" aria-hidden="true"><span id="fedex-severity-fill"></span></div>
                   <small id="fedex-severity-description">输入参数后评估</small>
                 </div>
+                <div class="fedex-girth-callout">
+                  <strong>130 in 围长关键门槛</strong>
+                  <span>105–130 in 为超长区间；130–165 in 需重点检查超大附加费。超出时优先调整宽度或高度。</span>
+                </div>
                 <div class="fedex-rules">
                   <div class="fedex-rule-row"><span>超长</span><strong id="fedex-overlength">—</strong></div>
                   <div class="fedex-rule-row"><span>超重</span><strong id="fedex-overweight">—</strong></div>
                   <div class="fedex-rule-row"><span>超大</span><strong id="fedex-oversize">—</strong></div>
+                </div>
+                <div class="fedex-guidance" id="fedex-guidance">
+                  <div class="guidance-heading">
+                    <span>下一档建议</span>
+                    <strong id="fedex-guidance-target">等待输入</strong>
+                  </div>
+                  <p id="fedex-guidance-text">输入参数后显示需要降低的尺寸或重量。</p>
                 </div>
               </article>
             </div>
@@ -248,7 +275,7 @@
               <div class="calculation-table">
                 <div class="calc-row"><span>换算后尺寸</span><strong id="detail-dimensions">—</strong></div>
                 <div class="calc-row"><span>三边排序</span><strong id="detail-sorted-edges">—</strong></div>
-                <div class="calc-row"><span>FedEx 围长公式（原始英寸）</span><strong id="detail-perimeter-formula">—</strong></div>
+                <div class="calc-row"><span>FedEx 围长公式（各边分别向上取整）</span><strong id="detail-perimeter-formula">—</strong></div>
                 <div class="calc-row"><span>FedEx 体积</span><strong id="detail-fba-perimeter">—</strong></div>
                 <div class="calc-row"><span>首重费 + 续重</span><strong id="detail-fee-formula">—</strong></div>
               </div>
@@ -273,7 +300,8 @@
             <p>案例中，Tacoma 包装由 <strong>217.5 × 39 × 19 cm</strong> 调整到 <strong>215 × 35 × 19 cm</strong>；FBA 费用按 2026 非服装商品费率图表计算，FedEx 则按超长、超重、超大规则估算渠道附加费。</p>
             <span class="official-source-link">费率依据：Amazon FBA 2026 非旺季配送费用截图</span>
             <span>FBA公式：计费重 = MAX(实际重，体积重)；尾程费 = 首重费 + CEILING(MAX(0，计费重 - 续重起重) ÷ 间隔单位) × 续重费</span>
-            <span>FedEx估算：超长 $5 · 超重 $8 · 超大 $45；多个条件按触发项合计</span>
+            <span class="girth-reference-note">130 in 围长是独立站 FedEx 的关键分界线，建议优先把围长控制在 130 in 以内。</span>
+            <span>FedEx 独立站附加费估算：超长 $5 · 超重 $8 · 超大 $45；多个条件同时触发时只取最高费用</span>
             <span>超长：最长边 48–96 in，第二长边 &gt;30 in，围长 105–130 in，或体积 &gt;169,901.08 cm³</span>
             <span>超重：计费重 &gt;50 lb</span>
             <span>超大：实际重 ≤150 lb 且最长边 96–108 in，或围长 130–165 in，或体积 &gt;283,168.47 cm³，或实际重 &gt;110 lb</span>
