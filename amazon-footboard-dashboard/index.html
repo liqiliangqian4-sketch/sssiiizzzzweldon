@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f2b45" />
+    <title>脚踏类目 · 价格段 × GMV 气泡图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="脚踏类目运营洞察首页">
+          <span class="brand-mark">JOY<span>TUTUS</span></span>
+          <span class="brand-copy">
+            <strong>Joytutus 脚踏类目运营洞察</strong>
+            <small>AMAZON US · MARKET INTELLIGENCE · 2026</small>
+          </span>
+        </a>
+        <div class="topbar-meta">
+          <span class="data-chip">US marketplace</span>
+          <span class="data-chip data-chip-light">2023.07 – 2026.06</span>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">JOYTUTUS / RUNNING BOARD · COMPANY SKU VIEW</p>
+            <h1>Joytutus 的 SKU，<em>落在哪个价格带？</em></h1>
+            <p class="hero-text">金色主图气泡是已核对的 Joytutus 商品，背景色块代表脚踏类目各价格段大盘。横轴看当前售价，纵向看月均 GMV，气泡大小看 2026 年累计 GMV；Amazon 标题、主图与详情页链接已按 ASIN 核对。</p>
+          </div>
+          <div class="hero-note">
+            <span class="note-index">数据口径</span>
+            <strong>类目月均 GMV</strong>
+            <span>纵轴按 Joytutus 单品月均 GMV<br />背景高度按价格段市场月均 GMV</span>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="类目概览">
+          <article class="metric-card metric-card-featured">
+            <span class="metric-label">2026 年销售额</span>
+            <strong id="metric-ytd-gmv">$0.0M</strong>
+            <small>截至 2026-06 · 仪表板类目大盘</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">2026 年 ASIN 数</span>
+            <strong id="metric-ytd-asin">0</strong>
+            <small>去重商品数</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">平均售价</span>
+            <strong id="metric-avg-price">$0</strong>
+            <small>仪表板 2026 口径</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">品牌数量</span>
+            <strong id="metric-brand-count">0</strong>
+            <small>2026 年 · 去重品牌</small>
+          </article>
+        </section>
+
+        <section class="section chart-section" aria-labelledby="map-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01 / MARKET MAP</p>
+              <h2 id="map-title">价格段 × GMV 气泡图</h2>
+            </div>
+            <div class="legend" aria-label="图例">
+              <span><i class="legend-dot legend-dot-image"></i>Joytutus 主图气泡 · 11 个（大小 = 2026 总 GMV）</span>
+              <span><i class="legend-dot legend-dot-band"></i>价格段大盘月均 GMV</span>
+            </div>
+          </div>
+
+          <div class="chart-toolbar">
+            <span><b id="plot-status">Joytutus SKU 层</b> · 横轴按当前售价，纵向按月均 GMV，大小按 2026 总 GMV</span>
+            <span class="chart-readout" id="chart-readout">选择一个主图气泡查看详情</span>
+          </div>
+
+          <div class="plot-frame">
+            <div class="plot-y-label">Joytutus 单品月均 GMV（USD）</div>
+            <div class="plot-scale" aria-hidden="true">
+              <span>$25K</span><span>$20K</span><span>$15K</span><span>$10K</span><span>$5K</span><span>$0</span>
+            </div>
+            <div class="plot" id="market-plot" role="img" aria-label="脚踏类目当前售价与月均 GMV气泡图，气泡大小代表2026总GMV">
+              <canvas id="market-canvas"></canvas>
+              <div class="band-layer" id="band-layer"></div>
+              <div class="bubble-layer" id="bubble-layer"></div>
+              <div class="chart-tooltip" id="chart-tooltip" aria-hidden="true"></div>
+            </div>
+             <div class="x-axis" id="price-axis-ticks" aria-hidden="true"></div>
+            <div class="plot-x-label">产品当前售价（USD）</div>
+          </div>
+
+          <p class="chart-note">图中仅保留已确认标题含 JOYTUTUS 的 11 个金色主图气泡。横轴使用当前商品售价，纵轴按 Joytutus 单品月均 GMV（每 5K 细分），背景色块高度为价格段市场月均 GMV，气泡大小使用 2026 年累计销售额（含税）。</p>
+        </section>
+
+        <section class="section coverage-section" aria-labelledby="coverage-title">
+          <div class="section-heading compact-heading">
+            <div>
+               <p class="section-kicker">05 / VEHICLE COVERAGE</p>
+              <h2 id="coverage-title">Joytutus 在市场重点车型的覆盖情况</h2>
+            </div>
+            <span class="section-caption">仪表盘 2026 年车型销售额占比 · 前 10 车型覆盖 88.6% 市场</span>
+          </div>
+          <p class="coverage-lead" id="coverage-summary"></p>
+          <div class="coverage-table-wrap">
+            <table class="coverage-table">
+              <thead>
+                <tr>
+                  <th>市场车型</th>
+                  <th>市场销售额占比</th>
+                  <th>Joytutus 覆盖 ASIN</th>
+                  <th>Joytutus 2026 总 GMV</th>
+                  <th>Joytutus 车型市占</th>
+                  <th>推进状态</th>
+                </tr>
+              </thead>
+              <tbody id="coverage-table-body"></tbody>
+            </table>
+          </div>
+          <p class="coverage-note">市场份额来自《仪表板（脚踏信息）》的“车型占比-26年”工作表；车型市占 = Joytutus 2026 总 GMV ÷ 该车型 2026 市场销售额。一个 Joytutus 产品同时适配多个车型时，会分别计入对应车型；“其余 38 个车型”为仪表盘中未列入前十的车型合计。</p>
+        </section>
+
+        <section class="detail-grid section" aria-label="选中商品详情">
+          <article class="product-detail">
+            <div class="section-heading compact-heading">
+              <div>
+                 <p class="section-kicker">02 / PRODUCT DETAIL</p>
+                <h2>单品画像</h2>
+              </div>
+              <span class="detail-status" id="detail-status">未选择</span>
+            </div>
+            <div class="product-body" id="product-body">
+              <div class="product-placeholder">点击上方主图气泡<br />查看商品主图与运营数据</div>
+            </div>
+          </article>
+
+          <aside class="decision-panel">
+            <div class="section-heading compact-heading">
+              <div>
+                 <p class="section-kicker">03 / WHAT IT SAYS</p>
+                <h2>价格带信号</h2>
+              </div>
+            </div>
+            <div class="decision-copy" id="decision-copy"></div>
+            <div class="trend-block">
+              <div class="trend-heading"><span>月度类目 GMV</span><small>单位：$M</small></div>
+              <svg id="trend-chart" viewBox="0 0 640 150" role="img" aria-label="2023年7月至2026年4月类目月度销售额趋势"></svg>
+              <div class="trend-axis"><span>2023.07</span><span>2024</span><span>2025</span><span>2026.04</span></div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section band-section" aria-labelledby="band-title">
+          <div class="section-heading compact-heading">
+            <div>
+               <p class="section-kicker">04 / PRICE BANDS</p>
+              <h2 id="band-title">价格段大盘拆解</h2>
+            </div>
+            <span class="section-caption">全周期累计销售额与月均 GMV 同时展示</span>
+          </div>
+          <div class="table-wrap">
+            <table class="band-table">
+              <thead>
+                <tr><th>价格段</th><th>ASIN 数</th><th>ASIN 占比</th><th>全周期 GMV</th><th>月均市场 GMV</th><th>GMV 结构</th></tr>
+              </thead>
+              <tbody id="band-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>市场大盘：仪表板（脚踏信息）.xlsx · US Amazon · 2023.07—2026.04</span>
+        <span>Joytutus 气泡 GMV：脚踏全品类详细信息（广告）.xlsx · 2025.09—2026.06 · 纵向为月均 GMV，大小为 2026.01—2026.06 累计销售额（含税）</span>
+      </footer>
+    </div>
+
+    <script src="market-data.js"></script>
+    <script src="joytutus-data.js"></script>
+    <script src="vehicle-coverage.js?v=20260727-coverage-actions-1"></script>
+    <script src="app.js?v=20260727-coverage-actions-2"></script>
+  </body>
+</html>
