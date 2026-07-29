@@ -1,8 +1,11 @@
 (() => {
   const data = window.MARKET_DATA;
+  const vehicleModelMarket = window.VEHICLE_MODEL_MARKET || { meta: { months: 6 }, vehicles: [] };
+  const marketSummary = vehicleModelMarket.overall || {};
+  const marketBands = marketSummary.priceBands || data.bands;
   const dashboardCurrent = {
-    gmv10k: 8601.48,
-    asinCount: 5001,
+    gmv10k: Number(marketSummary.gmv2026 || 86014800) / 10000,
+    asinCount: Number(marketSummary.dashboardAsinCount || 5001),
     averagePrice: 250.48,
     brandCount: 555,
   };
@@ -20,7 +23,6 @@
   }));
   const featured = companyProducts.filter((product) => Number.isFinite(product.price));
   const vehicleCoverage = window.VEHICLE_COVERAGE || [];
-  const vehicleModelMarket = window.VEHICLE_MODEL_MARKET || { meta: { months: 6 }, vehicles: [] };
   const marketMonths = Number(vehicleModelMarket.meta?.months) || 6;
   const modelMarketByVehicle = new Map((vehicleModelMarket.vehicles || []).map((item) => [item.vehicle, item]));
   const knownJoytutusAsins = new Set(featured.map((product) => product.asin));
@@ -95,20 +97,38 @@
   }
 
   function renderBands() {
-    const totalAsins = data.bands.reduce((sum, band) => sum + band.asinCount, 0);
-    const totalGmv = data.bands.reduce((sum, band) => sum + band.gmvTotal10k, 0);
-    document.getElementById("band-table-body").innerHTML = data.bands.map((band) => {
+    const totalAsins = Number(marketSummary.dashboardAsinCount || dashboardCurrent.asinCount);
+    const countedAsins = marketBands.reduce((sum, band) => sum + (Number(band.asinCount) || 0), 0);
+    const unallocatedAsins = Math.max(0, totalAsins - countedAsins);
+    const totalGmv = marketBands.reduce((sum, band) => sum + (Number(band.gmv2026) || 0), 0);
+    const sectionCaption = document.querySelector(".band-section .section-caption");
+    if (sectionCaption) sectionCaption.textContent = `ASIN 按 2026.01-06 全年去重统计；价格段按每个 ASIN 在 2026 年内的最新售价归类，共 ${formatNumber(totalAsins)} 个，其中 ${formatNumber(unallocatedAsins)} 个在仪表盘汇总中但未出现在可展开明细。`;
+    const rows = marketBands.map((band) => {
       const asinShare = band.asinCount / totalAsins * 100;
-      const gmvShare = band.gmvTotal10k / totalGmv * 100;
+      const bandGmv = Number(band.gmv2026) || 0;
+      const gmvShare = totalGmv ? bandGmv / totalGmv * 100 : 0;
       return `<tr>
         <td><strong>${escapeHtml(band.label)}</strong></td>
         <td>${formatNumber(band.asinCount)}</td>
         <td>${asinShare.toFixed(1)}%</td>
-        <td>${formatMoney(band.gmvTotal10k * 10000)}</td>
-        <td>${formatMoney(band.gmvMonthlyUsd)}</td>
+        <td>${formatMoney(bandGmv)}</td>
+        <td>${formatMoney(bandGmv / marketMonths)}</td>
         <td><div class="bar-track"><span style="width:${Math.max(gmvShare, 1)}%"></span></div><small>${gmvShare.toFixed(1)}%</small></td>
       </tr>`;
-    }).join("");
+    });
+    if (unallocatedAsins) rows.push(`<tr class="band-unallocated">
+      <td><strong>未分配（仪表盘与明细差额）</strong></td>
+      <td>${formatNumber(unallocatedAsins)}</td>
+      <td>${(unallocatedAsins / totalAsins * 100).toFixed(1)}%</td>
+      <td>未计入</td><td>未计入</td><td><small>无可定位售价/GMV</small></td>
+    </tr>`);
+    rows.push(`<tr class="band-total">
+      <td><strong>合计（仪表盘口径）</strong></td>
+      <td>${formatNumber(totalAsins)}</td><td>100.0%</td>
+      <td>${formatMoney(totalGmv)}</td><td>${formatMoney(totalGmv / marketMonths)}</td>
+      <td><div class="bar-track"><span style="width:100%"></span></div><small>100.0%</small></td>
+    </tr>`);
+    document.getElementById("band-table-body").innerHTML = rows.join("");
   }
 
   const detailChartGroups = [
@@ -245,6 +265,7 @@
   }
 
   function getVehicleEntryAdvice(marketVehicle, products) {
+    if (marketVehicle.isOther) return "其余车型与未归类 ASIN 汇总；用于补足全类目总量，不作为单一车型的开发决策依据。";
     const visibleBands = getVisibleMarketBands(marketVehicle.priceBands);
     if (!visibleBands.length) return "建议：暂无可用价格段市场数据，暂不判断准入。";
     const totalGmv = visibleBands.reduce((sum, band) => sum + (Number(band.gmv2026) || 0), 0);
@@ -263,10 +284,12 @@
   function renderDetailCharts() {
     const container = document.getElementById("detail-chart-grid");
     if (!container) return;
-    const marketVehicles = (vehicleCoverage.length ? vehicleCoverage : vehicleModelMarket.vehicles || [])
+    const focusMarkets = (vehicleCoverage.length ? vehicleCoverage : vehicleModelMarket.vehicles || [])
       .filter((row) => row.aliases && row.aliases.length)
       .map((row) => modelMarketByVehicle.get(row.vehicle))
       .filter(Boolean);
+    const otherMarket = (vehicleModelMarket.vehicles || []).find((item) => item.isOther);
+    const marketVehicles = otherMarket ? [...focusMarkets, otherMarket] : focusMarkets;
     container.innerHTML = marketVehicles.map((marketVehicle) => {
       const coverageRow = vehicleCoverage.find((row) => row.vehicle === marketVehicle.vehicle);
       const products = coverageRow ? getVehicleMatches(coverageRow).sort((a, b) => a.price - b.price) : [];
@@ -280,7 +303,8 @@
       const legend = products.length
         ? products.map((product) => `<button type="button" class="mini-key" data-mini-asin="${escapeHtml(product.asin)}"><strong>${escapeHtml(product.asin)}</strong><span>$${formatNumber(product.price, 0)} · 月均 ${formatMoney(product.gmv)}</span></button>`).join("")
         : `<span class="mini-empty">暂无 Joytutus ASIN</span>`;
-      const totalLabel = `${formatNumber(marketVehicle.marketAsinCount)} 市场 ASIN · 2026.01-06 GMV ${formatMoney(marketVehicle.marketGmv2026)} · 月均 ${formatMoney(marketVehicle.marketMonthlyGmv)}`;
+      const gapLabel = marketVehicle.reportedGapAsinCount ? `（含仪表盘未展开 ${formatNumber(marketVehicle.reportedGapAsinCount)} 个）` : "";
+      const totalLabel = `${formatNumber(marketVehicle.marketAsinCount)} 市场 ASIN${gapLabel} · 2026.01-06 GMV ${formatMoney(marketVehicle.marketGmv2026)} · 月均 ${formatMoney(marketVehicle.marketMonthlyGmv)}`;
       return `<article class="detail-chart-card">
         <div class="detail-chart-heading"><div><h3>${escapeHtml(marketVehicle.vehicle)}</h3><span>${escapeHtml(totalLabel)}</span></div><small>月均 GMV / 售价</small></div>
         <div class="mini-plot" role="img" aria-label="${escapeHtml(marketVehicle.vehicle)} 车型 Joytutus 售价与月均 GMV 气泡图；暗色柱形对应市场价格段月均 GMV，气泡大小代表 2026 总 GMV">
@@ -395,13 +419,13 @@
   }
 
   function renderDecision() {
-    const largestBand = data.bands.reduce((best, band) => band.gmvMonthlyUsd > best.gmvMonthlyUsd ? band : best, data.bands[0]);
-    const densestBand = data.bands.reduce((best, band) => band.asinCount > best.asinCount ? band : best, data.bands[0]);
+    const largestBand = marketBands.reduce((best, band) => (Number(band.gmv2026) || 0) > (Number(best?.gmv2026) || 0) ? band : best, marketBands[0]);
+    const densestBand = marketBands.reduce((best, band) => band.asinCount > best.asinCount ? band : best, marketBands[0]);
     const tracked = featured.filter((product) => product.gmv !== null);
     const pending = featured.filter((product) => product.gmv === null);
     const topTracked = tracked.reduce((best, product) => (product.gmv || 0) > (best?.gmv || 0) ? product : best, tracked[0]);
     document.getElementById("decision-copy").innerHTML = `
-      <p class="decision-lead">当前最厚的市场带是 <strong>${escapeHtml(largestBand.label)}</strong>，月均大盘 GMV 约 <strong>${formatMoney(largestBand.gmvMonthlyUsd)}</strong>。</p>
+      <p class="decision-lead">当前最厚的市场带是 <strong>${escapeHtml(largestBand.label)}</strong>，月均大盘 GMV 约 <strong>${formatMoney((Number(largestBand.gmv2026) || 0) / marketMonths)}</strong>。</p>
       <div class="signal-row"><span class="signal-index">A</span><span>已核对的 Joytutus 层保留 <b>${tracked.length} 个有运营数据的 SKU</b>，其中 ${topTracked ? `<b>${escapeHtml(topTracked.asin)}</b> 的月均 GMV 最高，约 ${formatMoney(topTracked.gmv)}。` : "暂未匹配到运营数据。"}</span></div>
       <div class="signal-row"><span class="signal-index">B</span><span><b>${escapeHtml(densestBand.label)}</b> 的 ASIN 数最多，共 ${formatNumber(densestBand.asinCount)} 个，供给密度高，进入时需要明确车型或功能差异。</span></div>
       <div class="signal-row"><span class="signal-index">C</span><span>${pending.length ? `<b>${pending.map((product) => escapeHtml(product.asin)).join("、")}</b> 已确认 Amazon 标题与主图，但不在当前仪表板历史数据中，页面不虚构 GMV。` : "所有 Joytutus SKU 都已匹配到运营数据。"}</span></div>`;
