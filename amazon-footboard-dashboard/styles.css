@@ -168,6 +168,12 @@ h1 em { color: var(--coral); font-style: normal; }
 .mini-gridline { position: absolute; left: 28px; right: 0; height: 1px; background: var(--line); opacity: .75; }
 .mini-market-bars { position: absolute; z-index: 1; inset: 0 0 0 28px; pointer-events: none; }
 .mini-market-bar { position: absolute; bottom: 0; left: var(--bar-left); width: var(--bar-width); height: var(--bar-height); background: rgba(31,43,69,.28); border-top: 2px solid rgba(31,43,69,.62); }
+.mini-market-axis { position: absolute; z-index: 1; inset: 0 0 0 auto; width: 46px; color: var(--muted); font-family: monospace; font-size: 9px; pointer-events: none; }
+.mini-market-axis-title { position: absolute; top: 50%; right: 19px; color: var(--muted); font-family: inherit; font-size: 8px; line-height: 1; writing-mode: vertical-rl; transform: translateY(-50%); white-space: nowrap; }
+.mini-market-y-tick { position: absolute; right: 0; transform: translateY(-50%); white-space: nowrap; }
+.mini-market-y-high { top: 20%; }
+.mini-market-y-mid { top: 60%; }
+.mini-market-y-low { bottom: 0; transform: translateY(50%); }
 .mini-gridline-high, .mini-y-high { top: 20%; }
 .mini-gridline-mid, .mini-y-mid { top: 60%; }
 .mini-gridline-low, .mini-y-low { bottom: 0; }

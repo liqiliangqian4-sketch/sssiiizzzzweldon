@@ -194,19 +194,32 @@
   const marketMiniPricePercent = (price) => Math.min(96, Math.max(4, (Number(price) - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 100));
   const marketMiniGmvPercent = (gmv) => Math.min(92, Math.max(8, 100 - (Number(gmv) || 0) / marketMiniGmvMax * 100));
 
-  function renderMarketBandBars(bands) {
-    const visibleBands = (bands || []).map((band) => {
+  const getVisibleMarketBands = (bands) => (bands || []).map((band) => {
       const low = Math.max(marketMiniPriceMin, Number(band.low) || 0);
       const highValue = band.high === null || band.high === undefined ? marketMiniPriceMax : Number(band.high);
       const high = Math.min(marketMiniPriceMax, Number.isFinite(highValue) ? highValue : marketMiniPriceMax);
       return { ...band, low, high, width: Math.max(0, (high - low) / (marketMiniPriceMax - marketMiniPriceMin) * 100) };
     }).filter((band) => band.width > 0);
+
+  function renderMarketBandBars(bands) {
+    const visibleBands = getVisibleMarketBands(bands);
     const maxGmv = Math.max(1, ...visibleBands.map((band) => Number(band.gmv2026) || 0));
     return `<div class="mini-market-bars" role="group" aria-label="价格段市场 GMV 柱形图">${visibleBands.map((band) => {
       const left = (band.low - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 100;
-      const height = Math.max(10, (Number(band.gmv2026) || 0) / maxGmv * 72);
+      const height = Math.max(2, (Number(band.gmv2026) || 0) / maxGmv * 80);
       return `<span class="mini-market-bar" aria-label="${escapeHtml(band.label)} 价格段" style="--bar-left:${left}%;--bar-width:${band.width}%;--bar-height:${height}%"></span>`;
     }).join("")}</div>`;
+  }
+
+  function renderMarketBarScale(bands) {
+    const visibleBands = getVisibleMarketBands(bands);
+    const maxMonthlyGmv = Math.max(1, ...visibleBands.map((band) => (Number(band.gmv2026) || 0) / marketMonths));
+    return `<div class="mini-market-axis" role="group" aria-label="市场价格段月均 GMV 右侧纵轴">
+      <span class="mini-market-axis-title">市场月均 GMV</span>
+      <span class="mini-market-y-tick mini-market-y-high">${formatMoney(maxMonthlyGmv)}</span>
+      <span class="mini-market-y-tick mini-market-y-mid">${formatMoney(maxMonthlyGmv / 2)}</span>
+      <span class="mini-market-y-tick mini-market-y-low">$0</span>
+    </div>`;
   }
 
   function renderDetailCharts() {
@@ -232,9 +245,10 @@
       const totalLabel = `${formatNumber(marketVehicle.marketAsinCount)} 市场 ASIN · 2026.01-06 GMV ${formatMoney(marketVehicle.marketGmv2026)} · 月均 ${formatMoney(marketVehicle.marketMonthlyGmv)}`;
       return `<article class="detail-chart-card">
         <div class="detail-chart-heading"><div><h3>${escapeHtml(marketVehicle.vehicle)}</h3><span>${escapeHtml(totalLabel)}</span></div><small>月均 GMV / 售价</small></div>
-        <div class="mini-plot" role="img" aria-label="${escapeHtml(marketVehicle.vehicle)} 车型 Joytutus 售价与月均 GMV 气泡图，气泡大小代表 2026 总 GMV">
+        <div class="mini-plot" role="img" aria-label="${escapeHtml(marketVehicle.vehicle)} 车型 Joytutus 售价与月均 GMV 气泡图；暗色柱形对应市场价格段月均 GMV，气泡大小代表 2026 总 GMV">
           <span class="mini-y-tick mini-y-high">$20K</span><span class="mini-y-tick mini-y-mid">$10K</span><span class="mini-y-tick mini-y-low">$0</span>
           <span class="mini-gridline mini-gridline-high"></span><span class="mini-gridline mini-gridline-mid"></span><span class="mini-gridline mini-gridline-low"></span>
+          ${renderMarketBarScale(marketVehicle.priceBands)}
           ${renderMarketBandBars(marketVehicle.priceBands)}
           ${bubbles}
           <span class="mini-x-tick mini-x-left">$100</span><span class="mini-x-tick mini-x-center">$250</span><span class="mini-x-tick mini-x-right">$400</span>
