@@ -192,7 +192,7 @@
   const marketMiniPriceMax = 400;
   const marketMiniGmvMax = 25000;
   const marketMiniPricePercent = (price) => Math.min(96, Math.max(4, (Number(price) - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 100));
-  const marketMiniGmvPercent = (gmv) => Math.min(92, Math.max(8, 100 - (Number(gmv) || 0) / marketMiniGmvMax * 100));
+  const marketMiniGmvPercent = (gmv) => Math.min(54, Math.max(8, 8 + (100 - (Number(gmv) || 0) / marketMiniGmvMax * 100) * 0.46));
 
   const getVisibleMarketBands = (bands) => (bands || []).map((band) => {
       const low = Math.max(marketMiniPriceMin, Number(band.low) || 0);
@@ -206,7 +206,7 @@
     const maxGmv = Math.max(1, ...visibleBands.map((band) => Number(band.gmv2026) || 0));
     return `<div class="mini-market-bars" role="group" aria-label="价格段市场 GMV 柱形图">${visibleBands.map((band) => {
       const left = (band.low - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 100;
-      const height = Math.max(2, (Number(band.gmv2026) || 0) / maxGmv * 80);
+      const height = Math.max(2, (Number(band.gmv2026) || 0) / maxGmv * 98);
       return `<span class="mini-market-bar" aria-label="${escapeHtml(band.label)} 价格段" style="--bar-left:${left}%;--bar-width:${band.width}%;--bar-height:${height}%"></span>`;
     }).join("")}</div>`;
   }
@@ -298,9 +298,9 @@
           ${renderMarketBarScale(marketVehicle.priceBands)}
           ${renderMarketBandBars(marketVehicle.priceBands)}
           ${bubbles}
+          ${renderMarketAsinChart(marketVehicle.vehicle, marketVehicle.priceBands)}
           <span class="mini-x-tick mini-x-left">$100</span><span class="mini-x-tick mini-x-center">$250</span><span class="mini-x-tick mini-x-right">$400</span>
         </div>
-        ${renderMarketAsinChart(marketVehicle.vehicle, marketVehicle.priceBands)}
         <div class="mini-entry-advice"><strong>准入建议</strong><span>${escapeHtml(getVehicleEntryAdvice(marketVehicle, products))}</span></div>
         <div class="mini-chart-legend">${legend}</div>
       </article>`;
