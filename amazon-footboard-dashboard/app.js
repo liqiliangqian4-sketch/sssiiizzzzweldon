@@ -222,6 +222,53 @@
     </div>`;
   }
 
+  function renderMarketAsinChart(vehicle, bands) {
+    const visibleBands = getVisibleMarketBands(bands);
+    const maxAsins = Math.max(1, ...visibleBands.map((band) => Number(band.asinCount) || 0));
+    const midAsins = Math.round(maxAsins / 2);
+    const left = 30;
+    const right = 346;
+    const top = 18;
+    const bottom = 70;
+    const points = visibleBands.map((band, index) => {
+      const x = visibleBands.length === 1 ? (left + right) / 2 : left + index / (visibleBands.length - 1) * (right - left);
+      const y = bottom - (Number(band.asinCount) || 0) / maxAsins * (bottom - top);
+      return { ...band, x, y };
+    });
+    const pointString = points.map((point) => `${point.x},${point.y}`).join(" ");
+    const labels = points.map((point) => `<text class="mini-density-value" x="${point.x}" y="${Math.max(11, point.y - 7)}" text-anchor="middle">${formatNumber(point.asinCount)}</text><circle class="mini-density-point" cx="${point.x}" cy="${point.y}" r="3"></circle><text class="mini-density-x-label" x="${point.x}" y="86" text-anchor="middle">${escapeHtml(point.label.replace(/^\$/, ""))}</text>`).join("");
+    return `<div class="mini-density-chart">
+      <div class="mini-density-heading"><span>价格段市场 ASIN 数</span><small>折线 = 市场商品密度</small></div>
+      <svg class="mini-density-svg" viewBox="0 0 360 90" role="img" aria-label="${escapeHtml(vehicle)} 各价格段市场 ASIN 数折线图">
+        <title>${escapeHtml(vehicle)} 各价格段市场 ASIN 数</title>
+        <line class="mini-density-gridline" x1="${left}" y1="${top}" x2="${right}" y2="${top}"></line>
+        <line class="mini-density-gridline" x1="${left}" y1="${(top + bottom) / 2}" x2="${right}" y2="${(top + bottom) / 2}"></line>
+        <line class="mini-density-gridline" x1="${left}" y1="${bottom}" x2="${right}" y2="${bottom}"></line>
+        <text class="mini-density-y-label" x="0" y="${top + 3}">${formatNumber(maxAsins)}</text>
+        <text class="mini-density-y-label" x="0" y="${(top + bottom) / 2 + 3}">${formatNumber(midAsins)}</text>
+        <text class="mini-density-y-label" x="0" y="${bottom + 3}">0</text>
+        <polyline class="mini-density-line" points="${pointString}"></polyline>
+        ${labels}
+      </svg>
+    </div>`;
+  }
+
+  function getVehicleEntryAdvice(marketVehicle, products) {
+    const visibleBands = getVisibleMarketBands(marketVehicle.priceBands);
+    if (!visibleBands.length) return "建议：暂无可用价格段市场数据，暂不判断准入。";
+    const totalGmv = visibleBands.reduce((sum, band) => sum + (Number(band.gmv2026) || 0), 0);
+    const demandBand = visibleBands.reduce((best, band) => (Number(band.gmv2026) || 0) > (Number(best?.gmv2026) || 0) ? band : best, visibleBands[0]);
+    const efficientBand = visibleBands.reduce((best, band) => {
+      const bandEfficiency = (Number(band.gmv2026) || 0) / Math.max(1, Number(band.asinCount) || 0);
+      const bestEfficiency = (Number(best?.gmv2026) || 0) / Math.max(1, Number(best?.asinCount) || 0);
+      return bandEfficiency > bestEfficiency ? band : best;
+    }, visibleBands[0]);
+    const demandShare = totalGmv ? (Number(demandBand.gmv2026) || 0) / totalGmv : 0;
+    if (!products.length) return `优先准入：${demandBand.label} 销售额最集中，当前没有 Joytutus 产品，建议优先开发该价格段。`;
+    if ((Number(demandBand.asinCount) || 0) >= 50 || demandShare >= 0.4) return `谨慎扩充：${demandBand.label} 需求最大但商品密度高，建议用适配范围或结构差异化切入。`;
+    return `建议补位：${efficientBand.label} 单个 ASIN 产出更优，适合作为下一款差异化价格段。`;
+  }
+
   function renderDetailCharts() {
     const container = document.getElementById("detail-chart-grid");
     if (!container) return;
@@ -253,6 +300,8 @@
           ${bubbles}
           <span class="mini-x-tick mini-x-left">$100</span><span class="mini-x-tick mini-x-center">$250</span><span class="mini-x-tick mini-x-right">$400</span>
         </div>
+        ${renderMarketAsinChart(marketVehicle.vehicle, marketVehicle.priceBands)}
+        <div class="mini-entry-advice"><strong>准入建议</strong><span>${escapeHtml(getVehicleEntryAdvice(marketVehicle, products))}</span></div>
         <div class="mini-chart-legend">${legend}</div>
       </article>`;
     }).join("");
