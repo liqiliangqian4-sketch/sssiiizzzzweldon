@@ -107,55 +107,127 @@
     }).join("");
   }
 
+  const detailChartGroups = [
+    { label: "Jeep Wrangler JK", years: "2007-2018", key: "Jeep Wrangler JK" },
+    { label: "Jeep Wrangler JL", years: "2018-2026", key: "Jeep Wrangler JL" },
+    { label: "Ram 1500 New Body", years: "2019-2026", key: "Ram 1500 New Body" },
+    { label: "Ram 1500 Classic / Heavy Duty", years: "2009-2026", key: "Ram 1500 Classic / Heavy Duty" },
+    { label: "Chevrolet Silverado / GMC Sierra", years: "2019-2026", key: "Chevrolet Silverado / GMC Sierra" },
+    { label: "Jeep Gladiator JT", years: "2020-2026", key: "Jeep Gladiator JT" },
+  ];
+  const miniPriceMin = 150;
+  const miniPriceMax = 300;
+  const miniGmvMax = 25000;
+  const miniPricePercent = (price) => Math.min(96, Math.max(4, (Number(price) - miniPriceMin) / (miniPriceMax - miniPriceMin) * 100));
+  const miniGmvPercent = (gmv) => Math.min(92, Math.max(8, 100 - (Number(gmv) || 0) / miniGmvMax * 100));
+
+  function renderDetailCharts() {
+    const container = document.getElementById("detail-chart-grid");
+    if (!container) return;
+    container.innerHTML = detailChartGroups.map((group) => {
+      const products = featured
+        .filter((product) => product.detailGroup === group.key)
+        .sort((a, b) => a.price - b.price);
+      const bubbles = products.map((product) => {
+        const size = Math.max(38, Math.min(76, bubbleSize(product.gmv2026) * 0.78));
+        const image = product.image
+          ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.asin)} Amazon 主图" loading="lazy" />`
+          : `<span>${escapeHtml(product.asin.slice(-4))}</span>`;
+        return `<button type="button" class="mini-bubble" data-mini-asin="${escapeHtml(product.asin)}" aria-label="${escapeHtml(product.asin)}，售价 $${formatNumber(product.price, 0)}，2026 总 GMV ${formatMoney(product.gmv2026)}" style="--bubble-left:${miniPricePercent(product.price)}%;--bubble-top:${miniGmvPercent(product.gmv)}%;--bubble-size:${size}px">${image}</button>`;
+      }).join("");
+      const legend = products.length
+        ? products.map((product) => `<button type="button" class="mini-key" data-mini-asin="${escapeHtml(product.asin)}"><strong>${escapeHtml(product.asin)}</strong><span>$${formatNumber(product.price, 0)} · 月均 ${formatMoney(product.gmv)}</span></button>`).join("")
+        : `<span class="mini-empty">暂无 Joytutus ASIN</span>`;
+      return `<article class="detail-chart-card">
+        <div class="detail-chart-heading"><div><h3>${escapeHtml(group.label)}</h3><span>${escapeHtml(group.years)} · ${products.length} ASIN</span></div><small>月均 GMV / 售价</small></div>
+        <div class="mini-plot" role="img" aria-label="${escapeHtml(group.label)} 细分车型售价与月均 GMV 气泡图，气泡大小代表 2026 总 GMV">
+          <span class="mini-y-tick mini-y-high">$20K</span><span class="mini-y-tick mini-y-mid">$10K</span><span class="mini-y-tick mini-y-low">$0</span>
+          <span class="mini-gridline mini-gridline-high"></span><span class="mini-gridline mini-gridline-mid"></span><span class="mini-gridline mini-gridline-low"></span>
+          ${bubbles}
+          <span class="mini-x-tick mini-x-left">$150</span><span class="mini-x-tick mini-x-center">$225</span><span class="mini-x-tick mini-x-right">$300</span>
+        </div>
+        <div class="mini-chart-legend">${legend}</div>
+      </article>`;
+    }).join("");
+    container.querySelectorAll("[data-mini-asin]").forEach((node) => {
+      node.addEventListener("click", () => {
+        const product = featured.find((item) => item.asin === node.dataset.miniAsin);
+        if (product) selectProduct(product, true);
+      });
+    });
+    container.querySelectorAll(".mini-bubble img").forEach((image) => {
+      image.addEventListener("error", () => image.classList.add("image-missing"));
+    });
+  }
+
   const normalizeVehicle = (value) => String(value || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
+  const matchesVehicle = (row, product) => {
+    const productVehicle = normalizeVehicle(`${product.vehicle || ""} ${product.title || ""}`);
+    return row.aliases.some((alias) => productVehicle.includes(normalizeVehicle(alias)));
+  };
+  const getVehicleMatches = (row) => row.aliases.length ? featured.filter((product) => matchesVehicle(row, product)) : [];
+  const coverageRowKey = (vehicle) => normalizeVehicle(vehicle).replace(/\s+/g, "-");
+
+  function renderCoverageDetails(row, matched) {
+    if (!matched.length) return `<div class="coverage-detail-empty">暂无 Joytutus ASIN；${row.action ? `推进安排：${escapeHtml(row.action)}` : "暂无拆分信息"}</div>`;
+    return `<div class="coverage-detail-table">
+      <div class="coverage-detail-grid coverage-detail-head"><span>年份区间</span><span>型号</span><span>ASIN</span><span>Amazon 售价</span><span>2026 总 GMV</span><span>月均 GMV</span></div>
+      ${matched.map((product) => `<div class="coverage-detail-grid coverage-detail-item">
+        <span>${escapeHtml(product.yearRange || "标题未提取")}</span>
+        <span>${escapeHtml(product.model || product.vehicle)}</span>
+        <a class="coverage-detail-asin" href="${escapeHtml(product.link)}" target="_blank" rel="noreferrer">${escapeHtml(product.asin)}</a>
+        <span>$${formatNumber(product.price, 0)}</span>
+        <span>${formatMoney(product.gmv2026)}</span>
+        <span>${formatMoney(product.gmv)}</span>
+      </div>`).join("")}
+    </div>`;
+  }
+
   function renderCoverage() {
     const rows = vehicleCoverage.map((row) => {
-      const matched = row.aliases.length
-        ? featured.filter((product) => {
-          const productVehicle = normalizeVehicle(`${product.vehicle || ""} ${product.title || ""}`);
-          return row.aliases.some((alias) => productVehicle.includes(normalizeVehicle(alias)));
-        })
-        : [];
+      const matched = getVehicleMatches(row);
       const gmv2026 = matched.reduce((sum, product) => sum + (Number(product.gmv2026) || 0), 0);
       const marketSalesUsd = Number.isFinite(row.marketSalesWan) ? row.marketSalesWan * 10000 : null;
       const brandMarketShare = marketSalesUsd ? gmv2026 / marketSalesUsd : null;
       const status = row.aliases.length === 0 ? "长尾合计" : (matched.length ? "现有产品" : (row.action || "待推进"));
       const statusClass = row.aliases.length === 0 ? "is-tail" : (matched.length ? "is-covered" : "is-gap");
+      const rowKey = coverageRowKey(row.vehicle);
       const asins = matched.length
         ? matched.map((product) => `<span class="coverage-asin">${escapeHtml(product.asin)}</span>`).join(" <span class=\"coverage-separator\">·</span> ")
         : `<span class="coverage-empty">${row.aliases.length ? "暂无 Joytutus ASIN" : "未拆分"}</span>`;
       const marketBarWidth = Math.max(2, row.marketShare / vehicleCoverage[0].marketShare * 100);
+      const vehicleCell = row.aliases.length
+        ? `<button type="button" class="coverage-toggle" data-coverage-toggle="${escapeHtml(rowKey)}" aria-expanded="false" aria-controls="coverage-detail-${escapeHtml(rowKey)}"><span class="coverage-chevron" aria-hidden="true">›</span><strong>${escapeHtml(row.vehicle)}</strong></button>`
+        : `<strong>${escapeHtml(row.vehicle)}</strong>`;
+      const detailRow = row.aliases.length ? `<tr id="coverage-detail-${escapeHtml(rowKey)}" class="coverage-detail-row ${statusClass}" data-coverage-detail="${escapeHtml(rowKey)}" hidden><td colspan="6">${renderCoverageDetails(row, matched)}</td></tr>` : "";
       return `<tr class="${statusClass}">
-        <td><strong>${escapeHtml(row.vehicle)}</strong></td>
+        <td>${vehicleCell}</td>
         <td><div class="coverage-share"><div class="coverage-share-track"><span style="width:${marketBarWidth}%"></span></div><small>${(row.marketShare * 100).toFixed(1)}%</small></div></td>
         <td><div class="coverage-asins">${asins}</div></td>
         <td>${gmv2026 ? formatMoney(gmv2026) : "—"}</td>
         <td class="coverage-brand-share">${brandMarketShare === null ? "—" : `${(brandMarketShare * 100).toFixed(2)}%`}</td>
         <td><span class="coverage-status">${status}</span></td>
-      </tr>`;
+      </tr>${detailRow}`;
     }).join("");
     document.getElementById("coverage-table-body").innerHTML = rows;
-
-    const focusRows = vehicleCoverage.filter((row) => row.aliases.length);
-    const coveredRows = focusRows.filter((row) => featured.some((product) => {
-      const productVehicle = normalizeVehicle(`${product.vehicle || ""} ${product.title || ""}`);
-      return row.aliases.some((alias) => productVehicle.includes(normalizeVehicle(alias)));
-    }));
-    const coveredShare = coveredRows.reduce((sum, row) => sum + row.marketShare, 0);
-    const gaps = focusRows.filter((row) => !coveredRows.includes(row)).map((row) => row.vehicle);
-    document.getElementById("coverage-summary").innerHTML = `重点 10 个车型中，Joytutus 现有产品对应 <strong>${coveredRows.length} 个</strong>，对应仪表盘市场销售额占比 <strong>${(coveredShare * 100).toFixed(1)}%</strong>。待推进车型为：<strong>${gaps.join("、")}</strong>。`;
+    document.querySelectorAll("[data-coverage-toggle]").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const detail = document.getElementById(`coverage-detail-${toggle.dataset.coverageToggle}`);
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        if (detail) detail.hidden = expanded;
+        toggle.closest("tr")?.classList.toggle("is-expanded", !expanded);
+      });
+    });
   }
 
   function renderCoverageSummary() {
     const focusRows = vehicleCoverage.filter((row) => row.aliases.length);
-    const coveredRows = focusRows.filter((row) => featured.some((product) => {
-      const productVehicle = normalizeVehicle(`${product.vehicle || ""} ${product.title || ""}`);
-      return row.aliases.some((alias) => productVehicle.includes(normalizeVehicle(alias)));
-    }));
+    const coveredRows = focusRows.filter((row) => getVehicleMatches(row).length);
     const coveredShare = coveredRows.reduce((sum, row) => sum + row.marketShare, 0);
     const focusShare = focusRows.reduce((sum, row) => sum + row.marketShare, 0);
     const focusCoverageRate = focusShare ? coveredShare / focusShare : 0;
@@ -425,7 +497,11 @@
   renderDecision();
   renderTrend();
   rerenderPlot();
+  renderDetailCharts();
   const initialProduct = featured.reduce((best, product) => (product.gmv || -1) > (best.gmv || -1) ? product : best, featured[0]);
   selectProduct(initialProduct, false);
-  window.addEventListener("resize", rerenderPlot);
+  window.addEventListener("resize", () => {
+    rerenderPlot();
+    renderDetailCharts();
+  });
 })();

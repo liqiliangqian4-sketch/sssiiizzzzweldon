@@ -95,11 +95,23 @@
           <p class="chart-note">图中仅保留已确认标题含 JOYTUTUS 的 11 个金色主图气泡。横轴使用当前商品售价，纵轴按 Joytutus 单品月均 GMV（每 5K 细分），背景色块高度为价格段市场月均 GMV，气泡大小使用 2026 年累计销售额（含税）。</p>
         </section>
 
+        <section class="section detail-charts-section" aria-labelledby="detail-charts-title">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="section-kicker">01B / MODEL DETAIL</p>
+              <h2 id="detail-charts-title">细分车型 × GMV 气泡图</h2>
+            </div>
+            <span class="section-caption">按 Amazon 标题中的年份与型号拆分 · 气泡大小 = 2026 总 GMV</span>
+          </div>
+          <p class="detail-charts-lead">主图保留全量 Joytutus SKU；下方按 JK、JL、车身代际与车型组合拆分，每个气泡对应一个 ASIN。</p>
+          <div class="detail-chart-grid" id="detail-chart-grid"></div>
+        </section>
+
         <section class="section coverage-section" aria-labelledby="coverage-title">
           <div class="section-heading compact-heading">
             <div>
                <p class="section-kicker">05 / VEHICLE COVERAGE</p>
-              <h2 id="coverage-title">Joytutus 在市场重点车型的覆盖情况</h2>
+              <h2 id="coverage-title">Joytutus 在市场重点车型的覆盖与明细</h2>
             </div>
             <span class="section-caption">仪表盘 2026 年车型销售额占比 · 前 10 车型覆盖 88.6% 市场</span>
           </div>
@@ -110,7 +122,7 @@
                 <tr>
                   <th>市场车型</th>
                   <th>市场销售额占比</th>
-                  <th>Joytutus 覆盖 ASIN</th>
+                  <th>Joytutus ASIN</th>
                   <th>Joytutus 2026 总 GMV</th>
                   <th>Joytutus 车型市占</th>
                   <th>推进状态</th>
@@ -178,8 +190,8 @@
     </div>
 
     <script src="market-data.js"></script>
-    <script src="joytutus-data.js"></script>
+    <script src="joytutus-data.js?v=20260729-model-detail-1"></script>
     <script src="vehicle-coverage.js?v=20260727-coverage-actions-1"></script>
-    <script src="app.js?v=20260727-coverage-actions-2"></script>
+    <script src="app.js?v=20260729-model-detail-1"></script>
   </body>
 </html>
