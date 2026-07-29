@@ -185,6 +185,10 @@ h1 em { color: var(--coral); font-style: normal; }
 .mini-key strong { color: var(--teal); font-family: monospace; font-size: 10px; }
 .mini-key span { color: var(--muted); font-size: 9px; white-space: nowrap; }
 .mini-empty { color: var(--muted); font-size: 11px; }
+.mini-market-band-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin-top: 12px; }
+.mini-market-band { display: grid; gap: 2px; min-width: 0; padding: 5px 6px; border-left: 2px solid rgba(20,125,131,.32); background: rgba(20,125,131,.045); color: var(--muted); font-size: 9px; line-height: 1.2; }
+.mini-market-band strong { color: var(--navy); font-family: monospace; font-size: 9px; }
+.mini-market-band span:last-child { color: var(--ink-soft); font-family: monospace; }
 
 .coverage-section { padding-top: 3px; }
 .coverage-lead { max-width: 900px; margin: 0 0 18px; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
@@ -220,6 +224,28 @@ h1 em { color: var(--coral); font-style: normal; }
 .coverage-detail-asin { color: var(--teal); font-family: monospace; font-size: 10px; text-decoration: none; }
 .coverage-detail-asin:hover { color: var(--coral); text-decoration: underline; }
 .coverage-detail-empty { padding: 12px 0 2px; color: var(--muted); font-size: 11px; }
+.coverage-model-shell { border-top: 1px solid var(--line); }
+.coverage-model-summary { padding: 10px 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.coverage-model-grid { display: grid; grid-template-columns: 2.4fr .8fr 1fr 2.25fr .7fr; gap: 10px; align-items: center; min-width: 760px; }
+.coverage-model-head { padding: 7px 0 6px; color: var(--muted); font-size: 9px; font-weight: 700; }
+.coverage-model-item { padding: 9px 0; border-top: 1px solid rgba(217,214,207,.72); color: var(--ink-soft); font-size: 11px; }
+.coverage-model-item strong { display: block; color: var(--navy); font-family: monospace; font-size: 10px; }
+.coverage-model-item small { display: block; margin-top: 3px; color: var(--ink-soft); line-height: 1.35; }
+.coverage-model-joytutus { color: var(--teal); font-family: monospace; font-size: 10px; line-height: 1.45; }
+.coverage-model-joytutus a { color: inherit; text-decoration: none; }
+.coverage-model-joytutus a:hover { color: var(--coral); text-decoration: underline; }
+.coverage-model-toggle { display: inline-flex; align-items: center; gap: 3px; padding: 0; border: 0; background: transparent; color: var(--teal); font-size: 10px; cursor: pointer; }
+.coverage-model-toggle .coverage-chevron { font-size: 16px; }
+.coverage-model-toggle[aria-expanded="true"] .coverage-chevron { transform: rotate(90deg); }
+.coverage-model-expanded { padding: 0 0 12px 16px; border-top: 1px solid rgba(217,214,207,.72); background: rgba(251,250,247,.72); }
+.coverage-model-band-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; padding: 9px 0; }
+.coverage-model-band-row .mini-market-band { background: rgba(20,125,131,.035); }
+.coverage-product-table { overflow-x: auto; border-top: 1px solid rgba(217,214,207,.72); }
+.coverage-product-grid { display: grid; grid-template-columns: 1fr 1.25fr 4fr .75fr .9fr; gap: 10px; align-items: start; min-width: 860px; }
+.coverage-product-head { padding: 7px 0 5px; color: var(--muted); font-size: 9px; font-weight: 700; }
+.coverage-product-item { padding: 8px 0; border-top: 1px solid rgba(217,214,207,.58); color: var(--ink-soft); font-size: 10px; line-height: 1.4; }
+.coverage-product-title { min-width: 0; }
+.coverage-brand-badge { display: inline-block; margin-left: 3px; color: var(--teal); font-size: 9px; font-weight: 700; }
 .coverage-note { margin: 14px 0 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
 
 .band-section { padding-top: 3px; }
@@ -242,6 +268,7 @@ h1 em { color: var(--coral); font-style: normal; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-grid { grid-template-columns: 1fr; }
   .detail-chart-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mini-market-band-summary, .coverage-model-band-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plot { height: 520px; }
 }
 
@@ -258,6 +285,7 @@ h1 em { color: var(--coral); font-style: normal; }
   .metric-card strong { font-size: 24px; }
   .section-heading { display: block; }
   .detail-chart-grid { grid-template-columns: 1fr; }
+  .mini-market-band-summary, .coverage-model-band-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-chart-heading { display: flex; }
   .legend { justify-content: flex-start; margin-top: 13px; gap: 8px 12px; }
   .legend span { white-space: normal; }

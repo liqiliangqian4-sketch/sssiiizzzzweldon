@@ -20,6 +20,10 @@
   }));
   const featured = companyProducts.filter((product) => Number.isFinite(product.price));
   const vehicleCoverage = window.VEHICLE_COVERAGE || [];
+  const vehicleModelMarket = window.VEHICLE_MODEL_MARKET || { meta: { months: 6 }, vehicles: [] };
+  const marketMonths = Number(vehicleModelMarket.meta?.months) || 6;
+  const modelMarketByVehicle = new Map((vehicleModelMarket.vehicles || []).map((item) => [item.vehicle, item]));
+  const knownJoytutusAsins = new Set(featured.map((product) => product.asin));
   const plot = document.getElementById("market-plot");
   const canvas = document.getElementById("market-canvas");
   const ctx = canvas.getContext("2d");
@@ -121,7 +125,7 @@
   const miniPricePercent = (price) => Math.min(96, Math.max(4, (Number(price) - miniPriceMin) / (miniPriceMax - miniPriceMin) * 100));
   const miniGmvPercent = (gmv) => Math.min(92, Math.max(8, 100 - (Number(gmv) || 0) / miniGmvMax * 100));
 
-  function renderDetailCharts() {
+  function renderLegacyDetailCharts() {
     const container = document.getElementById("detail-chart-grid");
     if (!container) return;
     container.innerHTML = detailChartGroups.map((group) => {
@@ -172,7 +176,7 @@
   const getVehicleMatches = (row) => row.aliases.length ? featured.filter((product) => matchesVehicle(row, product)) : [];
   const coverageRowKey = (vehicle) => normalizeVehicle(vehicle).replace(/\s+/g, "-");
 
-  function renderCoverageDetails(row, matched) {
+  function renderLegacyCoverageDetails(row, matched) {
     if (!matched.length) return `<div class="coverage-detail-empty">暂无 Joytutus ASIN；${row.action ? `推进安排：${escapeHtml(row.action)}` : "暂无拆分信息"}</div>`;
     return `<div class="coverage-detail-table">
       <div class="coverage-detail-grid coverage-detail-head"><span>年份区间</span><span>型号</span><span>ASIN</span><span>Amazon 售价</span><span>2026 总 GMV</span><span>月均 GMV</span></div>
@@ -184,6 +188,99 @@
         <span>${formatMoney(product.gmv2026)}</span>
         <span>${formatMoney(product.gmv)}</span>
       </div>`).join("")}
+    </div>`;
+  }
+
+  const marketMiniPriceMin = 100;
+  const marketMiniPriceMax = 400;
+  const marketMiniGmvMax = 25000;
+  const marketMiniPricePercent = (price) => Math.min(96, Math.max(4, (Number(price) - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 100));
+  const marketMiniGmvPercent = (gmv) => Math.min(92, Math.max(8, 100 - (Number(gmv) || 0) / marketMiniGmvMax * 100));
+
+  function renderMarketBandSummary(bands) {
+    return (bands || []).map((band) => `<span class="mini-market-band"><strong>${escapeHtml(band.label)}</strong><span>${formatNumber(band.asinCount)} 市场 ASIN</span><span>2026 GMV ${formatMoney(band.gmv2026)} · 月均 ${formatMoney((Number(band.gmv2026) || 0) / marketMonths)}</span></span>`).join("");
+  }
+
+  function renderDetailCharts() {
+    const container = document.getElementById("detail-chart-grid");
+    if (!container) return;
+    const marketVehicles = (vehicleCoverage.length ? vehicleCoverage : vehicleModelMarket.vehicles || [])
+      .filter((row) => row.aliases && row.aliases.length)
+      .map((row) => modelMarketByVehicle.get(row.vehicle))
+      .filter(Boolean);
+    container.innerHTML = marketVehicles.map((marketVehicle) => {
+      const coverageRow = vehicleCoverage.find((row) => row.vehicle === marketVehicle.vehicle);
+      const products = coverageRow ? getVehicleMatches(coverageRow).sort((a, b) => a.price - b.price) : [];
+      const bubbles = products.map((product) => {
+        const size = Math.max(38, Math.min(76, bubbleSize(product.gmv2026) * 0.78));
+        const image = product.image
+          ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.asin)} Amazon 主图" loading="lazy" />`
+          : `<span>${escapeHtml(product.asin.slice(-4))}</span>`;
+        return `<button type="button" class="mini-bubble" data-mini-asin="${escapeHtml(product.asin)}" aria-label="${escapeHtml(product.asin)}，售价 $${formatNumber(product.price, 0)}，2026 总 GMV ${formatMoney(product.gmv2026)}" style="--bubble-left:${marketMiniPricePercent(product.price)}%;--bubble-top:${marketMiniGmvPercent(product.gmv)}%;--bubble-size:${size}px">${image}</button>`;
+      }).join("");
+      const legend = products.length
+        ? products.map((product) => `<button type="button" class="mini-key" data-mini-asin="${escapeHtml(product.asin)}"><strong>${escapeHtml(product.asin)}</strong><span>$${formatNumber(product.price, 0)} · 月均 ${formatMoney(product.gmv)}</span></button>`).join("")
+        : `<span class="mini-empty">暂无 Joytutus ASIN</span>`;
+      const totalLabel = `${formatNumber(marketVehicle.marketAsinCount)} 市场 ASIN · 2026.01-06 GMV ${formatMoney(marketVehicle.marketGmv2026)} · 月均 ${formatMoney(marketVehicle.marketMonthlyGmv)}`;
+      return `<article class="detail-chart-card">
+        <div class="detail-chart-heading"><div><h3>${escapeHtml(marketVehicle.vehicle)}</h3><span>${escapeHtml(totalLabel)}</span></div><small>月均 GMV / 售价</small></div>
+        <div class="mini-market-band-summary" aria-label="${escapeHtml(marketVehicle.vehicle)} 价格段市场 ASIN 数和销售额">${renderMarketBandSummary(marketVehicle.priceBands)}</div>
+        <div class="mini-plot" role="img" aria-label="${escapeHtml(marketVehicle.vehicle)} 车型 Joytutus 售价与月均 GMV 气泡图，气泡大小代表 2026 总 GMV">
+          <span class="mini-y-tick mini-y-high">$20K</span><span class="mini-y-tick mini-y-mid">$10K</span><span class="mini-y-tick mini-y-low">$0</span>
+          <span class="mini-gridline mini-gridline-high"></span><span class="mini-gridline mini-gridline-mid"></span><span class="mini-gridline mini-gridline-low"></span>
+          ${bubbles}
+          <span class="mini-x-tick mini-x-left">$100</span><span class="mini-x-tick mini-x-center">$250</span><span class="mini-x-tick mini-x-right">$400</span>
+        </div>
+        <div class="mini-chart-legend">${legend}</div>
+      </article>`;
+    }).join("");
+    container.querySelectorAll("[data-mini-asin]").forEach((node) => {
+      node.addEventListener("click", () => {
+        const product = featured.find((item) => item.asin === node.dataset.miniAsin);
+        if (product) selectProduct(product, true);
+      });
+    });
+    container.querySelectorAll(".mini-bubble img").forEach((image) => {
+      image.addEventListener("error", () => image.classList.add("image-missing"));
+    });
+  }
+
+  function renderMarketProducts(group) {
+    return `<div class="coverage-product-table">
+      <div class="coverage-product-grid coverage-product-head"><span>ASIN</span><span>品牌</span><span>Amazon 标题</span><span>售价</span><span>2026 GMV</span></div>
+      ${(group.products || []).map((product) => `<div class="coverage-product-grid coverage-product-item">
+        <a class="coverage-detail-asin" href="${escapeHtml(product.link)}" target="_blank" rel="noreferrer">${escapeHtml(product.asin)}</a>
+        <span>${escapeHtml(product.brand)}${knownJoytutusAsins.has(product.asin) ? ` <b class="coverage-brand-badge">Joytutus</b>` : ""}</span>
+        <span class="coverage-product-title">${escapeHtml(product.title)}</span>
+        <span>$${formatNumber(product.price, 0)}</span>
+        <span>${formatMoney(product.gmv2026)}</span>
+      </div>`).join("")}
+    </div>`;
+  }
+
+  function renderCoverageDetails(row, matched) {
+    const marketVehicle = modelMarketByVehicle.get(row.vehicle);
+    if (!marketVehicle || !marketVehicle.groups.length) return renderLegacyCoverageDetails(row, matched);
+    return `<div class="coverage-model-shell">
+      <div class="coverage-model-summary">Amazon 标题/详细参数拆分 · ${formatNumber(marketVehicle.marketAsinCount)} 个市场 ASIN · 2026.01-06 市场 GMV ${formatMoney(marketVehicle.marketGmv2026)} · 细分组可继续展开查看全部 ASIN</div>
+      <div class="coverage-model-grid coverage-model-head"><span>年份区间 / 型号</span><span>市场 ASIN 数</span><span>市场 2026 GMV</span><span>Joytutus ASIN</span><span>明细</span></div>
+      ${marketVehicle.groups.map((group, index) => {
+        const groupId = `${coverageRowKey(row.vehicle)}-model-${index}`;
+        const joyAsins = group.joytutusAsins.filter((asin) => knownJoytutusAsins.has(asin));
+        return `<div class="coverage-model-block">
+          <div class="coverage-model-grid coverage-model-item">
+            <div><strong>${escapeHtml(group.yearRange)}</strong><small>${escapeHtml(group.model)}</small></div>
+            <span>${formatNumber(group.marketAsinCount)}</span>
+            <span>${formatMoney(group.marketGmv2026)}</span>
+            <span class="coverage-model-joytutus">${joyAsins.length ? joyAsins.map((asin) => `<a href="https://www.amazon.com/dp/${escapeHtml(asin)}" target="_blank" rel="noreferrer">${escapeHtml(asin)}</a>`).join(" · ") : "—"}</span>
+            <button type="button" class="coverage-model-toggle" data-model-group-toggle="${escapeHtml(groupId)}" aria-expanded="false" aria-controls="${escapeHtml(groupId)}"><span class="coverage-chevron" aria-hidden="true">›</span><span>展开</span></button>
+          </div>
+          <div id="${escapeHtml(groupId)}" class="coverage-model-expanded" hidden>
+            <div class="coverage-model-band-row">${renderMarketBandSummary(group.priceBands)}</div>
+            ${renderMarketProducts(group)}
+          </div>
+        </div>`;
+      }).join("")}
     </div>`;
   }
 
@@ -221,6 +318,14 @@
         toggle.setAttribute("aria-expanded", String(!expanded));
         if (detail) detail.hidden = expanded;
         toggle.closest("tr")?.classList.toggle("is-expanded", !expanded);
+      });
+    });
+    document.querySelectorAll("[data-model-group-toggle]").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const detail = document.getElementById(toggle.dataset.modelGroupToggle);
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        if (detail) detail.hidden = expanded;
       });
     });
   }

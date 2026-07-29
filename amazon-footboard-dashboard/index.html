@@ -101,9 +101,9 @@
               <p class="section-kicker">01B / MODEL DETAIL</p>
               <h2 id="detail-charts-title">细分车型 × GMV 气泡图</h2>
             </div>
-            <span class="section-caption">按 Amazon 标题中的年份与型号拆分 · 气泡大小 = 2026 总 GMV</span>
+            <span class="section-caption">按车型、年份、型号拆分 · 每个价格段同步显示市场 ASIN 数与销售额</span>
           </div>
-          <p class="detail-charts-lead">主图保留全量 Joytutus SKU；下方按 JK、JL、车身代际与车型组合拆分，每个气泡对应一个 ASIN。</p>
+          <p class="detail-charts-lead">主图保留全量 Joytutus SKU；下方覆盖 10 个市场重点车型，价格段展示该车型市场 ASIN 数与 2026.01-06 销售额，气泡仍只标记 Joytutus ASIN。</p>
           <div class="detail-chart-grid" id="detail-chart-grid"></div>
         </section>
 
@@ -131,7 +131,7 @@
               <tbody id="coverage-table-body"></tbody>
             </table>
           </div>
-          <p class="coverage-note">市场份额来自《仪表板（脚踏信息）》的“车型占比-26年”工作表；车型市占 = Joytutus 2026 总 GMV ÷ 该车型 2026 市场销售额。一个 Joytutus 产品同时适配多个车型时，会分别计入对应车型；“其余 38 个车型”为仪表盘中未列入前十的车型合计。</p>
+          <p class="coverage-note">车型细分来自 Amazon 商品标题与详细参数，市场 ASIN 数与销售额来自仪表板明细的 2026.01-06 数据。车型、年份或型号不明确的商品保留在“未明确”组；一个 ASIN 明确适配多个车型时，会分别计入对应车型。</p>
         </section>
 
         <section class="detail-grid section" aria-label="选中商品详情">
@@ -191,7 +191,8 @@
 
     <script src="market-data.js"></script>
     <script src="joytutus-data.js?v=20260729-model-detail-1"></script>
+    <script src="market-model-data.js?v=20260729-market-model-2"></script>
     <script src="vehicle-coverage.js?v=20260727-coverage-actions-1"></script>
-    <script src="app.js?v=20260729-model-detail-1"></script>
+    <script src="app.js?v=20260729-market-model-3"></script>
   </body>
 </html>
