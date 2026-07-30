@@ -1,0 +1,764 @@
+{
+  "query": "Truck Bed Tents",
+  "englishQuery": "Truck Bed Tents",
+  "market": "US",
+  "generatedAt": "2026-07-30T18:55:57.229749+08:00",
+  "executive": {
+    "verdict": "条件进入",
+    "tone": "conditional",
+    "score": 64,
+    "confidence": 67,
+    "oneLiner": "需求信号存在，但必须围绕“耐久与材料”建立可验证差异化。",
+    "condition": "先完成样品、成本和核心风险验证，再放大采购。"
+  },
+  "signals": {
+    "demand": 50,
+    "competition": 33,
+    "painGap": 95,
+    "premium": 42,
+    "feasibility": 62,
+    "labels": "所有评分均为方向性信号指数，不是官方市场规模或销量估算。"
+  },
+  "marketStats": {
+    "competitorCount": 0,
+    "priceMin": null,
+    "priceMedian": null,
+    "priceMax": null,
+    "averageRating": null,
+    "medianReviewCount": null,
+    "sourceCoverage": 60,
+    "evidenceCount": 26
+  },
+  "pricing": {
+    "entry": 29.99,
+    "core": 49.99,
+    "premium": 69.99,
+    "currency": "USD",
+    "logic": "按可见市场样本四分位数生成；上市前必须复核贡献利润。"
+  },
+  "competitors": [],
+  "channelOverview": [
+    {
+      "key": "retail",
+      "title": "零售需求",
+      "sources": [
+        "amazon"
+      ],
+      "count": 0,
+      "state": "failed",
+      "purpose": "价格、评论量与竞品密度"
+    },
+    {
+      "key": "voice",
+      "title": "用户声音",
+      "sources": [
+        "reddit",
+        "youtube"
+      ],
+      "count": 43,
+      "state": "success",
+      "purpose": "使用场景、抱怨、安装与替代方案"
+    },
+    {
+      "key": "trend",
+      "title": "趋势内容",
+      "sources": [
+        "news"
+      ],
+      "count": 2,
+      "state": "success",
+      "purpose": "新品、品牌和行业时效信号"
+    },
+    {
+      "key": "supply",
+      "title": "出口供应端",
+      "sources": [
+        "alibaba"
+      ],
+      "count": 0,
+      "state": "action_required",
+      "purpose": "出口供应商、起订量、批发价与产品同质化"
+    }
+  ],
+  "voices": [
+    {
+      "source": "reddit",
+      "title": "Truck Campers - Exploring the world from the bed of your truck",
+      "snippet": "Whether you have a shell, full slide in cabover camper, or doing research r/TruckCampers is where you can discuss modifications, tips/tricks, camping locations, or ask questions about truck campers large and small. [link]",
+      "context": "r/TruckCampers",
+      "metric": null,
+      "url": "https://www.reddit.com/r/TruckCampers/"
+    },
+    {
+      "source": "reddit",
+      "title": "r/Camping",
+      "snippet": "A subreddit for campers concerned more about the act of recreational camping and less concerned about hiking long distances or light gear. Primarily for tent/hammock camping. No RV camping here. [link]",
+      "context": "r/camping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/camping/"
+    },
+    {
+      "source": "reddit",
+      "title": "Toyota Tacoma",
+      "snippet": "ToyotaTacoma is a home to discuss all things Tacomas. [link]",
+      "context": "r/ToyotaTacoma",
+      "metric": null,
+      "url": "https://www.reddit.com/r/ToyotaTacoma/"
+    },
+    {
+      "source": "reddit",
+      "title": "Has anyone used a truck bed tent before? Thoughts?",
+      "snippet": "submitted by /u/EarlyBake420 to r/camping [link] [comments]",
+      "context": "r/camping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/camping/comments/q9ix0l/has_anyone_used_a_truck_bed_tent_before_thoughts/"
+    },
+    {
+      "source": "reddit",
+      "title": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
+      "snippet": "​ I have been thinking, what if I take a rooftop tent that is the size of my truck bed (when closed flat) and mount it directly onto my truck bed like a tonneau cover, cut the floor out of the tent and basically make a collapsible camper topper. I will weatherproof the connection between the tent and the truck bed with a skirt. I have never seen this done yet, am I missing something? Where would this go wrong? submitted by /u/dinglebingle583 to r/TruckCampers [link] [comments]",
+      "context": "r/TruckCampers",
+      "metric": null,
+      "url": "https://www.reddit.com/r/TruckCampers/comments/1sd75cv/can_i_mount_a_rooftop_tent_directly_onto_my_truck/"
+    },
+    {
+      "source": "reddit",
+      "title": "First time installing truck bed tent.",
+      "snippet": "submitted by /u/kingtra62 to r/CampingGear [link] [comments]",
+      "context": "r/CampingGear",
+      "metric": null,
+      "url": "https://www.reddit.com/r/CampingGear/comments/gzv8l9/first_time_installing_truck_bed_tent/"
+    },
+    {
+      "source": "reddit",
+      "title": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
+      "snippet": "I have been thinking, what if I take a rooftop tent that is the size of my truck bed (when closed flat) and mount it directly onto my truck bed like a tonneau cover, cut the floor out of the tent and basically make a collapsible camper topper. I will weatherproof the connection between the tent and the truck bed with a skirt. I have never seen this done yet, am I missing something? Where would this go wrong? submitted by /u/dinglebingle583 to r/rooftoptents [link] [comments]",
+      "context": "r/rooftoptents",
+      "metric": null,
+      "url": "https://www.reddit.com/r/rooftoptents/comments/1sd72v2/can_i_mount_a_rooftop_tent_directly_onto_my_truck/"
+    },
+    {
+      "source": "reddit",
+      "title": "Recommendations for sleeping pad/mattress for truck bed",
+      "snippet": "Hi all just joined and im looking for some recommendations from the experts. Ive been primarily camping out of a tent the past few years but recently acquired a cap for my pickup and a topper tent so ive migrated to the bed of my truck. On my most recent trip I used a 4inch tri fold memory foam mattress which didnt meet my needs as a side sleeper (220lbs). I felt it bottom out nightly and im looking for alternatives. Ive seen a lot of recommendations for Exped and Thermarest. Ideally I would buy the Exped Megamat Duo but im not sure how that would fair if im using it solo. Would I be better off to get two smaller mats for when I have another person with me? Are there any other options like a Japanese futon mattress that people have experience with? Im also curious to hear reviews from larger individuals such as myself at 6'3\" and 220lbs. My other gripe with the trifold is the space it to",
+      "context": "r/carcamping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/carcamping/comments/1uidlzc/recommendations_for_sleeping_padmattress_for/"
+    },
+    {
+      "source": "youtube",
+      "title": "Napier Truck Tent FULL USER review/ Is this the Best Budget Tent option for Camping and Overlanding?",
+      "snippet": "Chenzo's World",
+      "context": "2 years ago",
+      "metric": "119,386 views",
+      "url": "https://www.youtube.com/watch?v=G4LMpsKQjK0"
+    },
+    {
+      "source": "youtube",
+      "title": "Truck Camping Just Got INSANE! Top 5 Bed Tents for 2026",
+      "snippet": "driveloop",
+      "context": "5 months ago",
+      "metric": "3,858 views",
+      "url": "https://www.youtube.com/watch?v=HbbsFepOVao"
+    },
+    {
+      "source": "youtube",
+      "title": "JOYTUTUS Truck Bed Tent Review | 6.5ft Waterproof Tent with Awning for F150, Silverado, Ram & More!",
+      "snippet": "Handy Homestead Reviews",
+      "context": "1 year ago",
+      "metric": "9,172 views",
+      "url": "https://www.youtube.com/watch?v=64oAg-ApKB0"
+    },
+    {
+      "source": "youtube",
+      "title": "BEST INFLATABLE TRUCK BED TENTS 2026 – Top 5 Picks",
+      "snippet": "driveloop",
+      "context": "1 month ago",
+      "metric": "886 views",
+      "url": "https://www.youtube.com/watch?v=gcceeQuBGR0"
+    },
+    {
+      "source": "youtube",
+      "title": "Full Demo & Honest Thoughts On Napier Backroadz Truck Tent After Lots of Use Plus Rain!",
+      "snippet": "Emily Clark",
+      "context": "2 years ago",
+      "metric": "16,449 views",
+      "url": "https://www.youtube.com/watch?v=GuPIktC6wqU"
+    },
+    {
+      "source": "youtube",
+      "title": "Kodiak Canvas Truck Tent",
+      "snippet": "Kodiak Canvas",
+      "context": "10 years ago",
+      "metric": "486,886 views",
+      "url": "https://www.youtube.com/watch?v=euH2hUkl9ME"
+    }
+  ],
+  "supply": {
+    "query": "Truck Bed Tents",
+    "items": [],
+    "priceBands": [],
+    "guidance": "Alibaba.com 本次未形成可核验供应样本；请从来源台账打开已带英文关键词的入口，不要把空结果当成无供给。"
+  },
+  "pains": [
+    {
+      "key": "durability",
+      "label": "耐久与材料",
+      "count": 12,
+      "examples": [
+        "Toyota Tacoma ToyotaTacoma is a home to discuss all things Tacomas. [link]",
+        "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck? ​ I have "
+      ],
+      "strength": 100,
+      "share": 55,
+      "severity": "高"
+    },
+    {
+      "key": "installation",
+      "label": "安装与说明",
+      "count": 4,
+      "examples": [
+        "First time installing truck bed tent. submitted by /u/kingtra62 to r/CampingGear [link] [comments]",
+        "For overlanders that camp in bear country and cook on their tailgate: What do you do for food storage, and kitchen prep/cleanup? Is a sealed truck bed enough? I’m planning a campin"
+      ],
+      "strength": 33,
+      "share": 18,
+      "severity": "低"
+    },
+    {
+      "key": "appearance",
+      "label": "外观与质感",
+      "count": 4,
+      "examples": [
+        "Recommendations for sleeping pad/mattress for truck bed Hi all just joined and im looking for some recommendations from the experts. Ive been primarily camping out of a tent the pa",
+        "Custom truck tent - Help I currently use a standard truck bed tent for short camping trips. It works well, but it requires removing my Diamondback tonneau cover which is a pain. I’"
+      ],
+      "strength": 33,
+      "share": 18,
+      "severity": "低"
+    },
+    {
+      "key": "value",
+      "label": "价格与价值感",
+      "count": 2,
+      "examples": [
+        "Sleeping in a 5ft truck bed? I used to have a single cab 6ft bed truck, which was great if I wanted to go sleep in the box I could do so under my canopy with a pad and sleeping bag",
+        "Truck bed tent Hello all! so im brand new to camping and testing my luck, Im going down south to ft. lauderdale for school for 2 months and places are soo expensive so I thought ab"
+      ],
+      "strength": 17,
+      "share": 9,
+      "severity": "低"
+    },
+    {
+      "key": "fitment",
+      "label": "适配与尺寸",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "adhesion",
+      "label": "粘接与固定",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "noise",
+      "label": "噪音与行驶体验",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "packaging",
+      "label": "包装与运输",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    }
+  ],
+  "personas": [
+    {
+      "name": "精准替换型",
+      "behavior": "先核对型号和尺寸，再看差评确认风险。",
+      "value": "高转化、低容错",
+      "priority": "核心"
+    },
+    {
+      "name": "省心安装型",
+      "behavior": "偏好免钻孔、预装和清晰视频。",
+      "value": "愿为节省时间付费",
+      "priority": "核心"
+    },
+    {
+      "name": "高端升级型",
+      "behavior": "比较材料、外观和套装完整度。",
+      "value": "高客单与配件机会",
+      "priority": "次核心"
+    },
+    {
+      "name": "风险敏感型",
+      "behavior": "反复查看退货、质保和真实图片。",
+      "value": "影响口碑与退货",
+      "priority": "守门"
+    }
+  ],
+  "emotions": {
+    "pain": "花钱之后仍然被“耐久与材料”拖回返工、退货和解释成本。",
+    "itch": "希望自己的选择看起来专业、可靠，买的是成熟方案而不是便宜试验品。",
+    "pleasure": "第一次安装就严丝合缝，使用过程中不需要再想起它。"
+  },
+  "opportunities": [
+    {
+      "priority": "P0",
+      "title": "材料与耐候升级",
+      "action": "提高抗冲击、耐候、耐刮能力，并把材料和测试结果可视化。",
+      "cost": "中",
+      "evidenceCount": 12,
+      "evidenceLabel": "耐久与材料",
+      "validation": "高低温、UV和冲击测试通过",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P1",
+      "title": "一次装对套件",
+      "action": "分步骤五金包、预装关键件、二维码视频和错误安装警示。",
+      "cost": "低",
+      "evidenceCount": 4,
+      "evidenceLabel": "安装与说明",
+      "validation": "首次安装完成率≥90%，漏件为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "高质感视觉语言",
+      "action": "建立材料、颜色、表面处理和整车比例的统一设计规范。",
+      "cost": "中",
+      "evidenceCount": 4,
+      "evidenceLabel": "外观与质感",
+      "validation": "盲测偏好显著高于基准款",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "清晰的版本梯度",
+      "action": "基础/利润/旗舰三档配置，差价由材料和配件解释。",
+      "cost": "低",
+      "evidenceCount": 2,
+      "evidenceLabel": "价格与价值感",
+      "validation": "用户可在10秒内看懂版本差异",
+      "evidenceStatus": "evidence-backed"
+    }
+  ],
+  "productDefinition": {
+    "concept": "面向主流用户的 Truck Bed Tents 可靠性升级款",
+    "coreUser": "正在替换低质量旧品、愿意为更低安装风险付费的实用型买家",
+    "job": "在不增加安装负担的前提下，稳定解决“耐久与材料”并降低误购和退货。",
+    "mustHave": [
+      "材料与耐候升级"
+    ],
+    "differentiators": [
+      "一次装对套件",
+      "高质感视觉语言",
+      "清晰的版本梯度"
+    ],
+    "doNotClaim": [
+      "未验证的通用适配",
+      "没有测试报告支撑的承重/寿命",
+      "所有场景零故障"
+    ]
+  },
+  "keywords": [
+    {
+      "keyword": "bed",
+      "frequency": 1,
+      "intent": "长尾"
+    },
+    {
+      "keyword": "tents",
+      "frequency": 1,
+      "intent": "长尾"
+    },
+    {
+      "keyword": "truck",
+      "frequency": 1,
+      "intent": "长尾"
+    }
+  ],
+  "keywordGroups": {
+    "core": [],
+    "attributes": [],
+    "longTail": [
+      "bed",
+      "tents",
+      "truck"
+    ]
+  },
+  "launchPlan": [
+    {
+      "phase": "0-15天",
+      "title": "证据补齐",
+      "owner": "市场研究/数据",
+      "actions": [
+        "补齐Top 20竞品参数与价格",
+        "抓取至少100条有效评论",
+        "确认目标用户与核心场景"
+      ],
+      "gate": "关键结论均有来源，未知项显式列出"
+    },
+    {
+      "phase": "16-45天",
+      "title": "产品验证",
+      "owner": "产品/研发/质量",
+      "actions": [
+        "冻结P0规格与测试计划",
+        "完成首轮样品和对标测试",
+        "核算三档价格与贡献利润"
+      ],
+      "gate": "P0问题闭环，样品通过核心工况"
+    },
+    {
+      "phase": "46-75天",
+      "title": "小批量验证",
+      "owner": "供应链/运营",
+      "actions": [
+        "10-30件试产",
+        "包装与安装盲测",
+        "完成Listing证据素材"
+      ],
+      "gate": "兼容、破损、漏件类问题为0"
+    },
+    {
+      "phase": "76-90天",
+      "title": "上市与复盘",
+      "owner": "运营/客服/数据",
+      "actions": [
+        "上线精确词与长尾词",
+        "逐单标记咨询与退货原因",
+        "第7/14/30天复盘"
+      ],
+      "gate": "达到目标转化且质量指标不恶化"
+    }
+  ],
+  "northStar": {
+    "metric": "有效机会验证率",
+    "definition": "进入样品验证的P0机会中，按期通过核心验收指标的比例。",
+    "guardrails": [
+      "适配/规格误购率",
+      "首月质量客诉率",
+      "贡献利润率",
+      "证据覆盖率"
+    ]
+  },
+  "sourceStatuses": [
+    {
+      "source": "amazon",
+      "state": "failed",
+      "count": 0,
+      "latencyMs": 1219,
+      "message": "HTTP 503；该来源可能需要登录会话、更低频率或官方 API。",
+      "url": "https://www.amazon.com/s?k=Truck+Bed+Tents",
+      "meta": {}
+    },
+    {
+      "source": "reddit",
+      "state": "success",
+      "count": 25,
+      "latencyMs": 1628,
+      "message": "采集到 25 条社区讨论；本次通道：Reddit RSS。",
+      "url": "https://www.reddit.com/search/?q=Truck+Bed+Tents&sort=relevance",
+      "meta": {
+        "method": "Reddit RSS",
+        "endpoint": "https://www.reddit.com/search.rss?q=Truck+Bed+Tents&sort=relevance&t=all",
+        "fallbackAttempts": []
+      }
+    },
+    {
+      "source": "youtube",
+      "state": "success",
+      "count": 18,
+      "latencyMs": 2047,
+      "message": "采集到 18 个视频及可见需求信号。",
+      "url": "https://www.youtube.com/results?search_query=Truck+Bed+Tents",
+      "meta": {}
+    },
+    {
+      "source": "news",
+      "state": "success",
+      "count": 2,
+      "latencyMs": 1475,
+      "message": "从 25 条近期结果中筛出 2 条相关资讯。",
+      "url": "https://news.google.com/rss/search?q=Truck+Bed+Tents&hl=en-US&gl=US&ceid=US%3Aen",
+      "meta": {}
+    },
+    {
+      "source": "alibaba",
+      "state": "action_required",
+      "count": 0,
+      "latencyMs": 456,
+      "message": "Alibaba.com 返回了真人验证页。请打开来源链接完成验证；已配置会话时可通过 OPC_ALIBABA_COOKIE 启用解析。",
+      "url": "https://www.alibaba.com/trade/search?SearchText=Truck+Bed+Tents",
+      "meta": {}
+    }
+  ],
+  "evidence": [
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "Speedy Truck Bed Tents - Trend Hunter",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBVnNPVHJtSDcxdHVPZ1pVZUxickJJSmxBMWJuZzUtblg5MHFqSDU3c3dzQWdPVWthV0FEX25qc3FsUzcwLWJwSDJ5R01yR3pGWTRLcGc4a2R2eUIwc2JIMm8za9IBaEFVX3lxTE1hMGc4c0M0ZFg2S1ZQZ2RTbDREN2J3THRMRU4tWjlacXpKZFk5VE5acEcxczVuWmNvVFBKX25ERHBTcHNtbHgwMEkzMzRfZ2tlMDhSdXc4b2U1QmZEaXVnNG5mLWprSEQ2?oc=5",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "The Best Truck Bed Tents of 2026 - Outdoor Life",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00ZGxCeFp1NVJ1RU1Dd3p2Mk5UcS1SUVRKZHk4TGd3cUt3b1lFY1hBUDdYRW5VMXhWX3N3TWxicU10ZGZmR3hNTjctdkhZeVhMSHZqWXBRc2QzaXFGLXdlNXNVWUw?oc=5",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Truck Campers - Exploring the world from the bed of your truck",
+      "value": null,
+      "url": "https://www.reddit.com/r/TruckCampers/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "r/Camping",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Toyota Tacoma",
+      "value": null,
+      "url": "https://www.reddit.com/r/ToyotaTacoma/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Has anyone used a truck bed tent before? Thoughts?",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/comments/q9ix0l/has_anyone_used_a_truck_bed_tent_before_thoughts/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
+      "value": null,
+      "url": "https://www.reddit.com/r/TruckCampers/comments/1sd75cv/can_i_mount_a_rooftop_tent_directly_onto_my_truck/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "First time installing truck bed tent.",
+      "value": null,
+      "url": "https://www.reddit.com/r/CampingGear/comments/gzv8l9/first_time_installing_truck_bed_tent/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
+      "value": null,
+      "url": "https://www.reddit.com/r/rooftoptents/comments/1sd72v2/can_i_mount_a_rooftop_tent_directly_onto_my_truck/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Recommendations for sleeping pad/mattress for truck bed",
+      "value": null,
+      "url": "https://www.reddit.com/r/carcamping/comments/1uidlzc/recommendations_for_sleeping_padmattress_for/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Hopped on the bed tent bandwagon",
+      "value": null,
+      "url": "https://www.reddit.com/r/ToyotaTacoma/comments/1s0ahbx/hopped_on_the_bed_tent_bandwagon/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Sleeping in a 5ft truck bed?",
+      "value": null,
+      "url": "https://www.reddit.com/r/overlanding/comments/1qfa6uk/sleeping_in_a_5ft_truck_bed/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Custom truck tent - Help",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/comments/1qpgsoq/custom_truck_tent_help/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "RTT and Truck Bed Cap on Ford Maverick.",
+      "value": null,
+      "url": "https://www.reddit.com/r/FordMaverickTruck/comments/1t3yzn2/rtt_and_truck_bed_cap_on_ford_maverick/",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Napier Truck Tent FULL USER review/ Is this the Best Budget Tent option for Camping and Overlanding?",
+      "value": "119,386 views",
+      "url": "https://www.youtube.com/watch?v=G4LMpsKQjK0",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Truck Camping Just Got INSANE! Top 5 Bed Tents for 2026",
+      "value": "3,858 views",
+      "url": "https://www.youtube.com/watch?v=HbbsFepOVao",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "JOYTUTUS Truck Bed Tent Review | 6.5ft Waterproof Tent with Awning for F150, Silverado, Ram & More!",
+      "value": "9,172 views",
+      "url": "https://www.youtube.com/watch?v=64oAg-ApKB0",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "BEST INFLATABLE TRUCK BED TENTS 2026 – Top 5 Picks",
+      "value": "886 views",
+      "url": "https://www.youtube.com/watch?v=gcceeQuBGR0",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Full Demo & Honest Thoughts On Napier Backroadz Truck Tent After Lots of Use Plus Rain!",
+      "value": "16,449 views",
+      "url": "https://www.youtube.com/watch?v=GuPIktC6wqU",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Kodiak Canvas Truck Tent",
+      "value": "486,886 views",
+      "url": "https://www.youtube.com/watch?v=euH2hUkl9ME",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "How to Setup a Napier 19 Series Backroadz Truck Tent │ Installation & Setup Instructions",
+      "value": "76,133 views",
+      "url": "https://www.youtube.com/watch?v=kwhAKk0lSnc",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Testing The CHEAPEST Truck Bed Tent On Amazon! (Go Buy It!)",
+      "value": "43,799 views",
+      "url": "https://www.youtube.com/watch?v=QYG8uf_cMXA",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 5 Best Truck Bed Tents of 2024",
+      "value": "57,307 views",
+      "url": "https://www.youtube.com/watch?v=AhjFsR2VswU",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 5 Best Truck Bed Tents 2025 - Don’t Buy one Before Watching this Video",
+      "value": "2,657 views",
+      "url": "https://www.youtube.com/watch?v=sa4s94yqqro",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Best Pickup Truck Bed Tents 2025: Top 5 Reviewed!",
+      "value": "23,657 views",
+      "url": "https://www.youtube.com/watch?v=aJG4uGNZedk",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "2024 Budget Truck Tent Setup | Organization Tips",
+      "value": "8,024 views",
+      "url": "https://www.youtube.com/watch?v=MefebtlT3g0",
+      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "confidence": "中"
+    }
+  ],
+  "reference": {
+    "used": false,
+    "materials": [],
+    "installMethods": [],
+    "source": null
+  },
+  "methodology": [
+    "多源证据工作流：吸收 IvyeaOps 与 TrendRadar 的方法",
+    "Amazon 品类/关键词/评论结构：吸收 Sorftime 研究技能与 EasyAMZ 字段模型",
+    "Amazon US 书面评论回退：吸收 MIT 许可 amazon-review-scraper 的 Woot 公开端点方法",
+    "Reddit 回退：优先公开 RSS，再回退 JSON/PullPush；参考 BSD-2 PRAW 与 MIT BAScraper 的边界",
+    "供应端研究：Alibaba.com 独立成组，不与 Amazon 零售样本混算",
+    "痛点/痒点/爽点与 P0-P2 机会映射：吸收 Market Insight 方法",
+    "问题定义、竞争、定价、上市门槛、北极星指标与复盘：吸收 Lenny PM Skills 方法"
+  ]
+}
