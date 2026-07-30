@@ -289,11 +289,13 @@
     }).filter((band) => band.asinCount > 0 && band.gmv2026 > 0);
     if (!bandStats.length) return "建议：暂无有效价格段销售额与 ASIN 数据，暂不判断准入。";
 
-    const efficiencyValues = bandStats.map((band) => band.gmvPerAsin).sort((a, b) => a - b);
+    const entryBandStats = bandStats.filter((band) => band.low >= 150 && band.high !== null && band.high <= 300);
+    if (!entryBandStats.length) return "暂不确认：当前车型在 $150-300 目标价格段没有有效的市场销售额与 ASIN 数据。";
+    const efficiencyValues = entryBandStats.map((band) => band.gmvPerAsin).sort((a, b) => a - b);
     const efficiencyMedian = efficiencyValues[Math.floor(efficiencyValues.length / 2)];
     const totalVehicleAsins = Number(marketVehicle.marketAsinCount) || bandStats.reduce((sum, band) => sum + band.asinCount, 0);
     const asinLimit = Math.max(40, totalVehicleAsins * 0.15);
-    const candidates = bandStats
+    const candidates = entryBandStats
       .filter((band) => band.gmvPerAsin >= efficiencyMedian)
       .filter((band) => band.asinCount <= asinLimit)
       .filter((band) => !band.bandProducts.length || band.joytutusShare <= 0.05)
