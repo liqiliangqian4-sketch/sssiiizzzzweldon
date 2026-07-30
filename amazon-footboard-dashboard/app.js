@@ -247,15 +247,12 @@
     const maxAsins = Math.max(1, ...visibleBands.map((band) => Number(band.asinCount) || 0));
     const top = 38;
     const bottom = 176;
-    const barBottom = 188;
-    const maxBandGmv = Math.max(1, ...visibleBands.map((band) => Number(band.gmv2026) || 0));
+    const lineOffset = 16;
     const points = visibleBands.map((band) => {
       const bandCenter = (Number(band.low) + Number(band.high)) / 2;
       const x = (bandCenter - marketMiniPriceMin) / (marketMiniPriceMax - marketMiniPriceMin) * 360;
       const rawY = bottom - (Number(band.asinCount) || 0) / maxAsins * (bottom - top);
-      const barHeight = Math.max(2, (Number(band.gmv2026) || 0) / maxBandGmv * 80);
-      const barTop = barBottom - barHeight / 100 * barBottom;
-      const y = Math.min(bottom, Math.max(rawY, barTop + 5));
+      const y = Math.min(bottom, rawY + lineOffset);
       return { ...band, x, y };
     });
     const pointString = points.map((point) => `${point.x},${point.y}`).join(" ");
