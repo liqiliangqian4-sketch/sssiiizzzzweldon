@@ -269,17 +269,43 @@
     if (marketVehicle.isOther) return "其余车型与未归类 ASIN 汇总；用于补足全类目总量，不作为单一车型的开发决策依据。";
     const visibleBands = getVisibleMarketBands(marketVehicle.priceBands);
     if (!visibleBands.length) return "建议：暂无可用价格段市场数据，暂不判断准入。";
-    const totalGmv = visibleBands.reduce((sum, band) => sum + (Number(band.gmv2026) || 0), 0);
-    const demandBand = visibleBands.reduce((best, band) => (Number(band.gmv2026) || 0) > (Number(best?.gmv2026) || 0) ? band : best, visibleBands[0]);
-    const efficientBand = visibleBands.reduce((best, band) => {
-      const bandEfficiency = (Number(band.gmv2026) || 0) / Math.max(1, Number(band.asinCount) || 0);
-      const bestEfficiency = (Number(best?.gmv2026) || 0) / Math.max(1, Number(best?.asinCount) || 0);
-      return bandEfficiency > bestEfficiency ? band : best;
-    }, visibleBands[0]);
-    const demandShare = totalGmv ? (Number(demandBand.gmv2026) || 0) / totalGmv : 0;
-    if (!products.length) return `优先准入：${demandBand.label} 销售额最集中，当前没有 Joytutus 产品，建议优先开发该价格段。`;
-    if ((Number(demandBand.asinCount) || 0) >= 50 || demandShare >= 0.4) return `谨慎扩充：${demandBand.label} 需求最大但商品密度高，建议用适配范围或结构差异化切入。`;
-    return `建议补位：${efficientBand.label} 单个 ASIN 产出更优，适合作为下一款差异化价格段。`;
+    const bandStats = visibleBands.map((band) => {
+      const asinCount = Number(band.asinCount) || 0;
+      const gmv2026 = Number(band.gmv2026) || 0;
+      const bandProducts = (products || []).filter((product) => {
+        const price = Number(product.price);
+        return price >= Number(band.low) && (band.high === null || price < Number(band.high));
+      });
+      const joytutusGmv = bandProducts.reduce((sum, product) => sum + (Number(product.gmv2026) || 0), 0);
+      return {
+        ...band,
+        asinCount,
+        gmv2026,
+        gmvPerAsin: asinCount ? gmv2026 / asinCount : 0,
+        joytutusGmv,
+        joytutusShare: gmv2026 ? joytutusGmv / gmv2026 : 0,
+        bandProducts,
+      };
+    }).filter((band) => band.asinCount > 0 && band.gmv2026 > 0);
+    if (!bandStats.length) return "建议：暂无有效价格段销售额与 ASIN 数据，暂不判断准入。";
+
+    const efficiencyValues = bandStats.map((band) => band.gmvPerAsin).sort((a, b) => a - b);
+    const efficiencyMedian = efficiencyValues[Math.floor(efficiencyValues.length / 2)];
+    const totalVehicleAsins = Number(marketVehicle.marketAsinCount) || bandStats.reduce((sum, band) => sum + band.asinCount, 0);
+    const asinLimit = Math.max(40, totalVehicleAsins * 0.15);
+    const candidates = bandStats
+      .filter((band) => band.gmvPerAsin >= efficiencyMedian)
+      .filter((band) => band.asinCount <= asinLimit)
+      .filter((band) => !band.bandProducts.length || band.joytutusShare <= 0.05)
+      .sort((a, b) => b.gmvPerAsin - a.gmvPerAsin || b.gmv2026 - a.gmv2026);
+    const candidate = candidates[0];
+    if (candidate) {
+      const productStatus = candidate.bandProducts.length
+        ? `Joytutus 已开发产品销售额占比仅 ${(candidate.joytutusShare * 100).toFixed(1)}%`
+        : "当前暂无 Joytutus 产品";
+      return `确认建议：${candidate.label} 单 ASIN 销售额约 ${formatMoney(candidate.gmvPerAsin)}，市场仅 ${formatNumber(candidate.asinCount)} 个 ASIN；${productStatus}，建议确认开发。`;
+    }
+    return "暂不确认：当前没有同时满足单 ASIN 销售额较高、ASIN 数不过密且 Joytutus 缺位或销售额较低的价格段。";
   }
 
   function renderDetailCharts() {
