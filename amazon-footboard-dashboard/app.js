@@ -287,10 +287,10 @@
         bandProducts,
       };
     }).filter((band) => band.asinCount > 0 && band.gmv2026 > 0);
-    if (!bandStats.length) return "建议：暂无有效价格段销售额与 ASIN 数据，暂不判断准入。";
+    if (!bandStats.length) return "切入建议：$200-250；当前车型缺少有效市场数据，建议先按核心价格段验证。";
 
     const entryBandStats = bandStats.filter((band) => band.low >= 150 && band.high !== null && band.high <= 300);
-    if (!entryBandStats.length) return "暂不确认：当前车型在 $150-300 目标价格段没有有效的市场销售额与 ASIN 数据。";
+    if (!entryBandStats.length) return "切入建议：$200-250；当前车型在核心价格段缺少有效市场数据，建议先按该价格段验证。";
     const efficiencyValues = entryBandStats.map((band) => band.gmvPerAsin).sort((a, b) => a - b);
     const efficiencyMedian = efficiencyValues[Math.floor(efficiencyValues.length / 2)];
     const totalVehicleAsins = Number(marketVehicle.marketAsinCount) || bandStats.reduce((sum, band) => sum + band.asinCount, 0);
@@ -301,13 +301,20 @@
       .filter((band) => !band.bandProducts.length || band.joytutusShare <= 0.05)
       .sort((a, b) => b.gmvPerAsin - a.gmvPerAsin || b.gmv2026 - a.gmv2026);
     const candidate = candidates[0];
-    if (candidate) {
-      const productStatus = candidate.bandProducts.length
-        ? `Joytutus 已开发产品销售额占比仅 ${(candidate.joytutusShare * 100).toFixed(1)}%`
-        : "当前暂无 Joytutus 产品";
-      return `确认建议：${candidate.label} 单 ASIN 销售额约 ${formatMoney(candidate.gmvPerAsin)}，市场仅 ${formatNumber(candidate.asinCount)} 个 ASIN；${productStatus}，建议确认开发。`;
-    }
-    return "暂不确认：当前没有同时满足单 ASIN 销售额较高、ASIN 数不过密且 Joytutus 缺位或销售额较低的价格段。";
+    const fallbackBand = entryBandStats
+      .map((band) => {
+        const gapScore = !band.bandProducts.length || band.joytutusShare <= 0.05 ? 1 : 0;
+        const densityAdjustedEfficiency = band.gmvPerAsin * (1 - Math.min(0.5, band.asinCount / Math.max(1, totalVehicleAsins)));
+        return { ...band, gapScore, densityAdjustedEfficiency };
+      })
+      .sort((a, b) => b.gapScore - a.gapScore || b.densityAdjustedEfficiency - a.densityAdjustedEfficiency || b.gmv2026 - a.gmv2026)[0];
+    const recommendation = candidate || fallbackBand;
+    const productStatus = recommendation.bandProducts.length
+      ? `Joytutus 已开发产品销售额占比仅 ${(recommendation.joytutusShare * 100).toFixed(1)}%`
+      : "当前暂无 Joytutus 产品";
+    const adviceLabel = candidate ? "确认建议" : "切入建议";
+    const adviceAction = candidate ? "建议确认开发" : "建议优先从该价格段切入";
+    return `${adviceLabel}：${recommendation.label} 单 ASIN 销售额约 ${formatMoney(recommendation.gmvPerAsin)}，市场 ${formatNumber(recommendation.asinCount)} 个 ASIN；${productStatus}，${adviceAction}。`;
   }
 
   function renderDetailCharts() {
