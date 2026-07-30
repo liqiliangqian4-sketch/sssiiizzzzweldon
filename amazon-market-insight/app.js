@@ -19,7 +19,8 @@ const stateNames = { success: "成功", limited: "受限", action_required: "需
 const confidenceNames = { 高: "高", 中: "中", 低: "低", high: "高", medium: "中", low: "低" };
 const appConfig = globalThis.OPC_APP_CONFIG || {};
 const apiBaseUrl = String(appConfig.apiBaseUrl || "").replace(/\/$/, "");
-const staticMode = Boolean(appConfig.staticMode) && !apiBaseUrl;
+const staticMode = Boolean(appConfig.staticMode);
+let apiAvailable = !staticMode;
 
 let currentReport = null;
 let loadingTimer = null;
@@ -429,7 +430,15 @@ async function loadReference({ scroll = false } = {}) {
   const sources = ["amazon", "reference-workbook"];
   setLoading(true, sources);
   try {
-    const report = await fetchReport(staticMode ? "./data/reference-report.json" : apiEndpoint("/api/reference"));
+    let report;
+    try {
+      report = await fetchReport(apiEndpoint("/api/reference"));
+      apiAvailable = true;
+    } catch (apiError) {
+      if (!staticMode) throw apiError;
+      apiAvailable = false;
+      report = await fetchReport("./data/reference-report.json");
+    }
     $("#progressFill").style.width = "100%";
     renderReport(report);
     if (scroll) $("#overview").scrollIntoView({ behavior: "smooth" });
@@ -443,10 +452,6 @@ async function loadReference({ scroll = false } = {}) {
 
 async function runResearch(event) {
   event.preventDefault();
-  if (staticMode) {
-    showError("GitHub Pages 当前展示可追溯的晴雨挡参考报告。实时全网采集需要运行仓库中的 Python 研究 API。", true);
-    return;
-  }
   const query = $("#queryInput").value.trim();
   const sources = selectedSources();
   if (!query) return;
@@ -462,11 +467,15 @@ async function runResearch(event) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query, market: $("#marketSelect").value, depth, sources }),
     });
+    apiAvailable = true;
     $("#progressFill").style.width = "100%";
     renderReport(report);
     $("#overview").scrollIntoView({ behavior: "smooth" });
   } catch (error) {
-    showError(error.message, true);
+    const offline = staticMode && /Failed to fetch|NetworkError|Load failed|fetch/i.test(error.message);
+    showError(offline
+      ? "未连接本机研究引擎。请保持 OPC 洞察服务在 127.0.0.1:4177 运行后重试。"
+      : error.message, true);
   } finally {
     setLoading(false);
   }
@@ -494,16 +503,17 @@ function bindNavigation() {
 }
 
 async function checkHealth() {
-  if (staticMode) {
-    $("#serviceLabel").textContent = "GitHub 参考报告版";
-    return;
-  }
   try {
     const result = await fetchReport(apiEndpoint("/api/health"));
-    $("#serviceLabel").textContent = `${result.service} ${result.version}`;
+    apiAvailable = true;
+    $("#serviceLabel").textContent = staticMode
+      ? `本机实时引擎 ${result.version}`
+      : `${result.service} ${result.version}`;
+    $(".service-state i").style.background = "";
   } catch {
-    $("#serviceLabel").textContent = "服务异常";
-    $(".service-state i").style.background = "#b42318";
+    apiAvailable = false;
+    $("#serviceLabel").textContent = staticMode ? "GitHub 参考报告版" : "服务异常";
+    $(".service-state i").style.background = staticMode ? "#b98210" : "#b42318";
   }
 }
 
