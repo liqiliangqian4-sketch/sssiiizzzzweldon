@@ -426,6 +426,16 @@ function apiEndpoint(path) {
   return apiBaseUrl ? `${apiBaseUrl}${path}` : path;
 }
 
+function openLocalResearch(query, market, depth, sources) {
+  const localUrl = new URL(apiBaseUrl || "http://127.0.0.1:4177");
+  localUrl.searchParams.set("query", query);
+  localUrl.searchParams.set("market", market);
+  localUrl.searchParams.set("depth", depth);
+  localUrl.searchParams.set("sources", sources.join(","));
+  localUrl.searchParams.set("autorun", "1");
+  window.location.assign(localUrl.href);
+}
+
 async function loadReference({ scroll = false } = {}) {
   const sources = ["amazon", "reference-workbook"];
   setLoading(true, sources);
@@ -460,6 +470,10 @@ async function runResearch(event) {
     return;
   }
   const depth = $('input[name="depth"]:checked').value;
+  if (staticMode) {
+    openLocalResearch(query, $("#marketSelect").value, depth, sources);
+    return;
+  }
   setLoading(true, sources);
   try {
     const report = await fetchReport(apiEndpoint("/api/research"), {
@@ -502,6 +516,34 @@ function bindNavigation() {
   $("#mobileNavButton").addEventListener("click", () => $(".sidebar").classList.toggle("open"));
 }
 
+function applyLaunchRequest() {
+  if (staticMode) return false;
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("query")?.trim();
+  if (!query) return false;
+
+  $("#queryInput").value = query;
+  const market = params.get("market");
+  if ([...$("#marketSelect").options].some((option) => option.value === market)) {
+    $("#marketSelect").value = market;
+  }
+  const depth = params.get("depth");
+  const depthInput = $$('input[name="depth"]').find((input) => input.value === depth);
+  if (depthInput) depthInput.checked = true;
+  const requestedSources = new Set((params.get("sources") || "").split(",").filter(Boolean));
+  if (requestedSources.size) {
+    $$("#sourceOptions input").forEach((input) => { input.checked = requestedSources.has(input.value); });
+  }
+  updateSourceCount();
+
+  if (params.get("autorun") === "1") {
+    window.history.replaceState({}, "", window.location.pathname);
+    setTimeout(() => $("#researchForm").requestSubmit(), 0);
+    return true;
+  }
+  return false;
+}
+
 async function checkHealth() {
   try {
     const result = await fetchReport(apiEndpoint("/api/health"));
@@ -542,8 +584,9 @@ function init() {
     localStorage.setItem("opc-insight-sources-version", sourceSettingsVersion);
   }
   updateSourceCount();
+  const launchedFromGitHub = applyLaunchRequest();
   checkHealth();
-  loadReference();
+  if (!launchedFromGitHub) loadReference();
 }
 
 init();
