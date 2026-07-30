@@ -1,0 +1,1107 @@
+{
+  "query": "SUV Tents",
+  "englishQuery": "SUV Tents",
+  "market": "US",
+  "generatedAt": "2026-07-30T19:34:52.852333+08:00",
+  "executive": {
+    "verdict": "条件进入",
+    "tone": "conditional",
+    "score": 61,
+    "confidence": 80,
+    "oneLiner": "需求信号存在，但必须围绕“耐久与材料”建立可验证差异化。",
+    "condition": "先完成样品、成本和核心风险验证，再放大采购。"
+  },
+  "signals": {
+    "demand": 50,
+    "competition": 33,
+    "painGap": 82,
+    "premium": 42,
+    "feasibility": 62,
+    "labels": "所有评分均为方向性信号指数，不是官方市场规模或销量估算。"
+  },
+  "marketStats": {
+    "competitorCount": 0,
+    "priceMin": null,
+    "priceMedian": null,
+    "priceMax": null,
+    "averageRating": null,
+    "medianReviewCount": null,
+    "sourceCoverage": 80,
+    "evidenceCount": 38
+  },
+  "pricing": {
+    "entry": 29.99,
+    "core": 49.99,
+    "premium": 69.99,
+    "currency": "USD",
+    "logic": "按可见市场样本四分位数生成；上市前必须复核贡献利润。"
+  },
+  "competitors": [],
+  "channelOverview": [
+    {
+      "key": "retail",
+      "title": "零售需求",
+      "sources": [
+        "amazon"
+      ],
+      "count": 0,
+      "state": "limited",
+      "purpose": "价格、评论量与竞品密度"
+    },
+    {
+      "key": "voice",
+      "title": "用户声音",
+      "sources": [
+        "reddit",
+        "youtube"
+      ],
+      "count": 43,
+      "state": "success",
+      "purpose": "使用场景、抱怨、安装与替代方案"
+    },
+    {
+      "key": "trend",
+      "title": "趋势内容",
+      "sources": [
+        "news"
+      ],
+      "count": 2,
+      "state": "success",
+      "purpose": "新品、品牌和行业时效信号"
+    },
+    {
+      "key": "supply",
+      "title": "出口供应端",
+      "sources": [
+        "alibaba"
+      ],
+      "count": 24,
+      "state": "success",
+      "purpose": "出口供应商、起订量、批发价与产品同质化"
+    }
+  ],
+  "voices": [
+    {
+      "source": "reddit",
+      "title": "Car Camping",
+      "snippet": "For those who drive their tent [link]",
+      "context": "r/carcamping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/carcamping/"
+    },
+    {
+      "source": "reddit",
+      "title": "A subreddit for gear heads.",
+      "snippet": "A community to get advice and to show off camping and backpacking gear. Helpful folks who love the hobby as much as you do. Please note: We may initiate another blackout to further protest the API changes. Some of the largest subreddits such as r/funny and r/teenagers are going private indefinitely. [link]",
+      "context": "r/CampingGear",
+      "metric": null,
+      "url": "https://www.reddit.com/r/CampingGear/"
+    },
+    {
+      "source": "reddit",
+      "title": "r/Camping",
+      "snippet": "A subreddit for campers concerned more about the act of recreational camping and less concerned about hiking long distances or light gear. Primarily for tent/hammock camping. No RV camping here. [link]",
+      "context": "r/camping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/camping/"
+    },
+    {
+      "source": "reddit",
+      "title": "Had never went kayaking before, bought a kayak few days ago. Have never went camping before, just bought a SUV-tent.",
+      "snippet": "Costco is turning me into an adventure seeker. submitted by /u/vreggie to r/Costco [link] [comments]",
+      "context": "r/Costco",
+      "metric": null,
+      "url": "https://www.reddit.com/r/Costco/comments/153h8fj/had_never_went_kayaking_before_bought_a_kayak_few/"
+    },
+    {
+      "source": "reddit",
+      "title": "KingCamp BOUNDLESS AIR3 Inflatable SUV Tent",
+      "snippet": "First family camping trip with our new KingCamp SUV tent. There weren’t many reviews available but it worked out very well paired with our EV9! Great construction/durable, fast set-up and takedown, good insulation/hatch seal, darkened bedroom partition with windows/skylight. Lots of great features and creature comforts. 6-8 person tent. submitted by /u/corpsec to r/KiaEV9 [link] [comments]",
+      "context": "r/KiaEV9",
+      "metric": null,
+      "url": "https://www.reddit.com/r/KiaEV9/comments/1ukruzx/kingcamp_boundless_air3_inflatable_suv_tent/"
+    },
+    {
+      "source": "reddit",
+      "title": "I'm so sorry Hana, I failed you...",
+      "snippet": "I just lost my mini poodle, Hana earlier today. She just turned 3 years old a few weeks ago and during her young life, she accompanied me on 20+ trips in the backcountry. Whether it was keeping watch on my canoe, chasing the mice away at camp or sharing my sleeping bag in the tent, we were inseparable. But I failed her this morning. I parked my car on the far side of my street in front of my home and let go of her leash and told her to wait at the front door, which she does all the time. I unloaded my car, waited for an SUV to pass by before crossing when I saw my lifeless girl on the side of the street. She had run back to check on me and had gotten run over. I rushed over but it was quite obvious that nothing could be done. I could only put my hand on her still warm body and cry out that I was so sorry. It was such a preventable incident and my lapse in judgement failed her. I'm still ",
+      "context": "r/poodles",
+      "metric": null,
+      "url": "https://www.reddit.com/r/poodles/comments/1onml80/im_so_sorry_hana_i_failed_you/"
+    },
+    {
+      "source": "reddit",
+      "title": "Taylor Swift, Travis Kelce married as wedding celebration held at Madison Square Garden",
+      "snippet": "After months of speculation and predictions , Taylor Swift and Travis Kelce were married as they celebrated their wedding with hundreds of guests Friday at Madison Square Garden in New York City. A representative for Swift confirmed in a statement provided to CBS News that the two were married in a ceremony officiated by comedian Adam Sandler. The couple had no bridesmaids or groomsmen. Swift's brother, Austin Swift, served as her \"Man of Honor,\" the representative said, while Kelce's brother, retired NFL offensive lineman Jason Kelce, served as Kelce's best man. The couple welcomed around 1,000 guests at Madison Square Garden to celebrate their marriage, according to law enforcement sources familiar with the security planning. It was not immediately clear if the wedding ceremony occurred at Madison Square Garden, or at some point before. Large black SUVs were seen starting to arrive at ",
+      "context": "r/TaylorSwift",
+      "metric": null,
+      "url": "https://www.reddit.com/r/TaylorSwift/comments/1umu5da/taylor_swift_travis_kelce_married_as_wedding/"
+    },
+    {
+      "source": "reddit",
+      "title": "Tricked out SUV with roof tent in Puerto Rico",
+      "snippet": "submitted by /u/anthony113 to r/Perfectfit [link] [comments]",
+      "context": "r/Perfectfit",
+      "metric": null,
+      "url": "https://www.reddit.com/r/Perfectfit/comments/1py3x9h/tricked_out_suv_with_roof_tent_in_puerto_rico/"
+    },
+    {
+      "source": "youtube",
+      "title": "💥Top 4 SUV Tents for Camping on Amazon",
+      "snippet": "Random Finds",
+      "context": "1 year ago",
+      "metric": "67,762 views",
+      "url": "https://www.youtube.com/watch?v=YAiiecCiZcA"
+    },
+    {
+      "source": "youtube",
+      "title": "✅Amazon’s Best SUV Tents: 5 Top-Rated Picks Under $300",
+      "snippet": "Gadgets Tab",
+      "context": "3 months ago",
+      "metric": "2,251 views",
+      "url": "https://www.youtube.com/watch?v=aqgJsfDl-IU"
+    },
+    {
+      "source": "youtube",
+      "title": "▶️ Top 5 Best Tailgate Tents 2026 | Turn Your SUV Into a Camper!",
+      "snippet": "HypeTech Picks",
+      "context": "6 months ago",
+      "metric": "9,760 views",
+      "url": "https://www.youtube.com/watch?v=j7q74MYUpyA"
+    },
+    {
+      "source": "youtube",
+      "title": "🏕️ 5 Best SUV Tents for Camping in 2026 (Ultimate Buyer's Guide)",
+      "snippet": "ReignOfWeapons",
+      "context": "1 month ago",
+      "metric": "2,638 views",
+      "url": "https://www.youtube.com/watch?v=pST3qGZ-5Ek"
+    },
+    {
+      "source": "youtube",
+      "title": "Top 5 Best SUV Tents for Camping on Amazon 2026 | Waterproof, Spacious & Easy Setup Car Tents.",
+      "snippet": "Review with Harper & Max",
+      "context": "9 months ago",
+      "metric": "11,183 views",
+      "url": "https://www.youtube.com/watch?v=0t-7mVKrIls"
+    },
+    {
+      "source": "youtube",
+      "title": "Top 8 Best SUV Tents for Camping in 2025 🚙🏕| Spacious, Waterproof & Easy Setup",
+      "snippet": "Tech Bite",
+      "context": "1 year ago",
+      "metric": "41,316 views",
+      "url": "https://www.youtube.com/watch?v=rhV2G3AiMaE"
+    }
+  ],
+  "supply": {
+    "query": "SUV Tents",
+    "items": [
+      {
+        "id": "807005243544",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/807005243544.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "572040471421",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/572040471421.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "427562014475",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/427562014475.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "634643771667",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/634643771667.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "723357774907",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/723357774907.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "655146402393",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/655146402393.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "698223750961",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/698223750961.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "441091290862",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/441091290862.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "814791753064",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/814791753064.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "205329476552",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/205329476552.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "156527933105",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/156527933105.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "276915630743",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/276915630743.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "732272126353",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/732272126353.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "645087609238",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/645087609238.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "790545424233",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/790545424233.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "683515417302",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/683515417302.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "517777692657",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/517777692657.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601510825924",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601510825924.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600959447684",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600959447684.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600591457456",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600591457456.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600966214859",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600966214859.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600961319882",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600961319882.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600656075361",
+        "title": "Kawagebo Kamp (KK) 24' X 15.8' Outdoor Glamping Waterproof Steel Frame Oxford Cotton Canvas Wall Tent With Stove Jack",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H73b54b4044b2487eb8f0628bfbce6619z.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600656075361.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600959479375",
+        "title": "Kawagebo Kamp (KK) 13.8' X 11.8' Glamping Waterproof Steel Frame Oxford Cotton Canvas Wall Tent With Stove Jack",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Ha0c2156572f548bdadcdd0f248e59a68S.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600959479375.html",
+        "source": "Alibaba.com"
+      }
+    ],
+    "priceBands": [],
+    "guidance": "已获取供应端样本；先比较材料、尺寸、MOQ、工艺和备品能力，不要直接用批发价反推落地成本。"
+  },
+  "pains": [
+    {
+      "key": "durability",
+      "label": "耐久与材料",
+      "count": 7,
+      "examples": [
+        "I'm so sorry Hana, I failed you... I just lost my mini poodle, Hana earlier today. She just turned 3 years old a few weeks ago and during her young life, she accompanied me on 20+ ",
+        "What's the purpose of those SUV connected tents? I don't mean rooftop tents. I'm talking about the ones that connect to the rear hatch. When I was younger, I thought you could mayb"
+      ],
+      "strength": 100,
+      "share": 54,
+      "severity": "高"
+    },
+    {
+      "key": "appearance",
+      "label": "外观与质感",
+      "count": 6,
+      "examples": [
+        "Testing out an SUV tent I grew up camping and am super excited to try car camping soon! I know for some people, this looks too extra — why add a tent when you can just use the car?",
+        "What's the purpose of those SUV connected tents? I don't mean rooftop tents. I'm talking about the ones that connect to the rear hatch. When I was younger, I thought you could mayb"
+      ],
+      "strength": 86,
+      "share": 46,
+      "severity": "高"
+    },
+    {
+      "key": "fitment",
+      "label": "适配与尺寸",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "adhesion",
+      "label": "粘接与固定",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "installation",
+      "label": "安装与说明",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "noise",
+      "label": "噪音与行驶体验",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "packaging",
+      "label": "包装与运输",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    },
+    {
+      "key": "value",
+      "label": "价格与价值感",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    }
+  ],
+  "personas": [
+    {
+      "name": "精准替换型",
+      "behavior": "先核对型号和尺寸，再看差评确认风险。",
+      "value": "高转化、低容错",
+      "priority": "核心"
+    },
+    {
+      "name": "省心安装型",
+      "behavior": "偏好免钻孔、预装和清晰视频。",
+      "value": "愿为节省时间付费",
+      "priority": "核心"
+    },
+    {
+      "name": "高端升级型",
+      "behavior": "比较材料、外观和套装完整度。",
+      "value": "高客单与配件机会",
+      "priority": "次核心"
+    },
+    {
+      "name": "风险敏感型",
+      "behavior": "反复查看退货、质保和真实图片。",
+      "value": "影响口碑与退货",
+      "priority": "守门"
+    }
+  ],
+  "emotions": {
+    "pain": "花钱之后仍然被“耐久与材料”拖回返工、退货和解释成本。",
+    "itch": "希望自己的选择看起来专业、可靠，买的是成熟方案而不是便宜试验品。",
+    "pleasure": "第一次安装就严丝合缝，使用过程中不需要再想起它。"
+  },
+  "opportunities": [
+    {
+      "priority": "P0",
+      "title": "材料与耐候升级",
+      "action": "提高抗冲击、耐候、耐刮能力，并把材料和测试结果可视化。",
+      "cost": "中",
+      "evidenceCount": 7,
+      "evidenceLabel": "耐久与材料",
+      "validation": "高低温、UV和冲击测试通过",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "高质感视觉语言",
+      "action": "建立材料、颜色、表面处理和整车比例的统一设计规范。",
+      "cost": "中",
+      "evidenceCount": 6,
+      "evidenceLabel": "外观与质感",
+      "validation": "盲测偏好显著高于基准款",
+      "evidenceStatus": "evidence-backed"
+    }
+  ],
+  "productDefinition": {
+    "concept": "面向主流用户的 SUV Tents 可靠性升级款",
+    "coreUser": "正在替换低质量旧品、愿意为更低安装风险付费的实用型买家",
+    "job": "在不增加安装负担的前提下，稳定解决“耐久与材料”并降低误购和退货。",
+    "mustHave": [
+      "材料与耐候升级"
+    ],
+    "differentiators": [
+      "高质感视觉语言"
+    ],
+    "doNotClaim": [
+      "未验证的通用适配",
+      "没有测试报告支撑的承重/寿命",
+      "所有场景零故障"
+    ]
+  },
+  "keywords": [
+    {
+      "keyword": "suv",
+      "frequency": 1,
+      "intent": "长尾"
+    },
+    {
+      "keyword": "tents",
+      "frequency": 1,
+      "intent": "长尾"
+    }
+  ],
+  "keywordGroups": {
+    "core": [],
+    "attributes": [],
+    "longTail": [
+      "suv",
+      "tents"
+    ]
+  },
+  "launchPlan": [
+    {
+      "phase": "0-15天",
+      "title": "证据补齐",
+      "owner": "市场研究/数据",
+      "actions": [
+        "补齐Top 20竞品参数与价格",
+        "抓取至少100条有效评论",
+        "确认目标用户与核心场景"
+      ],
+      "gate": "关键结论均有来源，未知项显式列出"
+    },
+    {
+      "phase": "16-45天",
+      "title": "产品验证",
+      "owner": "产品/研发/质量",
+      "actions": [
+        "冻结P0规格与测试计划",
+        "完成首轮样品和对标测试",
+        "核算三档价格与贡献利润"
+      ],
+      "gate": "P0问题闭环，样品通过核心工况"
+    },
+    {
+      "phase": "46-75天",
+      "title": "小批量验证",
+      "owner": "供应链/运营",
+      "actions": [
+        "10-30件试产",
+        "包装与安装盲测",
+        "完成Listing证据素材"
+      ],
+      "gate": "兼容、破损、漏件类问题为0"
+    },
+    {
+      "phase": "76-90天",
+      "title": "上市与复盘",
+      "owner": "运营/客服/数据",
+      "actions": [
+        "上线精确词与长尾词",
+        "逐单标记咨询与退货原因",
+        "第7/14/30天复盘"
+      ],
+      "gate": "达到目标转化且质量指标不恶化"
+    }
+  ],
+  "northStar": {
+    "metric": "有效机会验证率",
+    "definition": "进入样品验证的P0机会中，按期通过核心验收指标的比例。",
+    "guardrails": [
+      "适配/规格误购率",
+      "首月质量客诉率",
+      "贡献利润率",
+      "证据覆盖率"
+    ]
+  },
+  "sourceStatuses": [
+    {
+      "source": "amazon",
+      "state": "limited",
+      "count": 0,
+      "latencyMs": 943,
+      "message": "采集到 0 个搜索商品和 0 条书面评论样本。",
+      "url": "https://www.amazon.com/s?k=SUV+Tents",
+      "meta": {
+        "reviews": [],
+        "reviewMethods": [],
+        "reviewCountType": "written_reviews_only"
+      }
+    },
+    {
+      "source": "reddit",
+      "state": "success",
+      "count": 25,
+      "latencyMs": 1715,
+      "message": "采集到 25 条社区讨论；本次通道：Reddit RSS。",
+      "url": "https://www.reddit.com/search/?q=SUV+Tents&sort=relevance",
+      "meta": {
+        "method": "Reddit RSS",
+        "endpoint": "https://www.reddit.com/search.rss?q=SUV+Tents&sort=relevance&t=all",
+        "fallbackAttempts": []
+      }
+    },
+    {
+      "source": "youtube",
+      "state": "success",
+      "count": 18,
+      "latencyMs": 1853,
+      "message": "采集到 18 个视频及可见需求信号。",
+      "url": "https://www.youtube.com/results?search_query=SUV+Tents",
+      "meta": {}
+    },
+    {
+      "source": "news",
+      "state": "success",
+      "count": 2,
+      "latencyMs": 1352,
+      "message": "从 25 条近期结果中筛出 2 条相关资讯。",
+      "url": "https://news.google.com/rss/search?q=SUV+Tents&hl=en-US&gl=US&ceid=US%3Aen",
+      "meta": {}
+    },
+    {
+      "source": "alibaba",
+      "state": "success",
+      "count": 24,
+      "latencyMs": 2913,
+      "message": "采集到 24 个 Alibaba.com 供应商品样本。",
+      "url": "https://www.alibaba.com/trade/search?SearchText=SUV+Tents",
+      "meta": {}
+    }
+  ],
+  "evidence": [
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "6 Best SUV Tents - Outdoors with Bear Grylls",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1GeFQxcmVwVmhEeElKTllqQXVFUlFUOHhXYUVHczRXalNCT1ZWVnh0dklEckNVaXp5Qk01ajZ2ZjM1VEQ4eVF6Ml9BWGE?oc=5",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "Our List of the 7 Best Car and SUV Tents in 2022 - The Manual",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByaEZYYW44b1YyYnRMM2Vsb3dfSmJfa2pycGhRdGF1X0JhWGVPY29XcnpXQ1JWZ0gyZVpZRFFYR3BkTE16ZFA3aE9zbm9tRVgwQWU4SEFFUXVDTEowejh4djAtMnU?oc=5",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Car Camping",
+      "value": null,
+      "url": "https://www.reddit.com/r/carcamping/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "A subreddit for gear heads.",
+      "value": null,
+      "url": "https://www.reddit.com/r/CampingGear/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "r/Camping",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Had never went kayaking before, bought a kayak few days ago. Have never went camping before, just bought a SUV-tent.",
+      "value": null,
+      "url": "https://www.reddit.com/r/Costco/comments/153h8fj/had_never_went_kayaking_before_bought_a_kayak_few/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "KingCamp BOUNDLESS AIR3 Inflatable SUV Tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/KiaEV9/comments/1ukruzx/kingcamp_boundless_air3_inflatable_suv_tent/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "I'm so sorry Hana, I failed you...",
+      "value": null,
+      "url": "https://www.reddit.com/r/poodles/comments/1onml80/im_so_sorry_hana_i_failed_you/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Taylor Swift, Travis Kelce married as wedding celebration held at Madison Square Garden",
+      "value": null,
+      "url": "https://www.reddit.com/r/TaylorSwift/comments/1umu5da/taylor_swift_travis_kelce_married_as_wedding/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Tricked out SUV with roof tent in Puerto Rico",
+      "value": null,
+      "url": "https://www.reddit.com/r/Perfectfit/comments/1py3x9h/tricked_out_suv_with_roof_tent_in_puerto_rico/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Testing out an SUV tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/carcamping/comments/1t1utcm/testing_out_an_suv_tent/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Waffle House Wedding Weekend",
+      "value": null,
+      "url": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1rjgqd1/waffle_house_wedding_weekend/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "What's the purpose of those SUV connected tents?",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/comments/1k94e7q/whats_the_purpose_of_those_suv_connected_tents/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Xiaomi's first full-size SUV: Sky Nomad N90 spotted in China, 500+km EREV with built-in tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/electricvehicles/comments/1ubls34/xiaomis_first_fullsize_suv_sky_nomad_n90_spotted/",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "💥Top 4 SUV Tents for Camping on Amazon",
+      "value": "67,762 views",
+      "url": "https://www.youtube.com/watch?v=YAiiecCiZcA",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "✅Amazon’s Best SUV Tents: 5 Top-Rated Picks Under $300",
+      "value": "2,251 views",
+      "url": "https://www.youtube.com/watch?v=aqgJsfDl-IU",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "▶️ Top 5 Best Tailgate Tents 2026 | Turn Your SUV Into a Camper!",
+      "value": "9,760 views",
+      "url": "https://www.youtube.com/watch?v=j7q74MYUpyA",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "🏕️ 5 Best SUV Tents for Camping in 2026 (Ultimate Buyer's Guide)",
+      "value": "2,638 views",
+      "url": "https://www.youtube.com/watch?v=pST3qGZ-5Ek",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 5 Best SUV Tents for Camping on Amazon 2026 | Waterproof, Spacious & Easy Setup Car Tents.",
+      "value": "11,183 views",
+      "url": "https://www.youtube.com/watch?v=0t-7mVKrIls",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 8 Best SUV Tents for Camping in 2025 🚙🏕| Spacious, Waterproof & Easy Setup",
+      "value": "41,316 views",
+      "url": "https://www.youtube.com/watch?v=rhV2G3AiMaE",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "✅Best SUV Tent for Camping of 2026",
+      "value": "3,327 views",
+      "url": "https://www.youtube.com/watch?v=2xM_acBNduk",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "SUBARU OUTBACK Car Camping / KingCamp SUV Tent / EBL / Hcalory / Silent Solo Camping",
+      "value": "106,826 views",
+      "url": "https://www.youtube.com/watch?v=mph8hHWsZiQ",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Trekway SUV Tent 6 Month Review",
+      "value": "19,150 views",
+      "url": "https://www.youtube.com/watch?v=-22Fil2G0ww",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "The Top 5 Best SUV Tent in 2026 - Must Watch Before Buying!",
+      "value": "136 views",
+      "url": "https://www.youtube.com/watch?v=AN8Kf1d2Ta4",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Rainy Winter Camping with iKamper Skycamp DLX & Annex Plus | LX470, 4Runner",
+      "value": "587,698 views",
+      "url": "https://www.youtube.com/watch?v=hzUhxews06c",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "KingCamp Car/SUV Tent – Easy Setup + Built-In Projector Screen",
+      "value": "21,817 views",
+      "url": "https://www.youtube.com/watch?v=UxMwUOra5-w",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/807005243544.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/572040471421.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/427562014475.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/634643771667.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/723357774907.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/655146402393.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/698223750961.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/441091290862.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/814791753064.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/205329476552.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/156527933105.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/276915630743.html",
+      "capturedAt": "2026-07-30T11:34:52.851271+00:00",
+      "confidence": "中"
+    }
+  ],
+  "reference": {
+    "used": false,
+    "materials": [],
+    "installMethods": [],
+    "source": null
+  },
+  "methodology": [
+    "多源证据工作流：吸收 IvyeaOps 与 TrendRadar 的方法",
+    "Amazon 品类/关键词/评论结构：吸收 Sorftime 研究技能与 EasyAMZ 字段模型",
+    "Amazon US 书面评论回退：吸收 MIT 许可 amazon-review-scraper 的 Woot 公开端点方法",
+    "Reddit 回退：优先公开 RSS，再回退 JSON/PullPush；参考 BSD-2 PRAW 与 MIT BAScraper 的边界",
+    "供应端研究：Alibaba.com 独立成组，不与 Amazon 零售样本混算",
+    "痛点/痒点/爽点与 P0-P2 机会映射：吸收 Market Insight 方法",
+    "问题定义、竞争、定价、上市门槛、北极星指标与复盘：吸收 Lenny PM Skills 方法"
+  ]
+}
