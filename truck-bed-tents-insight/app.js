@@ -9,6 +9,7 @@ const sourceNames = {
   youtube: "YouTube",
   news: "Google News",
   alibaba: "Alibaba.com",
+  "1688": "1688",
   "reference-workbook": "参考工作簿",
   "amazon-review": "Amazon 评论",
   "amazon-written-review": "Amazon 书面评论",
@@ -27,7 +28,7 @@ let currentReport = null;
 let loadingTimer = null;
 let elapsedTimer = null;
 let toastTimer = null;
-const sourceSettingsVersion = "2026-07-30-five-sources";
+const sourceSettingsVersion = "2026-07-31-six-sources";
 
 function escapeHTML(value) {
   return String(value ?? "")
@@ -234,17 +235,17 @@ function renderSupply(report) {
   const supply = report.supply || {};
   const items = supply.items || [];
   const priceBands = (supply.priceBands || []).map((band) => `<div class="supply-stat"><span>${escapeHTML(band.currency)} 批发价</span><strong>${formatMoney(band.median, band.currency)}</strong><small>${formatMoney(band.min, band.currency)} - ${formatMoney(band.max, band.currency)} · ${formatNumber(band.sampleCount)} 个有价样本</small></div>`).join("");
-  const sourceStatuses = (report.sourceStatuses || []).filter((item) => item.source === "alibaba");
+  const sourceStatuses = (report.sourceStatuses || []).filter((item) => ["alibaba", "1688"].includes(item.source));
   const actionRows = sourceStatuses.map((item) => `<div class="supply-action"><div><strong>${escapeHTML(sourceNames[item.source] || item.source)}</strong><p>${escapeHTML(item.message)}</p></div><span class="state-pill ${escapeHTML(item.state)}">${escapeHTML(stateNames[item.state] || item.state)}</span>${linkButton(item.url, `打开 ${sourceNames[item.source] || item.source}`)}</div>`).join("");
   const rows = items.map((item) => {
     const image = httpUrl(item.image);
     return `<tr><td><div class="product-cell">${image ? `<img src="${escapeHTML(image)}" alt="${escapeHTML(item.title)}" loading="lazy">` : `<span class="image-placeholder" data-icon="package-search"></span>`}<div><strong>${escapeHTML(item.title || "未命名供应商品")}</strong><small>${escapeHTML(item.supplier || item.id || "供应商待采集")}</small></div></div></td><td><strong>${formatMoney(item.price, item.currency || "CNY")}</strong></td><td>${item.moq ? formatNumber(item.moq) : "待采集"}</td><td>${escapeHTML(item.source || "供应端")}</td><td>${linkButton(item.url, "打开供应商品")}</td></tr>`;
   }).join("");
   return `<section class="report-section" id="supply" aria-labelledby="supply-title">
-    ${sectionTitle("supply", "list-filter", "出口供应端洞察", `Alibaba.com 英文检索词：${supply.query || report.englishQuery}；批发价不等于到岸成本`)}
+    ${sectionTitle("supply", "list-filter", "出口供应端洞察", `Alibaba.com / 1688 检索词：${supply.query || report.englishQuery}；批发价不等于到岸成本`)}
     ${priceBands ? `<div class="supply-stats">${priceBands}</div>` : ""}
     <div class="panel supply-guidance"><span data-icon="info"></span><p>${escapeHTML(supply.guidance || "待获取供应样本。")}</p></div>
-    ${items.length ? `<div class="table-wrap" style="margin-top:12px"><table><thead><tr><th style="width:52%">供应商品</th><th style="width:14%">批发价</th><th style="width:12%">MOQ</th><th style="width:14%">来源</th><th style="width:8%">链接</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<div class="panel supply-actions">${actionRows || `<p>未选择 Alibaba.com 数据源。</p>`}</div>`}
+    ${items.length ? `<div class="table-wrap" style="margin-top:12px"><table><thead><tr><th style="width:52%">供应商品</th><th style="width:14%">批发价</th><th style="width:12%">MOQ</th><th style="width:14%">来源</th><th style="width:8%">链接</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<div class="panel supply-actions">${actionRows || `<p>未选择 Alibaba.com / 1688 数据源。</p>`}</div>`}
   </section>`;
 }
 
@@ -593,7 +594,7 @@ function init() {
     const available = new Set($$("#sourceOptions input").map((input) => input.value));
     const migrated = storedVersion === sourceSettingsVersion
       ? saved.filter((source) => available.has(source))
-      : [...new Set([...saved.filter((source) => available.has(source)), "alibaba"])];
+      : [...new Set([...saved.filter((source) => available.has(source)), "alibaba", "1688"])];
     $$("#sourceOptions input").forEach((input) => { input.checked = migrated.includes(input.value); });
     localStorage.setItem("opc-insight-sources", JSON.stringify(migrated));
     localStorage.setItem("opc-insight-sources-version", sourceSettingsVersion);
