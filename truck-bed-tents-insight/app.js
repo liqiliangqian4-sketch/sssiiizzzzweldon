@@ -445,12 +445,12 @@ async function loadReference({ scroll = false } = {}) {
   try {
     let report;
     try {
-      report = await fetchReport(reportOnly ? "./data/reference-report.json" : apiEndpoint("/api/reference"));
+      report = await fetchReport(reportOnly ? "./data/reference-report.json?v=20260731-71453b3" : apiEndpoint("/api/reference"));
       apiAvailable = true;
     } catch (apiError) {
       if (!staticMode) throw apiError;
       apiAvailable = false;
-      report = await fetchReport("./data/reference-report.json");
+      report = await fetchReport("./data/reference-report.json?v=20260731-71453b3");
     }
     $("#progressFill").style.width = "100%";
     if (staticMode) $("#queryInput").value = report.query || "";
