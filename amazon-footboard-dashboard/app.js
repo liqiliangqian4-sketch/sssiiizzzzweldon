@@ -313,8 +313,17 @@
       ? `Joytutus 已开发产品销售额占比仅 ${(recommendation.joytutusShare * 100).toFixed(1)}%`
       : "当前暂无 Joytutus 产品";
     const adviceLabel = candidate ? "确认建议" : "切入建议";
-    const adviceAction = candidate ? "建议确认开发" : "建议优先从该价格段切入";
-    return `${adviceLabel}：${recommendation.label} 单 ASIN 销售额约 ${formatMoney(recommendation.gmvPerAsin)}，市场 ${formatNumber(recommendation.asinCount)} 个 ASIN；${productStatus}，${adviceAction}。`;
+    const namedGroups = (marketVehicle.groups || [])
+      .filter((group) => Number(group.marketGmv2026) > 0)
+      .sort((a, b) => (Number(b.marketGmv2026) || 0) - (Number(a.marketGmv2026) || 0));
+    const priorityGroup = namedGroups.find((group) => !/not stated|not specified|未明确|未说明/i.test(`${group.yearRange} ${group.model}`)) || namedGroups[0];
+    const fitmentSummary = priorityGroup
+      ? `优先细分 ${priorityGroup.yearRange} · ${priorityGroup.model}（细分总销售额 ${formatMoney(priorityGroup.marketGmv2026)}，${formatNumber(priorityGroup.marketAsinCount)} 个 ASIN）`
+      : `优先细分 ${marketVehicle.vehicle} 主流年款与车型配置`;
+    const productAction = products.length
+      ? "在现有产品基础上补齐该年款/车厢配置，优先做结构或外观差异化"
+      : "建议立项开发该年款/车厢配置，先验证核心结构和适配范围";
+    return `${adviceLabel}：${recommendation.label}；${fitmentSummary}。${productStatus}，${productAction}。`;
   }
 
   function renderDetailCharts() {
@@ -369,10 +378,11 @@
 
   function renderMarketProducts(group) {
     return `<div class="coverage-product-table">
-      <div class="coverage-product-grid coverage-product-head"><span>ASIN</span><span>品牌</span><span>Amazon 标题</span></div>
+      <div class="coverage-product-grid coverage-product-head"><span>ASIN</span><span>品牌</span><span>2026 总 GMV</span><span>Amazon 标题</span></div>
       ${(group.products || []).map((product) => `<div class="coverage-product-grid coverage-product-item">
         <a class="coverage-detail-asin" href="${escapeHtml(product.link)}" target="_blank" rel="noreferrer">${escapeHtml(product.asin)}</a>
         <span>${escapeHtml(product.brand)}${knownJoytutusAsins.has(product.asin) ? ` <b class="coverage-brand-badge">Joytutus</b>` : ""}</span>
+        <span class="coverage-product-gmv">${formatMoney(product.gmv2026)}<small>月均 ${formatMoney(product.monthlyGmv)}</small></span>
         <span class="coverage-product-title">${escapeHtml(product.title)}</span>
       </div>`).join("")}
     </div>`;
@@ -385,10 +395,14 @@
       <div class="coverage-model-grid coverage-model-head"><span>年份区间 / 型号</span><span>明细</span></div>
       ${marketVehicle.groups.map((group, index) => {
         const groupId = `${coverageRowKey(row.vehicle)}-model-${index}`;
+        const groupGmv = Number(group.marketGmv2026) || 0;
+        const groupAsinCount = Number(group.marketAsinCount) || 0;
+        const groupMonthlyGmv = Number(group.marketMonthlyGmv) || (groupGmv / marketMonths);
+        const groupProductCount = (group.products || []).length;
         return `<div class="coverage-model-block">
           <div class="coverage-model-grid coverage-model-item">
-            <div><strong>${escapeHtml(group.yearRange)}</strong><small>${escapeHtml(group.model)}</small></div>
-            <button type="button" class="coverage-model-toggle" data-model-group-toggle="${escapeHtml(groupId)}" aria-expanded="false" aria-controls="${escapeHtml(groupId)}"><span class="coverage-chevron" aria-hidden="true">›</span><span>展开</span></button>
+            <div><strong>${escapeHtml(group.yearRange)}</strong><small>${escapeHtml(group.model)}</small><small class="coverage-model-total">市场 ${formatNumber(groupAsinCount)} ASIN · 2026 总销售额 ${formatMoney(groupGmv)} · 月均 ${formatMoney(groupMonthlyGmv)}</small></div>
+            <button type="button" class="coverage-model-toggle" data-model-group-toggle="${escapeHtml(groupId)}" aria-expanded="false" aria-controls="${escapeHtml(groupId)}"><span class="coverage-chevron" aria-hidden="true">›</span><span>展开 ${formatNumber(groupProductCount)} 条链接</span></button>
           </div>
           <div id="${escapeHtml(groupId)}" class="coverage-model-expanded" hidden>
             ${renderMarketProducts(group)}
