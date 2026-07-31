@@ -1,0 +1,2001 @@
+{
+  "query": "SUV Tents",
+  "englishQuery": "SUV Tents",
+  "market": "US",
+  "generatedAt": "2026-07-30T19:51:34.405806+08:00",
+  "executive": {
+    "verdict": "条件进入",
+    "tone": "conditional",
+    "score": 68,
+    "confidence": 96,
+    "oneLiner": "需求信号存在，但必须围绕“耐久与材料”建立可验证差异化。",
+    "condition": "先完成样品、成本和核心风险验证，再放大采购。"
+  },
+  "signals": {
+    "demand": 78,
+    "competition": 89,
+    "painGap": 95,
+    "premium": 84,
+    "feasibility": 62,
+    "labels": "所有评分均为方向性信号指数，不是官方市场规模或销量估算。"
+  },
+  "marketStats": {
+    "competitorCount": 16,
+    "priceMin": 55.99,
+    "priceMedian": 169.99,
+    "priceMax": 1099.0,
+    "averageRating": 4.35,
+    "medianReviewCount": 440,
+    "sourceCoverage": 100,
+    "evidenceCount": 62
+  },
+  "pricing": {
+    "entry": 140.84,
+    "core": 169.99,
+    "premium": 230.36,
+    "currency": "USD",
+    "logic": "按可见市场样本四分位数生成；上市前必须复核贡献利润。"
+  },
+  "competitors": [
+    {
+      "asin": "B0CJ8Y6RTP",
+      "title": "UNP SUV Tents for Camping 6 Person Car Camping Tailgate Tent for Outdoor | Easy Set Up with Rainfly Double Layer Waterproof Family SUV Cabin Tent 10'X9'X78in(H)",
+      "price": 142.4,
+      "rating": 4.4,
+      "reviewCount": 681,
+      "image": "https://m.media-amazon.com/images/I/81U6Rd-BJzL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Camping-6-Person-Tailgate-Outdoor-10x9x78in/dp/B0CHY6G2SV",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0H7RRVCN4",
+      "title": "SUV Tent, Car Tents for Camping, Universal SUV Tailgate Tent | 10x9ft Large, PU3000 Waterproof, Camping Tent Universal Compatible with SUV, CUV, Easy Setup Standalone Shelter for Outdoor",
+      "price": 119.99,
+      "rating": 5.0,
+      "reviewCount": 7,
+      "image": "https://m.media-amazon.com/images/I/81Vakb5nuGL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/WildFinder-Tents-Camping-Universal-Tailgate/dp/B0H7RRVCN4",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GXT6ZFD7",
+      "title": "Happy Travel SUV Tents for Camping, 6 Person Instant Car Tent with Rainfly | 60 Seconds Easy Setup Pop up Tent, Waterproof Car Tailgate Tent, Cabin Tent with Expandable Carry Bag, 10'W X 10'L X 7.1'H",
+      "price": 219.99,
+      "rating": 4.7,
+      "reviewCount": 28,
+      "image": "https://m.media-amazon.com/images/I/61AA5NFJ+UL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Travel-Camping-Person-Instant-Rainfly/dp/B0GXT6ZFD7",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DMSZSQN5",
+      "title": "SUV Tent, Rectangle Car Tent for Family, Waterproof & Windproof for Car Camping, Large Camping Tents with Storage Bag, SUV, Van, Jeep",
+      "price": 179.99,
+      "rating": 4.2,
+      "reviewCount": 172,
+      "image": "https://m.media-amazon.com/images/I/7164uCMXwML._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/WildFinder-Rectangle-Waterproof-Windproof-Camping/dp/B0DMSZSQN5",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0CT87D3MV",
+      "title": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "price": 227.98,
+      "rating": 4.4,
+      "reviewCount": 679,
+      "image": "https://m.media-amazon.com/images/I/71tpZH5RA4L._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/TIMBER-RIDGE-Weather-Resistant-Portable/dp/B0DSBJX8Q1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0CGX2XLXW",
+      "title": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "price": 199.99,
+      "rating": 4.4,
+      "reviewCount": 679,
+      "image": "https://m.media-amazon.com/images/I/81Qv9T+bQJL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Timber-Truck-Bed-Tents-Camping-Rainfly-Storage/dp/B0DSBJX8Q1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0C9Z6VYGW",
+      "title": "GoHimal SUV Tent for Camping, 8' W x 8' L x 7.2' H, for 5-8 Person, Green | Waterproof PU3000mm, Spacious Double Layer Design, Includes Rainfly and Storage Bag, 4-Season for Family Outdoor Adventures",
+      "price": 129.99,
+      "rating": 4.2,
+      "reviewCount": 419,
+      "image": "https://m.media-amazon.com/images/I/71KEO2fwvTL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/GoHimal-Camping-Waterproof-PU3000mm-Spacious/dp/B0C9Z6YK4Z",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0FSKHTV4K",
+      "title": "5/6 Person SUV Tent for Camping, SUV Tailgate Tent,Truck Car Tent Weather Resistant Portable for Car SUV Van Camping, Includes Rainfly and Storage Bag, 10' W X 8' L X 7.1' H",
+      "price": 142.16,
+      "rating": 4.0,
+      "reviewCount": 15,
+      "image": "https://m.media-amazon.com/images/I/61splt6r54L._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Camping-Tailgate-Weather-Resistant-Portable/dp/B0GDG7QBLB",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0FT2K2QBH",
+      "title": "FanttikOutdoor Beta C6 Apex SUV Tent 6 Person Instant Cabin Car Tent Setup in 60 Seconds with Rainfly & Windproof Portable with Carry Bag for Family Camping, Upgraded Ventilation, Khaki",
+      "price": 263.99,
+      "rating": 4.3,
+      "reviewCount": 39,
+      "image": "https://m.media-amazon.com/images/I/61XkspJCCWL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/FanttikOutdoor-Windproof-Portable-Upgraded-Ventilation/dp/B0FT2K2QBH",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B08MT3463Z",
+      "title": "HASIKA SUV Tailgate Tent, 2-Person Car Camping Awning | 3000mm Waterproof & UPF 50+. Fits most SUV and Hatchback. 2-Min Setup Road Trip Essentials for Couples and Pets Black",
+      "price": 55.99,
+      "rating": 4.4,
+      "reviewCount": 1715,
+      "image": "https://m.media-amazon.com/images/I/71xW5hxkHEL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Hasika-Tailgate-Awning-Travel-Waterproof/dp/B08MT3463Z",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DSJ1NLZ1",
+      "title": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "price": 239.99,
+      "rating": 4.4,
+      "reviewCount": 679,
+      "image": "https://m.media-amazon.com/images/I/71OhaKbzx+L._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/TIMBER-RIDGE-Camping-Resistant-Portable/dp/B0DSBJX8Q1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0D8KQV4ZH",
+      "title": "UNP SUV Tents for Camping 6 Person Car Camping Tailgate Tent for Outdoor | Easy Set Up with Rainfly Double Layer Waterproof Family SUV Cabin Tent 10'X9'X78in(H)",
+      "price": 149.99,
+      "rating": 4.4,
+      "reviewCount": 681,
+      "image": "https://m.media-amazon.com/images/I/81jUUKJ-ywL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Camping-6-Person-Tailgate-Outdoor-10x9x78in/dp/B0CHY6G2SV",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DZMZFWYX",
+      "title": "San Hima SUV Tailgate Tent for Camping, Car Tent with Detachable Awning, Waterproof 3000mm & UV50+ 210D Oxford, Fits SUV Van Minivan Jeep CUV Model Y, Windproof with Storage Bag",
+      "price": 159.99,
+      "rating": 4.0,
+      "reviewCount": 66,
+      "image": "https://m.media-amazon.com/images/I/51Y5+4Pf6FL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/SanHima-SUV-Tent-Camping-Rainfly/dp/B0DZMZFWYX",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DPNC8F91",
+      "title": "Adventurer Pro Rooftop Tent Hard Shell with Side Awning&LED Light Strip, 2-3 Person Roof Top Tent for 4 Season Camping, Aluminum Pop Up Roof Tent for Truck Jeep SUV Van Trailer",
+      "price": 1099.0,
+      "rating": 4.5,
+      "reviewCount": 75,
+      "image": "https://m.media-amazon.com/images/I/71tOkiJzOmL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/Adventurer-Pro-Rooftop-Replaceable-Aluminum/dp/B0DPNC8F91",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DSJ1J6FV",
+      "title": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "price": 237.49,
+      "rating": 4.4,
+      "reviewCount": 679,
+      "image": "https://m.media-amazon.com/images/I/71upN+DDehL._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/TIMBER-RIDGE-Camping-Resistant-Portable/dp/B0DSBJX8Q1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0C5JGHMQY",
+      "title": "VEVOR SUV or Pickup Truck Camping Tents, Waterproof Double Layer Design with Carry Bag, Accommodates 2-9 Persons for Outdoor Activities",
+      "price": 136.9,
+      "rating": 3.9,
+      "reviewCount": 461,
+      "image": "https://m.media-amazon.com/images/I/6118tUAT0-L._AC_UY218_.jpg",
+      "url": "https://www.amazon.com/VEVOR-Attachment-Waterproof-PU2000mm-Accommodate/dp/B0C5JGHMQY",
+      "source": "Amazon"
+    }
+  ],
+  "channelOverview": [
+    {
+      "key": "retail",
+      "title": "零售需求",
+      "sources": [
+        "amazon"
+      ],
+      "count": 16,
+      "state": "success",
+      "purpose": "价格、评论量与竞品密度"
+    },
+    {
+      "key": "voice",
+      "title": "用户声音",
+      "sources": [
+        "reddit",
+        "youtube"
+      ],
+      "count": 43,
+      "state": "success",
+      "purpose": "使用场景、抱怨、安装与替代方案"
+    },
+    {
+      "key": "trend",
+      "title": "趋势内容",
+      "sources": [
+        "news"
+      ],
+      "count": 2,
+      "state": "success",
+      "purpose": "新品、品牌和行业时效信号"
+    },
+    {
+      "key": "supply",
+      "title": "出口供应端",
+      "sources": [
+        "alibaba"
+      ],
+      "count": 24,
+      "state": "success",
+      "purpose": "出口供应商、起订量、批发价与产品同质化"
+    }
+  ],
+  "voices": [
+    {
+      "source": "reddit",
+      "title": "Car Camping",
+      "snippet": "For those who drive their tent [link]",
+      "context": "r/carcamping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/carcamping/"
+    },
+    {
+      "source": "reddit",
+      "title": "A subreddit for gear heads.",
+      "snippet": "A community to get advice and to show off camping and backpacking gear. Helpful folks who love the hobby as much as you do. Please note: We may initiate another blackout to further protest the API changes. Some of the largest subreddits such as r/funny and r/teenagers are going private indefinitely. [link]",
+      "context": "r/CampingGear",
+      "metric": null,
+      "url": "https://www.reddit.com/r/CampingGear/"
+    },
+    {
+      "source": "reddit",
+      "title": "r/Camping",
+      "snippet": "A subreddit for campers concerned more about the act of recreational camping and less concerned about hiking long distances or light gear. Primarily for tent/hammock camping. No RV camping here. [link]",
+      "context": "r/camping",
+      "metric": null,
+      "url": "https://www.reddit.com/r/camping/"
+    },
+    {
+      "source": "reddit",
+      "title": "Had never went kayaking before, bought a kayak few days ago. Have never went camping before, just bought a SUV-tent.",
+      "snippet": "Costco is turning me into an adventure seeker. submitted by /u/vreggie to r/Costco [link] [comments]",
+      "context": "r/Costco",
+      "metric": null,
+      "url": "https://www.reddit.com/r/Costco/comments/153h8fj/had_never_went_kayaking_before_bought_a_kayak_few/"
+    },
+    {
+      "source": "reddit",
+      "title": "KingCamp BOUNDLESS AIR3 Inflatable SUV Tent",
+      "snippet": "First family camping trip with our new KingCamp SUV tent. There weren’t many reviews available but it worked out very well paired with our EV9! Great construction/durable, fast set-up and takedown, good insulation/hatch seal, darkened bedroom partition with windows/skylight. Lots of great features and creature comforts. 6-8 person tent. submitted by /u/corpsec to r/KiaEV9 [link] [comments]",
+      "context": "r/KiaEV9",
+      "metric": null,
+      "url": "https://www.reddit.com/r/KiaEV9/comments/1ukruzx/kingcamp_boundless_air3_inflatable_suv_tent/"
+    },
+    {
+      "source": "reddit",
+      "title": "I'm so sorry Hana, I failed you...",
+      "snippet": "I just lost my mini poodle, Hana earlier today. She just turned 3 years old a few weeks ago and during her young life, she accompanied me on 20+ trips in the backcountry. Whether it was keeping watch on my canoe, chasing the mice away at camp or sharing my sleeping bag in the tent, we were inseparable. But I failed her this morning. I parked my car on the far side of my street in front of my home and let go of her leash and told her to wait at the front door, which she does all the time. I unloaded my car, waited for an SUV to pass by before crossing when I saw my lifeless girl on the side of the street. She had run back to check on me and had gotten run over. I rushed over but it was quite obvious that nothing could be done. I could only put my hand on her still warm body and cry out that I was so sorry. It was such a preventable incident and my lapse in judgement failed her. I'm still ",
+      "context": "r/poodles",
+      "metric": null,
+      "url": "https://www.reddit.com/r/poodles/comments/1onml80/im_so_sorry_hana_i_failed_you/"
+    },
+    {
+      "source": "reddit",
+      "title": "Taylor Swift, Travis Kelce married as wedding celebration held at Madison Square Garden",
+      "snippet": "After months of speculation and predictions , Taylor Swift and Travis Kelce were married as they celebrated their wedding with hundreds of guests Friday at Madison Square Garden in New York City. A representative for Swift confirmed in a statement provided to CBS News that the two were married in a ceremony officiated by comedian Adam Sandler. The couple had no bridesmaids or groomsmen. Swift's brother, Austin Swift, served as her \"Man of Honor,\" the representative said, while Kelce's brother, retired NFL offensive lineman Jason Kelce, served as Kelce's best man. The couple welcomed around 1,000 guests at Madison Square Garden to celebrate their marriage, according to law enforcement sources familiar with the security planning. It was not immediately clear if the wedding ceremony occurred at Madison Square Garden, or at some point before. Large black SUVs were seen starting to arrive at ",
+      "context": "r/TaylorSwift",
+      "metric": null,
+      "url": "https://www.reddit.com/r/TaylorSwift/comments/1umu5da/taylor_swift_travis_kelce_married_as_wedding/"
+    },
+    {
+      "source": "reddit",
+      "title": "Tricked out SUV with roof tent in Puerto Rico",
+      "snippet": "submitted by /u/anthony113 to r/Perfectfit [link] [comments]",
+      "context": "r/Perfectfit",
+      "metric": null,
+      "url": "https://www.reddit.com/r/Perfectfit/comments/1py3x9h/tricked_out_suv_with_roof_tent_in_puerto_rico/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Perfect Fit for My Chevy Traverse and Great Quality",
+      "snippet": "This SUV tent was an awesome purchase and worked perfectly for our camping trip. It attached easily and securely to the back of my Chevy Traverse and lined up great with the tailgate. The tent is roomy and gave us plenty of space for extra gear storage and a private changing area, which was a huge bonus and made the whole setup feel so much more comfortable. It really helped keep the car organized and gave us extra living space without feeling cramped. It was easy to set up, easy to attach to the vehicle, and the quality feels really solid. The material and zippers feel durable and it held up great. Overall, I am super happy with this tent and would definitely recommend it if you want extra space and a clean setup for car camping.",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Very cool SUV tent! Great size/great price. Easy to put up/take down. Lightweight/packs up small.",
+      "snippet": "I bought this tent for an upcoming camping trip with my son. It'll be wonderful to have so much space for our gear and my son's sleeping area (I sleep on a cot in my tailgate). It's lightweight, packs up small, easy to put up, and it's tall enough for my 6'2\" son to stand comfortably. It also seems very well made, especially since the price point was so good. We did a test run in my yard (photo included) on my Bronco Sport. We didn't test the rain fly because it's so dry where we live, but I can say that it did great in the strong winds up here. We left it up overnight to see how it handled. It didn't budge! It would have been great to have clear instructions, but we figured it out intuitively. It was simple and quick to put up and attach to the truck. We put it up together but I was able to take it down by myself (I'm 4'11\", so that should illustrate how easy/light it is). It packs up nicely in its bag for easy packing and storage. Note about photo: my tailgate was closed, so the connector looks saggy. It was nice and taut while the truck was open. We love that we'll be able to detach the truck from the tent to go exploring and the tent closes up like a regular one. 10/10 recommend",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Great Tent. Very versatile.",
+      "snippet": "Great Quality Tent! Attached securely to my camper. Take your time and the straps make a lot of sense. Handled wind and rain very well. Set up was easy with a quick review of the instructions. Ventilation was good when windows were opened. Zippers didnt get stuck. Material strong and light. Versatile and reliable tent.",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Easy set up, spacious!",
+      "snippet": "2024 Rav4. Works good. Did not fully extend over suv on madien trip, but have since, fits well!! Spacious and love how easy it is to setup. One person setup in under 30 minutes! Easy to take down & easy to pack up without strugglingto get it back in carry bag.. Durability, time will tell but seems ok. Windy conditions, standard set up without lines. No issues, held up well, just a bit noisy which you will have with most tents. Downside: The top center pole (shorter/4part) does not fit, either a few inches to long or the strap/attachment it goes into were placed/sized incorrectly.",
+      "context": "B0CJ8Y6RTP · 4.0 / 5",
+      "metric": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Fantastic tent!",
+      "snippet": "Fantastic! A perfect fit for my 2018 RAV4. Super easy to set up. Everything worked perfectly (to make it even easier you might prefer to get some heavier tent spikes). The shape of the tent, height, and the zipper/screen windows were perfect. Would 100% buy again.",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "I've been reviewing these tents for years and glad I decided on this one!",
+      "snippet": "I waited a year to review this after using it a couple of times. This is easy to set up; you can do it by yourself, but it's easier with 2 people. This past weekend, it poured rain, and this tent stayed dry! Make sure you put on the rain fly before you set it all the way up, or it's a pain to reach (still didn't get it quite right this time as in the pic, but next time i'll get it on right). I have not quite figured out how to attach it to my rims, but I haven't tried, it works fine just pulled up over the back of my Chevy Equinox. It's also easy to pull away from it if you need to use your vehicle, and easy to put back on. We had a full-size mattress on one side and a cot on the other and there was plenty of room in between and room enough for our bags, clothes, etc.",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Live this!!",
+      "snippet": "Excellent quality, stayed dry inside with the rain. The car fly worked well to keep rain out of car when it rained as well. Didnt have to close hatch as i thought we might. Used several times and thrilled. Lots of space inside, and can roll up the car attachment if need to to keep tent closed if you need to take your car off site. Colors are great. Zippers work well, buckles for car attachment work great also. We took to florida in summer and ran our ac inside at night and it held the cool air in well so we could sleep.",
+      "context": "B0CJ8Y6RTP · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "A bit disappointed so far!",
+      "snippet": "I decided to purchase this tent for my Tesla Y after seeing many positive comments on Amazon. I later learned that the selected reviewers are mostly from a program called Amazon Vine, who provide their \"objective\" feedback for using the products for free. Although I have not had a chance to use this tent, I recently did a \"test run\" in my driveway to see how it works. Upon unboxing, I already found a couple problems with the scratches on the poles (the elastic inside poles seem weak) and the tent materials, specifically the flooring part (already shows signs it may rip/tear easily). I don't think I can exchange it at this point because I already went past the 30 days return policy due to my busy schedule. In any case, I hope I didn't waste my money on this tent. Time will tell once I have a chance to use it. The quality does not seem that great. However, it seems descent for the price. I really want to keep it because it is very roomy yet compact in a carry case. The instructions were very easy to follow as they are printed inside the carry bag. I was going to recommend to several other Tesla owners (friends and family), but I am reluctant at this point. I'm hoping it will hold up once I get to use it.",
+      "context": "B0CJ8Y6RTP · 3.0 / 5",
+      "metric": 3.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/"
+    },
+    {
+      "source": "youtube",
+      "title": "💥Top 4 SUV Tents for Camping on Amazon",
+      "snippet": "Random Finds",
+      "context": "1 year ago",
+      "metric": "67,762 views",
+      "url": "https://www.youtube.com/watch?v=YAiiecCiZcA"
+    },
+    {
+      "source": "youtube",
+      "title": "Top 8 Best SUV Tents for Camping in 2025 🚙🏕| Spacious, Waterproof & Easy Setup",
+      "snippet": "Tech Bite",
+      "context": "1 year ago",
+      "metric": "41,316 views",
+      "url": "https://www.youtube.com/watch?v=rhV2G3AiMaE"
+    },
+    {
+      "source": "youtube",
+      "title": "✅Amazon’s Best SUV Tents: 5 Top-Rated Picks Under $300",
+      "snippet": "Gadgets Tab",
+      "context": "3 months ago",
+      "metric": "2,252 views",
+      "url": "https://www.youtube.com/watch?v=aqgJsfDl-IU"
+    },
+    {
+      "source": "youtube",
+      "title": "Top 5 Best SUV Tents for Camping on Amazon 2026 | Waterproof, Spacious & Easy Setup Car Tents.",
+      "snippet": "Review with Harper & Max",
+      "context": "9 months ago",
+      "metric": "11,183 views",
+      "url": "https://www.youtube.com/watch?v=0t-7mVKrIls"
+    }
+  ],
+  "supply": {
+    "query": "SUV Tents",
+    "items": [
+      {
+        "id": "807005243544",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/807005243544.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "572040471421",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/572040471421.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "427562014475",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/427562014475.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "634643771667",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/634643771667.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "723357774907",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/723357774907.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "655146402393",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/655146402393.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "698223750961",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/698223750961.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "441091290862",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/441091290862.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "814791753064",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/814791753064.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "205329476552",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/205329476552.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "156527933105",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/156527933105.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "276915630743",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/276915630743.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "732272126353",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/732272126353.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "645087609238",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/645087609238.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "790545424233",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/790545424233.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "683515417302",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/683515417302.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "517777692657",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/517777692657.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601510825924",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601510825924.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600591994438",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600591994438.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600925180318",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600925180318.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601510854622",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601510854622.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600503682032",
+        "title": "YumuQ 230 x 280 x 205cm Air Tube Car Tailgate Tent with PU3000mm , Inflatable SUV Rear Tent for Outdoor Camping",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/Hc0053d15ceb84fafb14830e6820e5c26R.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600503682032.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600928913093",
+        "title": "Kawagebo Kamp (KK) 16㎡ / 20㎡ / 25㎡ Glamping Outdoor Polyester Cotton / Cotton Canvas Inflatable Camping air Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H18fc61971cea4d63967c448ac78d594fY.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600928913093.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1600959447684",
+        "title": "YumuQ Custom 4-8 Person Sun Hot Black Family Big Dome Fun Tunnel Family Outdoor Camping Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H597af9655ea349aebbad991ed1c69363I.jpg",
+        "url": "https://www.alibaba.com/product-detail/1600959447684.html",
+        "source": "Alibaba.com"
+      }
+    ],
+    "priceBands": [],
+    "guidance": "已获取供应端样本；先比较材料、尺寸、MOQ、工艺和备品能力，不要直接用批发价反推落地成本。"
+  },
+  "pains": [
+    {
+      "key": "durability",
+      "label": "耐久与材料",
+      "count": 15,
+      "examples": [
+        "Fantastic tent! Fantastic! A perfect fit for my 2018 RAV4. Super easy to set up. Everything worked perfectly (to make it even easier you might prefer to get some heavier tent spike",
+        "A bit disappointed so far! I decided to purchase this tent for my Tesla Y after seeing many positive comments on Amazon. I later learned that the selected reviewers are mostly from"
+      ],
+      "strength": 100,
+      "share": 37,
+      "severity": "高"
+    },
+    {
+      "key": "appearance",
+      "label": "外观与质感",
+      "count": 10,
+      "examples": [
+        "GoHimal SUV Tent for Camping, 8' W x 8' L x 7.2' H, for 5-8 Person, Green | Waterproof PU3000mm, Spacious Double Layer Design, Includes Rainfly and Storage Bag, 4-Season for Family",
+        "VEVOR SUV or Pickup Truck Camping Tents, Waterproof Double Layer Design with Carry Bag, Accommodates 2-9 Persons for Outdoor Activities"
+      ],
+      "strength": 67,
+      "share": 24,
+      "severity": "中"
+    },
+    {
+      "key": "installation",
+      "label": "安装与说明",
+      "count": 7,
+      "examples": [
+        "Very cool SUV tent! Great size/great price. Easy to put up/take down. Lightweight/packs up small. I bought this tent for an upcoming camping trip with my son. It'll be wonderful to",
+        "Great Tent. Very versatile. Great Quality Tent! Attached securely to my camper. Take your time and the straps make a lot of sense. Handled wind and rain very well. Set up was easy "
+      ],
+      "strength": 47,
+      "share": 17,
+      "severity": "中"
+    },
+    {
+      "key": "value",
+      "label": "价格与价值感",
+      "count": 6,
+      "examples": [
+        "Very cool SUV tent! Great size/great price. Easy to put up/take down. Lightweight/packs up small. I bought this tent for an upcoming camping trip with my son. It'll be wonderful to",
+        "A bit disappointed so far! I decided to purchase this tent for my Tesla Y after seeing many positive comments on Amazon. I later learned that the selected reviewers are mostly from"
+      ],
+      "strength": 40,
+      "share": 15,
+      "severity": "中"
+    },
+    {
+      "key": "fitment",
+      "label": "适配与尺寸",
+      "count": 1,
+      "examples": [
+        "Easy set up, spacious! 2024 Rav4. Works good. Did not fully extend over suv on madien trip, but have since, fits well!! Spacious and love how easy it is to setup. One person setup "
+      ],
+      "strength": 7,
+      "share": 2,
+      "severity": "低"
+    },
+    {
+      "key": "adhesion",
+      "label": "粘接与固定",
+      "count": 1,
+      "examples": [
+        "Very spacious and easy setup The setup as a 5’1” woman was super easy. It took me maybe 3 minutes. The takedown was just as easy but was struggling to get it folded back up to fit "
+      ],
+      "strength": 7,
+      "share": 2,
+      "severity": "低"
+    },
+    {
+      "key": "packaging",
+      "label": "包装与运输",
+      "count": 1,
+      "examples": [
+        "CAR CAMPING WITH CATS Get this tent - it will change your life. We car camp with a kitty, and it makes all the difference to be able to place her litter box far from where we’re sl"
+      ],
+      "strength": 7,
+      "share": 2,
+      "severity": "低"
+    },
+    {
+      "key": "noise",
+      "label": "噪音与行驶体验",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    }
+  ],
+  "personas": [
+    {
+      "name": "精准替换型",
+      "behavior": "先核对型号和尺寸，再看差评确认风险。",
+      "value": "高转化、低容错",
+      "priority": "核心"
+    },
+    {
+      "name": "省心安装型",
+      "behavior": "偏好免钻孔、预装和清晰视频。",
+      "value": "愿为节省时间付费",
+      "priority": "核心"
+    },
+    {
+      "name": "高端升级型",
+      "behavior": "比较材料、外观和套装完整度。",
+      "value": "高客单与配件机会",
+      "priority": "次核心"
+    },
+    {
+      "name": "风险敏感型",
+      "behavior": "反复查看退货、质保和真实图片。",
+      "value": "影响口碑与退货",
+      "priority": "守门"
+    }
+  ],
+  "emotions": {
+    "pain": "花钱之后仍然被“耐久与材料”拖回返工、退货和解释成本。",
+    "itch": "希望自己的选择看起来专业、可靠，买的是成熟方案而不是便宜试验品。",
+    "pleasure": "第一次安装就严丝合缝，使用过程中不需要再想起它。"
+  },
+  "opportunities": [
+    {
+      "priority": "P0",
+      "title": "材料与耐候升级",
+      "action": "提高抗冲击、耐候、耐刮能力，并把材料和测试结果可视化。",
+      "cost": "中",
+      "evidenceCount": 15,
+      "evidenceLabel": "耐久与材料",
+      "validation": "高低温、UV和冲击测试通过",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P0",
+      "title": "车型与尺寸零误购",
+      "action": "车型/年份/版本拆分SKU，实车治具全检，页面给出不适配清单。",
+      "cost": "中",
+      "evidenceCount": 1,
+      "evidenceLabel": "适配与尺寸",
+      "validation": "实车装配通过率100%，适配类退货为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P0",
+      "title": "高可靠固定系统",
+      "action": "升级胶带或机械固定方案，加入表面清洁与固化时间指引。",
+      "cost": "低",
+      "evidenceCount": 1,
+      "evidenceLabel": "粘接与固定",
+      "validation": "冷热循环后无起翘，安装后7天无脱落",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P1",
+      "title": "一次装对套件",
+      "action": "分步骤五金包、预装关键件、二维码视频和错误安装警示。",
+      "cost": "低",
+      "evidenceCount": 7,
+      "evidenceLabel": "安装与说明",
+      "validation": "首次安装完成率≥90%，漏件为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "高质感视觉语言",
+      "action": "建立材料、颜色、表面处理和整车比例的统一设计规范。",
+      "cost": "中",
+      "evidenceCount": 10,
+      "evidenceLabel": "外观与质感",
+      "validation": "盲测偏好显著高于基准款",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "清晰的版本梯度",
+      "action": "基础/利润/旗舰三档配置，差价由材料和配件解释。",
+      "cost": "低",
+      "evidenceCount": 6,
+      "evidenceLabel": "价格与价值感",
+      "validation": "用户可在10秒内看懂版本差异",
+      "evidenceStatus": "evidence-backed"
+    }
+  ],
+  "productDefinition": {
+    "concept": "面向主流用户的 SUV Tents 可靠性升级款",
+    "coreUser": "正在替换低质量旧品、愿意为更低安装风险付费的实用型买家",
+    "job": "在不增加安装负担的前提下，稳定解决“耐久与材料”并降低误购和退货。",
+    "mustHave": [
+      "材料与耐候升级",
+      "车型与尺寸零误购",
+      "高可靠固定系统"
+    ],
+    "differentiators": [
+      "一次装对套件",
+      "高质感视觉语言",
+      "清晰的版本梯度"
+    ],
+    "doNotClaim": [
+      "未验证的通用适配",
+      "没有测试报告支撑的承重/寿命",
+      "所有场景零故障"
+    ]
+  },
+  "keywords": [
+    {
+      "keyword": "tent",
+      "frequency": 33,
+      "intent": "核心"
+    },
+    {
+      "keyword": "suv",
+      "frequency": 26,
+      "intent": "核心"
+    },
+    {
+      "keyword": "camping",
+      "frequency": 21,
+      "intent": "核心"
+    },
+    {
+      "keyword": "car",
+      "frequency": 16,
+      "intent": "核心"
+    },
+    {
+      "keyword": "bag",
+      "frequency": 11,
+      "intent": "核心"
+    },
+    {
+      "keyword": "rainfly",
+      "frequency": 10,
+      "intent": "核心"
+    },
+    {
+      "keyword": "waterproof",
+      "frequency": 9,
+      "intent": "核心"
+    },
+    {
+      "keyword": "person",
+      "frequency": 8,
+      "intent": "核心"
+    },
+    {
+      "keyword": "storage",
+      "frequency": 8,
+      "intent": "核心"
+    },
+    {
+      "keyword": "van",
+      "frequency": 8,
+      "intent": "核心"
+    },
+    {
+      "keyword": "tailgate",
+      "frequency": 7,
+      "intent": "核心"
+    },
+    {
+      "keyword": "tents",
+      "frequency": 7,
+      "intent": "核心"
+    },
+    {
+      "keyword": "includes",
+      "frequency": 6,
+      "intent": "核心"
+    },
+    {
+      "keyword": "portable",
+      "frequency": 6,
+      "intent": "核心"
+    },
+    {
+      "keyword": "family",
+      "frequency": 5,
+      "intent": "核心"
+    },
+    {
+      "keyword": "outdoor",
+      "frequency": 5,
+      "intent": "核心"
+    },
+    {
+      "keyword": "resistant",
+      "frequency": 5,
+      "intent": "核心"
+    },
+    {
+      "keyword": "weather",
+      "frequency": 5,
+      "intent": "核心"
+    }
+  ],
+  "keywordGroups": {
+    "core": [
+      "tent",
+      "suv",
+      "camping",
+      "car",
+      "bag",
+      "rainfly"
+    ],
+    "attributes": [],
+    "longTail": []
+  },
+  "launchPlan": [
+    {
+      "phase": "0-15天",
+      "title": "证据补齐",
+      "owner": "市场研究/数据",
+      "actions": [
+        "补齐Top 20竞品参数与价格",
+        "抓取至少100条有效评论",
+        "确认目标用户与核心场景"
+      ],
+      "gate": "关键结论均有来源，未知项显式列出"
+    },
+    {
+      "phase": "16-45天",
+      "title": "产品验证",
+      "owner": "产品/研发/质量",
+      "actions": [
+        "冻结P0规格与测试计划",
+        "完成首轮样品和对标测试",
+        "核算三档价格与贡献利润"
+      ],
+      "gate": "P0问题闭环，样品通过核心工况"
+    },
+    {
+      "phase": "46-75天",
+      "title": "小批量验证",
+      "owner": "供应链/运营",
+      "actions": [
+        "10-30件试产",
+        "包装与安装盲测",
+        "完成Listing证据素材"
+      ],
+      "gate": "兼容、破损、漏件类问题为0"
+    },
+    {
+      "phase": "76-90天",
+      "title": "上市与复盘",
+      "owner": "运营/客服/数据",
+      "actions": [
+        "上线精确词与长尾词",
+        "逐单标记咨询与退货原因",
+        "第7/14/30天复盘"
+      ],
+      "gate": "达到目标转化且质量指标不恶化"
+    }
+  ],
+  "northStar": {
+    "metric": "有效机会验证率",
+    "definition": "进入样品验证的P0机会中，按期通过核心验收指标的比例。",
+    "guardrails": [
+      "适配/规格误购率",
+      "首月质量客诉率",
+      "贡献利润率",
+      "证据覆盖率"
+    ]
+  },
+  "sourceStatuses": [
+    {
+      "source": "amazon",
+      "state": "success",
+      "count": 16,
+      "latencyMs": 0,
+      "message": "采集到 16 个搜索商品和 27 条书面评论样本。 书面评论来源：Woot public endpoint。 使用最近成功缓存。",
+      "url": "https://www.amazon.com/s?k=SUV+Tents",
+      "meta": {
+        "reviews": [
+          {
+            "title": "Perfect Fit for My Chevy Traverse and Great Quality",
+            "body": "This SUV tent was an awesome purchase and worked perfectly for our camping trip. It attached easily and securely to the back of my Chevy Traverse and lined up great with the tailgate. The tent is roomy and gave us plenty of space for extra gear storage and a private changing area, which was a huge bonus and made the whole setup feel so much more comfortable. It really helped keep the car organized and gave us extra living space without feeling cramped. It was easy to set up, easy to attach to the vehicle, and the quality feels really solid. The material and zippers feel durable and it held up great. Overall, I am super happy with this tent and would definitely recommend it if you want extra space and a clean setup for car camping.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on February 10, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very cool SUV tent! Great size/great price. Easy to put up/take down. Lightweight/packs up small.",
+            "body": "I bought this tent for an upcoming camping trip with my son. It'll be wonderful to have so much space for our gear and my son's sleeping area (I sleep on a cot in my tailgate). It's lightweight, packs up small, easy to put up, and it's tall enough for my 6'2\" son to stand comfortably. It also seems very well made, especially since the price point was so good. We did a test run in my yard (photo included) on my Bronco Sport. We didn't test the rain fly because it's so dry where we live, but I can say that it did great in the strong winds up here. We left it up overnight to see how it handled. It didn't budge! It would have been great to have clear instructions, but we figured it out intuitively. It was simple and quick to put up and attach to the truck. We put it up together but I was able to take it down by myself (I'm 4'11\", so that should illustrate how easy/light it is). It packs up nicely in its bag for easy packing and storage. Note about photo: my tailgate was closed, so the connector looks saggy. It was nice and taut while the truck was open. We love that we'll be able to detach the truck from the tent to go exploring and the tent closes up like a regular one. 10/10 recommend",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 6, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great Tent. Very versatile.",
+            "body": "Great Quality Tent! Attached securely to my camper. Take your time and the straps make a lot of sense. Handled wind and rain very well. Set up was easy with a quick review of the instructions. Ventilation was good when windows were opened. Zippers didnt get stuck. Material strong and light. Versatile and reliable tent.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy set up, spacious!",
+            "body": "2024 Rav4. Works good. Did not fully extend over suv on madien trip, but have since, fits well!! Spacious and love how easy it is to setup. One person setup in under 30 minutes! Easy to take down & easy to pack up without strugglingto get it back in carry bag.. Durability, time will tell but seems ok. Windy conditions, standard set up without lines. No issues, held up well, just a bit noisy which you will have with most tents. Downside: The top center pole (shorter/4part) does not fit, either a few inches to long or the strap/attachment it goes into were placed/sized incorrectly.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 24, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Fantastic tent!",
+            "body": "Fantastic! A perfect fit for my 2018 RAV4. Super easy to set up. Everything worked perfectly (to make it even easier you might prefer to get some heavier tent spikes). The shape of the tent, height, and the zipper/screen windows were perfect. Would 100% buy again.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "I've been reviewing these tents for years and glad I decided on this one!",
+            "body": "I waited a year to review this after using it a couple of times. This is easy to set up; you can do it by yourself, but it's easier with 2 people. This past weekend, it poured rain, and this tent stayed dry! Make sure you put on the rain fly before you set it all the way up, or it's a pain to reach (still didn't get it quite right this time as in the pic, but next time i'll get it on right). I have not quite figured out how to attach it to my rims, but I haven't tried, it works fine just pulled up over the back of my Chevy Equinox. It's also easy to pull away from it if you need to use your vehicle, and easy to put back on. We had a full-size mattress on one side and a cot on the other and there was plenty of room in between and room enough for our bags, clothes, etc.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 29, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Live this!!",
+            "body": "Excellent quality, stayed dry inside with the rain. The car fly worked well to keep rain out of car when it rained as well. Didnt have to close hatch as i thought we might. Used several times and thrilled. Lots of space inside, and can roll up the car attachment if need to to keep tent closed if you need to take your car off site. Colors are great. Zippers work well, buckles for car attachment work great also. We took to florida in summer and ran our ac inside at night and it held the cool air in well so we could sleep.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on March 20, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "A bit disappointed so far!",
+            "body": "I decided to purchase this tent for my Tesla Y after seeing many positive comments on Amazon. I later learned that the selected reviewers are mostly from a program called Amazon Vine, who provide their \"objective\" feedback for using the products for free. Although I have not had a chance to use this tent, I recently did a \"test run\" in my driveway to see how it works. Upon unboxing, I already found a couple problems with the scratches on the poles (the elastic inside poles seem weak) and the tent materials, specifically the flooring part (already shows signs it may rip/tear easily). I don't think I can exchange it at this point because I already went past the 30 days return policy due to my busy schedule. In any case, I hope I didn't waste my money on this tent. Time will tell once I have a chance to use it. The quality does not seem that great. However, it seems descent for the price. I really want to keep it because it is very roomy yet compact in a carry case. The instructions were very easy to follow as they are printed inside the carry bag. I was going to recommend to several other Tesla owners (friends and family), but I am reluctant at this point. I'm hoping it will hold up once I get to use it.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on April 19, 2024",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Durability👍",
+            "body": "This tent is very sturdy. We took it to 2 music festivals. Last night at the music festival we got heavy rain and 40+mph winds and the tent held strong. It was bowing in but we stayed dry inside and nothing broke on the tent. Highly recommend this tent if you want something strong",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 18, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good Versatile Tent",
+            "body": "I bought this tent back in the early spring for a camping trip in July. As a 65+ woman who does a lot of solo camping, I was a little bit concerned about how easy it would be to set up. Hubby & I did a couple of dry runs in the backyard before I left on my trip. While there was a small challenge bending the main support pole to get it to slide into the pocket, I was eventually able to do it all by myself. The tent itself was very nice for how I wanted to use it. Because I was planning to left my campsite frequently, I opted not to hook it up to my Santa Fe's tailgate. This made it easier to come & go, but also created a bit of a mess the couple of days we had a lot of rain. Live & learn . . . I just needed to be sure to shake it out after it rained. Yes the nylon and net windows are pretty thin. I had a raccoon try to get inside one night. It jumped up onto the sidewall of the tent, collapsing it on one side and punching several holes in the window netting. Initially I thought they were cigarette burns but later realized it for what it was . . . a critter trying to get in. Taking the tent down and packing it away was much easier than setting it up. All in all, I thoroughly enjoyed this tent and will use it again on future camping trips when I'm planning to stay put for at least 3-5 nights. P.S. I should note that I car camp, sleeping in my SUV and not in this tent. That said, there is plenty of space for a couple of cots/sleeping bags if that is your preferred way to camp/sleep.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on November 16, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0CJ8Y6RTP",
+            "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Super spacious for tall people. easy to set up. waterproof",
+            "body": "First weekend after getting Wildfinder SUV tent, we went on a family trip to a camp site. We knew we need a large SUV tent to be able to stay comfortable because our family member are tall (6\"2' and so on). We were still nicely surprised by how spacious this tent is. Two to three tall people can comfortably stand inside the tent and not feel huddling each other. Setup is totally painless. Probably 5 minutes top. I spent like 10 minutes to make sure the connection to SUV tailgate were as tight as possible. For the two nights nobody got mosquito bites inside the tent. outside in the woods there were lots of those. There was no rain so couldn't test how rainproof it is. But I did see some water accumulation on the surface of the rainfly due to overnight moisture. The water never gets inside so I am assuming the waterproof is working. Time will tell. Overall solid product for the price and quality and easof using it.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great quality",
+            "body": "Great quality and very easy to set up. It fits my SUV well and provides plenty of space inside. The tent stayed dry during light rain, and the ventilation was excellent. Perfect for weekend camping trips. Highly recommend!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 27, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Cost-effective.",
+            "body": "Quick installation, good sealing, and mosquitoes are not easily allowed to enter.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Incredible center height! I can actually stand up straight.",
+            "body": "I absolutely love the height of this SUV tent! The ceiling is so high that I can comfortably stand up completely straight inside without having to hunch over at all. It gives you so much headroom and makes the whole tent feel incredibly open and less cramped. Getting changed and moving around inside is a breeze. If you hate low-clearance tents, this one is perfect!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 9, 2026",
+            "verified": false,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Heavy duty protection against rain and wind!",
+            "body": "Took this tailgate tent out for a weekend trip and got hit with an unexpected thunderstorm on night one. I was nervous, but it held up beautifully! Not a single drop of water leaked inside, and the wind didn't even phase it. The next day was blistering hot, but the fabric provided excellent sun protection and kept us cool. True peace of mind in wild weather.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 9, 2026",
+            "verified": false,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Super easy setup, literally took minutes!",
+            "body": "I was a bit skeptical about how hard it would be to connect to my car, but this Car Tent is a breeze to assemble. The instructions are crystal clear, and I managed to pop it up all by myself in under 10 minutes on my first try! Takedown and packing it back into the bag was just as simple. If you hate struggling with complicated poles, this is the one to get.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 10, 2026",
+            "verified": false,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Solid SUV tent",
+            "body": "I used this SUV camping tent with my Tesla Model Y for a weekend camping trip, and it worked really well. I wasn't sure how it would fit with the Model Y, but the attachment was straightforward and created a nice, enclosed space between the vehicle and the tent. The tent was easy to set up with two people, and once it was up, it felt sturdy and spacious. Having access to the back of the car made it really convenient to grab gear and added extra sleeping/storage space. It also held up well overnight and kept us comfortable. Overall, I'm happy with the purchase and would recommend it to anyone looking for an SUV camping tent that works with a Tesla Model Y. It's a great option for weekend camping trips and offers good value for the price.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 14, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0H7RRVCN4",
+            "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "CAR CAMPING WITH CATS",
+            "body": "Get this tent - it will change your life. We car camp with a kitty, and it makes all the difference to be able to place her litter box far from where we’re sleeping (we used to place her litter box in the foot space of the driver seat, and we could no longer bear the smell of a mid-poop waft in the middle of the night, then praying that she covered her crap with enough litter). I’m extremely happy I went for it and bought this suv tent. It is surprisingly good quality for the price! And nothing beats being able to pop up your tent in minutes - the harder part is figuring out all the straps wrapping around the wheels and door handles, but you figure it out quickly. Recommend a “trial run” and take photos as a guide for the real deal. There are simple instructions in the package, and there are videos you can find on the product to set it up. It rained the first time we took it camping in the High Uintas (Utah) and it stood up well with no leakage! Very spacious to where my 6’1” husband could stand up completely and stretched out his arms. The bag has an extender zipper, so there is wiggle room to get the tent back into its bag.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 23, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy set up and takedown.",
+            "body": "Very nice tent for summer camping. Bright and airy-love the open ceiling for star gazing. Easy set up. Great for 4 people two full size air matresses. Did not have rain but did have wind on camping trip but did apply rain gear to top easy addition.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very spacious and easy setup",
+            "body": "The setup as a 5’1” woman was super easy. It took me maybe 3 minutes. The takedown was just as easy but was struggling to get it folded back up to fit in the bag without struggles. The tent itself is huge on the inside and very spacious. It was easy to connect to the back of my 2020 outback. After connecting it though I did notice that there was a small rip on the edge by the zipper for the screen to my outback I plan on just using duct tape. While getting the tent back in the back it did rip fairly easily so that was kinda disappointing. I will say it is definitely a lot more room than I need but it will be useful solo camping being able to setup everything inside as I have the back out my outback setup with a shikibuton or a floor mattress.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 24, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Fits a lexus gx470.",
+            "body": "It does fit a lexus gx 470. Only have to worry about a gap on the roof under the rails. A towel or some screening material to keep the bugs out.. It was 2 mins to put together. Amazing. Maybe 5 to 10 mins to hook up to the truck and tie down It reminds me of a pop up ez shad.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 12, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Fantastic tent, easy set up",
+            "body": "The set up is super easy and fast! Attached to the Tesla without issues. Great tent for the money!!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 25, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Awesome tent",
+            "body": "The easiest tent i ever had, very quick set up",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 4, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "So easy to set up and take down",
+            "body": "This tent was so easy to set up and even easier to breakdown. It attached to my suv in minutes and expanded my space tremendously. Absolutely love this tent",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 26, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "A nice tent once it's in place but set up and take down are difficult",
+            "body": "The tent is easy to set up but it is much smoother with two people than one person trying to do it themselves. Taking down the tent, however, is a bear. All of the legs of the tent are connected to the tent itself, so they have to be folded and rolled in just the perfect way. The tent only comes with one small piece of scrap to use as a tie to hold it together to fit back into the bag. The bag has a expansion zipper that allows for more room for the tent once it has been opened, but our zipper was having problems and not moving smoothly. The one single strap included with the tent was not sufficient to hold it together, so we had to add Velcro straps. It was still a wrestle to get it back into the bag. This tent is not compact and comes with a large bag. It will take up quite a bit of room in your vehicle to carry it. The bag is almost 5 ft long. The tent itself is large and roomy. It can be used as a standalone tent or connected to the back of an SUV. The tunnel that is used to connect it to the SUV is large so that it can accommodate many different vehicle sizes. The tent has a full screen top that allows you to see the sky or you can put the rainfly on it for privacy. There are no instructions on how the rainfly should be oriented. We found through trial and error that the “Happy Trails” logo goes over the window opposite the SUV door. When this tent is used as a free-standing tent, there is a full side screen with a panel that can be zipped closed for privacy instead of the SUV connection. The tent floor is heavy duty and quite large. The floor material reaches up the side to give you extra waterproofing and durability. When attached to the vehicle the tent has two windows and a door. The door is on the driver side of the vehicle, not on the back. The interior of the tent has a hook in the center for hanging a light or a fan, it has some gear pockets on the side, and an access port for power. The windows open and shut from the inside of the tent. There are no instructions included on how to take down, roll up, and put the tent away properly. There is a waterproof sheet sewn into the tent bag with a picture of how to connect the tent to the vehicle. The instructions do not show you how to set the tent up.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 11, 2026",
+            "verified": false,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Forgot using attachment straps. Must have the correct rims. Get some strong magnets instead",
+            "body": "I bought this for a Camper Van , It was easy up, Loved that. But the attachment straps didn't work on this size car, so I just used strong magnets I had to attach it and it worked great. Very roomy. Side door was a great Idea.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 8, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very Good",
+            "body": "This is a pretty cool concept that allows for the seamless combination of your vehicle and the tent. The only real issue is that it is obviously not completely 299% sealed so small mosquitos can get in but the benefits of direct access to your vehicle make it worth that trade off. I was able to finagle it enough to work with the cap on my 2002 Dodge Ram truck. It,'s a bit sketchy but it worked, lol. Should work well with most small SUVs and crossover type things with a hatchback",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 4, 2026",
+            "verified": false,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0GXT6ZFD7",
+            "url": "https://www.amazon.com/product-reviews/B0GXT6ZFD7/",
+            "collectionMethod": "Woot public written-review endpoint"
+          }
+        ],
+        "reviewMethods": [
+          "Woot public endpoint"
+        ],
+        "reviewCountType": "written_reviews_only",
+        "cached": true
+      }
+    },
+    {
+      "source": "reddit",
+      "state": "success",
+      "count": 25,
+      "latencyMs": 0,
+      "message": "采集到 25 条社区讨论；本次通道：Reddit RSS。 使用最近成功缓存。",
+      "url": "https://www.reddit.com/search/?q=SUV+Tents&sort=relevance",
+      "meta": {
+        "method": "Reddit RSS",
+        "endpoint": "https://www.reddit.com/search.rss?q=SUV+Tents&sort=relevance&t=all",
+        "fallbackAttempts": [],
+        "cached": true
+      }
+    },
+    {
+      "source": "youtube",
+      "state": "success",
+      "count": 18,
+      "latencyMs": 2400,
+      "message": "采集到 18 个视频及可见需求信号。",
+      "url": "https://www.youtube.com/results?search_query=SUV+Tents",
+      "meta": {}
+    },
+    {
+      "source": "news",
+      "state": "success",
+      "count": 2,
+      "latencyMs": 909,
+      "message": "从 25 条近期结果中筛出 2 条相关资讯。",
+      "url": "https://news.google.com/rss/search?q=SUV+Tents&hl=en-US&gl=US&ceid=US%3Aen",
+      "meta": {}
+    },
+    {
+      "source": "alibaba",
+      "state": "success",
+      "count": 24,
+      "latencyMs": 2817,
+      "message": "采集到 24 个 Alibaba.com 供应商品样本。",
+      "url": "https://www.alibaba.com/trade/search?SearchText=SUV+Tents",
+      "meta": {}
+    }
+  ],
+  "evidence": [
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Car Camping",
+      "value": null,
+      "url": "https://www.reddit.com/r/carcamping/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "A subreddit for gear heads.",
+      "value": null,
+      "url": "https://www.reddit.com/r/CampingGear/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "r/Camping",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Had never went kayaking before, bought a kayak few days ago. Have never went camping before, just bought a SUV-tent.",
+      "value": null,
+      "url": "https://www.reddit.com/r/Costco/comments/153h8fj/had_never_went_kayaking_before_bought_a_kayak_few/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "KingCamp BOUNDLESS AIR3 Inflatable SUV Tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/KiaEV9/comments/1ukruzx/kingcamp_boundless_air3_inflatable_suv_tent/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "I'm so sorry Hana, I failed you...",
+      "value": null,
+      "url": "https://www.reddit.com/r/poodles/comments/1onml80/im_so_sorry_hana_i_failed_you/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Taylor Swift, Travis Kelce married as wedding celebration held at Madison Square Garden",
+      "value": null,
+      "url": "https://www.reddit.com/r/TaylorSwift/comments/1umu5da/taylor_swift_travis_kelce_married_as_wedding/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Tricked out SUV with roof tent in Puerto Rico",
+      "value": null,
+      "url": "https://www.reddit.com/r/Perfectfit/comments/1py3x9h/tricked_out_suv_with_roof_tent_in_puerto_rico/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Testing out an SUV tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/carcamping/comments/1t1utcm/testing_out_an_suv_tent/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Waffle House Wedding Weekend",
+      "value": null,
+      "url": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1rjgqd1/waffle_house_wedding_weekend/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "What's the purpose of those SUV connected tents?",
+      "value": null,
+      "url": "https://www.reddit.com/r/camping/comments/1k94e7q/whats_the_purpose_of_those_suv_connected_tents/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "reddit",
+      "type": "observed",
+      "claim": "Xiaomi's first full-size SUV: Sky Nomad N90 spotted in China, 500+km EREV with built-in tent",
+      "value": null,
+      "url": "https://www.reddit.com/r/electricvehicles/comments/1ubls34/xiaomis_first_fullsize_suv_sky_nomad_n90_spotted/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "UNP SUV Tents for Camping 6 Person Car Camping Tailgate Tent for Outdoor | Easy Set Up with Rainfly Double Layer Waterproof Family SUV Cabin Tent 10'X9'X78in(H)",
+      "value": 142.4,
+      "url": "https://www.amazon.com/Camping-6-Person-Tailgate-Outdoor-10x9x78in/dp/B0CHY6G2SV",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "SUV Tent, Car Tents for Camping, Universal SUV Tailgate Tent | 10x9ft Large, PU3000 Waterproof, Camping Tent Universal Compatible with SUV, CUV, Easy Setup Standalone Shelter for Outdoor",
+      "value": 119.99,
+      "url": "https://www.amazon.com/WildFinder-Tents-Camping-Universal-Tailgate/dp/B0H7RRVCN4",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Happy Travel SUV Tents for Camping, 6 Person Instant Car Tent with Rainfly | 60 Seconds Easy Setup Pop up Tent, Waterproof Car Tailgate Tent, Cabin Tent with Expandable Carry Bag, 10'W X 10'L X 7.1'H",
+      "value": 219.99,
+      "url": "https://www.amazon.com/Travel-Camping-Person-Instant-Rainfly/dp/B0GXT6ZFD7",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "SUV Tent, Rectangle Car Tent for Family, Waterproof & Windproof for Car Camping, Large Camping Tents with Storage Bag, SUV, Van, Jeep",
+      "value": 179.99,
+      "url": "https://www.amazon.com/WildFinder-Rectangle-Waterproof-Windproof-Camping/dp/B0DMSZSQN5",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "value": 227.98,
+      "url": "https://www.amazon.com/TIMBER-RIDGE-Weather-Resistant-Portable/dp/B0DSBJX8Q1",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "value": 199.99,
+      "url": "https://www.amazon.com/Timber-Truck-Bed-Tents-Camping-Rainfly-Storage/dp/B0DSBJX8Q1",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "GoHimal SUV Tent for Camping, 8' W x 8' L x 7.2' H, for 5-8 Person, Green | Waterproof PU3000mm, Spacious Double Layer Design, Includes Rainfly and Storage Bag, 4-Season for Family Outdoor Adventures",
+      "value": 129.99,
+      "url": "https://www.amazon.com/GoHimal-Camping-Waterproof-PU3000mm-Spacious/dp/B0C9Z6YK4Z",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "5/6 Person SUV Tent for Camping, SUV Tailgate Tent,Truck Car Tent Weather Resistant Portable for Car SUV Van Camping, Includes Rainfly and Storage Bag, 10' W X 8' L X 7.1' H",
+      "value": 142.16,
+      "url": "https://www.amazon.com/Camping-Tailgate-Weather-Resistant-Portable/dp/B0GDG7QBLB",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "FanttikOutdoor Beta C6 Apex SUV Tent 6 Person Instant Cabin Car Tent Setup in 60 Seconds with Rainfly & Windproof Portable with Carry Bag for Family Camping, Upgraded Ventilation, Khaki",
+      "value": 263.99,
+      "url": "https://www.amazon.com/FanttikOutdoor-Windproof-Portable-Upgraded-Ventilation/dp/B0FT2K2QBH",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "HASIKA SUV Tailgate Tent, 2-Person Car Camping Awning | 3000mm Waterproof & UPF 50+. Fits most SUV and Hatchback. 2-Min Setup Road Trip Essentials for Couples and Pets Black",
+      "value": 55.99,
+      "url": "https://www.amazon.com/Hasika-Tailgate-Awning-Travel-Waterproof/dp/B08MT3463Z",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Timber Ridge Truck-Bed-Tents SUV Camping Tent | Weather Resistant and Portable Van or Car Tent, Includes Rainfly and Storage Bag",
+      "value": 239.99,
+      "url": "https://www.amazon.com/TIMBER-RIDGE-Camping-Resistant-Portable/dp/B0DSBJX8Q1",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "UNP SUV Tents for Camping 6 Person Car Camping Tailgate Tent for Outdoor | Easy Set Up with Rainfly Double Layer Waterproof Family SUV Cabin Tent 10'X9'X78in(H)",
+      "value": 149.99,
+      "url": "https://www.amazon.com/Camping-6-Person-Tailgate-Outdoor-10x9x78in/dp/B0CHY6G2SV",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Perfect Fit for My Chevy Traverse and Great Quality: This SUV tent was an awesome purchase and worked perfectly for our camping trip. It attached easily and securely to the back of my Chevy Traverse and lined up great with the tailgate. The tent is roomy and g",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Very cool SUV tent! Great size/great price. Easy to put up/take down. Lightweight/packs up small.: I bought this tent for an upcoming camping trip with my son. It'll be wonderful to have so much space for our gear and my son's sleeping area (I sleep on a cot i",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Great Tent. Very versatile.: Great Quality Tent! Attached securely to my camper. Take your time and the straps make a lot of sense. Handled wind and rain very well. Set up was easy with a quick review of the instructions. Ventilation was good when windows were",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Easy set up, spacious!: 2024 Rav4. Works good. Did not fully extend over suv on madien trip, but have since, fits well!! Spacious and love how easy it is to setup. One person setup in under 30 minutes! Easy to take down & easy to pack up without strugglingto g",
+      "value": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Fantastic tent!: Fantastic! A perfect fit for my 2018 RAV4. Super easy to set up. Everything worked perfectly (to make it even easier you might prefer to get some heavier tent spikes). The shape of the tent, height, and the zipper/screen windows were perfect. ",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "I've been reviewing these tents for years and glad I decided on this one!: I waited a year to review this after using it a couple of times. This is easy to set up; you can do it by yourself, but it's easier with 2 people. This past weekend, it poured rain, and",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Live this!!: Excellent quality, stayed dry inside with the rain. The car fly worked well to keep rain out of car when it rained as well. Didnt have to close hatch as i thought we might. Used several times and thrilled. Lots of space inside, and can roll up the",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "A bit disappointed so far!: I decided to purchase this tent for my Tesla Y after seeing many positive comments on Amazon. I later learned that the selected reviewers are mostly from a program called Amazon Vine, who provide their \"objective\" feedback for using",
+      "value": 3.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Durability👍: This tent is very sturdy. We took it to 2 music festivals. Last night at the music festival we got heavy rain and 40+mph winds and the tent held strong. It was bowing in but we stayed dry inside and nothing broke on the tent. Highly recommend this",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Good Versatile Tent: I bought this tent back in the early spring for a camping trip in July. As a 65+ woman who does a lot of solo camping, I was a little bit concerned about how easy it would be to set up. Hubby & I did a couple of dry runs in the backyard be",
+      "value": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0CJ8Y6RTP/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Super spacious for tall people. easy to set up. waterproof: First weekend after getting Wildfinder SUV tent, we went on a family trip to a camp site. We knew we need a large SUV tent to be able to stay comfortable because our family member are tall (6\"2' and s",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Great quality: Great quality and very easy to set up. It fits my SUV well and provides plenty of space inside. The tent stayed dry during light rain, and the ventilation was excellent. Perfect for weekend camping trips. Highly recommend!",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0H7RRVCN4/",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "6 Best SUV Tents - Outdoors with Bear Grylls",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1GeFQxcmVwVmhEeElKTllqQXVFUlFUOHhXYUVHczRXalNCT1ZWVnh0dklEckNVaXp5Qk01ajZ2ZjM1VEQ4eVF6Ml9BWGE?oc=5",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "Our List of the 7 Best Car and SUV Tents in 2022 - The Manual",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByaEZYYW44b1YyYnRMM2Vsb3dfSmJfa2pycGhRdGF1X0JhWGVPY29XcnpXQ1JWZ0gyZVpZRFFYR3BkTE16ZFA3aE9zbm9tRVgwQWU4SEFFUXVDTEowejh4djAtMnU?oc=5",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "💥Top 4 SUV Tents for Camping on Amazon",
+      "value": "67,762 views",
+      "url": "https://www.youtube.com/watch?v=YAiiecCiZcA",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 8 Best SUV Tents for Camping in 2025 🚙🏕| Spacious, Waterproof & Easy Setup",
+      "value": "41,316 views",
+      "url": "https://www.youtube.com/watch?v=rhV2G3AiMaE",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "✅Amazon’s Best SUV Tents: 5 Top-Rated Picks Under $300",
+      "value": "2,252 views",
+      "url": "https://www.youtube.com/watch?v=aqgJsfDl-IU",
+      "capturedAt": "2026-07-30T11:51:34.404748+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 5 Best SUV Tents for Camping on Amazon 2026 | Waterproof, Spacious & Easy Setup Car Tents.",
+      "value": "11,183 views",
+      "url": "https://www.youtube.com/watch?v=0t-7mVKrIls",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Trekway SUV Instant Tent",
+      "value": "316,111 views",
+      "url": "https://www.youtube.com/watch?v=iBJ87pe8UiE",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "🏕️ 5 Best SUV Tents for Camping in 2026 (Ultimate Buyer's Guide)",
+      "value": "2,638 views",
+      "url": "https://www.youtube.com/watch?v=pST3qGZ-5Ek",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "▶️ Top 5 Best Tailgate Tents 2026 | Turn Your SUV Into a Camper!",
+      "value": "9,760 views",
+      "url": "https://www.youtube.com/watch?v=j7q74MYUpyA",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "SUBARU OUTBACK Car Camping / KingCamp SUV Tent / EBL / Hcalory / Silent Solo Camping",
+      "value": "106,826 views",
+      "url": "https://www.youtube.com/watch?v=mph8hHWsZiQ",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Best SUV Tents on Amazon 2026 | Top 7 Car Camping Tents You Must See",
+      "value": "2,417 views",
+      "url": "https://www.youtube.com/watch?v=yP-h60fh6ao",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Napier Outdoors Sportz SUV Tent - SOLO Set Up",
+      "value": "117,896 views",
+      "url": "https://www.youtube.com/watch?v=3Zz_eKRppl4",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "The Top 5 Best SUV Tent in 2026 - Must Watch Before Buying!",
+      "value": "136 views",
+      "url": "https://www.youtube.com/watch?v=AN8Kf1d2Ta4",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Trekway SUV Tent 6 Month Review",
+      "value": "19,150 views",
+      "url": "https://www.youtube.com/watch?v=-22Fil2G0ww",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/807005243544.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/572040471421.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/427562014475.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/634643771667.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/723357774907.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/655146402393.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/698223750961.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/441091290862.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/814791753064.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/205329476552.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/156527933105.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/276915630743.html",
+      "capturedAt": "2026-07-30T11:51:34.405806+00:00",
+      "confidence": "中"
+    }
+  ],
+  "reference": {
+    "used": false,
+    "materials": [],
+    "installMethods": [],
+    "source": null
+  },
+  "methodology": [
+    "多源证据工作流：吸收 IvyeaOps 与 TrendRadar 的方法",
+    "Amazon 品类/关键词/评论结构：吸收 Sorftime 研究技能与 EasyAMZ 字段模型",
+    "Amazon US 书面评论回退：吸收 MIT 许可 amazon-review-scraper 的 Woot 公开端点方法",
+    "Reddit 回退：优先公开 RSS，再回退 JSON/PullPush；参考 BSD-2 PRAW 与 MIT BAScraper 的边界",
+    "供应端研究：Alibaba.com 独立成组，不与 Amazon 零售样本混算",
+    "痛点/痒点/爽点与 P0-P2 机会映射：吸收 Market Insight 方法",
+    "问题定义、竞争、定价、上市门槛、北极星指标与复盘：吸收 Lenny PM Skills 方法"
+  ]
+}

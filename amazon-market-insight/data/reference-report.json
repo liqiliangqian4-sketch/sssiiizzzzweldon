@@ -1,0 +1,619 @@
+{
+  "query": "晴雨挡",
+  "englishQuery": "rain guards window visors",
+  "market": "US",
+  "generatedAt": "2026-07-30T18:36:07.653798+08:00",
+  "executive": {
+    "verdict": "条件进入",
+    "tone": "conditional",
+    "score": 62,
+    "confidence": 82,
+    "oneLiner": "可进入，但不应再做低价通用款：优先开发车型专配的 PMMA 外贴式产品，以适配零误购、可靠背胶、低风噪和运输零划伤作为上市门槛。",
+    "condition": "先完成目标车型实车装配、冷热循环与高速风噪验证；任一 P0 指标未通过，不进入首单采购。"
+  },
+  "signals": {
+    "demand": 34,
+    "competition": 37,
+    "painGap": 78,
+    "premium": 73,
+    "feasibility": 78,
+    "labels": "所有评分均为方向性信号指数，不是官方市场规模或销量估算。"
+  },
+  "marketStats": {
+    "competitorCount": 3,
+    "priceMin": 38.99,
+    "priceMedian": 46.99,
+    "priceMax": 69.99,
+    "averageRating": 4.3,
+    "medianReviewCount": null,
+    "sourceCoverage": 100,
+    "evidenceCount": 9
+  },
+  "pricing": {
+    "entry": 45.99,
+    "core": 59.99,
+    "premium": 79.99,
+    "currency": "USD",
+    "logic": "参考工作簿材料价格带与已核对 Amazon 样本；该价格是产品经理测试梯度，不是市场均价。"
+  },
+  "competitors": [
+    {
+      "asin": "B07YSTD1GV",
+      "title": "Amazon 样本：Tape-On Window Visors",
+      "price": 46.99,
+      "rating": 4.4,
+      "reviewCount": null,
+      "image": "https://m.media-amazon.com/images/I/61mKHb7xPhS._AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "url": "https://www.amazon.com/dp/B07YSTD1GV",
+      "source": "Amazon",
+      "capturedAt": "2026-07-29"
+    },
+    {
+      "asin": "B00PCE7SQ8",
+      "title": "Amazon 样本：In-Channel Side Window Deflectors",
+      "price": 69.99,
+      "rating": 4.5,
+      "reviewCount": null,
+      "image": "https://m.media-amazon.com/images/I/61tqMuR3vYL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+      "url": "https://www.amazon.com/dp/B00PCE7SQ8",
+      "source": "Amazon",
+      "capturedAt": "2026-07-29"
+    },
+    {
+      "asin": "B0CGHVBYP3",
+      "title": "Amazon 样本：Tape-On Rain Guards",
+      "price": 38.99,
+      "rating": 4.0,
+      "reviewCount": null,
+      "image": "https://m.media-amazon.com/images/I/71W9dKvdNIL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+      "url": "https://www.amazon.com/dp/B0CGHVBYP3",
+      "source": "Amazon",
+      "capturedAt": "2026-07-29"
+    }
+  ],
+  "channelOverview": [
+    {
+      "key": "retail",
+      "title": "零售需求",
+      "sources": [
+        "amazon"
+      ],
+      "count": 0,
+      "state": "not_selected",
+      "purpose": "价格、评论量与竞品密度"
+    },
+    {
+      "key": "voice",
+      "title": "用户声音",
+      "sources": [
+        "reddit",
+        "youtube"
+      ],
+      "count": 0,
+      "state": "not_selected",
+      "purpose": "使用场景、抱怨、安装与替代方案"
+    },
+    {
+      "key": "trend",
+      "title": "趋势内容",
+      "sources": [
+        "news"
+      ],
+      "count": 0,
+      "state": "not_selected",
+      "purpose": "新品、品牌和行业时效信号"
+    },
+    {
+      "key": "supply",
+      "title": "出口供应端",
+      "sources": [
+        "alibaba"
+      ],
+      "count": 0,
+      "state": "not_selected",
+      "purpose": "出口供应商、起订量、批发价与产品同质化"
+    }
+  ],
+  "voices": [],
+  "supply": {
+    "query": "rain guards window visors",
+    "items": [],
+    "priceBands": [],
+    "guidance": "Alibaba.com 本次未形成可核验供应样本；请从来源台账打开已带英文关键词的入口，不要把空结果当成无供给。"
+  },
+  "pains": [
+    {
+      "key": "durability",
+      "label": "耐久与材料",
+      "count": 4,
+      "examples": [
+        "参考工作簿判断：北美外贴式 Tape-On 为主流，估计份额约60%-70%；该比例来自用户工作簿，待用第三方市场数据库复核。",
+        "参考工作簿判断：材料主推 PMMA，建议售价带 $55-$80，优势是透明度和外观质感。"
+      ],
+      "strength": 100,
+      "share": 29,
+      "severity": "高"
+    },
+    {
+      "key": "adhesion",
+      "label": "粘接与固定",
+      "count": 3,
+      "examples": [
+        "参考工作簿判断：北美外贴式 Tape-On 为主流，估计份额约60%-70%；该比例来自用户工作簿，待用第三方市场数据库复核。",
+        "用户问题集中在车型适配不准、背胶失效、材料偏薄或破损、风噪、包装刮花与边缘锋利。"
+      ],
+      "strength": 75,
+      "share": 21,
+      "severity": "高"
+    },
+    {
+      "key": "fitment",
+      "label": "适配与尺寸",
+      "count": 2,
+      "examples": [
+        "用户问题集中在车型适配不准、背胶失效、材料偏薄或破损、风噪、包装刮花与边缘锋利。",
+        "车型专配页面必须列出年份、车身版本、门数及不适配清单，避免用 Universal 或 Fits All 做未验证承诺。"
+      ],
+      "strength": 50,
+      "share": 14,
+      "severity": "中"
+    },
+    {
+      "key": "packaging",
+      "label": "包装与运输",
+      "count": 2,
+      "examples": [
+        "用户问题集中在车型适配不准、背胶失效、材料偏薄或破损、风噪、包装刮花与边缘锋利。",
+        "长条透明件运输中易互相摩擦和受力开裂，分片隔离、端部保护和跌落验证属于产品定义而非售后补救。"
+      ],
+      "strength": 50,
+      "share": 14,
+      "severity": "中"
+    },
+    {
+      "key": "installation",
+      "label": "安装与说明",
+      "count": 1,
+      "examples": [
+        "外贴式安装简单，但必须明确清洁、温度、压合和固化时间，否则背胶类差评会抵消安装便利性。"
+      ],
+      "strength": 25,
+      "share": 7,
+      "severity": "低"
+    },
+    {
+      "key": "noise",
+      "label": "噪音与行驶体验",
+      "count": 1,
+      "examples": [
+        "用户问题集中在车型适配不准、背胶失效、材料偏薄或破损、风噪、包装刮花与边缘锋利。"
+      ],
+      "strength": 25,
+      "share": 7,
+      "severity": "低"
+    },
+    {
+      "key": "appearance",
+      "label": "外观与质感",
+      "count": 1,
+      "examples": [
+        "参考工作簿判断：材料主推 PMMA，建议售价带 $55-$80，优势是透明度和外观质感。"
+      ],
+      "strength": 25,
+      "share": 7,
+      "severity": "低"
+    },
+    {
+      "key": "value",
+      "label": "价格与价值感",
+      "count": 0,
+      "examples": [],
+      "strength": 0,
+      "share": 0,
+      "severity": "低"
+    }
+  ],
+  "personas": [
+    {
+      "name": "车型核对型",
+      "behavior": "先核对年份、门数和装饰版本，再看买家实拍确认轮廓。",
+      "value": "高转化、低误购",
+      "priority": "核心"
+    },
+    {
+      "name": "雨天通勤型",
+      "behavior": "需要小开窗通风和除雾，不愿承受明显风噪。",
+      "value": "稳定刚需",
+      "priority": "核心"
+    },
+    {
+      "name": "外观升级型",
+      "behavior": "关注烟灰色、贴合度和与整车线条的一致性。",
+      "value": "支撑溢价",
+      "priority": "次核心"
+    },
+    {
+      "name": "安装风险敏感型",
+      "behavior": "反复查看背胶、说明书、质保和退货评价。",
+      "value": "决定退货与口碑",
+      "priority": "守门"
+    }
+  ],
+  "emotions": {
+    "pain": "买前无法确定车型版本，买后才发现弧度、长度或胶带不匹配，形成退货和返工。",
+    "itch": "希望低成本获得更完整的车身外观，并让雨天通风看起来是原厂级解决方案。",
+    "pleasure": "开箱无划伤、左右件一眼可分、一次贴合；高速使用没有额外异响，装完后不需要再处理。"
+  },
+  "opportunities": [
+    {
+      "priority": "P0",
+      "title": "材料与耐候升级",
+      "action": "提高抗冲击、耐候、耐刮能力，并把材料和测试结果可视化。",
+      "cost": "中",
+      "evidenceCount": 4,
+      "evidenceLabel": "耐久与材料",
+      "validation": "高低温、UV和冲击测试通过",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P0",
+      "title": "高可靠固定系统",
+      "action": "升级胶带或机械固定方案，加入表面清洁与固化时间指引。",
+      "cost": "低",
+      "evidenceCount": 3,
+      "evidenceLabel": "粘接与固定",
+      "validation": "冷热循环后无起翘，安装后7天无脱落",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P0",
+      "title": "车型与尺寸零误购",
+      "action": "车型/年份/版本拆分SKU，实车治具全检，页面给出不适配清单。",
+      "cost": "中",
+      "evidenceCount": 2,
+      "evidenceLabel": "适配与尺寸",
+      "validation": "实车装配通过率100%，适配类退货为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P1",
+      "title": "运输零划伤包装",
+      "action": "分片隔离、受力点加固、配件称重与跌落验证。",
+      "cost": "低",
+      "evidenceCount": 2,
+      "evidenceLabel": "包装与运输",
+      "validation": "试运样本破损率为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P1",
+      "title": "一次装对套件",
+      "action": "分步骤五金包、预装关键件、二维码视频和错误安装警示。",
+      "cost": "低",
+      "evidenceCount": 1,
+      "evidenceLabel": "安装与说明",
+      "validation": "首次安装完成率≥90%，漏件为0",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P1",
+      "title": "低风噪/低异响结构",
+      "action": "优化外形、接触面和缓冲结构，台架与实车双验证。",
+      "cost": "中",
+      "evidenceCount": 1,
+      "evidenceLabel": "噪音与行驶体验",
+      "validation": "目标工况无可感知结构异响",
+      "evidenceStatus": "evidence-backed"
+    }
+  ],
+  "productDefinition": {
+    "concept": "车型专配 PMMA 外贴式晴雨挡，围绕一次装对、长期不翘边和高速低风噪设计。",
+    "coreUser": "希望改善通风与雨天体验、会严格核对车型年份、愿意为低安装风险付费的北美车主。",
+    "job": "在小开窗通风时减少雨水进入，同时不增加明显风噪、视线干扰或反复粘贴成本。",
+    "mustHave": [
+      "车型/年份/车身版本零误购",
+      "PMMA 厚度、透光与边缘安全规格冻结",
+      "汽车级胶带与表面处理流程",
+      "高速风噪、冷热循环、UV 与跌落测试通过"
+    ],
+    "differentiators": [
+      "左右件位号与定位治具",
+      "实车安装短视频和错误安装预警",
+      "单片隔离零划伤包装",
+      "页面公开不适配清单与实测工况"
+    ],
+    "doNotClaim": [
+      "未实车验证的通用适配",
+      "没有风洞或路试证据的零风噪",
+      "没有材料报告支持的永久不褪色",
+      "无法追溯来源的 3M 品牌胶带"
+    ]
+  },
+  "keywords": [
+    {
+      "keyword": "样本",
+      "frequency": 3,
+      "intent": "属性"
+    },
+    {
+      "keyword": "guards",
+      "frequency": 2,
+      "intent": "属性"
+    },
+    {
+      "keyword": "rain",
+      "frequency": 2,
+      "intent": "属性"
+    },
+    {
+      "keyword": "tape-on",
+      "frequency": 2,
+      "intent": "属性"
+    },
+    {
+      "keyword": "visors",
+      "frequency": 2,
+      "intent": "属性"
+    },
+    {
+      "keyword": "deflectors",
+      "frequency": 1,
+      "intent": "长尾"
+    },
+    {
+      "keyword": "in-channel",
+      "frequency": 1,
+      "intent": "长尾"
+    },
+    {
+      "keyword": "side",
+      "frequency": 1,
+      "intent": "长尾"
+    }
+  ],
+  "keywordGroups": {
+    "core": [],
+    "attributes": [
+      "样本",
+      "guards",
+      "rain",
+      "tape-on",
+      "visors"
+    ],
+    "longTail": [
+      "deflectors",
+      "in-channel",
+      "side"
+    ]
+  },
+  "launchPlan": [
+    {
+      "phase": "0-15天",
+      "title": "证据补齐",
+      "owner": "市场研究/数据",
+      "actions": [
+        "补齐Top 20竞品参数与价格",
+        "抓取至少100条有效评论",
+        "确认目标用户与核心场景"
+      ],
+      "gate": "关键结论均有来源，未知项显式列出"
+    },
+    {
+      "phase": "16-45天",
+      "title": "产品验证",
+      "owner": "产品/研发/质量",
+      "actions": [
+        "冻结P0规格与测试计划",
+        "完成首轮样品和对标测试",
+        "核算三档价格与贡献利润"
+      ],
+      "gate": "P0问题闭环，样品通过核心工况"
+    },
+    {
+      "phase": "46-75天",
+      "title": "小批量验证",
+      "owner": "供应链/运营",
+      "actions": [
+        "10-30件试产",
+        "包装与安装盲测",
+        "完成Listing证据素材"
+      ],
+      "gate": "兼容、破损、漏件类问题为0"
+    },
+    {
+      "phase": "76-90天",
+      "title": "上市与复盘",
+      "owner": "运营/客服/数据",
+      "actions": [
+        "上线精确词与长尾词",
+        "逐单标记咨询与退货原因",
+        "第7/14/30天复盘"
+      ],
+      "gate": "达到目标转化且质量指标不恶化"
+    }
+  ],
+  "northStar": {
+    "metric": "有效机会验证率",
+    "definition": "进入样品验证的P0机会中，按期通过核心验收指标的比例。",
+    "guardrails": [
+      "适配/规格误购率",
+      "首月质量客诉率",
+      "贡献利润率",
+      "证据覆盖率"
+    ]
+  },
+  "sourceStatuses": [
+    {
+      "source": "reference-workbook",
+      "state": "success",
+      "count": 9,
+      "latencyMs": 0,
+      "message": "已导入用户提供的品类洞察工作簿。",
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "meta": {
+        "type": "user-provided-workbook"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "参考工作簿判断：北美外贴式 Tape-On 为主流，估计份额约60%-70%；该比例来自用户工作簿，待用第三方市场数据库复核。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "参考工作簿判断：材料主推 PMMA，建议售价带 $55-$80，优势是透明度和外观质感。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "用户问题集中在车型适配不准、背胶失效、材料偏薄或破损、风噪、包装刮花与边缘锋利。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "外贴式安装简单，但必须明确清洁、温度、压合和固化时间，否则背胶类差评会抵消安装便利性。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "长条透明件运输中易互相摩擦和受力开裂，分片隔离、端部保护和跌落验证属于产品定义而非售后补救。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "reference-workbook",
+      "type": "observed",
+      "claim": "车型专配页面必须列出年份、车身版本、门数及不适配清单，避免用 Universal 或 Fits All 做未验证承诺。",
+      "value": null,
+      "url": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx",
+      "capturedAt": "2026-07-29T00:00:00+08:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "B07YSTD1GV Amazon 样本：Tape-On Window Visors; price 46.99; rating 4.4",
+      "value": 46.99,
+      "url": "https://www.amazon.com/dp/B07YSTD1GV",
+      "capturedAt": "2026-07-29",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "B00PCE7SQ8 Amazon 样本：In-Channel Side Window Deflectors; price 69.99; rating 4.5",
+      "value": 69.99,
+      "url": "https://www.amazon.com/dp/B00PCE7SQ8",
+      "capturedAt": "2026-07-29",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "B0CGHVBYP3 Amazon 样本：Tape-On Rain Guards; price 38.99; rating 4.0",
+      "value": 38.99,
+      "url": "https://www.amazon.com/dp/B0CGHVBYP3",
+      "capturedAt": "2026-07-29",
+      "confidence": "高"
+    }
+  ],
+  "reference": {
+    "used": true,
+    "materials": [
+      {
+        "name": "PP",
+        "cost": "低",
+        "appearance": "哑黑/黑茶色，不透明",
+        "durability": 3,
+        "priceBand": "$35-$55",
+        "recommendation": "仅用于基础款"
+      },
+      {
+        "name": "PC",
+        "cost": "中",
+        "appearance": "半透明/透明，韧性较好",
+        "durability": 4,
+        "priceBand": "$45-$65",
+        "recommendation": "可作为耐冲击备选"
+      },
+      {
+        "name": "PMMA/亚克力",
+        "cost": "中高",
+        "appearance": "高透明/烟灰色，亮面",
+        "durability": 4,
+        "priceBand": "$55-$80",
+        "recommendation": "主推材料"
+      },
+      {
+        "name": "PP+PMMA复合",
+        "cost": "中",
+        "appearance": "PP边框内嵌亚克力",
+        "durability": 4,
+        "priceBand": "$50-$70",
+        "recommendation": "兼顾性价比"
+      },
+      {
+        "name": "PC+碳纤维纹路",
+        "cost": "高",
+        "appearance": "碳纤纹/拉丝银面",
+        "durability": 5,
+        "priceBand": "$85-$130",
+        "recommendation": "高端形象款"
+      }
+    ],
+    "installMethods": [
+      {
+        "name": "In-Channel 内嵌式",
+        "share": "约20%-30%",
+        "difficulty": "中",
+        "returnRisk": "中",
+        "recommendation": "维持成熟 SKU，不作为扩张主线"
+      },
+      {
+        "name": "Tape-On 外贴式",
+        "share": "约60%-70%",
+        "difficulty": "低",
+        "returnRisk": "低",
+        "recommendation": "主攻方向；新产品优先"
+      },
+      {
+        "name": "Clip-On 无胶内嵌式",
+        "share": "约10%-15%",
+        "difficulty": "低",
+        "returnRisk": "低",
+        "recommendation": "精度要求高，适合高端款"
+      }
+    ],
+    "source": "D:/Users/SYZ/Desktop/晴雨挡 品类洞察.xlsx"
+  },
+  "methodology": [
+    "多源证据工作流：吸收 IvyeaOps 与 TrendRadar 的方法",
+    "Amazon 品类/关键词/评论结构：吸收 Sorftime 研究技能与 EasyAMZ 字段模型",
+    "Amazon US 书面评论回退：吸收 MIT 许可 amazon-review-scraper 的 Woot 公开端点方法",
+    "Reddit 回退：优先公开 RSS，再回退 JSON/PullPush；参考 BSD-2 PRAW 与 MIT BAScraper 的边界",
+    "供应端研究：Alibaba.com 独立成组，不与 Amazon 零售样本混算",
+    "痛点/痒点/爽点与 P0-P2 机会映射：吸收 Market Insight 方法",
+    "问题定义、竞争、定价、上市门槛、北极星指标与复盘：吸收 Lenny PM Skills 方法"
+  ]
+}
