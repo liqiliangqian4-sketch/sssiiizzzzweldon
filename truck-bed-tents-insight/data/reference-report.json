@@ -2,41 +2,242 @@
   "query": "Truck Bed Tents",
   "englishQuery": "Truck Bed Tents",
   "market": "US",
-  "generatedAt": "2026-07-30T18:55:57.229749+08:00",
+  "generatedAt": "2026-07-31T16:12:06.449025+08:00",
   "executive": {
     "verdict": "条件进入",
     "tone": "conditional",
-    "score": 64,
-    "confidence": 67,
+    "score": 69,
+    "confidence": 96,
     "oneLiner": "需求信号存在，但必须围绕“耐久与材料”建立可验证差异化。",
     "condition": "先完成样品、成本和核心风险验证，再放大采购。"
   },
   "signals": {
-    "demand": 50,
-    "competition": 33,
+    "demand": 78,
+    "competition": 84,
     "painGap": 95,
-    "premium": 42,
+    "premium": 84,
     "feasibility": 62,
     "labels": "所有评分均为方向性信号指数，不是官方市场规模或销量估算。"
   },
   "marketStats": {
-    "competitorCount": 0,
-    "priceMin": null,
-    "priceMedian": null,
-    "priceMax": null,
-    "averageRating": null,
-    "medianReviewCount": null,
-    "sourceCoverage": 60,
-    "evidenceCount": 26
+    "competitorCount": 20,
+    "priceMin": 64.99,
+    "priceMedian": 104.99,
+    "priceMax": 329.98,
+    "averageRating": 4.39,
+    "medianReviewCount": 94,
+    "sourceCoverage": 100,
+    "evidenceCount": 62
   },
   "pricing": {
-    "entry": 29.99,
-    "core": 49.99,
-    "premium": 69.99,
+    "entry": 69.99,
+    "core": 104.99,
+    "premium": 230.99,
     "currency": "USD",
     "logic": "按可见市场样本四分位数生成；上市前必须复核贡献利润。"
   },
-  "competitors": [],
+  "competitors": [
+    {
+      "asin": "B0BQYQBK35",
+      "title": "GoHimal Pickup Truck Bed Tent, 5.5-6.0FT Truck Tent for Camping（Gray） | Portable,Double Layer,Waterproof PU2000mm",
+      "price": 69.99,
+      "rating": 4.5,
+      "reviewCount": 929,
+      "image": "https://m.media-amazon.com/images/I/71txMGDrP-L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/GoHimal-Waterproof-PU2000mm-5-5-6-0-Portable/dp/B0BQYQBK35",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B07HXML6M9",
+      "title": "Napier Backroadz Truck Tent | Pickup Truck Bed Camping Tent | Rainfly for Water Protection | Sturdy and Spacious 2-Person Truck Tent | Easy 10-Minute Setup | Gray/Green",
+      "price": 195.49,
+      "rating": 4.6,
+      "reviewCount": 5550,
+      "image": "https://m.media-amazon.com/images/I/71F-7OQHZ+L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Napier-Backroadz-Truck-Tent-Short/dp/B07HXML6M9",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DWFDWD1Z",
+      "title": "Truck Bed Tent, Pickup Truck Tents for Camping 5.5-6.0 Ft Bed | Waterproof PU3000mm Tent for Truck Bed, Heavy Duty Oxford Fabric Sleeping Truck Tent for Car Camping, Overlanding, Green",
+      "price": 64.99,
+      "rating": 4.0,
+      "reviewCount": 281,
+      "image": "https://m.media-amazon.com/images/I/71sL92oeW8L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/WildFinder-Truck-Pickup-Camping-5-5-6-0/dp/B0DWFDWD1Z",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0D2XHJ6T2",
+      "title": "Truck Bed Tent with Awning: 6.4-6.7FT PU3000mm Waterproof Tailgate Pickup Truck Tents, Easy Set-up for 2 Person, Fits Full Size Short Bed, Chevy, Dodge, Ford, GMC, Green",
+      "price": 125.96,
+      "rating": 4.6,
+      "reviewCount": 53,
+      "image": "https://m.media-amazon.com/images/I/61-agL4fFYL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Umbrauto-Truck-Bed-Tent-Awning/dp/B0D2XHJ6T2",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B08XH7TK3M",
+      "title": "JOYTUTUS Pickup Truck Tent 2.0, Waterproof PU2000mm Double Layer for 2 Person, Portable Truck Bed Tent with Rainfly, 5.5'-5.8' Camping Preferred - Green Recycled Claim Standard Blended",
+      "price": 69.99,
+      "rating": 4.4,
+      "reviewCount": 1031,
+      "image": "https://m.media-amazon.com/images/I/71Lnmf8-ppL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/JoyTutus-Waterproof-PU2000mm-Portable-Preferred/dp/B08XH7TK3M",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DXL4PZ4Z",
+      "title": "Truck Bed Tent 6.4' ~ 6.7' Easy Set Up Umburato Pickup Truck Tents for Camping, Waterproof PU3000mm Canopy for Truck Camper, Portable, Spacious for 2 Person Green",
+      "price": 89.32,
+      "rating": 4.2,
+      "reviewCount": 111,
+      "image": "https://m.media-amazon.com/images/I/81jj9PvOheL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Umburato-Waterproof-PU3000mm-Portable-Spacious/dp/B0DXL4PZ4Z",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DXL477KQ",
+      "title": "Truck Bed Tent 5.5-6ft: Easy Set Up Umburato Pickup Truck Tents for Camping, Waterproof PU3000mm Canopy for Truck Camper, Portable, Spacious for 2 Person Green",
+      "price": 79.96,
+      "rating": 4.3,
+      "reviewCount": 94,
+      "image": "https://m.media-amazon.com/images/I/71AYt-tGRFL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Truck-Bed-Tent-5-5-6ft-Waterproof/dp/B0DXL477KQ",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0D66W5HP5",
+      "title": "Pickup Truck Tent with Awning Shade,Waterproof PU5000mm Oxford for 5.5-6.3 FT Truck Bed for Camping Travel Outdoor Activities for Chevy Silverado 1500,Ram 1500/Dakota,F150,GMC 1500,Titan,Tundra",
+      "price": 89.99,
+      "rating": 4.4,
+      "reviewCount": 287,
+      "image": "https://m.media-amazon.com/images/I/71jt9dyZscL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Waterproof-PU5000mm-5-5-5-8-Activities-Silverado/dp/B0D66W5HP5",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DK6FWCK1",
+      "title": "Umbrauto Air Mattress for 5.5-5.8 ft Full-Size Short Truck Beds, Inflatable Truck Tent Airbed with Pump, Pickup Camper Air Bed for Camping",
+      "price": 67.97,
+      "rating": null,
+      "reviewCount": null,
+      "image": "https://m.media-amazon.com/images/I/61OwUPmWXoL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Umbrauto-Mattress-5-5-5-8-Full-Size-Inflatable/dp/B0DK6FWCK1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0BJZBSLG4",
+      "title": "JOYTUTUS Pickup Truck Tent 5.5ft Bed Tent with Removable Awning, Waterproof PU2000mm Double Layer for 2 Person, Portable Truck Bed Tent - Green, Aluminum Pole Recycled Claim Standard Blended",
+      "price": 142.49,
+      "rating": 4.3,
+      "reviewCount": 111,
+      "image": "https://m.media-amazon.com/images/I/71oJQz8xRGL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/JoyTutus-Waterproof-Removable-5-5ft-6ft-Preferred/dp/B0BJZBSLG4",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0DRXX4X77",
+      "title": "Niphean Truck Bed Tent for Camping 5ft-8ft for 2+1 People, 2 Mins Setup | Inflatable Pickup Truck Tent, PU 3000mm Waterproof & High-Strength Windproof, Spacious Interior for Multi-Landscape",
+      "price": 299.98,
+      "rating": 4.1,
+      "reviewCount": 72,
+      "image": "https://m.media-amazon.com/images/I/81+fMJO7f+L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/5-5ft-8ft-Inflatable-Waterproof-High-Strength-Multi-Landscape/dp/B0DRXX4X77",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0BQYP6R63",
+      "title": "GoHimal Pickup Truck Bed Tent, 5.5-6.0FT Truck Tent for Camping（Green） | Portable,Double Layer,Waterproof PU2000mm",
+      "price": 64.99,
+      "rating": 4.5,
+      "reviewCount": 929,
+      "image": "https://m.media-amazon.com/images/I/71KfXYmBinL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/GoHimal-Waterproof-PU2000mm-5-5-6-0-Portable/dp/B0BQYP6R63",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GJTGWP5Z",
+      "title": "Inflatable Truck Bed Tent with Detachable Zippered Awning | Pickup Truck Tent for 5.5ft-8ft Bed, 2 Mins Fast Setup Blow Up Tent for truck, PU3000 Waterproof Truck Tent for Camping",
+      "price": 299.99,
+      "rating": 4.2,
+      "reviewCount": 21,
+      "image": "https://m.media-amazon.com/images/I/71+cu+XBa0L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/BravArrk-Inflatable-Detachable-5-5ft-8ft-Waterproof/dp/B0GJTGWP5Z",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0H1GZX61Y",
+      "title": "Inflatable Truck Bed Tent 5.5FT-8FT,2-Min Pole-Free Setup Truck Tent with Air Pump,PU3000 Waterproof Pickup Truck Camping Tent with Stargazing Skylight for 2-3 Person,Fits Tacoma/F150/Ram",
+      "price": 329.98,
+      "rating": 4.2,
+      "reviewCount": 6,
+      "image": "https://m.media-amazon.com/images/I/81c64rRIEjL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/GARIGLOOME-Inflatable-5-5FT-8FT-Waterproof-Stargazing/dp/B0H1GZX61Y",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GGGJCWNX",
+      "title": "All-in-One Inflatable Truck Bed Tent with Mattress for 5.5-6.5FT,Built in Wireless Rechargeable Air Pump,3 Mins Fast Setup,Waterproof PU 2000MM Pickup Truck Tent for Camping Road Trip Recycled Claim Standard Blended",
+      "price": 248.99,
+      "rating": 4.1,
+      "reviewCount": 6,
+      "image": "https://m.media-amazon.com/images/I/71LiA7peFUL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/TIPHOPE-Inflatable-5-5-6-5FT-Rechargeable-Waterproof/dp/B0GGGJCWNX",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GXXNZHG1",
+      "title": "Inflatable Truck Bed Tent for Camping with Detachable Zippered Awning, Fits 5.5ft-8ft Pickup Truck Beds, 2-Min Fast Setup, PU3000mm Waterproof, Trucks & Ground Tent, Windproof Shelter for 2-3 Person",
+      "price": 299.99,
+      "rating": 5.0,
+      "reviewCount": 1,
+      "image": "https://m.media-amazon.com/images/I/81UF7b+jU6L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/Inflatable-Truck-Bed-Tent-Camping/dp/B0GXXNZHG1",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0CR3NCMN4",
+      "title": "JOYTUTUS Truck Tent with Rainfly 5.5Ft-5.8Ft, Straight Spacious Truck Bed Tent with Sky View Mesh, Waterproof PU2000mm Double Layer for 2 Person, Gray Blue Recycled Claim Standard Blended",
+      "price": 79.99,
+      "rating": 4.6,
+      "reviewCount": 284,
+      "image": "https://m.media-amazon.com/images/I/81xkdT89LTL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/JOYTUTUS-5-5Ft-6Ft-Straight-Spacious-Waterproof/dp/B0CR3NCMN4",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GX5JBXWH",
+      "title": "Truck Bed Tent with Rainfly, Truck Tents for Camping 5.5-6.0 Ft | Waterproof PU3000mm Tent for Truck Bed, Heavy Duty Oxford Fabric Sleeping Truck Tent for Car Camping, Overlanding, Green",
+      "price": 119.99,
+      "rating": 4.2,
+      "reviewCount": 9,
+      "image": "https://m.media-amazon.com/images/I/81RZdDakJvL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/WildFinder-Truck-Rainfly-Camping-5-5-6-0/dp/B0GX5JBXWH",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0H1C3SVNP",
+      "title": "Truck Bed Tent, Pickup Truck Tents for Camping 5.5-6.0 FT Bed | Waterproof PU3000mm Tent for Truck Bed, Heavy Duty Oxford Fabric Sleeping Truck Tent for Car Camping, Overlanding, Green",
+      "price": 69.99,
+      "rating": 4.7,
+      "reviewCount": 8,
+      "image": "https://m.media-amazon.com/images/I/71VYrohkP+L._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/WildFinder-Truck-Pickup-Camping-5-5-6-0/dp/B0H1C3SVNP",
+      "source": "Amazon"
+    },
+    {
+      "asin": "B0GJ3PVWVK",
+      "title": "Truck Bed Tent for Camping Inflatable Pickup Truck Tent with Pump 5.5ft–8ft | 2 Mins Setup PU3000mm Waterproof Windproof, Double Layer Mesh Window & Door 4-Season Design",
+      "price": 224.99,
+      "rating": 4.5,
+      "reviewCount": 2,
+      "image": "https://m.media-amazon.com/images/I/7154RVClbfL._AC_UL320_.jpg",
+      "url": "https://www.amazon.com/5-5ft-8ft-Inflatable-Camping-Waterproof-Dual-use/dp/B0GJ3PVWVK",
+      "source": "Amazon"
+    }
+  ],
   "channelOverview": [
     {
       "key": "retail",
@@ -44,8 +245,8 @@
       "sources": [
         "amazon"
       ],
-      "count": 0,
-      "state": "failed",
+      "count": 24,
+      "state": "success",
       "purpose": "价格、评论量与竞品密度"
     },
     {
@@ -75,8 +276,8 @@
       "sources": [
         "alibaba"
       ],
-      "count": 0,
-      "state": "action_required",
+      "count": 24,
+      "state": "success",
       "purpose": "出口供应商、起订量、批发价与产品同质化"
     }
   ],
@@ -146,11 +347,75 @@
       "url": "https://www.reddit.com/r/carcamping/comments/1uidlzc/recommendations_for_sleeping_padmattress_for/"
     },
     {
+      "source": "amazon-written-review",
+      "title": "Absolutely incredible all around tent",
+      "snippet": "This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. With that being said it was so easy to set up and way more durable than I had expected. I stayed on an island in Florida and it rained like crazy for three nights straight and we never got a single drop of water on us. The design is super cool and looks great in my personal opinion, I found it to be pretty cozy inside as well. Another thing that I found really cool is that it is attached to the truck so well that we could even drive around our area with it still setup. *THERE IS A WARNING TAG THAT SAYS NOT TO* I did it anyways at less than 30 mph and the tent didn’t even budge. This is for the 6.5 foot tent and it fit absolutely perfectly on a 2006 ford F250 For the price I could not have been more impressed",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Beach camping",
+      "snippet": "It works great. It never rained, but we were in zero visibility fog while camping on the beach. With that being said the outside out the entire tent and truck were soaked with condensation/dew/wetness - not a drop from inside the tent. Loved sleeping and waking up to the waves. Super easy to put up. Purchased on cyber Monday for $40 less than current price. Was definitely worth the money. Fit the truck bed air mattress perfect and left the tailgate portion enough room to place items. Zippers were easy to use and everything stayed intact!",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Great little tent",
+      "snippet": "I have a 2024 Toyota Tacoma sr, 5”5’ foot bed this fit perfectly. Directions to set up were a little complicated but once installed it was great. Easy to set up after you figure it out. The camper next to me stepped in to help me out. Nice and spacious inside with pockets and windows. I gave it 4 stars because there is an area starting to rip already after 5 camping trips. The zippers work well . As for wind resistance and moisture, I’ve only used this in a warm area during summer so I can’t give input on that. When it came time to take it down, it was easy and it actually fit back into the storage bag it came with.",
+      "context": "B0BQYQBK35 · 4.0 / 5",
+      "metric": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Very good quality, great fit and finish.",
+      "snippet": "It’s a little short for our truck, even though we ordered the one that matches the size of our truck bed. However, it’s a good enough fit. I’m not sure about it being waterproof because it’s not in the forecast to rain here in the desert. The quality fit and finish, and attention to detail appears to be really good. It was a little bit of a pain to put together because the rods that come with it are really stiff and hard to flex. But I guess that’s a good for durability. So, overall we are really glad we got it.",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Quick set up",
+      "snippet": "This is a pretty cool way to get out for the weekend. Sets up quickly and when you add an air mattress very comfortable. I have used when white water rafting on a nice summer weekend and up to the cascade mountains in a thunderstorm and stayed dry. High recommend",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Love it!",
+      "snippet": "I love this thing. I took it out to the great Salt Lake and went camping at antelope island and I gotta say its nice to be in the back of a truck like that, at least its provides protection. Totally water proof and very roomy and warm. Fit perfectly!",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Handy and affordable truck tent",
+      "snippet": "This tent is going to work fantastic for our traveling. We have a 2023 Honda Ridgeline, which wasn't listed on the list of vehicles in the item description, so we weren't sure if it would work, but it works great! The tent is packaged in a very nice and durable carrying case that doesn't take up much room at all. It set up super easy. This being our first time setting it up, it only took us 15 minutes start-to-finish. The directions are very clear and it is very handy having one of the poles a different color so you are sure to get the right positioning. The tent also took down quickly and easily and folded up to fit nicely back in the carrying bag. The tent is big enough for us to have a double-sized air mattress for sleeping. The roof is tall enough that we could stand up in it or put camp stools and a small camp table inside if the weather is rainy. The zippers are a very sturdy quality and zip up and down smoothly. There are two flaps in the front door so you can have a screen zippered with the outer door open to let in fresh air. The two side windows also zip open to let in air as well. We look forward to using the tent on our next road trip and/or impromptu camping trip. It will make it nice to be up of the ground for sleeping.",
+      "context": "B0BQYQBK35 · 5.0 / 5",
+      "metric": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
+      "source": "amazon-written-review",
+      "title": "Good set up, not waterproof.",
+      "snippet": "The positives: it definitely fits back in the bag and is compact to store. It is a good set up if it’s not raining. The height is nice. Covers the tailgate giving extra storage room. Once you know how to put it together it is easy, but I highly recommend doing it before your first trip out. It would be difficult for one person to do on their own once it gets to inserting into the last holder. I had someone help me put it together before I left and broke down a couple pieces on each pole so it tucked down while I was driving and I just needed to do a few inserts once I arrived. This was helpful. The cons: the poles are slippery when wet making it a challenge to put the strength into it that is needed to make them fit into the pockets. It definitely leaks water! It poured rain the first 24 hours of the trip. The door was wet and the fan I hung from the tent hook on the ceiling was full of water. Had that not been there the bed would have been soaked. If it was not raining it would have been fine. If you are short (I am not and still needed a step) you will need a way to reach the door zipper up top from the outside. All in all it is a good concept, I just really need something to be waterproof when it says it is. I can be rugged, and don’t mind the elements, but being dry in my tent is a must.",
+      "context": "B0BQYQBK35 · 3.0 / 5",
+      "metric": 3.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/"
+    },
+    {
       "source": "youtube",
       "title": "Napier Truck Tent FULL USER review/ Is this the Best Budget Tent option for Camping and Overlanding?",
       "snippet": "Chenzo's World",
       "context": "2 years ago",
-      "metric": "119,386 views",
+      "metric": "119,490 views",
       "url": "https://www.youtube.com/watch?v=G4LMpsKQjK0"
     },
     {
@@ -158,7 +423,7 @@
       "title": "Truck Camping Just Got INSANE! Top 5 Bed Tents for 2026",
       "snippet": "driveloop",
       "context": "5 months ago",
-      "metric": "3,858 views",
+      "metric": "3,917 views",
       "url": "https://www.youtube.com/watch?v=HbbsFepOVao"
     },
     {
@@ -166,7 +431,7 @@
       "title": "JOYTUTUS Truck Bed Tent Review | 6.5ft Waterproof Tent with Awning for F150, Silverado, Ram & More!",
       "snippet": "Handy Homestead Reviews",
       "context": "1 year ago",
-      "metric": "9,172 views",
+      "metric": "9,203 views",
       "url": "https://www.youtube.com/watch?v=64oAg-ApKB0"
     },
     {
@@ -174,111 +439,368 @@
       "title": "BEST INFLATABLE TRUCK BED TENTS 2026 – Top 5 Picks",
       "snippet": "driveloop",
       "context": "1 month ago",
-      "metric": "886 views",
+      "metric": "925 views",
       "url": "https://www.youtube.com/watch?v=gcceeQuBGR0"
-    },
-    {
-      "source": "youtube",
-      "title": "Full Demo & Honest Thoughts On Napier Backroadz Truck Tent After Lots of Use Plus Rain!",
-      "snippet": "Emily Clark",
-      "context": "2 years ago",
-      "metric": "16,449 views",
-      "url": "https://www.youtube.com/watch?v=GuPIktC6wqU"
-    },
-    {
-      "source": "youtube",
-      "title": "Kodiak Canvas Truck Tent",
-      "snippet": "Kodiak Canvas",
-      "context": "10 years ago",
-      "metric": "486,886 views",
-      "url": "https://www.youtube.com/watch?v=euH2hUkl9ME"
     }
   ],
   "supply": {
     "query": "Truck Bed Tents",
-    "items": [],
+    "items": [
+      {
+        "id": "264803526111",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/264803526111.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "801547917447",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/801547917447.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "283229434330",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/283229434330.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "772103742206",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/772103742206.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "748393152923",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/748393152923.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "724401144914",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/724401144914.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "156527933105",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/156527933105.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "276915630743",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/276915630743.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "732272126353",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/732272126353.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "358520972389",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/358520972389.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "645087609238",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/645087609238.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "790545424233",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/790545424233.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "706362952886",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/706362952886.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "683515417302",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/683515417302.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "517777692657",
+        "title": "Store reviews",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": null,
+        "url": "https://www.alibaba.com/product-detail/517777692657.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601704948488",
+        "title": "Modular Design East-west king Size Bed pop up Truck Camper Shell Caps Topper with Rooftop Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1cd3387c0e914b75a009d0a63a4cb284e.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601704948488.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601083558074",
+        "title": "Modular Design East-west king Size Bed pop up Truck Camper Shell Caps Topper with Rooftop Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1cd3387c0e914b75a009d0a63a4cb284e.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601083558074.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601521255787",
+        "title": "Modular Design East-west king Size Bed pop up Truck Camper Shell Caps Topper with Rooftop Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1cd3387c0e914b75a009d0a63a4cb284e.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601521255787.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601568971708",
+        "title": "Modular Design East-west king Size Bed pop up Truck Camper Shell Caps Topper with Rooftop Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1cd3387c0e914b75a009d0a63a4cb284e.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601568971708.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601250442807",
+        "title": "Modular Design East-west king Size Bed pop up Truck Camper Shell Caps Topper with Rooftop Tent",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1cd3387c0e914b75a009d0a63a4cb284e.jpg",
+        "url": "https://www.alibaba.com/product-detail/1601250442807.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601551410447",
+        "title": "Customized 4X4 Steel Aluminum Alloy Single Dual Cab Pickup Truck Bed Canopy Camper Rooftop Tent for Jeep Gladiator / Tocoma",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H3401e89e09e1463487e2beb9d997d4baV.png",
+        "url": "https://www.alibaba.com/product-detail/1601551410447.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601370479380",
+        "title": "Pickup Truck Topper With Roof Top Tent Dual Cab Bed Canopy Topper for Ford Ranger",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "",
+        "image": "https://sc04.alicdn.com/kf/H1b86d98e95f542cb931f56c74a19a9b5L.png",
+        "url": "https://www.alibaba.com/product-detail/1601370479380.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601521316075",
+        "title": "Pickup Truck Bed Canopy Tonneau Cover with RTT Tent Waterproof Hard Flat Tops Custom Truck Bed Covers",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "Hainan Xinyi Industry Co., Ltd.",
+        "image": "https://s.alicdn.com/@sc04/kf/H6ee4e9b69c744aa582829c35601dcbd2c.jpg_300x300.jpg",
+        "url": "https://www.alibaba.com/product-detail/Pickup-Truck-Bed-Canopy-Tonneau-Cover_1601521316075.html",
+        "source": "Alibaba.com"
+      },
+      {
+        "id": "1601521222989",
+        "title": "Pickup Truck Rear Cover 4x4 Offroad Accessory Bed Canopy Topper with Rooftop Tent for Great Wall Poer Cannon Ford & GMC",
+        "price": null,
+        "currency": "USD",
+        "moq": null,
+        "supplier": "Hainan Xinyi Industry Co., Ltd.",
+        "image": "https://s.alicdn.com/@sc04/kf/H2be454d23cbc4053ad0bbc7ff6a0d636f.jpg_300x300.jpg",
+        "url": "https://www.alibaba.com/product-detail/Pickup-Truck-Rear-Cover-4x4-Offroad_1601521222989.html",
+        "source": "Alibaba.com"
+      }
+    ],
     "priceBands": [],
-    "guidance": "Alibaba.com 本次未形成可核验供应样本；请从来源台账打开已带英文关键词的入口，不要把空结果当成无供给。"
+    "guidance": "已获取供应端样本；先比较材料、尺寸、MOQ、工艺和备品能力，不要直接用批发价反推落地成本。"
   },
   "pains": [
     {
       "key": "durability",
       "label": "耐久与材料",
-      "count": 12,
+      "count": 51,
       "examples": [
-        "Toyota Tacoma ToyotaTacoma is a home to discuss all things Tacomas. [link]",
-        "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck? ​ I have "
+        "Absolutely incredible all around tent This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. Wit",
+        "Beach camping It works great. It never rained, but we were in zero visibility fog while camping on the beach. With that being said the outside out the entire tent and truck were so"
       ],
       "strength": 100,
-      "share": 55,
+      "share": 36,
       "severity": "高"
-    },
-    {
-      "key": "installation",
-      "label": "安装与说明",
-      "count": 4,
-      "examples": [
-        "First time installing truck bed tent. submitted by /u/kingtra62 to r/CampingGear [link] [comments]",
-        "For overlanders that camp in bear country and cook on their tailgate: What do you do for food storage, and kitchen prep/cleanup? Is a sealed truck bed enough? I’m planning a campin"
-      ],
-      "strength": 33,
-      "share": 18,
-      "severity": "低"
-    },
-    {
-      "key": "appearance",
-      "label": "外观与质感",
-      "count": 4,
-      "examples": [
-        "Recommendations for sleeping pad/mattress for truck bed Hi all just joined and im looking for some recommendations from the experts. Ive been primarily camping out of a tent the pa",
-        "Custom truck tent - Help I currently use a standard truck bed tent for short camping trips. It works well, but it requires removing my Diamondback tonneau cover which is a pain. I’"
-      ],
-      "strength": 33,
-      "share": 18,
-      "severity": "低"
     },
     {
       "key": "value",
       "label": "价格与价值感",
-      "count": 2,
+      "count": 31,
       "examples": [
-        "Sleeping in a 5ft truck bed? I used to have a single cab 6ft bed truck, which was great if I wanted to go sleep in the box I could do so under my canopy with a pad and sleeping bag",
-        "Truck bed tent Hello all! so im brand new to camping and testing my luck, Im going down south to ft. lauderdale for school for 2 months and places are soo expensive so I thought ab"
+        "Absolutely incredible all around tent This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. Wit",
+        "Beach camping It works great. It never rained, but we were in zero visibility fog while camping on the beach. With that being said the outside out the entire tent and truck were so"
       ],
-      "strength": 17,
-      "share": 9,
-      "severity": "低"
+      "strength": 61,
+      "share": 22,
+      "severity": "中"
+    },
+    {
+      "key": "appearance",
+      "label": "外观与质感",
+      "count": 31,
+      "examples": [
+        "Truck Bed Tent for Camping Inflatable Pickup Truck Tent with Pump 5.5ft–8ft | 2 Mins Setup PU3000mm Waterproof Windproof, Double Layer Mesh Window & Door 4-Season Design",
+        "Absolutely incredible all around tent This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. Wit"
+      ],
+      "strength": 61,
+      "share": 22,
+      "severity": "中"
+    },
+    {
+      "key": "installation",
+      "label": "安装与说明",
+      "count": 22,
+      "examples": [
+        "Great little tent I have a 2024 Toyota Tacoma sr, 5”5’ foot bed this fit perfectly. Directions to set up were a little complicated but once installed it was great. Easy to set up a",
+        "Good set up, not waterproof. The positives: it definitely fits back in the bag and is compact to store. It is a good set up if it’s not raining. The height is nice. Covers the tail"
+      ],
+      "strength": 43,
+      "share": 15,
+      "severity": "中"
     },
     {
       "key": "fitment",
       "label": "适配与尺寸",
-      "count": 0,
-      "examples": [],
-      "strength": 0,
-      "share": 0,
-      "severity": "低"
-    },
-    {
-      "key": "adhesion",
-      "label": "粘接与固定",
-      "count": 0,
-      "examples": [],
-      "strength": 0,
-      "share": 0,
-      "severity": "低"
-    },
-    {
-      "key": "noise",
-      "label": "噪音与行驶体验",
-      "count": 0,
-      "examples": [],
-      "strength": 0,
-      "share": 0,
+      "count": 3,
+      "examples": [
+        "6-6.3\" Compact Almost Perfect for 4x8 Trailer (Pictured without the fly installed.) I am happy overall with the quality of what I got, but have three relatively minor gripes that w",
+        "It works. It's tent that fits in the bed of a truck and it does its job 100% I'm a Happy Camper. This review is based upon purchasing the product according to the fitment chart pro"
+      ],
+      "strength": 6,
+      "share": 2,
       "severity": "低"
     },
     {
       "key": "packaging",
       "label": "包装与运输",
+      "count": 3,
+      "examples": [
+        "Handy and affordable truck tent This tent is going to work fantastic for our traveling. We have a 2023 Honda Ridgeline, which wasn't listed on the list of vehicles in the item desc",
+        "Good Dry weather tent for over night camp trips utilizing your truck while exploring Got the job Done. Worked great, easy to setup in back of pickup, and break down. The storage ba"
+      ],
+      "strength": 6,
+      "share": 2,
+      "severity": "低"
+    },
+    {
+      "key": "adhesion",
+      "label": "粘接与固定",
+      "count": 1,
+      "examples": [
+        "6-6.3\" Compact Almost Perfect for 4x8 Trailer (Pictured without the fly installed.) I am happy overall with the quality of what I got, but have three relatively minor gripes that w"
+      ],
+      "strength": 2,
+      "share": 1,
+      "severity": "低"
+    },
+    {
+      "key": "noise",
+      "label": "噪音与行驶体验",
       "count": 0,
       "examples": [],
       "strength": 0,
@@ -323,9 +845,19 @@
       "title": "材料与耐候升级",
       "action": "提高抗冲击、耐候、耐刮能力，并把材料和测试结果可视化。",
       "cost": "中",
-      "evidenceCount": 12,
+      "evidenceCount": 51,
       "evidenceLabel": "耐久与材料",
       "validation": "高低温、UV和冲击测试通过",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P0",
+      "title": "车型与尺寸零误购",
+      "action": "车型/年份/版本拆分SKU，实车治具全检，页面给出不适配清单。",
+      "cost": "中",
+      "evidenceCount": 3,
+      "evidenceLabel": "适配与尺寸",
+      "validation": "实车装配通过率100%，适配类退货为0",
       "evidenceStatus": "evidence-backed"
     },
     {
@@ -333,19 +865,19 @@
       "title": "一次装对套件",
       "action": "分步骤五金包、预装关键件、二维码视频和错误安装警示。",
       "cost": "低",
-      "evidenceCount": 4,
+      "evidenceCount": 22,
       "evidenceLabel": "安装与说明",
       "validation": "首次安装完成率≥90%，漏件为0",
       "evidenceStatus": "evidence-backed"
     },
     {
-      "priority": "P2",
-      "title": "高质感视觉语言",
-      "action": "建立材料、颜色、表面处理和整车比例的统一设计规范。",
-      "cost": "中",
-      "evidenceCount": 4,
-      "evidenceLabel": "外观与质感",
-      "validation": "盲测偏好显著高于基准款",
+      "priority": "P1",
+      "title": "运输零划伤包装",
+      "action": "分片隔离、受力点加固、配件称重与跌落验证。",
+      "cost": "低",
+      "evidenceCount": 3,
+      "evidenceLabel": "包装与运输",
+      "validation": "试运样本破损率为0",
       "evidenceStatus": "evidence-backed"
     },
     {
@@ -353,9 +885,19 @@
       "title": "清晰的版本梯度",
       "action": "基础/利润/旗舰三档配置，差价由材料和配件解释。",
       "cost": "低",
-      "evidenceCount": 2,
+      "evidenceCount": 31,
       "evidenceLabel": "价格与价值感",
       "validation": "用户可在10秒内看懂版本差异",
+      "evidenceStatus": "evidence-backed"
+    },
+    {
+      "priority": "P2",
+      "title": "高质感视觉语言",
+      "action": "建立材料、颜色、表面处理和整车比例的统一设计规范。",
+      "cost": "中",
+      "evidenceCount": 31,
+      "evidenceLabel": "外观与质感",
+      "validation": "盲测偏好显著高于基准款",
       "evidenceStatus": "evidence-backed"
     }
   ],
@@ -364,12 +906,14 @@
     "coreUser": "正在替换低质量旧品、愿意为更低安装风险付费的实用型买家",
     "job": "在不增加安装负担的前提下，稳定解决“耐久与材料”并降低误购和退货。",
     "mustHave": [
-      "材料与耐候升级"
+      "材料与耐候升级",
+      "车型与尺寸零误购"
     ],
     "differentiators": [
       "一次装对套件",
-      "高质感视觉语言",
-      "清晰的版本梯度"
+      "运输零划伤包装",
+      "清晰的版本梯度",
+      "高质感视觉语言"
     ],
     "doNotClaim": [
       "未验证的通用适配",
@@ -379,29 +923,107 @@
   },
   "keywords": [
     {
+      "keyword": "truck",
+      "frequency": 53,
+      "intent": "核心"
+    },
+    {
+      "keyword": "tent",
+      "frequency": 43,
+      "intent": "核心"
+    },
+    {
       "keyword": "bed",
-      "frequency": 1,
-      "intent": "长尾"
+      "frequency": 29,
+      "intent": "核心"
+    },
+    {
+      "keyword": "camping",
+      "frequency": 20,
+      "intent": "核心"
+    },
+    {
+      "keyword": "pickup",
+      "frequency": 18,
+      "intent": "核心"
+    },
+    {
+      "keyword": "waterproof",
+      "frequency": 18,
+      "intent": "核心"
+    },
+    {
+      "keyword": "green",
+      "frequency": 10,
+      "intent": "核心"
+    },
+    {
+      "keyword": "person",
+      "frequency": 9,
+      "intent": "核心"
+    },
+    {
+      "keyword": "pu3000mm",
+      "frequency": 8,
+      "intent": "核心"
+    },
+    {
+      "keyword": "inflatable",
+      "frequency": 7,
+      "intent": "核心"
+    },
+    {
+      "keyword": "setup",
+      "frequency": 7,
+      "intent": "核心"
     },
     {
       "keyword": "tents",
-      "frequency": 1,
-      "intent": "长尾"
+      "frequency": 7,
+      "intent": "核心"
     },
     {
-      "keyword": "truck",
-      "frequency": 1,
-      "intent": "长尾"
+      "keyword": "double",
+      "frequency": 6,
+      "intent": "核心"
+    },
+    {
+      "keyword": "layer",
+      "frequency": 6,
+      "intent": "核心"
+    },
+    {
+      "keyword": "portable",
+      "frequency": 6,
+      "intent": "核心"
+    },
+    {
+      "keyword": "awning",
+      "frequency": 5,
+      "intent": "核心"
+    },
+    {
+      "keyword": "pu2000mm",
+      "frequency": 5,
+      "intent": "核心"
+    },
+    {
+      "keyword": "spacious",
+      "frequency": 5,
+      "intent": "核心"
     }
   ],
   "keywordGroups": {
-    "core": [],
-    "attributes": [],
-    "longTail": [
+    "core": [
+      "truck",
+      "tent",
       "bed",
-      "tents",
-      "truck"
-    ]
+      "camping",
+      "pickup",
+      "waterproof"
+    ],
+    "attributes": [],
+    "longTail": []
   },
   "launchPlan": [
     {
@@ -462,31 +1084,1480 @@
   "sourceStatuses": [
     {
       "source": "amazon",
-      "state": "failed",
-      "count": 0,
-      "latencyMs": 1219,
-      "message": "HTTP 503；该来源可能需要登录会话、更低频率或官方 API。",
+      "state": "success",
+      "count": 24,
+      "latencyMs": 0,
+      "message": "采集到 24 个搜索商品和 120 条书面评论样本。 书面评论来源：Woot public endpoint。 使用最近成功缓存。",
       "url": "https://www.amazon.com/s?k=Truck+Bed+Tents",
-      "meta": {}
+      "meta": {
+        "reviews": [
+          {
+            "title": "Absolutely incredible all around tent",
+            "body": "This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. With that being said it was so easy to set up and way more durable than I had expected. I stayed on an island in Florida and it rained like crazy for three nights straight and we never got a single drop of water on us. The design is super cool and looks great in my personal opinion, I found it to be pretty cozy inside as well. Another thing that I found really cool is that it is attached to the truck so well that we could even drive around our area with it still setup. *THERE IS A WARNING TAG THAT SAYS NOT TO* I did it anyways at less than 30 mph and the tent didn’t even budge. This is for the 6.5 foot tent and it fit absolutely perfectly on a 2006 ford F250 For the price I could not have been more impressed",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 19, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Beach camping",
+            "body": "It works great. It never rained, but we were in zero visibility fog while camping on the beach. With that being said the outside out the entire tent and truck were soaked with condensation/dew/wetness - not a drop from inside the tent. Loved sleeping and waking up to the waves. Super easy to put up. Purchased on cyber Monday for $40 less than current price. Was definitely worth the money. Fit the truck bed air mattress perfect and left the tailgate portion enough room to place items. Zippers were easy to use and everything stayed intact!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on December 10, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great little tent",
+            "body": "I have a 2024 Toyota Tacoma sr, 5”5’ foot bed this fit perfectly. Directions to set up were a little complicated but once installed it was great. Easy to set up after you figure it out. The camper next to me stepped in to help me out. Nice and spacious inside with pockets and windows. I gave it 4 stars because there is an area starting to rip already after 5 camping trips. The zippers work well . As for wind resistance and moisture, I’ve only used this in a warm area during summer so I can’t give input on that. When it came time to take it down, it was easy and it actually fit back into the storage bag it came with.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on October 3, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very good quality, great fit and finish.",
+            "body": "It’s a little short for our truck, even though we ordered the one that matches the size of our truck bed. However, it’s a good enough fit. I’m not sure about it being waterproof because it’s not in the forecast to rain here in the desert. The quality fit and finish, and attention to detail appears to be really good. It was a little bit of a pain to put together because the rods that come with it are really stiff and hard to flex. But I guess that’s a good for durability. So, overall we are really glad we got it.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 28, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Quick set up",
+            "body": "This is a pretty cool way to get out for the weekend. Sets up quickly and when you add an air mattress very comfortable. I have used when white water rafting on a nice summer weekend and up to the cascade mountains in a thunderstorm and stayed dry. High recommend",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Love it!",
+            "body": "I love this thing. I took it out to the great Salt Lake and went camping at antelope island and I gotta say its nice to be in the back of a truck like that, at least its provides protection. Totally water proof and very roomy and warm. Fit perfectly!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 29, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Handy and affordable truck tent",
+            "body": "This tent is going to work fantastic for our traveling. We have a 2023 Honda Ridgeline, which wasn't listed on the list of vehicles in the item description, so we weren't sure if it would work, but it works great! The tent is packaged in a very nice and durable carrying case that doesn't take up much room at all. It set up super easy. This being our first time setting it up, it only took us 15 minutes start-to-finish. The directions are very clear and it is very handy having one of the poles a different color so you are sure to get the right positioning. The tent also took down quickly and easily and folded up to fit nicely back in the carrying bag. The tent is big enough for us to have a double-sized air mattress for sleeping. The roof is tall enough that we could stand up in it or put camp stools and a small camp table inside if the weather is rainy. The zippers are a very sturdy quality and zip up and down smoothly. There are two flaps in the front door so you can have a screen zippered with the outer door open to let in fresh air. The two side windows also zip open to let in air as well. We look forward to using the tent on our next road trip and/or impromptu camping trip. It will make it nice to be up of the ground for sleeping.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 25, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good set up, not waterproof.",
+            "body": "The positives: it definitely fits back in the bag and is compact to store. It is a good set up if it’s not raining. The height is nice. Covers the tailgate giving extra storage room. Once you know how to put it together it is easy, but I highly recommend doing it before your first trip out. It would be difficult for one person to do on their own once it gets to inserting into the last holder. I had someone help me put it together before I left and broke down a couple pieces on each pole so it tucked down while I was driving and I just needed to do a few inserts once I arrived. This was helpful. The cons: the poles are slippery when wet making it a challenge to put the strength into it that is needed to make them fit into the pockets. It definitely leaks water! It poured rain the first 24 hours of the trip. The door was wet and the fan I hung from the tent hook on the ceiling was full of water. Had that not been there the bed would have been soaked. If it was not raining it would have been fine. If you are short (I am not and still needed a step) you will need a way to reach the door zipper up top from the outside. All in all it is a good concept, I just really need something to be waterproof when it says it is. I can be rugged, and don’t mind the elements, but being dry in my tent is a must.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on November 22, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Silverado WITH a bed box ✅",
+            "body": "I got this for me and my bf to use in his truck. We weren't sure how it would work with the bed box but you can still use the tent. It's just not exactly as intended but it's perfectly secure and the frame is still up. The inside just looks weird but you got yourself a nice nightstand out of the bed box lol! Works great with an air mattress also designed for the truck bed. I was surprised at how spacious it was in there. The roof of the tent is quite high I felt like I could almost stand in there. Great ventilation with windows on both sides plus a window on the door and on the 4th wall there is an actual vent you can push out with velcro. Make your life easier and build the tent before you put it on the truck (we are dumb and can't read directions apparently). Easy enough to put back in the bag when you're done with it. The only bad thing is that with the design there are plastic parts that the straps are held on with rubbing against the paint. I didn't notice any scratches but it seems possible. It would be nice if there were something like rubber or felt or something between the buckles and the truck. Otherwise excellent tent and especially for the value. Much more affordable than other options on here and seems like the better buy!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 26, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy to use",
+            "body": "We purchased this for our 2020 ram for a summer road trip. It did the job we needed it to do. It sets up and down quickly. Our only complaint about using this was probably like any other tent of any kind. When you got rain or morning dew on it you had to either dry it or wait for it to dry before you could pack it away and move on.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 26, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "SETUP",
+            "body": "No leaks was comfortable but hard to set out of truck bed.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy to set up",
+            "body": "We bought the smallest option and could go a bit bigger for our Chevy f150, worked well, easy to set up.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 23, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Tent comfortable, roomy, but lacks ventilation during rain.",
+            "body": "I bought this with the idea of staying drier and less lumpy than sleeping on the ground. I found the tent relatively easy to set up with prior experience with small camping tents. Once set up, I had a little difficulty at the door end, since the poles didn't quite want to fit the places in my truck bed where they would stay put. (2014 F150 6.5 bed), so the shape and tension were not perfect, but worked well. My very first night in the tent, the rain was torrential, so I was apprehensive about whether it would leak. I was surprised that it generally stayed dry, but with two issues. Being a single-wall tent, there was really no ventilation with everything zipped up. Only the very small vent at the cab end, which didn't allow much air flow. This means that condensation can develop even without rain. Also, the slope of the walls and door meant that every time I opened the door, all the rain from the door end would drip onto the foot of my sleeping bag, and opening the side windows even a little meant lots of rain getting in. The second night was dry, so I could open the windows and everything was great. I like the convenience of camping in the truck bed, especially when camping at unprepared spots. I wish that there would be a rain fly or front awning so ventilation would improve, but overall a very roomy and waterproof tent.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on August 14, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Pickup truk tent",
+            "body": "Excelente producto",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 15, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Fácil de armar",
+            "body": "Siguiendo las instrucciones es súper fácil de armar",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 9, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very nice",
+            "body": "Very cool but haven’t put it up yet. Quick delivery and will come in handy.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on April 19, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Nice tent for the money",
+            "body": "I bought this to use in the back of my 2006 Nissan frontier. If it perfectly in the back of the truck and it's made fairly well. Not only had a light rain for about an hour but the inside of the tent did not get wet in any way and I seen some people talking about zipper issues but I had no problems with the zippers at all.. it does come with a nice carrying case and I decided to go for the aluminum poles instead of the fiberglass which I highly recommend. And I will say the reason I gave it four stars instead of five is because the directions are very user friendly. But after some cursing and fussing and about 20 minutes time I was able to put it together but it does require two people. It's nice that has a little spot to hang your lantern in the ceiling and it does have good ventilation and a nice bag to put all your personal items such as cell phones wallet and such... One drawback is once you put in the back of your truck you can't really use your vehicle to go anywhere and unfortunately I had to.. so instead of dismantling the tent I just unstrapped it from the truck picked it up later on the ground did what I had to do came back lifted it put it right back in the truck and strapped it down putting all that difficult.. I did fit a twin size air mattress in the back but trying to stand on the air mattress and it feel like a big bouncy house.. I will also say it has a lot of room inside you can stand up in long as you're not 6 ft 5. Like I said if not for the difficulty of the directions I would have given it a five stars definitely worth the money..",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on November 17, 2024",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Greatest truck bed tent ever!",
+            "body": "I bought this a couple years ago and it fits my truck perfectly super roomy and very sturdy!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 27, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great for Honda Ridgeline",
+            "body": "This is second the go at this after returning another brand tent. This one fits my Honda Ridgeline great. The straps have metal U hooks and give you plenty of length to find the best securing point under the truck. The directions have you build it on the ground first and then lift it and lower it over the truck bed. That was not a problem with two people. I can't wait to go camping.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 18, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "So much better than sleeping on the ground",
+            "body": "I bought this on a whim a day before a camping trip with my daughters. It was supposed to rain and I wasn’t looking forward to sleeping on the wet ground. We got there late and had to set it up in the dark. It went together easily and was very simple to secure to the truck. You will have to remove and tonneau cover you have as a bed cover. The only drawback was that I had to take it out to drive anywhere. But it was also light enough for me to take in and out of the pickup bed myself, so I could just leave it at the campsite like any other tent. It did rain the first night, and although it’s recommended that it be treated along the seams with a protectant of some sort, I didn’t have time and I had no issues with leaks. It was roomy and warm. I would definitely recommend an inflatable mattress or other sleeping pad. But I was very pleased and I’m now keeping it in my pickup for whenever I might need it.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 28, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0BQYQBK35",
+            "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great!",
+            "body": "This is a really nice truck tent. Setup and teardown are very easy. Its well built and very roomy. I have a 22 F150 with a 6.5ft bed and it fits perfectly even with a roll up tonneau cover. Its pretty durable and water resistant. The first weekend camping we had a late night rain and with the rain fly stayed dry all night. My girlfriend and I enjoy camping with this, and together can setup and clean up in around 10 minutes.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 27, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Solid truck tent.",
+            "body": "Fits in my ‘24 F-150 perfectly (have to take the tonneau cover off though, which is fine). It’s very simple to set up and secures very well. We brought this to Electric Forest for its first adventure and it was great for a variety of reasons but a big one being that when it rained on the final night, all of our gear stayed dry. Very excited to take this on more adventures (in calmer settings).",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 1, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "I love this tent",
+            "body": "I have had this tent for almost a year now and have used it multiple times so I think I can give an accurate review on it. The TL:DR is I love this tent, and if you are thinking of a truck bed setup like this, this tent is awesome! Being up off the ground surrounded by the truck bed gives an extra sense of security and there is plenty of room inside. Setup: Reviews here mentioned setting it up on the ground vs while it is in the truck bed and having done both methods, I agree setting it up on the ground then lifting it into the truck bed is the way to go. It is especially helpful with another person to help get it into place. The actual setup of the tent is typical, and if you are used to setting up a tent this is similar. It takes about 5 minutes now to get it popped up and into the truck bed, first time is a little frustrating when you don't fully know how it works. I am in a 2005 Nissan Titan and it fits perfectly. Durability: so far this tent has held up just fine with multiple setup and take downs, no visible damage yet, and it survived some very strong winds during a bit of a storm. With the rain fly on it stays perfectly dry inside and not being on the ground when it rains is very nice. Zippers are all holding up fine. I also found out that it can hold up to moving the truck under 20mph recently when a Bear decided to crash our campsite, my Wife and Son inside reported that it was solid during the short ride we took. Inside/comfort: The tent gives a really cozy feeling in your truck bed and even though its just the size of your truck, it feels plenty spacious and sleeps my Wife, Son and I comfortably. There is plenty of headroom and the way it hangs over the sides of the bed make it like a shelf on each side where I like to put my phone/keys/wallet etc... We originally were using a queen size air mattress and while it fit well, the comfort was a bit lacking (probably due to the low quality mattressI was using) I built a modular wood platform that we then put some foam mattress toppers on it that has really made a huge difference, more comfortable, and more stable than an air mattress. Conclusion: We love this tent and have not regretted it one bit, you feel more secure in your truck bed than on the ground. Setup/takedown is standard for most tents, nothing tricky once you get the hang of it, and it fits in its bag easily enough. I would definitely buy it again if something were to happen to it.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 22, 2023",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "6-6.3\" Compact Almost Perfect for 4x8 Trailer",
+            "body": "(Pictured without the fly installed.) I am happy overall with the quality of what I got, but have three relatively minor gripes that would be easy for the manufacturer to improve: 1) One of the rubber end bumpers immediately fell off of the poles when I took it down the first time. No big deal to just glue back on - if you don't lose it first. 2) Zipper quality is good enough now, but it is light duty plastic and will likely not take much abuse. 3) The entry flap rolling down instead of to the side means I will always be walking or tripping over it to some degree. For my trailer, that means it will end up in the dirt a lot. The flap issue is likely less of one when setup in an actual pickup and kept off the ground, but having to go over it to get in and out every time could be problematic. It does stow nicely when rolled up at the bottom however. That aside, the tent is relatively easy to setup and fits mostly within the confines of my trailer. The only fitment issue for it is where there would normally be a tailgate. The side rails of my trailer restrict how wide the door support poles can spread the tent, so it's a little wonky there, but the zipper still has a nice easy pull regardless. I would likely buy again unless I find something better.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 18, 2024",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Perfect fit, much better weather resistant then normal tent camping",
+            "body": "Fit perfect in my 2021 gmc short bed crew cab. 3 nights of rain and the inside of the tent was slightly damp but not wet. Definitely better than camping on the ground. Perfect fit, easy set up, well worth the money.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 27, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great way to camp!",
+            "body": "It works just fine with my 2026 Maverick, with a little adjusting. It's just a little long for the bed, but not enough to make it clumsy or ill-fitting. Setting it up is very easily done. The designers knew what they were doing!! All zippers work well. The one thing to keep in mind - if you don't plan ahead about rain and put the rain fly on before it rains, you will be outside putting it on after it starts raining. Not a big problem, just a caution. Also, taking it down and putting it back in the carrying bag that comes with it is quite easy, too. A great way to camp",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 5, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great Tent!",
+            "body": "I really like this tent. I’ll start by saying I’ve done a lot of camping and setting up and taking down tents. I have set this one up and taken it down. Y myself multiple times at night and with lest heavy winds and I’ve managed to get it done in less than 25 minutes each time. Once you set it up once or twice it gets much easier. There is a lot of space for just me, haven’t had the opportunity to take my wife yet but seems like we would fit just fine. I also appreciate that this will fit over my roll up tonneau cover with Velcro rails on top. It fits right over them and the cover itself when it’s rolled up, so I don’t have to mess with my cover. 100% recommend!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 4, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Comfortable and Dry",
+            "body": "We bought this tent for an event we would be camping at that took place last week. We encountered sunny days, cool nights and rain while on our trip. The tent performed spectacularly. We were dry inside without any leaks. I have room to stand upright in the middle of the tent, but my husband has to stoop a bit. The size was perfect for the bed of our truck and it is easy to set up. I highly recommend this tent if you plan do camp using the bed of a truck.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 29, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good Tent",
+            "body": "It's been a good tent. First trip out it brushed off 4\" of heavy snow that destroyed a Walmart bug tent. On the second outing the pole over the door broke. I could have been the cause or it could have been the pole. Regardless, I sent Napier an email and they sent me a new pole. Super happy with the customer service and the tent. Would recommend and buy again if I ever needed to.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Spacious",
+            "body": "I would buy new next time instead if gently used but I have used it on two camping trips and it was great. Because it does go over the top of the truckbed side wall, it feels much roomier than the previous truck tent I had. I also have a 6.7 truck bed with a tool/fuel box and ordered a 8 ft tent. This allowed me to use the entire bed while creating a shelf inside the tent which added even more interior space. It works great for me but I am not exactly a minimalist camper and this allowed me much more space than I had in my 5 1/2ft tent that began after the tool box.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Its ok, and fits F-150 with tonneau cover BAK Revolver",
+            "body": "Its good, not as easy to install the first time, but once you done it once, you know the way and faster for second setup. First time took us like 20 minutes for 2 adults to install it, second time took 10 to 15 minutes for an adult to install it. Good ventilation and have a good desing. I have a BAK Revolver bed cover, and while it was tight to isntall on the bed due to the rails of the cover it still fit, so it has some room for adjusting. The zipper on front (door) could be better, the zipper goes around the arch and the attached part of the tend of the door is the bottom side, which pretty much needs to be fully open for an adult to comfortable squeeze in/out and when its fully open, the door falls into exterior which can grab some dirt/mud depending where you are. On regards of material, its ok, the fabric/tarp on the bottom is not though but does the job, the sides are meh, but also does the job, feels it will last for at least 20-30 setups",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 9, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "It works. It's tent that fits in the bed of a truck and it does its job 100% I'm a Happy Camper.",
+            "body": "This review is based upon purchasing the product according to the fitment chart provided by the manufacturer. It should be noted that I purchased the Rightline Gear 110766 5 Foot Mid Size Short Truck Tent (5') -Tall Bed and it did NOT fit and there were quite a few quality issues APPLICATION: 2015-2021 Chevrolet Colorado - Crew Cab / Short Bed PRODUCT: Napier Backroadz Truck Tent Compact Short Bed (5'-5'2\") Regarding the star ratings: Easy to assemble ... 5 stars - Because it's semi-intuitive and instructions are accurate Warmth .................... 5 stars - Because it's a non insulated tent that was as warm as non-insulated tent should be. I didn't rate 5 stars because it was \"warm\" Thickness ................. 5 stars - Because it was not advertised as heavy duty or having some construction of some exotic strong materials it was up to expectation for durability While I do rate this a 5 star product, it is 5 star because it delivered on the claims and my expectations based on those claims. This is by no means is a premium tent but a great tent for a great price <$200. Having previously purchased a competitive product over this one purely for aesthetic / color reasons, I got a feel for how the truck bed tent experience could be and have a great comparison point. The Napier Backroadz is by far the superior design, as the recommended fitment was spot-on for my application as listed on their chart. Fitment - The truck bed tent fills the entire bed area. The width and height are spot-on with some extra interior material to spare. Being the Chevy Colorado has tall bed sides in relation to other Mid-Size trucks, this means that other Mid Size truck applications should also enjoy good fitment with additional interior material to spare. Unlike the other truck bed tent, the bed hold down straps are partially elastic which makes positioning and set-up much faster. With the no elastic straps every 1/2\" of movement needed on one side had to be relieved in equal amounts on the 3 opposite side straps. The elastic makes for easy centering of the tent and once in position they can be pulled tot for the same kind of tension. Functionality / Size - The intention of the truck bed tent having the tailgate down is to the extend the sleeping area to greater than the 5'2\"-5'6\" area. This tent's design has a near vertical entrance panel making for the most amount of interior room offered. The other design has a dramatic slope putting your head or your feet within inches of the tent door surface when laying down. Additionally this tent has a nice high roofline. The extra head room is complimented by a \"net' shelf at the top for placing lights that may not have hanging provisions ... nice little bonus feature. Design - The biggest plus of this particular truck bed tent is that its completely enclosed. The bed area is not left open meaning the tent will keep out bugs, dust/dirt and have some degree better temperature insulation in just keeping the cold air from blowing in. Having had the competitive product without the interior liner, I can say that with the liner as this tent has, is the only way to go. The other floorless design was marketed as faster to set-up but the process after the first attempt for both was about the same. Initial First time set-up: 34 mins Second time set-up: 15 mins This trip was a success with this product and it worked on the application as advertised and survived 30-40 mph gusts in 30 degree F weather with some snow flurries without any issues. Happy Camper here. Criticisms and Suggestions - While I don't mind branding, the Napier logo on the rain fly is too big and obnoxious. I would not even take a picture of it. - Functionality is great but it could use a little help in the aesthetic design and color choices. - Make a premium model with better insulation / thicker materials / upgraded zippers.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on January 8, 2021",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great tent, I would recommend",
+            "body": "Tent looks great easy to install. One thing I would’ve like is for the straps to have more protection for your car paint, but other than that it was easy installation. Took about 15 mins for someone that has never used one like this.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 8, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Water proof.",
+            "body": "Nice easy set up. Roomy.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 29, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Nice tent",
+            "body": "We were worried that it was going to be a pain getting the tent in and out of the truck without breaking it down so that we could still drive somewhere during our camping trip. It was not an issue at all with two people to remove the tent from the bed and put it on the ground and then put it back in the bed when we got back. All we had to do was remove the clips and use the tent poles to move it. Inside the tent we stayed nice and dry. Not a lot of storage but we were still able to use the truck side rails to store our stuff. The only complaint I have is the rainfly pole that goes across the door opening is much too long, so you have to bend it a LOT to get it to go into place. The second time we did this the force on the pole was so much that the fiberglass broke right in the middle of the pole. Napierz was great though and replaced the pole after about three weeks we had a new pole.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on January 7, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Sweet tent",
+            "body": "It’s a sweet tent! Looks cool, fits my truck bed well (F150). The tent itself feels super high quality. The only reason I didn’t give it 5 stars was because the poles looked like they were used already and seemed a little flimsy but they haven’t broke yet so that’s good!",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on April 6, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy Install Napier Truck Tent",
+            "body": "Did a test run setting up the Napier truck tent and overall it went pretty smoothly—surprisingly easy to install. I followed the instructions and assembled it inside the truck bed, but I’ve seen others put it together on the ground first and then lift it in, so I might try that approach next time. Also worth noting—I did this solo. The whole idea behind getting this was to have a quick, simple setup for one-night trips instead of hauling the trailer. So far, it’s looking promising… we’ll see how it performs in the real world. Overall I am happy with the ease of installation. Its not heavy and can be installed by one person.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": true,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Perfect",
+            "body": "Tent was perfect",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 3, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Fits perfectly quick install",
+            "body": "Fits perfectly on a 2026 canyon. Super easy to set up. Even in the wind. They say you can set it up on the ground an then put it in the truck but I recommend doing the whole set up in the truck . It moves around to much other wise.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 3, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Disappointed with the quality",
+            "body": "The 3rd time I set it up, one of the poles started to break and the train topper ripped when I was attaching a strap to the main tent. Really disappointed",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on July 6, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B07HXML6M9",
+            "url": "https://www.amazon.com/product-reviews/B07HXML6M9/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Pretty good tent for the price.",
+            "body": "Works good, after the first time getting it set up it's easy, I can put it up and down pretty quick, obviously it's a tent so it will still have some kinks when trying to set it up. Sadly I ripped a clip but it was just the loop so ill fix it and it was my fault not the manufacturer. Im just glad the tent itself didnt rip. The entry support pole does not seem fit in a good spot for some reason down in the corners of the tailgate. Also i use a tonto cover so it doesnt fit perfectly as intended because it shofts back towards the tailgate like 4 inches. But it still fits and works good considering that. It also folds up pretty small and its pretty light. I have not had it in the rain yet, but it holds moisture inside of it so I asume it will work good in the rain. The design makes a lot of sense for everything and it has a vent on the top. I have had no zipper issues yet, they are bigger and nice quality. Just a little sad that the tent with the rain fly was like 50-60 more just for the extra tarp on the top when the tent itself is still great.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 6, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Up Date Overall Valve",
+            "body": "Nice tent overall, not too hard to set up by one person. Lots of head room inside. The fit for my short bed Chevy is ok but not perfect but do able. The day I received it I set it up and left it up overnight. We had a late June strong thunderstorm with a lot of rain and wind for about 4 hours, and it held up really well. The next morning I check inside and it had a few drops of rain that had made its way through. So I would say its not a 100% waterproof but held up better than I expected. A 8x10 tarp over the top would help to repel water in a heavy downpour. Ventilation is fair its ok with the door and window flaps open but closed a little warn in summer but would be good in cooler months. Most truck beds till down towards the cab in which if you sleep with your head at the door is ok but sleep with you head towards the cab can make your blood rush to you head. Its something to think about and your bed if angle down toward. I cut 4x4 piece width wise at goes against the/cab and layed a cut piece of plywood down on top of the 4x4 so it wood raise that end up to a comfortable angle for a mattress pad. My truck bed had no drainage holes at the cab end where normally fill up with water in a heavy rain and be not good if you where sleeping on the bed floor. I drilled 4 3/8 holes across the bed to insure it can drain. But be sure of where your drilling and make sure the bit is not hitting anything like a gas tank. I general I'm happy with the tent so far and will test it more when camping. The price is fair and I would give it a try. I decided to order a Joy pickup tent to see if it was any better than Wild Finder, the Joy tent was about $40 more for my size truck but it does have a rain fly. The Joy tent is a better value and is made with solid material, fasteners, poles designed not to break. It is worth the extra $ for a much more quality tent. I gave this tent 5 stars.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Quality review",
+            "body": "Great tent for the price. Just have to be careful when tightening down the straps along the fenders; one ripped off with very little force. Tent does hold up with little rain, but after a heavy downpour, some water did manage to get in. Setup is quick and easy, and it’s very spacious inside. Would buy again.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 12, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great purchase",
+            "body": "The tent came quickly, set up very easily, and seems very sturdy and spacious. However, two of the pole pockets were coming apart at the seam. And there was a tiny hole in the top fabric. I asked for a replacement and it was exchanged with no fuss at all. The replacement tent was not just as nice as the first, it was even better. The tent pole pockets had reinforced seams and the text fabric was pristine. I can't wait to use it!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Steaming Hot Garbage",
+            "body": "Terrible. If you need a garbage bag in a pinch, this is s great option. Ive used many \"budget\" bed tents in the past and this isn't even worth trying to return. Ordered it for my proper bed size, which is a 5.8ft bed on a 2020 gmc. It not only wasnt wide enough, but also wasnt quite long enough (of course it said it was good up to a 6ft bed). Upon first use the one pole snapped and split in half, Ive used fiberglass poles in all sorts of tents for the past 20+ years and never snapped a pole... I also do not understand the \"fully encompassed\" part of it, as all the other bed tents ive used only sit on top of the bed rails, where this lays fully into the bed. Couple of the seams started to tear just from attempting to get things mildly cinched down to the truck bed. Bottom line, dont waste your money. Best budget truck bed tent is a rightline, go that route.",
+            "rating": 1.0,
+            "date": "Reviewed in the United States on June 23, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great little tent!",
+            "body": "Used this for the first time this weekend. Truly great tent for the price! Plenty of room inside and even enough to almost stand up in. Fit the 6’ bed of my Tacoma perfectly. Easy set up and take down. The double stitch seams were nice and color coating of the poles was perfect for easy identification no issues with ventilation though we did sleep with the windows and door netting up only.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 6, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Not waterproof",
+            "body": "Easy to set up, but both sides leak below the windows at the seams for the inside pockets.",
+            "rating": 2.0,
+            "date": "Reviewed in the United States on July 18, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Door pole broke overnight",
+            "body": "Easy to set up and take down. Roomy and fit well in the truck bed. The only bad thing was the door pole broke sometime during the second night",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on July 6, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Solid Tent",
+            "body": "Works great. The tent is easy to set up and has no leaks or anything, even during a thunderstorm. Easy to set up and take down. Used this on a week-long camping trip where we set up and tore it down in a different location every night and we had no issues with the setup. The front pole over the door did bend on our first use, but we were able to use it for the rest of the trip with minimal issues.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 17, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Does not have an option for Ford Mavericks",
+            "body": "Arrived in good shape and was pretty easy to assemble. The only negative thing I have you say is the company, nor any others on Amazon that I have seen, did not have an option that would fit a Ford Maverick. That being said the smallest option does fit with some finagaling.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 18, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "2022 Honda Ridgeline",
+            "body": "Did a test trial for my upcoming camping trip. Setup was fairly easy and finished product looks nice. The straps closest to the cabin reached its limit and barely strapped around my truck though. Hopefully winds dont break the straps! 🤞",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 9, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Not too bad for the price.",
+            "body": "I’m actually very surprised with this tent. The quality isn’t amazing and it doesn’t fit perfectly on my truck.(2022 f150 5.5ft bed) But super easy to set up and surprisingly waterproof. I’d buy again for sure.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on July 7, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Roomy and fit great.",
+            "body": "One of the poles came with an extra length to it. Another was a length short. We just swapped one over to make it work. Otherwise it was a good buy.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 23, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "No ground",
+            "body": "It was for my daughter. She has not set up yet. Practice test setting up on June 8th. She going to for birthday trip for camping and hiking trip. And she likes the color green . And keeps her off the ground. No critters access on back off truck.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 2, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great tent",
+            "body": "This Tent fit perfect in my Nissan frontier with a 6 foot bed. It also performed very well during a severe rainstorm which lasted 12 hours with only one or two drops of rain entering the tent.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 19, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Big, good but not great.",
+            "body": "It’s ok, seems enormous inside when set up ,could be easier to set up but not the worse, some poles are color coated, and there are some quick hooks so it’s not all just sliding poles through sleeves in the dark. It didn’t really fit my 3rd gen Tacoma bed very well with the rear pole placement, and the exterior attaching straps.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on May 10, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good Quality...needs to be tested",
+            "body": "Ok just got this tent and decided to pre assemble it to practice....seems quality is excellent and pretty easy to set up with instructions.....much stronger tent than anything you could get at Walmart. I was surprised it did not come with a rain fly.....I guess I could always throw a tarp over it. Other than that looking to set it up when I go camping in a few weeks....by the way the door way is set for the tail gate to be down so poles sit much higher... so this tent wont work on the ground it doesnt sit flat on the ground....but in truck bed its made to set level with the gate down.. For the price point and quality iam please....but will have to see if it works functionally....in rain and ventilation.... 2 small side windows and large door opening. I got it for the option for me to sleep in my truck bed....not sure how often I will use it other than my upcoming trip but its cool. Other reviews scared me in the quality comments but compared to Walmart brands and Ozark....this tent is 10x stronger and sturdy",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 15, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Camp trip",
+            "body": "Best thing I bought in a long time. Spacious, water proof, and good privacy windows if you need it",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 17, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Simple, fast, and easy to carry.",
+            "body": "This truck tent has provided me with an excellent camping experience. It is incredibly easy to set up and take down, and the interior is spacious with thoughtful design details—such as a central hook for hanging a camping light, as well as mesh screens on the entrance and side windows that ensure good ventilation while effectively keeping insects out. When packed away, it is lightweight and easy to carry.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Solid Purchase",
+            "body": "Easy to set up, take down and re-pack. Held tight and dry in windy and rainy conditions. Overall pleased with purchase.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 13, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DWFDWD1Z",
+            "url": "https://www.amazon.com/product-reviews/B0DWFDWD1Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Quick and Easy!",
+            "body": "The Umbrauto Truck Bed Tent is a momentous change for camping enthusiasts! Setup is quick and intuitive, and once installed, it fits securely without any sagging. The interior is spacious, with plenty of room to stretch out and store gear comfortably. One thing that really impressed me is the zipper quality. Smooth, sturdy, and does not snag, even after repeated use. This is important when you are out in the elements and need reliable closures. The tent also offers excellent functionality, with well-placed mesh windows for ventilation and a rainfly that provides solid protection during unexpected showers. Considering the value for money, this tent delivers premium features at a very reasonable price. It is durable, lightweight, and packs down easily for transport. If you want a dependable, comfortable, and well-designed truck bed tent without breaking the bank, Umbrauto is a fantastic choice. Highly recommended!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on November 13, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Perfect Truck Tent",
+            "body": "I absolutely love this tent, it was easy to set up by myself. I do suggest following the instructions step by step. The 1st time I attempted without instructions (who needs those 🫣) things didn’t go right 😂 It fit perfectly, quality was great, super roomy, material seems to be great. My 1st trip was to the coast here in the PNW and it was perfect. I will also say make sure you leave a window or 2 unzipped when putting it away because it holds air really well.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 19, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great option.",
+            "body": "Easy and fast to set up. Plenty of windows for ventilation. And it felt roomier then what I was expecting.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 27, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great for F-150 6.5' Bed",
+            "body": "I bought this for a 2014 F150 with the 6.5' bed. The tent was very easy to set up, I think it took us (2 people) around 10 minutes from opening the bag to setting up our bedding. We had a small issue strapping the side hooks, as our truck is lifted, and the straps don't have the length to allow the hooks to reach the wheel well/wheel. Length wise the tent fit well, but was a little odd on the sides, I'm chalking this up the wheel wells in the bed. The zippers worked great, and the instructions (sewn to the inside of the bag) were clear. The straps definitely helped with wind, and the material is water/rain resistant. I was very impressed with how much we liked this tent and have recommended others buy it, due to the quality for the price! Also, this was a big deal for us - all the parts fit back in the bag easier than expected!!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on September 9, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good Dry weather tent for over night camp trips utilizing your truck while exploring",
+            "body": "Got the job Done. Worked great, easy to setup in back of pickup, and break down. The storage bag was plenty big to stow the tent and poles in, after use. (If you've tent camped in past you know what I'm speaking of trying to get the package back in the storage bag.. LOL.) Took a little time to get it figured out with the colored tent poles and their proper placement. The awning off the tent took a little time to figure out but over all not bad. Instructions are on the flap inside the storage bag for tent, fairly easy to follow if you have had previous tent pitching experience. My wife and I found it a Good Over night Summer tent for southern Oregon woods with a cool night and no rain when we did not want to take out travel trail out to explore a new location.. NO.. is does not come with a so called RainFly or external cover to keep moisture and rainwater deflected off the top, at least not ours, and i didnt see anything/hardware or supports for such. Otherwise for an outing with the Significant other or a solo camp. Id say it will keep you happy off the forest floor and comfortable in the back or your truck. I would not put much trust in rain proof, but id say its a good buy to keep the mosquito's, fly's, bugs, and dust and the great outdoor environment at bay.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 15, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very spacious inside!",
+            "body": "I read the reviews to this, and many suggested that it was not waterproof. It held up fine in the rain (although we did spray it with water repellent spray, as we do all our tents). We did have condensation (which is 100% normal in a small tent due to you breathing in it. To prevent that, we opened the back door window (kept the screen closed) to allow some of the moisture that we exhale to escape. It work, even with it only in the low 40's outside at night. I did have 2 issues. The first issues was the awning was sewed to the tent upside down, so the pockets to the rods were on the inside instead of the outside, prevent you from being able to use the awning, which was an extra cost. The other issue was the 2 front pocket on the inside for storage were also sewed on backwards, so the opening to the pocket was facing the wall underneath the pocket itself. In the end, the tent did its job by providing shelter for us to sleep. Unfortunately, we did pay extra for an awning that cannot be used. The space inside the tent was very big, much larger than anticipated. We comfortably slept with 2 large dogs with our 6.4' bed, using the Umbrauto truck bed mattress.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on June 15, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Gr8 outdoors",
+            "body": "Received on time as promised. Cannot evaluate yet as I have not had the opportunity to set it up or use it yet.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on April 24, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great product!!",
+            "body": "Worked out great for our 12 Ram 3500 long bed. Recommend",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 18, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Excellent Value for the Price – Highly Recommended",
+            "body": "I bought this truck bed tent, and I was honestly impressed. The quality exceeded my expectations for the price. The overall construction is very good. The fabric feels durable, the stitching is well done, and the zippers are sturdy and smooth. The only part that could be improved is the mesh on the windows—it feels a little thinner than the rest of the materials—but it has worked fine so far. I also like the floor material. It's strong and more than adequate for what it's designed to do. It gives me confidence that it will hold up well over time. One thing to keep in mind is to double-check your truck bed size before ordering. In my photos, the tent looks a little loose because I accidentally ordered the version for a standard bed, while my truck has a short bed. That was completely my mistake, not a problem with the product. Even so, I was still able to use it, but the fit would have been much better if I had selected the correct size. Overall, I'm very happy with this purchase. It's practical, well made, and offers excellent value for the money. I would definitely recommend it and would buy it again without hesitation.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 27, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "100% recommend",
+            "body": "Went camping and didnt want to take the camper this time. Good thing because have gotten stuck if we did. But this tent wasnt super difficult to put up. I would say it takes two people to put up or someone who is used to putting up new tents. It was super hot where we went to we were grumpy at the end. 😅 Still love this tent. And it was easy taking it down. It fits our truck which is a 1999 250 Ford Super Duty short bed.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Better then being on the ground!",
+            "body": "Worked great in my f150",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Love it!",
+            "body": "Worked great",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 4, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Buy a Tarp Too!",
+            "body": "While this tent looks cool, It’s a little overcomplicated to put together, but ultimately easy enough that you don’t need to retain the instructions for every assembly. Unfortunately, it is not water resistant! After only a few minutes in moderately light rain, moisture started to bleed through the fabric. If you buy this, you have to have a rain fly or a tarp in addition when traveling in rainforest like areas.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on July 11, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "So far so good",
+            "body": "I have not camped with the tent yet. However, i did set it up. I drive a 2nd gen dodge ram with the 6.5 bed. The tent fits great! Nice and tight. The material seems nice. We will see after a storm. There are plenty of windows. The sky vent seems pretty nice also! I like that there are 4 storage bags inside. The setup took me roughly 20 minutes but I have owned a truck bed tent in the past. I didnt catch a snag on any of the zippers. Seems to.be a good tent for the price.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on March 15, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "A but more of a hassle than I'd have liked",
+            "body": "Setting this up for the first time was a pain in the ass because the directions aren't super clear. The thick black poles are for diagonal support for the canopy, two longer black and silver poles get I'd across top, shorter black and silver one intersects the two on top, and two grays x across each other to support canopy roof. The yellow goes around front opening. Zipper quality seems to not be the best so be easy when you use them!!! I gave this a three star as I had two buddies with me to assist with setup and it still took some time, especially once we got it up in the truck. I put this in my 2020 Ram 1500 Classic Warlock with 6'4\" bed, and a couple things - the yellow poles needed taken out and maneuvered around the tailgate straps. Despite multiple adjustments, the front of the tent is not sitting symmetrical as I'd expect (see pictures). I may return this and just get a tent to sleep on the ground, particularly one of those quick setup ones. I was unsure whether or not the straps would mess my paint up so I bought some of the gray pipe foam insulation from Lowe's for like $2/ea and put underneath of where the straps would touch in hopes that itd be better to rest on my paint and fender flares instead of the straps themselves even though they do have a small amount of tent material underneath a section of them. I may change my rating if I keep and setup a second time with a more favorable result. But as of now this was a bit more of a pain that I'd have liked to deal with. Main benefit I guess is that I am off the ground at least.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on July 11, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great!",
+            "body": "I love this thing. I was skeptical at first because of the price but it is well worth it and fits perfectly in my 2016 F250. It’s designed flawlessly.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on April 4, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great quality",
+            "body": "Great design, fit, and quality.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 3, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great truck tent!",
+            "body": "Awesome tent for truck bed! Made well, sturdy!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on March 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great purchase",
+            "body": "Fit perfectly, good quality. Holds up during wind but the zippers get loud when it’s windy",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on January 25, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Watch a video",
+            "body": "Once you figure out where the Rod’s going so very nice sleeper",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on January 29, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0D2XHJ6T2",
+            "url": "https://www.amazon.com/product-reviews/B0D2XHJ6T2/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great tent for camping on the road or anywhere your truck will take ya!",
+            "body": "I have had this truck camper for a few years now and it is still awesome. Its is very good quality and has held up nicely in some rainy elements. It's not super hard to put up by yourself. I'm 5'7 and can get it done by myself. Yes its a little harder for us shorter ones but totally doable. Even maybe take a step stool and help more especially to get into the truck lol. The color has stood up, the poles are still great and an air mattress with your truck beds dimensions also fits nice and snug. There are small storage areas and can easily hang some lights inside as well. I love this tent!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 1, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great quality",
+            "body": "We tested it out when we got it. It fits perfect, easy set up and is very durable.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 9, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Exactly what I wanted",
+            "body": "I was excited to receive this tent to use on the back of my truck. Fast delivery and it came out of the box looking great. I decided to put it together in garage to make sure I understood and it was fairly simple. Little of adjusting back and forth to get the rods evenly spaced, but not tough at all. Put it on the truck and it was a pretty good fit, not perfect, but good. Strapped down fairly easily although around the tailgate took some getting used to. Roomy inside, flaps seemed to seal well, decent height, and I didn’t feel like it was going to blow away off my truck. I left it in my garage overnight and then took it down in preparation for going camping. That’s when I found the issue. The little nylon pockets where the rod ends rest. The two in the back toward the cab of the truck were looking like they were going to break. I immediately started thinking about reinforcing them somehow, then realized if it’s doing this on a test run, how fast is this going to wear out and break? I’m guessing I’d have to buy another tent once a year or slightly more. At this price, it’s not worth buying yearly-ish. I think if the company makes the nylon rod end holders more durable, this would be great. I debated whether to get a replacement, but decided to try another brand so I started the return process. The company reached out to me and were really nice + concerned about the issue. I sent them pictures. They offered to replace, but I already have another brand being shipped. If I have problems with the other tent, I may give this unit another try. Maybe I just got an “off” unit, but there didn’t seem to be anything wrong with the nylon. Maybe too much pressure on it. I was going to give a little less stars, but the customer service was surprisingly good and overall the tent met all my needs except durability Update: Customer service reached out to me and, even after I was refunded, wanted to try to make things right. They ended up shipping me another unit for me to try. I can’t say enough how impressed I am with the support received. They were very pleasant throughout and only wanted to help me. I tried the new unit and it did not have the same issue with the nylon pockets. I’m glad that turned out to be unusual. I’ve now used the tent 4 times and it’s great. Good fit on my truck. The only issue I’ve noticed over time is the liner is a tad thin. It’s already starting to show a couple minor pinpoint holes. It’s a good tent though. Definitely adding a star back and would recommend, especially if you can catch it on sale!",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on October 1, 2022",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Worth it and kept us dry",
+            "body": "Bought this for a 5 day music festival and am shocked how comfortable it was. Being up higher feels more private with thousands of other campers around and walking by. The height is nice, I could literally stand up inside. It did rain 1 day and we stayed dry! There were some drops by the door, but I suspect that our rain cover wasnt fully correct. Super easy to put up and tank down.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great way to get outside for a reasonable price",
+            "body": "This truck tent fits my 2023 Ford F-150 short bed perfectly. Setup was straightforward, and it feels sturdy once it’s in place. It’s so much more comfortable than sleeping on the ground, especially when camping in rough or wet areas. Plenty of room inside, and it made my camping trip a lot more enjoyable. Definitely recommend if you’re looking to get into camping!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 23, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Well made, durable material, simple to erect.",
+            "body": "I have used and owned many tents. Well, over a dozen different types, brands and models. I was prepared to be disappointed but ended up being surprisingly delighted. Is tent is probably the best made tent I have ever used. The material is heavy duty and very durable. All the scenes are double stitched and volcanized on the inside. If this tent leaks, I will be shocked. I look forward to being able to pass this down to someone else in the future.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 4, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Doesn’t fit tundra",
+            "body": "Does not really fit the bed of a Toyota tundra crewmax well, the way it fits in I feel like it’s going to end up tearing. No amount of adjustment will fix the issue. Unfortunately I bought this too close to a camping trip and don’t have a choice but to use it now",
+            "rating": 1.0,
+            "date": "Reviewed in the United States on July 11, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy to put up",
+            "body": "Works well and easy to put up. You can put the tent up and leave it on the ground so you still have access to your truck and then easily pop it in the back after you're in for the day.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 7, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Well worth the money!!",
+            "body": "Well worth the money!! I have a Honda Ridgeline. The truck tent was so easy to assemble with only 4 poles. I assembled it on the ground. It took 2 minutes with me and my wife working together. Once it was together, we simply lifted it in to the truck bed, secured the hooks to the undercarriage and rear wheel, and done!! Taking it down went even faster! The zippers worked perfectly and the material was surprisingly thicker than I had expected. I'd recommend this product to anyone looking for a truck tent (plus, being in the bed of the truck kept us off the ground with the insects and raccoons).",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great tent",
+            "body": "This tent was great and it paired nicely with a air mattress. Held up nice for the couple of nights I used it. Not sure how well it would do in the wind, but the tent poles definitely hold it tight in the back of the truck. The only reason I gave it 4 stars is because the straps go over paint and can very easily scratch the paint.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 21, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "This tent is awesome",
+            "body": "Amazing product for the price. Set up was ok, probably a 2 person job in some cases, but we had rain and wind and it stayed nice and dry.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 12, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy setup",
+            "body": "This was a birthday gift for my brother. He said it sets up easy and is great for overnight trips. Water tight and plenty of room. He set it up in a 2020 ford f150.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 8, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Nice tent.",
+            "body": "This tent was a great price, so we were a little bit concerned it might be cheap. We took it out for a camping trip and it rained a fair bit. The rain fly definitely helped. But the wall near the tailgate did get a little wet. Other than that not too bad.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on June 8, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Seems ok",
+            "body": "Haven’t used it yet……I don’t expect much for what it costs 🤷‍♂️",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 22, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "You can move truck with tent on it.",
+            "body": "Love this tent it sets up pretty easy if you are familiar with building tents. If not you will still get it. What I love about this tent, is that you can drive your car around slowly with tent assembled on your truck. Most you can't because they use your tires as tie down points. Not this one. That's why I got this one in particular for that reason.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 14, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Good tent for a bed of pickup",
+            "body": "Easy to put up it works nice for the weekend camping trip",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 29, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "It fits",
+            "body": "Nice for a last minute trip,good quality",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on July 2, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Tent for tundra",
+            "body": "Fits my Toyota Tundra pretty well keeps me dry when it rains no complaints over here with the product has exceeded my expectations",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 10, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "I Was Wrong.....",
+            "body": "UPDATE April 13, 2025-After having used this tent on a recent camping outing, this truck tent is actually pretty darn good. While set up is a bit fiddly, overall, it was a very solid shelter that was room and had PLENTY of headroom. The ten materials are solid and provided plenty of protection from the chilly winds along the Appalachain Trail. The zippers are very good and did not snag upon entry and exit. I did experience a little rain and the fly kept me dry. I do feel confident that this tent can old up to long periods of rain and not wet out. In addition, this tent really shines when dipsersed camping. All you need is a flat spot to park your truck, set up your shelter and you have a comfortable place to sleep for the night. If you're on the fence, go ahead and give this tent a try. Customer service is very responsive and will work with you if you have any issues so you have nothing to lose! Happy camping! UPDATE: I received a replacement tent with aluminum poles and that was extremely cool of the vendor. Sadly, I am still having issues with this tent. This time, the tent came with a bent pole tip. PLEASE tell me how I can get a spare set of poles? I really want to love this tent but these issues are becoming annoying in a hurry! I was very excited about this tent after reading reviews and watching multiple videos. Sadly, this tent did not come close to my expectations. The tent poles are VERY flimsy and the knots on the ends of the shock cord can be pulled through the poles without much pressure. In addition, setting this think up is a nightmare. Poles won’t stay in their pockets and too much care has to be taken to not break these flimsy fiberglass poles. Just an awful tent. Save your money and avoid this junk.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on October 27, 2024",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "It's OK",
+            "body": "Setup was relatively easy, until placement into the truck bed. I entered my truck info (Ford Ranger) and the website said it would fit. Well, it does fit after a bunch of pushing and shoving. It is a bit too big for the truck bed. However, with all of the straps provided, it will work. Unknown at this early time is how any long term strain on the fiberglass poles may cause stress cracks.",
+            "rating": 3.0,
+            "date": "Reviewed in the United States on May 28, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B08XH7TK3M",
+            "url": "https://www.amazon.com/product-reviews/B08XH7TK3M/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Better than I planned…no rain fly, no problem",
+            "body": "I bought this tent for a 4 day camp out, last minute because it was inexpensive. It ended up being easy to set up, and have a ton of room inside. It didn’t have a rainfly, which was concerning, but the description said it didn’t need one. We had a freak downpour for about 30 minutes. I was sure it was going to leak with the amount of water, literally dumping, from the sky. To my surprise, not a drop of water inside! No rain fly and no problems. I don’t know how it would hold up to sustained rain, but it passed the test of a downpour for a short time. I was impressed.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on August 17, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Umbrauto Truck Tent...Best purchase to date!",
+            "body": "My hubby & I love our new truck tent. Whoever designed it was genius! Plenty of space inside for 2 adults & a regular queen air mattress. We were unsure how it'd go until we assembled it & used it for the first time a month ago. Even though we didn't get it perfect during our first set up (in the dark), it kept us comfy & dry overnight during a light rain. Next time set up will be a breeze! Very easy to break down, roll up & repack in the included bag. Recently bought the umbrauto full size truck air mattress with pillows, so we're excited to try that out on our next camping trip. Overall, we're delighted with this purchase & have recommended it to our friends. If you're on the fence about it, just buy it - you'll likely love it as much as we do. Worst case, if you don't, simply return it. Easy peasy.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on March 11, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Game changer for camping",
+            "body": "Easy to assemble. The only reason I’m giving 4 stars it’s that when it rains it drips on the inside.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on September 18, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Exceeded expectations",
+            "body": "We were honestly surprised how nice this mattress was, i typically have low expectations and this exceeded them. It blows up quickly with the built in pump and stayed inflated all night. This will fit a 6.5 or a 8 ft bed.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Lots of reasons to get this one.",
+            "body": "I bought this for my 6'2\" son to use on his Dodge Ram. It fit perfectly on the bed. Best to set it up in bed if you're alone, one gust of wind and you're fighting a losing battle if you set it up and try to lift it in. Along with a self inflating mattress, a small folding camp table, and a chargeable fan/light that hangs from the ceiling there's still room for another person/pet OR some of your gear. Headroom of course isn't stand upable, but it's enough to get around in. It has good vents, and if you take care of it, it'll take care of you. Especially appreciated is the duffle bag it's stored in, it's got extra room so you don't have to know origami to get it back in when you're packing up camp.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on June 29, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Strap Failed on First Use",
+            "body": "I purchased this tent last month and used it for the first time over the Fourth of July weekend. While assembling the tent, one of the straps broke the very first time I set it up. I love this tent however it was a bit of a disappointment that a critical item in a retention strap did not work and failed. We had to tie a knot and use bungee cords to anchor the corner of the broken strap.",
+            "rating": 1.0,
+            "date": "Reviewed in the United States on July 8, 2026",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Perfect for our chevy Silverado custom",
+            "body": "Its just as described, it wasnt that hard to do it, once you know, you’ll do it way faster the next time. We took it to Alexander springs and had an awesome time sleeping in it, altough we did not need to close it because we wanted some air too. It didn’t rain so i don’t know how this would work in the rain",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on August 10, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "We were running out of oxygen AND soaked",
+            "body": "Overall, for the price, it can serve its purpose well. ONLY if the weather allows you to sleep with the windows open through the night though. We just camped for 3 days in this in various states. Fit our 2500 Silverado perfectly. We were SO excited to sleep in this. Great room. Nice setup. Loved the little features it came with like tent pockets and a little clip for our lantern. We had high hopes. The number one thing that really limits how you can use this tent, is if you sleep with all the windows zipped, you could die. Truly. The first two nights my husband and I and our German shepherd woke up hypoxic and hyperventilating with raging headaches. The first night we assumed it was the altitude change, but the second night we were at a low altitude and the issue was even worse. Unlike most tents, this tent doesn’t need a rainfly because it is waterproof, but this plastic waterproof siding eliminates any air exchange. With 3 of us in the tent, the carbon dioxide build up halfway through the night was severe. Maybe if it was just one set of lungs, it would have been okay, so I’ll give the manufacturers that. This first night, we had the windows zipped to keep out the cold wind, SO much condensation built up on the inner tent walls everything in the tent became wet. This was with a low of just 53 degrees and low humidity of 35%. Extremely difficult to dry the inside of this tent out, and it will be very wet every morning. Our second night we had a five hour heavy rainstorm so we had the windows zipped again and woke up having to choose between breathing and letting more water into the tent. Also around 1am, water ended up dripping into our face nonstop from the top peak of the tent and all of our bedding and clothing became soaked…. So maybe not 100% waterproof in a real rainstorm… we should have had a tarp, but also that storm wasn’t supposed to pass over where we were so we decided to count on the tent’s waterproofing. I would honestly choose a different truck bed tent that isn’t waterproof and has a separate rainfly so you can get some air exchange and not suck in your own carbon dioxide all night. Don’t give yourself brain damage in this tent to save $ like we did.",
+            "rating": 2.0,
+            "date": "Reviewed in the United States on August 30, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Very cool",
+            "body": "Absolutely kick ass cool. Glad I got it !",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on December 27, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great design, manufacturing flaws.",
+            "body": "The fiberglass poles didn't last, and why I had to return it.... but asked for a replacement because I really like the design. The zipper roof access was also missing the handle. Design is great, manufacturing needs some help. I may just purchase my own aluminum poles",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on February 21, 2024",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Turned a beautiful camping trip into stress.",
+            "body": "Absolutely junk! First night out we assembled it and about an hour later we came back and one of the poles snapped. Second day it rained and we had almost as much water inside as was outside.",
+            "rating": 1.0,
+            "date": "Reviewed in the United States on June 20, 2026",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Unworthy in the rain!!!",
+            "body": "So far so good until last night. My issue and the reason for my rating... you say it's waterproof but the one I received is not. I ordered it in the beginning of summer, so I couldn't test it till last night. It rained, and it was leaking from all 4 side. I did not wake up in a good mood. Unbelievably poor product when it's raining.",
+            "rating": 2.0,
+            "date": "Reviewed in the United States on October 3, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "It'll work.",
+            "body": "It's an okay tent for the price, however the material is weak. Wasn't my favorite to put up compared to others, too small to fit in the 6.5 bed. I ended up returning this tent after setup and they ended up subtracting $25 from my refund for \"damage\" keep in mind it was never utilized. It set it up And I was disappointed and promptly boxed it back up.",
+            "rating": 2.0,
+            "date": "Reviewed in the United States on August 23, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Cover for a Wolf Pup 18TO",
+            "body": "Cover fit well, Model 1 20’, and has plenty of tie down straps to secure the cover. Material was a bit lighter in weight than I expected, but so far has held up well and no tears.",
+            "rating": 4.0,
+            "date": "Reviewed in the United States on January 25, 2023",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Amazing fit!",
+            "body": "Easy setup! My lady loves not sleeping on the ground!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 22, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "love it",
+            "body": "pretty easy to set up and with a truck style air matress very comfortable",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on March 12, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Great",
+            "body": "This is great and so easy to put up can't wait for camping trips.",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on January 13, 2025",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Easy set up and take down",
+            "body": "This tent is perfect. We set it up on the beach in the wind and was amazing. We haven’t used it yet just set it up. We are thrilled with how easy it is!!",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on August 16, 2023",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Stayed dry",
+            "body": "Reasonably easy to set up kit me drive through an amazing windstorm only draw back Is the rain fly. It lays on the windows hurting ventilation",
+            "rating": 5.0,
+            "date": "Reviewed in the United States on May 1, 2023",
+            "verified": true,
+            "hasImage": true,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          },
+          {
+            "title": "Water leak",
+            "body": "Leaked pretty bad on the first rain. Very disappointed in the waterproofing. Leaked at the roof vent zipper and just in general on the roof.",
+            "rating": 1.0,
+            "date": "Reviewed in the United States on September 23, 2025",
+            "verified": true,
+            "hasImage": false,
+            "hasVideo": false,
+            "asin": "B0DXL4PZ4Z",
+            "url": "https://www.amazon.com/product-reviews/B0DXL4PZ4Z/",
+            "collectionMethod": "Woot public written-review endpoint"
+          }
+        ],
+        "reviewMethods": [
+          "Woot public endpoint"
+        ],
+        "reviewCountType": "written_reviews_only",
+        "cached": true
+      }
     },
     {
       "source": "reddit",
       "state": "success",
       "count": 25,
-      "latencyMs": 1628,
-      "message": "采集到 25 条社区讨论；本次通道：Reddit RSS。",
+      "latencyMs": 0,
+      "message": "采集到 25 条社区讨论；本次通道：Reddit RSS。 使用最近成功缓存。",
       "url": "https://www.reddit.com/search/?q=Truck+Bed+Tents&sort=relevance",
       "meta": {
         "method": "Reddit RSS",
         "endpoint": "https://www.reddit.com/search.rss?q=Truck+Bed+Tents&sort=relevance&t=all",
-        "fallbackAttempts": []
+        "fallbackAttempts": [],
+        "cached": true
       }
     },
     {
       "source": "youtube",
       "state": "success",
       "count": 18,
-      "latencyMs": 2047,
+      "latencyMs": 2842,
       "message": "采集到 18 个视频及可见需求信号。",
       "url": "https://www.youtube.com/results?search_query=Truck+Bed+Tents",
       "meta": {}
@@ -495,47 +2566,29 @@
       "source": "news",
       "state": "success",
       "count": 2,
-      "latencyMs": 1475,
+      "latencyMs": 1072,
       "message": "从 25 条近期结果中筛出 2 条相关资讯。",
       "url": "https://news.google.com/rss/search?q=Truck+Bed+Tents&hl=en-US&gl=US&ceid=US%3Aen",
       "meta": {}
     },
     {
       "source": "alibaba",
-      "state": "action_required",
-      "count": 0,
-      "latencyMs": 456,
-      "message": "Alibaba.com 返回了真人验证页。请打开来源链接完成验证；已配置会话时可通过 OPC_ALIBABA_COOKIE 启用解析。",
+      "state": "success",
+      "count": 24,
+      "latencyMs": 2424,
+      "message": "采集到 24 个 Alibaba.com 供应商品样本。",
       "url": "https://www.alibaba.com/trade/search?SearchText=Truck+Bed+Tents",
       "meta": {}
     }
   ],
   "evidence": [
     {
-      "source": "news",
-      "type": "observed",
-      "claim": "Speedy Truck Bed Tents - Trend Hunter",
-      "value": null,
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBVnNPVHJtSDcxdHVPZ1pVZUxickJJSmxBMWJuZzUtblg5MHFqSDU3c3dzQWdPVWthV0FEX25qc3FsUzcwLWJwSDJ5R01yR3pGWTRLcGc4a2R2eUIwc2JIMm8za9IBaEFVX3lxTE1hMGc4c0M0ZFg2S1ZQZ2RTbDREN2J3THRMRU4tWjlacXpKZFk5VE5acEcxczVuWmNvVFBKX25ERHBTcHNtbHgwMEkzMzRfZ2tlMDhSdXc4b2U1QmZEaXVnNG5mLWprSEQ2?oc=5",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
-      "confidence": "中"
-    },
-    {
-      "source": "news",
-      "type": "observed",
-      "claim": "The Best Truck Bed Tents of 2026 - Outdoor Life",
-      "value": null,
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00ZGxCeFp1NVJ1RU1Dd3p2Mk5UcS1SUVRKZHk4TGd3cUt3b1lFY1hBUDdYRW5VMXhWX3N3TWxicU10ZGZmR3hNTjctdkhZeVhMSHZqWXBRc2QzaXFGLXdlNXNVWUw?oc=5",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
-      "confidence": "中"
-    },
-    {
       "source": "reddit",
       "type": "observed",
       "claim": "Truck Campers - Exploring the world from the bed of your truck",
       "value": null,
       "url": "https://www.reddit.com/r/TruckCampers/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -544,7 +2597,7 @@
       "claim": "r/Camping",
       "value": null,
       "url": "https://www.reddit.com/r/camping/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -553,7 +2606,7 @@
       "claim": "Toyota Tacoma",
       "value": null,
       "url": "https://www.reddit.com/r/ToyotaTacoma/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -562,7 +2615,7 @@
       "claim": "Has anyone used a truck bed tent before? Thoughts?",
       "value": null,
       "url": "https://www.reddit.com/r/camping/comments/q9ix0l/has_anyone_used_a_truck_bed_tent_before_thoughts/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -571,7 +2624,7 @@
       "claim": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
       "value": null,
       "url": "https://www.reddit.com/r/TruckCampers/comments/1sd75cv/can_i_mount_a_rooftop_tent_directly_onto_my_truck/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -580,7 +2633,7 @@
       "claim": "First time installing truck bed tent.",
       "value": null,
       "url": "https://www.reddit.com/r/CampingGear/comments/gzv8l9/first_time_installing_truck_bed_tent/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -589,7 +2642,7 @@
       "claim": "Can I mount a rooftop tent directly onto my truck bed (no rack) like a tonneau cover and cut out the tent floor basically make the tent a collapsible topper for my truck?",
       "value": null,
       "url": "https://www.reddit.com/r/rooftoptents/comments/1sd72v2/can_i_mount_a_rooftop_tent_directly_onto_my_truck/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -598,7 +2651,7 @@
       "claim": "Recommendations for sleeping pad/mattress for truck bed",
       "value": null,
       "url": "https://www.reddit.com/r/carcamping/comments/1uidlzc/recommendations_for_sleeping_padmattress_for/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -607,7 +2660,7 @@
       "claim": "Hopped on the bed tent bandwagon",
       "value": null,
       "url": "https://www.reddit.com/r/ToyotaTacoma/comments/1s0ahbx/hopped_on_the_bed_tent_bandwagon/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -616,7 +2669,7 @@
       "claim": "Sleeping in a 5ft truck bed?",
       "value": null,
       "url": "https://www.reddit.com/r/overlanding/comments/1qfa6uk/sleeping_in_a_5ft_truck_bed/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -625,7 +2678,7 @@
       "claim": "Custom truck tent - Help",
       "value": null,
       "url": "https://www.reddit.com/r/camping/comments/1qpgsoq/custom_truck_tent_help/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
       "confidence": "中"
     },
     {
@@ -634,115 +2687,457 @@
       "claim": "RTT and Truck Bed Cap on Ford Maverick.",
       "value": null,
       "url": "https://www.reddit.com/r/FordMaverickTruck/comments/1t3yzn2/rtt_and_truck_bed_cap_on_ford_maverick/",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "GoHimal Pickup Truck Bed Tent, 5.5-6.0FT Truck Tent for Camping（Gray） | Portable,Double Layer,Waterproof PU2000mm",
+      "value": 69.99,
+      "url": "https://www.amazon.com/GoHimal-Waterproof-PU2000mm-5-5-6-0-Portable/dp/B0BQYQBK35",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Napier Backroadz Truck Tent | Pickup Truck Bed Camping Tent | Rainfly for Water Protection | Sturdy and Spacious 2-Person Truck Tent | Easy 10-Minute Setup | Gray/Green",
+      "value": 195.49,
+      "url": "https://www.amazon.com/Napier-Backroadz-Truck-Tent-Short/dp/B07HXML6M9",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Truck Bed Tent, Pickup Truck Tents for Camping 5.5-6.0 Ft Bed | Waterproof PU3000mm Tent for Truck Bed, Heavy Duty Oxford Fabric Sleeping Truck Tent for Car Camping, Overlanding, Green",
+      "value": 64.99,
+      "url": "https://www.amazon.com/WildFinder-Truck-Pickup-Camping-5-5-6-0/dp/B0DWFDWD1Z",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Truck Bed Tent with Awning: 6.4-6.7FT PU3000mm Waterproof Tailgate Pickup Truck Tents, Easy Set-up for 2 Person, Fits Full Size Short Bed, Chevy, Dodge, Ford, GMC, Green",
+      "value": 125.96,
+      "url": "https://www.amazon.com/Umbrauto-Truck-Bed-Tent-Awning/dp/B0D2XHJ6T2",
+      "capturedAt": "2026-07-31T08:12:06.447010+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "JOYTUTUS Pickup Truck Tent 2.0, Waterproof PU2000mm Double Layer for 2 Person, Portable Truck Bed Tent with Rainfly, 5.5'-5.8' Camping Preferred - Green Recycled Claim Standard Blended",
+      "value": 69.99,
+      "url": "https://www.amazon.com/JoyTutus-Waterproof-PU2000mm-Portable-Preferred/dp/B08XH7TK3M",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Truck Bed Tent 6.4' ~ 6.7' Easy Set Up Umburato Pickup Truck Tents for Camping, Waterproof PU3000mm Canopy for Truck Camper, Portable, Spacious for 2 Person Green",
+      "value": 89.32,
+      "url": "https://www.amazon.com/Umburato-Waterproof-PU3000mm-Portable-Spacious/dp/B0DXL4PZ4Z",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Truck Bed Tent 5.5-6ft: Easy Set Up Umburato Pickup Truck Tents for Camping, Waterproof PU3000mm Canopy for Truck Camper, Portable, Spacious for 2 Person Green",
+      "value": 79.96,
+      "url": "https://www.amazon.com/Truck-Bed-Tent-5-5-6ft-Waterproof/dp/B0DXL477KQ",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Pickup Truck Tent with Awning Shade,Waterproof PU5000mm Oxford for 5.5-6.3 FT Truck Bed for Camping Travel Outdoor Activities for Chevy Silverado 1500,Ram 1500/Dakota,F150,GMC 1500,Titan,Tundra",
+      "value": 89.99,
+      "url": "https://www.amazon.com/Waterproof-PU5000mm-5-5-5-8-Activities-Silverado/dp/B0D66W5HP5",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Umbrauto Air Mattress for 5.5-5.8 ft Full-Size Short Truck Beds, Inflatable Truck Tent Airbed with Pump, Pickup Camper Air Bed for Camping",
+      "value": 67.97,
+      "url": "https://www.amazon.com/Umbrauto-Mattress-5-5-5-8-Full-Size-Inflatable/dp/B0DK6FWCK1",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "JOYTUTUS Pickup Truck Tent 5.5ft Bed Tent with Removable Awning, Waterproof PU2000mm Double Layer for 2 Person, Portable Truck Bed Tent - Green, Aluminum Pole Recycled Claim Standard Blended",
+      "value": 142.49,
+      "url": "https://www.amazon.com/JoyTutus-Waterproof-Removable-5-5ft-6ft-Preferred/dp/B0BJZBSLG4",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "Niphean Truck Bed Tent for Camping 5ft-8ft for 2+1 People, 2 Mins Setup | Inflatable Pickup Truck Tent, PU 3000mm Waterproof & High-Strength Windproof, Spacious Interior for Multi-Landscape",
+      "value": 299.98,
+      "url": "https://www.amazon.com/5-5ft-8ft-Inflatable-Waterproof-High-Strength-Multi-Landscape/dp/B0DRXX4X77",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon",
+      "type": "observed",
+      "claim": "GoHimal Pickup Truck Bed Tent, 5.5-6.0FT Truck Tent for Camping（Green） | Portable,Double Layer,Waterproof PU2000mm",
+      "value": 64.99,
+      "url": "https://www.amazon.com/GoHimal-Waterproof-PU2000mm-5-5-6-0-Portable/dp/B0BQYP6R63",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Absolutely incredible all around tent: This tent absolutely blew me away! It was my first time ever camping in my adult life and I figured a $90 tent could be a ok starter spot. With that being said it was so easy to set up and way more durable than I had expe",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Beach camping: It works great. It never rained, but we were in zero visibility fog while camping on the beach. With that being said the outside out the entire tent and truck were soaked with condensation/dew/wetness - not a drop from inside the tent. Loved sle",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Great little tent: I have a 2024 Toyota Tacoma sr, 5”5’ foot bed this fit perfectly. Directions to set up were a little complicated but once installed it was great. Easy to set up after you figure it out. The camper next to me stepped in to help me out. Nice a",
+      "value": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Very good quality, great fit and finish.: It’s a little short for our truck, even though we ordered the one that matches the size of our truck bed. However, it’s a good enough fit. I’m not sure about it being waterproof because it’s not in the forecast to rain",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Quick set up: This is a pretty cool way to get out for the weekend. Sets up quickly and when you add an air mattress very comfortable. I have used when white water rafting on a nice summer weekend and up to the cascade mountains in a thunderstorm and stayed dr",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Love it!: I love this thing. I took it out to the great Salt Lake and went camping at antelope island and I gotta say its nice to be in the back of a truck like that, at least its provides protection. Totally water proof and very roomy and warm. Fit perfectly!",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Handy and affordable truck tent: This tent is going to work fantastic for our traveling. We have a 2023 Honda Ridgeline, which wasn't listed on the list of vehicles in the item description, so we weren't sure if it would work, but it works great! The tent is p",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Good set up, not waterproof.: The positives: it definitely fits back in the bag and is compact to store. It is a good set up if it’s not raining. The height is nice. Covers the tailgate giving extra storage room. Once you know how to put it together it is easy",
+      "value": 3.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Silverado WITH a bed box ✅: I got this for me and my bf to use in his truck. We weren't sure how it would work with the bed box but you can still use the tent. It's just not exactly as intended but it's perfectly secure and the frame is still up. The inside ju",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Easy to use: We purchased this for our 2020 ram for a summer road trip. It did the job we needed it to do. It sets up and down quickly. Our only complaint about using this was probably like any other tent of any kind. When you got rain or morning dew on it you",
+      "value": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "SETUP: No leaks was comfortable but hard to set out of truck bed.",
+      "value": 4.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "amazon-review",
+      "type": "observed",
+      "claim": "Easy to set up: We bought the smallest option and could go a bit bigger for our Chevy f150, worked well, easy to set up.",
+      "value": 5.0,
+      "url": "https://www.amazon.com/product-reviews/B0BQYQBK35/",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "高"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "Speedy Truck Bed Tents - Trend Hunter",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBVnNPVHJtSDcxdHVPZ1pVZUxickJJSmxBMWJuZzUtblg5MHFqSDU3c3dzQWdPVWthV0FEX25qc3FsUzcwLWJwSDJ5R01yR3pGWTRLcGc4a2R2eUIwc2JIMm8za9IBaEFVX3lxTE1hMGc4c0M0ZFg2S1ZQZ2RTbDREN2J3THRMRU4tWjlacXpKZFk5VE5acEcxczVuWmNvVFBKX25ERHBTcHNtbHgwMEkzMzRfZ2tlMDhSdXc4b2U1QmZEaXVnNG5mLWprSEQ2?oc=5",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "news",
+      "type": "observed",
+      "claim": "The Best Truck Bed Tents of 2026 - Outdoor Life",
+      "value": null,
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00ZGxCeFp1NVJ1RU1Dd3p2Mk5UcS1SUVRKZHk4TGd3cUt3b1lFY1hBUDdYRW5VMXhWX3N3TWxicU10ZGZmR3hNTjctdkhZeVhMSHZqWXBRc2QzaXFGLXdlNXNVWUw?oc=5",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/264803526111.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/801547917447.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/283229434330.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/772103742206.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/748393152923.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/724401144914.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/156527933105.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/276915630743.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/732272126353.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/358520972389.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/645087609238.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "alibaba",
+      "type": "observed",
+      "claim": "Store reviews",
+      "value": null,
+      "url": "https://www.alibaba.com/product-detail/790545424233.html",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Napier Truck Tent FULL USER review/ Is this the Best Budget Tent option for Camping and Overlanding?",
-      "value": "119,386 views",
+      "value": "119,490 views",
       "url": "https://www.youtube.com/watch?v=G4LMpsKQjK0",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Truck Camping Just Got INSANE! Top 5 Bed Tents for 2026",
-      "value": "3,858 views",
+      "value": "3,917 views",
       "url": "https://www.youtube.com/watch?v=HbbsFepOVao",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "JOYTUTUS Truck Bed Tent Review | 6.5ft Waterproof Tent with Awning for F150, Silverado, Ram & More!",
-      "value": "9,172 views",
+      "value": "9,203 views",
       "url": "https://www.youtube.com/watch?v=64oAg-ApKB0",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "BEST INFLATABLE TRUCK BED TENTS 2026 – Top 5 Picks",
-      "value": "886 views",
+      "value": "925 views",
       "url": "https://www.youtube.com/watch?v=gcceeQuBGR0",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Full Demo & Honest Thoughts On Napier Backroadz Truck Tent After Lots of Use Plus Rain!",
-      "value": "16,449 views",
+      "value": "16,499 views",
       "url": "https://www.youtube.com/watch?v=GuPIktC6wqU",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Kodiak Canvas Truck Tent",
-      "value": "486,886 views",
+      "value": "486,922 views",
       "url": "https://www.youtube.com/watch?v=euH2hUkl9ME",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "How to Setup a Napier 19 Series Backroadz Truck Tent │ Installation & Setup Instructions",
-      "value": "76,133 views",
+      "value": "76,207 views",
       "url": "https://www.youtube.com/watch?v=kwhAKk0lSnc",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Testing The CHEAPEST Truck Bed Tent On Amazon! (Go Buy It!)",
-      "value": "43,799 views",
+      "value": "43,879 views",
       "url": "https://www.youtube.com/watch?v=QYG8uf_cMXA",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
-      "confidence": "中"
-    },
-    {
-      "source": "youtube",
-      "type": "observed",
-      "claim": "Top 5 Best Truck Bed Tents of 2024",
-      "value": "57,307 views",
-      "url": "https://www.youtube.com/watch?v=AhjFsR2VswU",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Top 5 Best Truck Bed Tents 2025 - Don’t Buy one Before Watching this Video",
-      "value": "2,657 views",
+      "value": "2,663 views",
       "url": "https://www.youtube.com/watch?v=sa4s94yqqro",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Top 5 Best Truck Bed Tents of 2024",
+      "value": "57,320 views",
+      "url": "https://www.youtube.com/watch?v=AhjFsR2VswU",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
+      "confidence": "中"
+    },
+    {
+      "source": "youtube",
+      "type": "observed",
+      "claim": "Is This the Best Truck Bed Tent on the Market?",
+      "value": "3,404 views",
+      "url": "https://www.youtube.com/watch?v=v4PxtT9Dkjw",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     },
     {
       "source": "youtube",
       "type": "observed",
       "claim": "Best Pickup Truck Bed Tents 2025: Top 5 Reviewed!",
-      "value": "23,657 views",
+      "value": "23,696 views",
       "url": "https://www.youtube.com/watch?v=aJG4uGNZedk",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
-      "confidence": "中"
-    },
-    {
-      "source": "youtube",
-      "type": "observed",
-      "claim": "2024 Budget Truck Tent Setup | Organization Tips",
-      "value": "8,024 views",
-      "url": "https://www.youtube.com/watch?v=MefebtlT3g0",
-      "capturedAt": "2026-07-30T10:55:57.228743+00:00",
+      "capturedAt": "2026-07-31T08:12:06.448016+00:00",
       "confidence": "中"
     }
   ],
