@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f6f5">
+    <title>Amazon 站内产品洞察</title>
+    <link rel="stylesheet" href="./amazon.css?v=20260731-amazon-1">
+    <link rel="stylesheet" href="./seller-sprite.css?v=20260731-snapshot-1">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="返回 OPC 产品洞察">
+        <span class="brand-mark" data-icon="package-search"></span>
+        <span>OPC / Amazon 站内</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="service-state"><i></i><span id="serviceLabel">Amazon-only</span></span>
+        <a class="quiet-link" href="/">全局洞察</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-strip" aria-labelledby="pageTitle">
+        <div>
+          <p class="eyebrow">AMAZON PRODUCT INTELLIGENCE</p>
+          <h1 id="pageTitle">亚马逊站内产品洞察</h1>
+          <p class="hero-note">以搜索结果、可见价格、评分、评论量和书面评论为核心，快速判断一个产品是否值得进入。</p>
+        </div>
+        <div class="data-boundary">
+          <span data-icon="shield-check"></span>
+          <div><strong>数据边界</strong><p>不把页面评分当作 Amazon 官方销量；未抓到的数据明确显示。</p></div>
+        </div>
+      </section>
+
+      <section class="query-bar" aria-label="Amazon 检索条件">
+        <form id="amazonForm">
+          <label class="search-control" for="amazonQuery">
+            <span data-icon="search"></span>
+            <input id="amazonQuery" type="search" value="Truck Bed Tents" placeholder="输入中文或英文产品词" required>
+          </label>
+          <label class="select-control"><span>站点</span><select id="amazonMarket"><option value="US">美国 US</option><option value="DE">德国 DE</option><option value="UK">英国 UK</option><option value="CA">加拿大 CA</option></select></label>
+          <label class="select-control"><span>深度</span><select id="amazonDepth"><option value="quick">快速</option><option value="standard" selected>标准</option><option value="deep">深度</option></select></label>
+          <button class="primary-btn" id="runAmazon" type="submit"><span data-icon="search"></span><span>开始检索</span></button>
+        </form>
+        <div class="run-line hidden" id="runLine" aria-live="polite"><span class="spinner" data-icon="loader-circle"></span><span id="runText">正在读取 Amazon 公开页面</span><span id="runElapsed">00:00</span></div>
+        <div class="error-line hidden" id="errorLine" role="alert"><span data-icon="triangle-alert"></span><span id="errorText"></span></div>
+      </section>
+
+      <section class="evidence-callout">
+        <div><span class="callout-label">本次检索</span><strong id="queryLabel">Truck Bed Tents</strong><span id="generatedLabel">等待运行</span></div>
+        <div class="method-list"><span><i></i>Amazon 搜索商品</span><span><i></i>可见价格 / 评分 / 评论量</span><span><i></i>书面评论样本</span></div>
+      </section>
+
+      <div id="reportRoot" class="report-root">
+        <section class="empty-state"><span data-icon="search"></span><h2>输入关键词，开始 Amazon 站内洞察</h2><p>结果会按商品竞争、价格带、评论痛点和可执行机会展开。</p></section>
+      </div>
+
+      <section class="seller-sprite-panel" aria-labelledby="sellerSpriteTitle">
+        <div class="panel-icon"><span data-icon="plug-zap"></span></div>
+        <div><p class="eyebrow">SELLERSPRITE SNAPSHOT</p><h2 id="sellerSpriteTitle">卖家精灵数据边界</h2><p>命中已采集快照的关键词会在报告中展示搜索量、购买率、PPC 竞价、商品数和样本聚合指标；未命中时显示待采集，不用推测值替代。账号信息不会进入前端页面。</p></div>
+        <span class="state-pill captured">快照模式</span>
+      </section>
+    </main>
+
+    <script type="module" src="./amazon.js?v=20260731-amazon-1"></script>
+  </body>
+</html>
