@@ -139,10 +139,14 @@ function setUnit(nextUnit) {
 function updateUnitLabels() {
   const lengthUnit = state.unit === "metric" ? "cm" : "in";
   const weightUnit = state.unit === "metric" ? "kg" : "lb";
+  const dimensionStep = state.unit === "metric" ? 1 : INCH_PER_CM;
   $("dimension-unit-label").textContent = lengthUnit;
   $("length-unit").textContent = lengthUnit;
   $("width-unit").textContent = lengthUnit;
   $("height-unit").textContent = lengthUnit;
+  ["length", "width", "height"].forEach((id) => {
+    $(id).step = dimensionStep.toFixed(4);
+  });
   $("weight-unit-label").textContent = weightUnit;
   $("weight-unit").textContent = weightUnit;
   document.querySelectorAll(".segment[data-unit]").forEach((button) => {
@@ -340,10 +344,7 @@ const FBA_NEXT_SEGMENTS = {
   oversize150Plus: { segment: "special70to150", maxBillable: 150 }
 };
 
-function getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb) {
-  const next = FBA_NEXT_SEGMENTS[segment];
-  if (!next) return { target: "当前最低档", text: "当前已处于可用的最低 FBA 尺寸分段。" };
-
+function getFbaDimensionNeeds(next, edges, fbaPerimeter) {
   const needs = [];
   if (next.maxDims) {
     ["最长边", "第二长边", "最短边"].forEach((label, index) => {
@@ -356,12 +357,44 @@ function getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb) {
   if (Number.isFinite(next.maxPerimeter) && fbaPerimeter > next.maxPerimeter) {
     needs.push("围长≤" + fmt(next.maxPerimeter, 0) + " in（当前 " + fmt(fbaPerimeter, 2) + " in，至少减少 " + fmt(fbaPerimeter - next.maxPerimeter, 2) + " in）");
   }
+  return needs;
+}
+
+function getFbaVolumeGuidance(volumeWeightLb, next, edges) {
+  const threshold = next.strictBillable ? next.maxBillable - 0.01 : next.maxBillable;
+  const scale = Math.max(0, Math.min(1, Math.cbrt(threshold / volumeWeightLb)));
+  const reductionPercent = (1 - scale) * 100;
+  const targetEdges = edges.map((edge) => edge * scale);
+  const limitText = next.strictBillable ? "<" + fmt(next.maxBillable, 0) + " lb" : "≤" + fmt(next.maxBillable, 0) + " lb";
+  return "体积重需" + limitText + "（当前 " + fmt(volumeWeightLb, 1) + " lb）；建议三边整体至少缩小约 " + fmt(reductionPercent, 1) + "%（参考最长边≤" + fmt(targetEdges[0], 2) + " in、第二长边≤" + fmt(targetEdges[1], 2) + " in、最短边≤" + fmt(targetEdges[2], 2) + " in）";
+}
+
+function getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb, realWeightLb, volumeWeightLb) {
+  const next = FBA_NEXT_SEGMENTS[segment];
+  if (!next) return { target: "当前最低档", text: "当前已处于可用的最低 FBA 尺寸分段。" };
+
+  const dimensionNeeds = getFbaDimensionNeeds(next, edges, fbaPerimeter);
+  const needs = dimensionNeeds.length ? ["先调整包装尺寸：" + dimensionNeeds.join("；")] : [];
   if (Number.isFinite(next.maxBillable)) {
     const limitText = next.strictBillable ? "<" + fmt(next.maxBillable, 0) + " lb" : "≤" + fmt(next.maxBillable, 0) + " lb";
     const overLimit = next.strictBillable ? billableWeightLb >= next.maxBillable : billableWeightLb > next.maxBillable;
     if (overLimit) {
       const reduction = Math.max(0, billableWeightLb - next.maxBillable);
-      needs.push("计费重" + limitText + "（当前 " + fmt(billableWeightLb, 1) + " lb，至少降低 " + fmt(reduction, 1) + " lb，约 " + fmt(reduction / LB_PER_KG, 1) + " kg）");
+      const actualWeightIsBottleneck = next.strictBillable
+        ? realWeightLb >= next.maxBillable
+        : realWeightLb > next.maxBillable;
+      if (actualWeightIsBottleneck) {
+        const actualReduction = Math.max(0, realWeightLb - next.maxBillable);
+        const actualText = "实际包装重量需降至" + limitText + "（当前 " + fmt(realWeightLb, 1) + " lb，至少降低 " + fmt(actualReduction, 1) + " lb，约 " + fmt(actualReduction / LB_PER_KG, 1) + " kg）";
+        needs.push(dimensionNeeds.length
+          ? "尺寸达标后，计费重仍由实际重量决定；" + actualText
+          : "当前尺寸已满足下一档尺寸条件；计费重瓶颈为实际重量，继续缩小包装尺寸不能单独跨档；" + actualText);
+      } else {
+        const volumeText = getFbaVolumeGuidance(volumeWeightLb, next, edges);
+        needs.push(dimensionNeeds.length
+          ? "上述尺寸达标后，计费重还受体积重影响；" + volumeText
+          : "当前尺寸已满足下一档边长和围长条件；计费重瓶颈为体积重，" + volumeText);
+      }
     }
   }
 
@@ -369,6 +402,57 @@ function getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb) {
     target: "下一档：" + formatSegment(next.segment),
     text: needs.length ? needs.join("；") + "。" : "当前尺寸和计费重已满足下一档条件。"
   };
+}
+
+function getFedexVolumeGuidance(volumeCm3, threshold, edges) {
+  if (!(volumeCm3 > threshold)) return null;
+  const scale = Math.max(0, Math.min(1, Math.cbrt(threshold / volumeCm3)));
+  const reductionPercent = (1 - scale) * 100;
+  const targetEdges = edges.map((edge) => edge * scale);
+  return "体积需≤" + fmt(threshold, 2) + " cm³（当前 " + fmt(volumeCm3, 2) + " cm³）；建议三边整体至少缩小约 " + fmt(reductionPercent, 1) + "%（参考最长边≤" + fmt(targetEdges[0], 2) + " in、第二长边≤" + fmt(targetEdges[1], 2) + " in、最短边≤" + fmt(targetEdges[2], 2) + " in）";
+}
+
+function getFedexOverlengthNeeds(fedex) {
+  const [longest, second] = fedex.girthEdges;
+  const needs = [];
+  if (longest > FEDEX_RULES.overlength.longestMinIn && longest <= FEDEX_RULES.overlength.longestMaxIn) needs.push("最长边≤" + fmt(FEDEX_RULES.overlength.longestMinIn, 0) + " in（当前 " + fmt(longest, 0) + " in）");
+  if (second > FEDEX_RULES.overlength.secondMinIn) needs.push("第二长边≤" + fmt(FEDEX_RULES.overlength.secondMinIn, 0) + " in（当前 " + fmt(second, 0) + " in）");
+  if (fedex.girthIn > FEDEX_RULES.overlength.girthMinIn && fedex.girthIn <= FEDEX_RULES.overlength.girthMaxIn) needs.push("围长≤" + fmt(FEDEX_RULES.overlength.girthMinIn, 0) + " in（当前 " + fmt(fedex.girthIn, 0) + " in）");
+  const volumeNeed = getFedexVolumeGuidance(fedex.volumeCm3, FEDEX_RULES.overlength.volumeMinCm3, fedex.girthEdges);
+  if (volumeNeed) needs.push(volumeNeed);
+  return needs;
+}
+
+function getFedexOversizeNeeds(fedex, realWeightLb) {
+  const [longest] = fedex.girthEdges;
+  const dimensionNeeds = [];
+  const weightNeeds = [];
+  if (longest > FEDEX_RULES.oversize.longestMinIn && longest <= FEDEX_RULES.oversize.longestMaxIn) {
+    dimensionNeeds.push("最长边≤" + fmt(FEDEX_RULES.oversize.longestMinIn, 0) + " in（当前 " + fmt(longest, 0) + " in）");
+  }
+  if (fedex.girthIn > FEDEX_RULES.oversize.girthMinIn && fedex.girthIn <= FEDEX_RULES.oversize.girthMaxIn) {
+    dimensionNeeds.push("围长≤" + fmt(FEDEX_RULES.oversize.girthMinIn, 0) + " in（当前 " + fmt(fedex.girthIn, 0) + " in）");
+  }
+  const volumeNeed = getFedexVolumeGuidance(fedex.volumeCm3, FEDEX_RULES.oversize.volumeMinCm3, fedex.girthEdges);
+  if (volumeNeed) dimensionNeeds.push(volumeNeed);
+  if (realWeightLb > FEDEX_RULES.oversize.actualWeightMinLb) {
+    weightNeeds.push("实际包装重量需降至≤" + fmt(FEDEX_RULES.oversize.actualWeightMinLb, 0) + " lb（当前 " + fmt(realWeightLb, 1) + " lb，至少降低 " + fmt(realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb, 1) + " lb，约 " + fmt((realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb) / LB_PER_KG, 1) + " kg）");
+  }
+  return { dimensionNeeds, weightNeeds };
+}
+
+function getFedexWeightGuidance(realWeightLb, billableWeightLb, volumeCm3, edges) {
+  const threshold = FEDEX_RULES.overweight.billableWeightMinLb;
+  const reduction = Math.max(0, billableWeightLb - threshold);
+  if (realWeightLb > threshold) {
+    const actualReduction = Math.max(0, realWeightLb - threshold);
+    return "计费重需降至≤" + fmt(threshold, 0) + " lb；当前最高附加费由实际包装重量决定，实际重量当前 " + fmt(realWeightLb, 1) + " lb，至少降低 " + fmt(actualReduction, 1) + " lb，约 " + fmt(actualReduction / LB_PER_KG, 1) + " kg";
+  }
+  if (billableWeightLb > threshold) {
+    const volumeThresholdCm3 = threshold * US_VOLUME_DIVISOR / (INCH_PER_CM ** 3);
+    return "计费重需降至≤" + fmt(threshold, 0) + " lb；当前由体积重决定，" + getFedexVolumeGuidance(volumeCm3, volumeThresholdCm3, edges);
+  }
+  return "计费重需降至≤" + fmt(threshold, 0) + " lb（当前 " + fmt(billableWeightLb, 1) + " lb，至少降低 " + fmt(reduction, 1) + " lb）";
 }
 
 function getFedexGuidance(fedex, realWeightLb, billableWeightLb) {
@@ -383,45 +467,44 @@ function getFedexGuidance(fedex, realWeightLb, billableWeightLb) {
       : [];
   const nextFee = remainingFees.length ? Math.max(...remainingFees) : 0;
   const nextLabel = nextFee ? "下一档：约 " + fmtMoney(nextFee) + " 附加费" : "下一档：无附加费";
-  const needs = [];
+  const nextAmount = nextFee ? "约 " + fmtMoney(nextFee) + " 附加费" : "无附加费";
 
   if (fedex.oversize) {
-    const [longest] = fedex.girthEdges;
-    if (realWeightLb > FEDEX_RULES.oversize.actualWeightMinLb) {
-      needs.push("实际重≤" + fmt(FEDEX_RULES.oversize.actualWeightMinLb, 0) + " lb（当前 " + fmt(realWeightLb, 1) + " lb，至少降低 " + fmt(realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb, 1) + " lb，约 " + fmt((realWeightLb - FEDEX_RULES.oversize.actualWeightMinLb) / LB_PER_KG, 1) + " kg）");
-    }
-    if (realWeightLb <= FEDEX_RULES.oversize.actualWeightMaxLb && longest > FEDEX_RULES.oversize.longestMinIn && longest <= FEDEX_RULES.oversize.longestMaxIn) {
-      needs.push("最长边≤" + fmt(FEDEX_RULES.oversize.longestMinIn, 0) + " in（当前 " + fmt(longest, 0) + " in，至少缩短 " + fmt(longest - FEDEX_RULES.oversize.longestMinIn, 0) + " in）");
-    }
-    if (realWeightLb <= FEDEX_RULES.oversize.actualWeightMaxLb && fedex.girthIn > FEDEX_RULES.oversize.girthMinIn && fedex.girthIn <= FEDEX_RULES.oversize.girthMaxIn) {
-      needs.push("围长≤" + fmt(FEDEX_RULES.oversize.girthMinIn, 0) + " in（当前 " + fmt(fedex.girthIn, 0) + " in，至少减少 " + fmt(fedex.girthIn - FEDEX_RULES.oversize.girthMinIn, 0) + " in）");
-    }
-    if (fedex.volumeCm3 > FEDEX_RULES.oversize.volumeMinCm3) {
-      needs.push("体积≤" + fmt(FEDEX_RULES.oversize.volumeMinCm3, 2) + " cm³（当前 " + fmt(fedex.volumeCm3, 2) + " cm³）");
-    }
+    const oversizeNeeds = getFedexOversizeNeeds(fedex, realWeightLb);
+    const sections = [];
+    if (oversizeNeeds.dimensionNeeds.length) sections.push("先调整包装尺寸，解除 $45 超大附加费需要：" + oversizeNeeds.dimensionNeeds.join("；"));
+    if (oversizeNeeds.weightNeeds.length) sections.push("同时，" + oversizeNeeds.weightNeeds.join("；"));
     return {
       target: nextLabel,
-      text: needs.length ? "解除 $45 超大附加费需同时满足：" + needs.join("；") + "。" : "请同时满足超大规则的所有尺寸、体积和重量上限。"
+      text: sections.length ? sections.join("；") + "。调整后下一档为" + nextAmount + "。" : "请同时满足超大规则的所有尺寸、体积和重量上限。"
     };
   }
 
   if (fedex.overweight) {
-    const reduction = Math.max(0, billableWeightLb - FEDEX_RULES.overweight.billableWeightMinLb);
+    const weightNeed = getFedexWeightGuidance(realWeightLb, billableWeightLb, fedex.volumeCm3, fedex.girthEdges);
+    if (fedex.overlength) {
+      const overlengthNeeds = getFedexOverlengthNeeds(fedex);
+      const dimensionText = overlengthNeeds.length
+        ? "尺寸调整可以解除当前 $5 超长附加费（" + overlengthNeeds.join("；") + "）"
+        : "尺寸调整可以解除当前 $5 超长附加费";
+      const weightText = realWeightLb > FEDEX_RULES.overweight.billableWeightMinLb
+        ? "但当前最高的 $8 超重附加费仍由实际包装重量决定"
+        : "当前 $8 超重附加费由体积重决定，优先缩小包装尺寸并复核计费重";
+      return {
+        target: nextLabel,
+        text: dimensionText + "；" + weightText + "；要降至" + nextAmount + "，" + weightNeed + "。"
+      };
+    }
     return {
       target: nextLabel,
-      text: "计费重降至≤" + fmt(FEDEX_RULES.overweight.billableWeightMinLb, 0) + " lb（当前 " + fmt(billableWeightLb, 1) + " lb，至少降低 " + fmt(reduction, 1) + " lb，约 " + fmt(reduction / LB_PER_KG, 1) + " kg）。"
+      text: weightNeed + "。"
     };
   }
 
-  const [longest, second] = fedex.girthEdges;
-  const overlengthNeeds = [];
-  if (longest > FEDEX_RULES.overlength.longestMinIn && longest <= FEDEX_RULES.overlength.longestMaxIn) overlengthNeeds.push("最长边≤" + fmt(FEDEX_RULES.overlength.longestMinIn, 0) + " in");
-  if (second > FEDEX_RULES.overlength.secondMinIn) overlengthNeeds.push("第二长边≤" + fmt(FEDEX_RULES.overlength.secondMinIn, 0) + " in");
-  if (fedex.girthIn > FEDEX_RULES.overlength.girthMinIn && fedex.girthIn <= FEDEX_RULES.overlength.girthMaxIn) overlengthNeeds.push("围长≤" + fmt(FEDEX_RULES.overlength.girthMinIn, 0) + " in");
-  if (fedex.volumeCm3 > FEDEX_RULES.overlength.volumeMinCm3) overlengthNeeds.push("体积≤" + fmt(FEDEX_RULES.overlength.volumeMinCm3, 2) + " cm³");
+  const overlengthNeeds = getFedexOverlengthNeeds(fedex);
   return {
     target: nextLabel,
-    text: overlengthNeeds.length ? "解除 $5 超长附加费需满足：" + overlengthNeeds.join("；") + "。" : "请同时满足超长规则的所有尺寸和体积上限。"
+    text: overlengthNeeds.length ? "优先调整包装尺寸，解除 $5 超长附加费需满足：" + overlengthNeeds.join("；") + "。" : "请同时满足超长规则的所有尺寸和体积上限。"
   };
 }
 
@@ -478,7 +561,7 @@ function calculate() {
     ...fedex.oversizeReasons
   ].join("；");
   const fedexSeverity = getFedexSeverity(fedex.totalFee);
-  const fbaGuidance = getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb);
+  const fbaGuidance = getFbaGuidance(segment, edges, fbaPerimeter, billableWeightLb, realWeightLb, volumeWeightLb);
   const fedexGuidance = getFedexGuidance(fedex, realWeightLb, billableWeightLb);
   $("fedex-guidance-target").textContent = fedexGuidance.target;
   $("fedex-guidance-text").textContent = fedexGuidance.text;
