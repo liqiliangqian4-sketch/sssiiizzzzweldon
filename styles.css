@@ -250,6 +250,51 @@ h1 em {
   font-size: 11px;
 }
 
+.report-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0 0 24px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.report-entry h2 {
+  margin: 8px 0 6px;
+  color: var(--blue);
+  font-size: 22px;
+}
+
+.report-entry p:last-child {
+  max-width: 900px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.report-entry-link {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  color: var(--white);
+  background: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.report-entry-link:hover {
+  background: var(--orange);
+}
+
 .panel-heading,
 .results-heading,
 .field-label-row,
@@ -860,6 +905,8 @@ input::placeholder { color: #a7b0b0; }
   .result-card { min-height: auto; }
   .metrics-grid { grid-template-columns: 1fr 1fr; }
   .reference-strip { display: block; padding: 20px; }
+  .report-entry { display: block; padding: 18px; }
+  .report-entry-link { width: 100%; margin-top: 16px; }
   .reference-copy { margin-top: 18px; padding: 16px 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .reference-rule { margin-top: 18px; padding: 16px 0 0; border-top: 1px solid var(--line); border-left: 0; text-align: left; }
   .footer { display: block; line-height: 1.7; }

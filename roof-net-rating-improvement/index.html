@@ -1,0 +1,1804 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>车顶网评分改善复盘：2026.7-2026.8差评客诉与产品本体改善</title>
+  <style>
+    :root { --bg:#f5f6f3; --ink:#1d2420; --muted:#64706a; --line:#dbe1dc; --panel:#fff; --green:#276b57; --red:#a43d32; --blue:#2e638b; --gold:#a56b20; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial, "Microsoft YaHei", sans-serif; line-height:1.56; }
+    header { background:#17231f; color:#fff; padding:36px 42px 30px; }
+    h1 { margin:0 0 10px; font-size:30px; letter-spacing:0; }
+    header p { margin:0; color:#cbd4cf; max-width:1180px; }
+    main { max-width:1420px; margin:0 auto; padding:24px 28px 60px; }
+    section { margin:24px 0; }
+    h2 { margin:0 0 12px; font-size:22px; }
+    h3 { margin:14px 0 8px; font-size:16px; }
+    .grid { display:grid; gap:13px; }
+    .kpis { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .two { grid-template-columns:1fr 1fr; }
+    .three { grid-template-columns:1.1fr .95fr .95fr; }
+    .card,.panel,details,.table-wrap { background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .card { padding:15px; min-height:96px; }
+    .label { color:var(--muted); font-size:13px; }
+    .value { margin-top:5px; font-size:27px; font-weight:700; }
+    .red { color:var(--red); } .green { color:var(--green); } .blue { color:var(--blue); }
+    .panel { padding:18px 20px; }
+    .panel ul { margin:8px 0 0; padding-left:18px; }
+    .panel li { margin:7px 0; }
+    .barline { display:grid; grid-template-columns:120px 1fr 108px; gap:10px; align-items:center; margin:8px 0; }
+    .bar { height:10px; background:#e7ece8; border-radius:999px; overflow:hidden; }
+    .bar i { display:block; height:100%; background:var(--green); }
+    details { margin:12px 0; overflow:hidden; }
+    summary { cursor:pointer; list-style:none; padding:14px 16px; display:flex; justify-content:space-between; gap:14px; align-items:center; font-weight:700; }
+    summary::-webkit-details-marker { display:none; }
+    summary:before { content:"▾"; color:var(--muted); margin-right:8px; }
+    details:not([open]) summary:before { content:"▸"; }
+    summary span { flex:1; }
+    summary b { color:var(--red); }
+    .theme.pos summary b { color:var(--green); }
+    .theme-body { padding-bottom:8px; }
+    .root,.fix,.priority { margin:0 16px 8px; padding:10px 12px; border-radius:6px; }
+    .root { background:#fff4ee; border-left:4px solid var(--red); }
+    .fix { background:#eef5f1; border-left:4px solid var(--green); }
+    .priority { display:inline-flex; margin-left:16px; background:#eef3f8; border:1px solid #d6e1ea; color:#2d5f86; font-weight:700; }
+    .quote { margin:0 16px; padding:13px 0; border-top:1px solid #edf0ed; }
+    .quote:first-of-type { border-top:0; }
+    .meta { display:flex; flex-wrap:wrap; gap:7px; color:var(--muted); font-size:12px; align-items:center; }
+    .meta span,.meta a { display:inline-flex; padding:2px 7px; border-radius:999px; background:#eef2ee; color:#4b5752; text-decoration:none; }
+    .ref-list { display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .ref-card { padding:15px; background:#fff; border:1px solid var(--line); border-radius:8px; }
+    .ref-card a { color:var(--blue); font-weight:700; text-decoration:none; word-break:break-word; }
+    .ref-card p { margin:8px 0 0; color:var(--muted); }
+    .benchmark { margin-top:14px; padding:14px 16px; border-left:4px solid var(--green); background:#eef5f1; border-radius:6px; }
+    .title { margin-top:6px; font-weight:700; }
+    .en,.cn { margin:6px 0 0; }
+    .cn { color:#59645f; }
+    .muted { color:var(--muted); }
+    .table-wrap { max-height:680px; overflow:auto; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th,td { border-bottom:1px solid #e8ede8; padding:9px 10px; text-align:left; vertical-align:top; font-size:13px; }
+    th { background:#edf2ee; position:sticky; top:0; z-index:1; }
+    @media(max-width:1120px) { header { padding:26px 20px; } main { padding:20px; } .kpis,.two,.three,.ref-list { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>车顶网评分改善复盘：2026.7-2026.8差评客诉与产品本体改善</h1>
+    <p>主数据源以前两个最新文件为准：B0GJT77GVM-US-Reviews-20260812.xlsx 与 客诉总表SKU明细（车顶网6款SKU）.xlsx。历史评分、客诉、Listing/视频需求仅用于识别“已做改善措施”和问题复发。</p>
+  </header>
+  <main>
+    <section class="grid kpis">
+      <div class="card"><div class="label">最新评论</div><div class="value">51</div><div class="label">平均 3.94 星</div></div>
+      <div class="card"><div class="label">7-8月评论</div><div class="value">14</div><div class="label">平均 3.43 星</div></div>
+      <div class="card"><div class="label">7-8月低星</div><div class="value red">6</div><div class="label">1-3星，42.9%</div></div>
+      <div class="card"><div class="label">最新客诉</div><div class="value">146</div><div class="label">6款SKU，含填充月份</div></div>
+      <div class="card"><div class="label">7-8月客诉</div><div class="value red">57</div><div class="label">改善后仍有反馈</div></div>
+      <div class="card"><div class="label">历史措施</div><div class="value blue">13</div><div class="label">评分措施 + Listing/视频需求</div></div>
+    </section>
+
+    <section class="grid three">
+      <div class="panel">
+        <h2>一句话结论</h2>
+        <ul>
+          <li><b>之前的改善没有明显生效，核心原因是偏页面/视频/说明，未改掉产品结构约束。</b></li>
+          <li>7-8月仍反复出现：24+气囊/中部绑带避让、Freedom Panel/硬顶复装、前角挂点不准、网面下垂拍打、魔术贴/塑料扣强度与长度不足。</li>
+          <li><b>下一轮必须以产品本体为主：</b>对标“全覆盖、贴合紧、不漏缝、高速不拍打、雨天可临时缓冲”的竞品体验，拆分2024+版型、重做前部绑带路径、加长魔术贴、强化卡扣、增加二级张紧结构和可调前角锚点。</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>最新评论星级</h2>
+        <div class="barline"><span>5星</span><div class="bar"><i style="width:51.0%"></i></div><b>26 / 51.0%</b></div>
+<div class="barline"><span>4星</span><div class="bar"><i style="width:17.6%"></i></div><b>9 / 17.6%</b></div>
+<div class="barline"><span>3星</span><div class="bar"><i style="width:13.7%"></i></div><b>7 / 13.7%</b></div>
+<div class="barline"><span>2星</span><div class="bar"><i style="width:9.8%"></i></div><b>5 / 9.8%</b></div>
+<div class="barline"><span>1星</span><div class="bar"><i style="width:7.8%"></i></div><b>4 / 7.8%</b></div>
+      </div>
+      <div class="panel">
+        <h2>评论月份</h2>
+        <div class="barline"><span>2026-06</span><div class="bar"><i style="width:29.4%"></i></div><b>15 / 29.4%</b></div>
+<div class="barline"><span>2026-05</span><div class="bar"><i style="width:27.5%"></i></div><b>14 / 27.5%</b></div>
+<div class="barline"><span>2026-07</span><div class="bar"><i style="width:19.6%"></i></div><b>10 / 19.6%</b></div>
+<div class="barline"><span>2026-04</span><div class="bar"><i style="width:15.7%"></i></div><b>8 / 15.7%</b></div>
+<div class="barline"><span>2026-08</span><div class="bar"><i style="width:7.8%"></i></div><b>4 / 7.8%</b></div>
+        <h3>客诉月份</h3>
+        <div class="barline"><span>2026-06</span><div class="bar"><i style="width:37.7%"></i></div><b>55 / 37.7%</b></div>
+<div class="barline"><span>2026-07</span><div class="bar"><i style="width:34.2%"></i></div><b>50 / 34.2%</b></div>
+<div class="barline"><span>2026-05</span><div class="bar"><i style="width:13.0%"></i></div><b>19 / 13.0%</b></div>
+<div class="barline"><span>2026-04</span><div class="bar"><i style="width:10.3%"></i></div><b>15 / 10.3%</b></div>
+<div class="barline"><span>2026-08</span><div class="bar"><i style="width:4.8%"></i></div><b>7 / 4.8%</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2026.7-2026.8 仍在发生的问题</h2>
+      <p class="muted">比例口径：低星评论 + 7/8月客诉的主题命中，模块内比例合计100.0%。这里是判断“改善后是否还有效”的主证据池。</p>
+      
+    <details class="theme">
+      <summary><span>版型/角点固定不准，导致不贴合</span><b>12条 / 40.0%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>Listing适配提示无法解决版型本身的锚点误差。尤其JK/JKU/JLU/JT不同顶框和角点位置，如果共用版型，前角最容易下垂。</div>
+        <div class="fix"><b>产品本体改善：</b>按车型重新打版前角半径和绑带角度；每个SKU做车架实装样板，前角增加可调三角补强带或滑动锚点，扩大±30mm调节余量。</div>
+        <div class="priority">P0 适配</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-29</span><span>B0GJSQHQNF</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RKSH1SHFAIEY5/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Does not fit 2015 JK Jeep Wrangler Sport.</div>
+      <p class="en">I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</p>
+      <p class="cn">我有一辆 2015 款 2 门 JK，应该适合。然而，前角不能正确贴合，因此防护罩会下垂。我不明白你怎么能说它适合 2 门 JK，而它显然不适合。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-26</span><span>B0GJSP36SB</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3LILPMLS2V9NS/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Junk</div>
+      <p class="en">Don’t be even bother , it does not fit tight Barely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the most The pics are false Yes it will def provide shade but it means nothing if it’s constantly flapping in the wind</p>
+      <p class="cn">别担心，它不紧 根本不合适，最重要的带子不能挂在最需要它们的正确位置（每个远角） 图片是假的 是的，它确实会提供遮荫，但如果它不断地在风中拍打，那就毫无意义了</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-25</span><span>B0GJSM7BSQ</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R85FA2XK1RBVF/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Needs longer Velcro and tighter mesh area</div>
+      <p class="en">Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</p>
+      <p class="cn">不适合和展示，魔术贴有点短，无法正确贴合，但经过一些修改后就可以了</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-15</span><span>B0GJT77GVM</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RBKSAFDT2NGKG/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Make sure it fits your Wrangler</div>
+      <p class="en">This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</p>
+      <p class="cn">这不适合 2025 款 Jeep 牧马人。正面没有附着任何东西……已退回</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>2星</span></div>
+      <div class="title">AZ退款换货问题 / 退货退款</div>
+      <p class="en">This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</p>
+      <p class="cn">确认是否适合你的Wrangler | 这个不适合2025款Jeep Wrangler。前部无法固定任何东西……已退货</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">No es para el auto que lo pedi bienen los sinchos cambiados no le quedaron y para devolverlo quieren que yo pague el emvio para poder resibir mi rembolso eso no esta bien</p>
+      <p class="cn">它不适合我订购时针对的那款车；绑带设计不同，根本装不上。如果要退货，他们竟然要求我自付运费才能拿到退款——这太不合理了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">Hi, are you sure this fits a 2925 JL Willy&#x27;s? There is nowhere on the front windshield for this to wrap around anywhere on the Jeep. It&#x27;s literally impossible. Can you help with a video or something? I&#x27;ve been at this for an hour and cannot find a solution! Thanks, Ken</p>
+      <p class="cn">7.10 退款，退货商品。尺寸不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Doesn&#x27;t fit properly.</p>
+      <p class="cn">不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span>1星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Don’t be even bother , it does not fit tightBarely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the mostThe pics are falseYes it will def provide shade but it means nothing if it’s constantly flapping in the wind</p>
+      <p class="cn">别费心了，它根本不贴身。几乎完全不合身，最重要的带子无法钩在正确的位置（在每个远角），而那里正是最需要它们的地方。图片是假的。是的，它确实能提供遮阳，但如果它一直在风中拍打，那也毫无意义。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">物流问题 / 运输破损</div>
+      <p class="en">Brand new jeep shade came broken fitment is also off</p>
+      <p class="cn">全新的吉普车遮阳篷到货时已损坏，而且尺寸也不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00109-BK</span><span>1星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</p>
+      <p class="cn">我有一辆2015年的两门JK，按理说应该适配。然而，前角部分无法正确贴合，因此护板会下垂。我不明白你们怎么能说它适配两门JK，因为显然并不适配。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span>2星</span></div>
+      <div class="title">销售问题 / 认为描述不符</div>
+      <p class="en">Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</p>
+      <p class="cn">不像展示的那样贴合，魔术贴有点短，无法正确固定，但稍作修改后还算合适。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>网面不够绷紧，下垂/高速拍打</span><b>5条 / 16.7%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>之前强调防滑凸条和安装视频，但没有解决张力系统的力学闭环：边缘、角点和中部需要形成可调张紧框架。</div>
+        <div class="fix"><b>产品本体改善：</b>增加周边弹性包边/二级张紧带；中部增加横向防鼓起织带；魔术贴长度加长并提供二次回折固定，让用户能真正拉紧而不靠硬拽塑料扣。</div>
+        <div class="priority">P0 行驶体验</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-14</span><span>B0GJT77GVM</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RQ8TGMK54BUAS/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Not the best</div>
+      <p class="en">Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</p>
+      <p class="cn">不是最合适的。行驶时顶部会下垂并在风中飘动。我已经从这家公司购买了其他商品并且很满意。这次购买并没有那么多。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>2星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</p>
+      <p class="cn">不是最好的 | 不太合适。顶部松垮在行驶中晃动。我买过这家公司其他产品都满意。这次不太行。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Overall, I&#x27;d give this sun shade 4 out of 5 stars. Once installed, it provides nice shade and helps cut down on the heat, but the installation was more difficult than I expected. On my 2025 Jeep Wrangler, I had to remove the windshield screws to feed the front straps through and added extra time to the install. It also doesn&#x27;t sit as taut as I&#x27;d hoped, so there are a few areas that sag slightly. Despite those drawbacks, it does the job well and I&#x27;m happy with it overall.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">These are great sun shades! I feel like they actually do block most of the sun so we don&#x27;t up all baking in the sun when we&#x27;re out on a trail. I love the design on these, and they don&#x27;t make your ride too noisy (any noisier than driving with the tops and windows down).</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏大</div>
+      <p class="en">Hello, I would lie to return my order for the Gladiator shade top. I did not know I would have to release my front windshield to install this this part. I do not want to take a chance of creating a rainwater leak at the windshield to install this shade. Please see order number and confirm the return request with a return shipping label. Order JOY#16638 Thanks.</p>
+      <p class="cn">7.29 退款 13.5 美元，商品退款比例为 25%。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>遮阳效果/覆盖面积未达预期</span><b>5条 / 16.6%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>遮阳效果整体有好评，但一旦版型不贴合或下垂，用户会感知覆盖不足/尺寸不对。</div>
+        <div class="fix"><b>产品本体改善：</b>保留全覆盖卖点，但用版型线和实际装车面积验证；前后段边缘加宽但避开气囊/锁扣。</div>
+        <div class="priority">P2 效果</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title"> / 尺寸偏大</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏大</div>
+      <p class="en">-</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">销售问题 / 认为描述不符</div>
+      <p class="en">Not as Expected|Cannot have top on while shade is installed|Misleading information</p>
+      <p class="cn">与预期不符|安装遮阳帘时无法同时安装顶盖|误导性信息</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title"> / 尺寸偏小</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏小</div>
+      <p class="en">-</p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>安装复杂：需拆/松挡风玻璃螺丝、两人操作</span><b>3条 / 10.0%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>删除“简易安装”和改安装视频后，用户仍需要实际拆/松挡风玻璃螺丝。问题不只是说明不清，而是安装路径本身门槛高。</div>
+        <div class="fix"><b>产品本体改善：</b>改为免拆挡风玻璃的前部锚点；若结构上无法避免，必须拆分为“免拆版/强固定版”两个方案，并在包装正面明确安装等级。</div>
+        <div class="priority">P1 安装</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>硬顶/Freedom Panel/软顶复装不兼容</span><b>2条 / 6.7%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>改善视频解释了安装步骤，但产品绑带仍压在Freedom Panel/软顶锁扣路径上，用户日常短途开合要反复松紧。</div>
+        <div class="fix"><b>产品本体改善：</b>重做前部绑带走线：避开锁扣和面板压合区；增加快拆扣/记忆长度扣，做到前段可单手打开或半固定，不需要每次重新穿带。</div>
+        <div class="priority">P0 体验/退货</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Rear can stay on with hardtop, but front section has to come off to reinstall freedom panels!</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en">I absolutely love the concept of the Velcro, but I can’t install my hard top front clips unless I unstrap the straps and then I can’t clip my hardtops unless I take the whole thing off.</p>
+      <p class="cn">我绝对喜欢魔术贴的概念，但除非解开绑带，否则我无法安装硬顶前夹，而除非把整个东西拆下来，否则我无法扣上硬顶。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>塑料扣/卡扣/魔术贴强度不足</span><b>2条 / 6.7%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>历史措施里已提到车缝和卡扣测试，但7-8月仍出现“塑料扣便宜/魔术贴短”。说明抽检和视频不足以弥补材料等级和长度设计问题。</div>
+        <div class="fix"><b>产品本体改善：</b>卡扣改POM/尼龙增强件或金属D环；魔术贴有效粘合长度增加30-50%；关键受力带做拉力测试和批次留样，车缝用加固回针。</div>
+        <div class="priority">P0 耐久/客诉</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJSP36SB</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1JAN46XQRYXSD/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Plastic buckles are super cheap.</div>
+      <p class="en">It fits good but I will understand why they use the cheapest plastic buckles in the world for the straps. I would only imagine they would get lots of returns.</p>
+      <p class="cn">它很合身，但我会理解为什么他们使用世界上最便宜的塑料带扣作为表带。我只是想象他们会得到很多回报。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品破损问题 / 断裂</div>
+      <p class="en">When installing my rear section, I noticed I had a buckle that was already broken. Please advise how to proceed for a replacement.</p>
+      <p class="cn">在安装后部组件时，我发现其中一个卡扣已经损坏。请告知如何办理更换手续。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>2024+侧气帘/安全气囊干涉</span><b>1条 / 3.3%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>前段绑带路径占用了新款JL/JLU防滚架侧气帘展开区域。页面提示只能降低误购，无法让已购用户安全安装。</div>
+        <div class="fix"><b>产品本体改善：</b>为2024+开发独立版型：前段取消穿越气囊展开区的中部绑带，改为前横梁/门框外侧低风险锚点；包装和SKU层面拆分“2018-2023”和“2024+”。</div>
+        <div class="priority">P0 安全/适配</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable.Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+    </section>
+
+    <section>
+      <h2>全量最新差评/客诉问题池</h2>
+      <p class="muted">用于补充判断产品本体风险，不限7-8月。可以看到历史早期问题和改善后问题高度重叠。</p>
+      
+    <details class="theme">
+      <summary><span>版型/角点固定不准，导致不贴合</span><b>17条 / 23.3%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>Listing适配提示无法解决版型本身的锚点误差。尤其JK/JKU/JLU/JT不同顶框和角点位置，如果共用版型，前角最容易下垂。</div>
+        <div class="fix"><b>产品本体改善：</b>按车型重新打版前角半径和绑带角度；每个SKU做车架实装样板，前角增加可调三角补强带或滑动锚点，扩大±30mm调节余量。</div>
+        <div class="priority">P0 适配</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-29</span><span>B0GJSQHQNF</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RKSH1SHFAIEY5/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Does not fit 2015 JK Jeep Wrangler Sport.</div>
+      <p class="en">I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</p>
+      <p class="cn">我有一辆 2015 款 2 门 JK，应该适合。然而，前角不能正确贴合，因此防护罩会下垂。我不明白你怎么能说它适合 2 门 JK，而它显然不适合。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-26</span><span>B0GJSP36SB</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3LILPMLS2V9NS/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Junk</div>
+      <p class="en">Don’t be even bother , it does not fit tight Barely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the most The pics are false Yes it will def provide shade but it means nothing if it’s constantly flapping in the wind</p>
+      <p class="cn">别担心，它不紧 根本不合适，最重要的带子不能挂在最需要它们的正确位置（每个远角） 图片是假的 是的，它确实会提供遮荫，但如果它不断地在风中拍打，那就毫无意义了</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-25</span><span>B0GJSM7BSQ</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R85FA2XK1RBVF/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Needs longer Velcro and tighter mesh area</div>
+      <p class="en">Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</p>
+      <p class="cn">不适合和展示，魔术贴有点短，无法正确贴合，但经过一些修改后就可以了</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-15</span><span>B0GJT77GVM</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RBKSAFDT2NGKG/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Make sure it fits your Wrangler</div>
+      <p class="en">This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</p>
+      <p class="cn">这不适合 2025 款 Jeep 牧马人。正面没有附着任何东西……已退回</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-26</span><span>B0GJT16HBL</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1L1YKCLNAR6QJ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Does not fit JLu as described</div>
+      <p class="en">Each lanyard that I tried to tighten down, they broke doesn’t fit snuggly and I’m OK with that, but each buckle broke when tried to tighten</p>
+      <p class="cn">我试图拉紧的每条挂绳都断了，但它们不紧贴，我对此很满意，但是当我试图拉紧时，每个带扣都断了</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-06</span><span>B0GJT16HBL</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RSWYEWLM24NZC/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Didn&#x27;t work for me but it may work for you</div>
+      <p class="en">Can&#x27;t get it fit right also won&#x27;t work with other accessories I already have</p>
+      <p class="cn">无法正确安装，也无法与我已有的其他配件配合使用</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>2星</span></div>
+      <div class="title">AZ退款换货问题 / 退货退款</div>
+      <p class="en">This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</p>
+      <p class="cn">确认是否适合你的Wrangler | 这个不适合2025款Jeep Wrangler。前部无法固定任何东西……已退货</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">No es para el auto que lo pedi bienen los sinchos cambiados no le quedaron y para devolverlo quieren que yo pague el emvio para poder resibir mi rembolso eso no esta bien</p>
+      <p class="cn">它不适合我订购时针对的那款车；绑带设计不同，根本装不上。如果要退货，他们竟然要求我自付运费才能拿到退款——这太不合理了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">Hi, are you sure this fits a 2925 JL Willy&#x27;s? There is nowhere on the front windshield for this to wrap around anywhere on the Jeep. It&#x27;s literally impossible. Can you help with a video or something? I&#x27;ve been at this for an hour and cannot find a solution! Thanks, Ken</p>
+      <p class="cn">7.10 退款，退货商品。尺寸不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00107-BK</span><span>3星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Can&#x27;t get it fit right also won&#x27;t work with other accessories I already have</p>
+      <p class="cn">无法正确安装，而且也无法与我已有的其他配件配合使用</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Didn&#x27;t work for me but it may work for you. Can&#x27;t get it fit right also won&#x27;t work with other accessories I already have</p>
+      <p class="cn">对我来说没用，但也许对你适用。我怎么也装不合适，而且也无法搭配我现有的其他配件使用。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00107-BK</span><span>1星</span></div>
+      <div class="title">产品破损问题 / 部件损坏</div>
+      <p class="en">Each lanyard that I tried to tighten down, they broke doesn’t fit snuggly and I’m OK with that, but each buckle broke when tried to tighten</p>
+      <p class="cn">我尝试收紧的每一条挂绳都断裂了，无法紧密贴合——对此我倒是可以接受，但每次试图收紧时，每个卡扣都断裂了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Doesn&#x27;t fit properly.</p>
+      <p class="cn">不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span>1星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Don’t be even bother , it does not fit tightBarely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the mostThe pics are falseYes it will def provide shade but it means nothing if it’s constantly flapping in the wind</p>
+      <p class="cn">别费心了，它根本不贴身。几乎完全不合身，最重要的带子无法钩在正确的位置（在每个远角），而那里正是最需要它们的地方。图片是假的。是的，它确实能提供遮阳，但如果它一直在风中拍打，那也毫无意义。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">物流问题 / 运输破损</div>
+      <p class="en">Brand new jeep shade came broken fitment is also off</p>
+      <p class="cn">全新的吉普车遮阳篷到货时已损坏，而且尺寸也不合适。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00109-BK</span><span>1星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</p>
+      <p class="cn">我有一辆2015年的两门JK，按理说应该适配。然而，前角部分无法正确贴合，因此护板会下垂。我不明白你们怎么能说它适配两门JK，因为显然并不适配。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span>2星</span></div>
+      <div class="title">销售问题 / 认为描述不符</div>
+      <p class="en">Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</p>
+      <p class="cn">不像展示的那样贴合，魔术贴有点短，无法正确固定，但稍作修改后还算合适。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>硬顶/Freedom Panel/软顶复装不兼容</span><b>14条 / 19.2%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>改善视频解释了安装步骤，但产品绑带仍压在Freedom Panel/软顶锁扣路径上，用户日常短途开合要反复松紧。</div>
+        <div class="fix"><b>产品本体改善：</b>重做前部绑带走线：避开锁扣和面板压合区；增加快拆扣/记忆长度扣，做到前段可单手打开或半固定，不需要每次重新穿带。</div>
+        <div class="priority">P0 体验/退货</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-27</span><span>B0GJT77GVM</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RK0D6NS0YO8N7/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Nice sun protection, good use some tweaks</div>
+      <p class="en">This mesh sun shade provides decent coverage and definitely helps reduce some of the sun and heat while driving with the top off. The material feels reasonably durable, and once installed, it stays in place well. It&#x27;s also nice that it can remain on when reinstalling the hard or soft top. That said, it wasn&#x27;t quite as effective as I expected. Getting the shade installed and properly tensioned took more effort than anticipated, particularly around the front. It&#x27;s a functional accessory that improves comfort, but there are a few compromises that keep it from being a higher-rated product.</p>
+      <p class="cn">这款网状遮阳罩提供了良好的覆盖范围，并且确实有助于在脱顶驾驶时减少一些阳光和热量。这种材料感觉相当耐用，一旦安装，它就能很好地固定到位。重新安装硬顶或软顶时它可以保持打开状态，这一点也很好。 也就是说，它并不像我预期的那么有效。安装遮阳帘并适当张紧比预期需要更多的努力，尤其是在前面。它是一款提高舒适度的功能性配件，但存在一些妥协，使其无法成为评价较高的产品。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-21</span><span>B0GJT77GVM</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RLNBPTMSM621H/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Could work with garage</div>
+      <p class="en">Two person job and 35 minutes to put on. Came off in 3 minutes. The pros: Definitely keep the sun from beating on your head. Well made with a heavy material Instructions are easy to follow Secure with many Velcro straps Easy to remove when you want to Cons We had to loosen the windshield to get one of the straps through in the front. One went through very easy but driver side required unscrewing and two people trying to locate the strap. Not sure what it got stuck up on but it was a struggle. Also too much work to put on every time we want to use it. Can’t stay on because it covers the latches to put the roof back on every time it rains.</p>
+      <p class="cn">两人作业，35 分钟即可完成。 3分钟后就下来了。 优点： 一定要避免阳光照射到你的头上。 采用厚重材料制作而成 说明很容易遵循 用许多尼龙搭扣带固定 当您想要时，可以轻松移除 缺点 我们必须松开挡风玻璃才能将其中一根带子从前面穿过。一个过程非常简单，但驾驶员侧需要拧开螺丝，并且两个人试图找到带子。不知道它被什么卡住了，但这是一场斗争。 每次我们想要使用它时也需要做太多的工作。不能留在上面，因为每次下雨的时候它都会盖住门闩，让屋顶重新盖上。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-31</span><span>B0GJT16HBL</span><span>1星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RCL32GT64VNQ6/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">If you park your jeep in a garage these are fine.</div>
+      <p class="en">I didn’t realize I had to loosen up straps in the front and actually will have to fish the strap every time to put my freedom panels back in. I will have to find something different.</p>
+      <p class="cn">我没有意识到我必须松开前面的带子，实际上每次都必须拉动带子才能将我的自由面板放回去。我必须找到不同的东西。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-25</span><span>B0GJSM7BSQ</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2U6PTXXQ31IZM/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Straps</div>
+      <p class="en">Nothing wrong with product at all that&#x27;s a 5 out of 5. Only problem is I can not open the freedom tops with out having to loosen up quite a few straps. Then have to pull them back tight when you use it.</p>
+      <p class="cn">产品没有任何问题，满分 5 分。唯一的问题是，我无法在不松开很多带子的情况下打开自由顶部。然后使用时必须将它们拉紧。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00105-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Ended up being a two person job for me specifically because you want it to be straight and leveled as possible so nothing can fly in, etc. Once I got it all strapped down it really took no more than 5-10 mins. I wish you could have it on while your freedom panels are on so you don&#x27;t have to keep taking it on and off but overall I was pleased. I was driving 60+ and still was able to hear my music with less noise/wind. Temperature was about 83 degrees and I didn&#x27;t feel the heat as much versus with just the panels off alone.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品操作问题 / 收货后使用操作咨询</div>
+      <p class="en">I just installed the sun screen and after I finished, I put the soft top back up. This was when I noticed that the sun screen is in the way of the latches. The latches will attach, but the screen is inside part of it. Is this the way it&#x27;s supposed to work or what did I do wrong? I didn&#x27;t have this issue with my previous screen because it had the bungees.</p>
+      <p class="cn">我刚装好遮阳网，装完后便把软顶重新升了起来。就在这时，我发现遮阳网挡住了锁扣的位置。虽然锁扣确实能扣上，但网面有一部分被夹在了锁扣里面。请问这是正常的设计效果，还是我哪里操作失误了？我之前用的那款遮阳网就没有这个问题，因为它采用的是弹性绳固定方式。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span>3星</span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">This mesh sun shade provides decent coverage and definitely helps reduce some of the sun and heat while driving with the top off. The material feels reasonably durable, and once installed, it stays in place well. It&#x27;s also nice that it can remain on when reinstalling the hard or soft top.That said, it wasn&#x27;t quite as effective as I expected. Getting the shade installed and properly tensioned took more effort than anticipated, particularly around the front. It&#x27;s a functional accessory that improves comfort, but there are a few compromises that keep it from being a higher-rated product.</p>
+      <p class="cn">这款网状遮阳罩提供了不错的遮盖面积，在敞篷驾驶时确实有助于减少部分阳光直射和热量。材质摸起来相当耐用，安装到位后也能稳固固定。此外，重新安装硬顶或软顶时，该遮阳罩也可保留在原位，这一点也很方便。不过，它的实际效果并未达到我的预期。尤其是前部区域，遮阳罩的安装及张紧过程比预想中更费力。它是一款功能性的配件，能够提升驾乘舒适性，但存在一些不足之处，使其难以成为一款高评分产品。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span>3星</span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en">Two person job and 35 minutes to put on. Came off in 3 minutes.The pros:Definitely keep the sun from beating on your head.Well made with a heavy materialInstructions are easy to followSecure with many Velcro strapsEasy to remove when you want toConsWe had to loosen the windshield to get one of the straps through in the front. One went through very easy but driver side required unscrewing and two people trying to locate the strap. Not sure what it got stuck up on but it was a struggle.Also too much work to put on every time we want to use it. Can’t stay on because it covers the latches to put the roof back on every time it rains.</p>
+      <p class="cn">两人协作安装，耗时35分钟；拆卸仅需3分钟。 优点： - 确实能防止阳光直晒头部； - 采用厚实材质，做工精良； - 说明书易于理解； - 配备多条尼龙搭扣带，固定牢靠； - 需要时可轻松拆卸。 缺点： - 为将其中一条前部绑带穿过，我们不得不松开挡风玻璃。一条绑带穿入十分顺利，但驾驶员侧的绑带穿入则需拧下螺丝，并由两人配合才能定位绑带——不清楚被什么卡住了，整个过程十分费力； - 每次使用均需重新安装，操作过于繁琐； - 无法长期固定在车上，因为其覆盖了车顶复位所需的锁扣，每次下雨需收起车顶时都必须先将其取下。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 无法安装</div>
+      <p class="en">I purchased this product and I am having a difficult time installing. NOTE: I have a 2 door. All of the instructions show installation with the entire top of the jeep off, not just with the freedom panels removed. The straps on the back of the shade are not fitting correctly and are difficult to maneuver around the sound bar. Any help will be greatly appreciated. Gary Brinkley</p>
+      <p class="cn">我购买了这款产品，但安装时遇到了困难。注意：我的车是两门版。所有说明书都显示需要拆掉整个吉普车顶进行安装，而不仅仅是拆掉顶篷。遮阳篷背面的绑带无法正确安装，而且很难绕过音响条。非常感谢您的帮助。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00107-BK</span><span>1星</span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en">I didn’t realize I had to loosen up straps in the front and actually will have to fish the strap every time to put my freedom panels back in. I will have to find something different.</p>
+      <p class="cn">我之前没意识到需要松开前面的带子，而且每次都要费力地把带子拉出来，才能重新装上我的自由面板。我得另找别的办法。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">If you park your jeep in a garage these are fine. I didn’t realize I had to loosen up straps in the front and actually will have to fish the strap every time to put my freedom panels back in. I will have to find something different.</p>
+      <p class="cn">如果你把吉普车停在车库里，那这套配件用起来还不错。但我之前没意识到，每次要把“自由面板”（Freedom Panels）装回去时，我都得先松开前部的固定带，而且还得费劲地把带子重新穿引到位。看来我得另寻他法了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Rear can stay on with hardtop, but front section has to come off to reinstall freedom panels!</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en">I absolutely love the concept of the Velcro, but I can’t install my hard top front clips unless I unstrap the straps and then I can’t clip my hardtops unless I take the whole thing off.</p>
+      <p class="cn">我绝对喜欢魔术贴的概念，但除非解开绑带，否则我无法安装硬顶前夹，而除非把整个东西拆下来，否则我无法扣上硬顶。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">Straps. Nothing wrong with product at all that&#x27;s a 5 out of 5. Only problem is I can not open the freedom tops with out having to loosen up quite a few straps. Then have to pull them back tight when you use it.</p>
+      <p class="cn">关于绑带：产品本身毫无瑕疵，绝对值得打满分（5分）。唯一的问题在于，如果我不先松开好几根绑带，就无法开启“自由顶”（Freedom Tops）；而在使用完毕后，我又得把这些绑带重新拉紧。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>网面不够绷紧，下垂/高速拍打</span><b>9条 / 12.3%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>之前强调防滑凸条和安装视频，但没有解决张力系统的力学闭环：边缘、角点和中部需要形成可调张紧框架。</div>
+        <div class="fix"><b>产品本体改善：</b>增加周边弹性包边/二级张紧带；中部增加横向防鼓起织带；魔术贴长度加长并提供二次回折固定，让用户能真正拉紧而不靠硬拽塑料扣。</div>
+        <div class="priority">P0 行驶体验</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-14</span><span>B0GJT77GVM</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RQ8TGMK54BUAS/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Not the best</div>
+      <p class="en">Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</p>
+      <p class="cn">不是最合适的。行驶时顶部会下垂并在风中飘动。我已经从这家公司购买了其他商品并且很满意。这次购买并没有那么多。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00105-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Fits well and I didnt even have to unscrew the front windshield.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly.What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in.The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day.Installation was straightforward and completel...</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt.The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone.The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of d...</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>2星</span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</p>
+      <p class="cn">不是最好的 | 不太合适。顶部松垮在行驶中晃动。我买过这家公司其他产品都满意。这次不太行。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Overall, I&#x27;d give this sun shade 4 out of 5 stars. Once installed, it provides nice shade and helps cut down on the heat, but the installation was more difficult than I expected. On my 2025 Jeep Wrangler, I had to remove the windshield screws to feed the front straps through and added extra time to the install. It also doesn&#x27;t sit as taut as I&#x27;d hoped, so there are a few areas that sag slightly. Despite those drawbacks, it does the job well and I&#x27;m happy with it overall.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">物流问题 / 未收到或未送达</div>
+      <p class="en">Hi, it appears you shipped my order to the wrong address. The correct address is 20 Windermere Ridge Drive in Southington, CT. I checked the confirmation and the picture is not of my home. Please advise as I need this package ASAP. Thanks, Ken</p>
+      <p class="cn">由于包裹被送到了错误的地址，因此未收到物品。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">These are great sun shades! I feel like they actually do block most of the sun so we don&#x27;t up all baking in the sun when we&#x27;re out on a trail. I love the design on these, and they don&#x27;t make your ride too noisy (any noisier than driving with the tops and windows down).</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏大</div>
+      <p class="en">Hello, I would lie to return my order for the Gladiator shade top. I did not know I would have to release my front windshield to install this this part. I do not want to take a chance of creating a rainwater leak at the windshield to install this shade. Please see order number and confirm the return request with a return shipping label. Order JOY#16638 Thanks.</p>
+      <p class="cn">7.29 退款 13.5 美元，商品退款比例为 25%。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>遮阳效果/覆盖面积未达预期</span><b>9条 / 12.3%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>遮阳效果整体有好评，但一旦版型不贴合或下垂，用户会感知覆盖不足/尺寸不对。</div>
+        <div class="fix"><b>产品本体改善：</b>保留全覆盖卖点，但用版型线和实际装车面积验证；前后段边缘加宽但避开气囊/锁扣。</div>
+        <div class="priority">P2 效果</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 无法安装</div>
+      <p class="en">I can’t get the straps to go around my soundbar for the sunshade on a Jeep JL Wrangler The strap for the front and rear are not going around the soundbar The straps are not going around my DS18 soundbar</p>
+      <p class="cn">我的吉普JL牧马人遮阳罩的绑带无法绕过我的音响条。 前后绑带都无法绕过音响条。 绑带无法绕过我的DS18音响条。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title"> / 尺寸偏大</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏大</div>
+      <p class="en">-</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">销售问题 / 认为描述不符</div>
+      <p class="en">Not as Expected|Cannot have top on while shade is installed|Misleading information</p>
+      <p class="cn">与预期不符|安装遮阳帘时无法同时安装顶盖|误导性信息</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00109-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏大</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Incorrect Size|the product left gaps and it defeats its purpose if there is sun gap!</p>
+      <p class="cn">尺寸错误｜产品留下缝隙，如果存在阳光缝隙，就失去了其本应具备的功能！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title"> / 尺寸偏小</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title"> / 尺寸偏小</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-08</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 尺寸偏小</div>
+      <p class="en">-</p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>塑料扣/卡扣/魔术贴强度不足</span><b>8条 / 11.0%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>历史措施里已提到车缝和卡扣测试，但7-8月仍出现“塑料扣便宜/魔术贴短”。说明抽检和视频不足以弥补材料等级和长度设计问题。</div>
+        <div class="fix"><b>产品本体改善：</b>卡扣改POM/尼龙增强件或金属D环；魔术贴有效粘合长度增加30-50%；关键受力带做拉力测试和批次留样，车缝用加固回针。</div>
+        <div class="priority">P0 耐久/客诉</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJSP36SB</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1JAN46XQRYXSD/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Plastic buckles are super cheap.</div>
+      <p class="en">It fits good but I will understand why they use the cheapest plastic buckles in the world for the straps. I would only imagine they would get lots of returns.</p>
+      <p class="cn">它很合身，但我会理解为什么他们使用世界上最便宜的塑料带扣作为表带。我只是想象他们会得到很多回报。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-22</span><span>B0GJSM7BSQ</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1T82HAV3G03SQ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Would be better if they used metal loops</div>
+      <p class="en">Well this sun shade seemed to be made strong and was starting to fit well. Before I could start tightening the straps one of the plastic pieces snapped without having and tension on it. I did return it. Really was hoping the velcro would have worked</p>
+      <p class="cn">嗯，这个遮阳帘似乎变得很坚固并且开始很合身。在我开始拉紧带子之前，其中一个塑料片在没有拉紧的情况下折断了。我确实退货了。真的希望尼龙搭扣能起作用</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-10</span><span>B0GJSM7BSQ</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3B0O4WIOBOO26/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Returned</div>
+      <p class="en">Initially I thought this was a home run for the price. Then , the strap buckles started breaking on instal. They weren&#x27;t even cranked tight. I think the angle of the middle/corner straps is too severe to handle the strap. If youre looking for a budget top shade this will work, but I can&#x27;t see it lasting. Returned product.</p>
+      <p class="cn">最初我认为这是一个本垒打的价格。然后，带扣在安装时开始断裂。他们甚至没有拧紧。我认为中间/角带的角度太严重，无法处理带子。如果您正在寻找预算最高的色调，这会起作用，但我看不到它持久。退回的产品。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00105-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">I would STRONGLY suggest buying the style with the bungee cords.I had those for my last Jeep and they were great.These have the sewn on velcro strap and one of them ripped half way off.Other than that, they seem to be off good quality.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品破损问题 / 断裂</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00110-BK</span><span>2星</span></div>
+      <div class="title">产品破损问题 / 断裂</div>
+      <p class="en">Initially I thought this was a home run for the price. Then , the strap buckles started breaking on instal. They weren&#x27;t even cranked tight. I think the angle of the middle/corner straps is too severe to handle the strap. If youre looking for a budget top shade this will work, but I can&#x27;t see it lasting. Returned product.</p>
+      <p class="cn">起初我以为这价位简直完美。结果安装时绑带卡扣就开始断，根本没拧紧。我觉得中间/转角的绑带角度太大，扣承受不住。预算车顶遮阳能用，但耐用性堪忧，已退货。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00110-BK</span><span>3星</span></div>
+      <div class="title">产品破损问题 / 断裂</div>
+      <p class="en">Well this sun shade seemed to be made strong and was starting to fit well. Before I could start tightening the straps one of the plastic pieces snapped without having and tension on it. I did return it. Really was hoping the velcro would have worked</p>
+      <p class="cn">嗯，这款遮阳罩看起来做工结实，安装也逐渐变得合适。但在我还没开始收紧绑带时，其中一个塑料部件就在没有任何张力的情况下断裂了。我已将其退回。本来还真的希望魔术贴能起作用呢。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00110-BK</span><span></span></div>
+      <div class="title">产品破损问题 / 断裂</div>
+      <p class="en">When installing my rear section, I noticed I had a buckle that was already broken. Please advise how to proceed for a replacement.</p>
+      <p class="cn">在安装后部组件时，我发现其中一个卡扣已经损坏。请告知如何办理更换手续。</p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>安装复杂：需拆/松挡风玻璃螺丝、两人操作</span><b>8条 / 10.9%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>删除“简易安装”和改安装视频后，用户仍需要实际拆/松挡风玻璃螺丝。问题不只是说明不清，而是安装路径本身门槛高。</div>
+        <div class="fix"><b>产品本体改善：</b>改为免拆挡风玻璃的前部锚点；若结构上无法避免，必须拆分为“免拆版/强固定版”两个方案，并在包装正面明确安装等级。</div>
+        <div class="priority">P1 安装</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-06</span><span>B0GJSY7XLM</span><span>2星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RFYU4SYZQ9543/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Not a good buy</div>
+      <p class="en">Installation was a nightmare, nothing like described in description</p>
+      <p class="cn">安装是一场噩梦，与描述中描述的完全不同</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00106-BK</span><span>2星</span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en">Installation was a nightmare, nothing like described in description</p>
+      <p class="cn">安装是噩梦，跟描述完全两回事。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装松动</div>
+      <p class="en">Not a good buy. Installation was a nightmare, nothing like described in description</p>
+      <p class="cn">不值得买。安装过程简直是噩梦，实际情况与描述完全不符。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00106-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00108-BK</span><span></span></div>
+      <div class="title">产品安装问题 / 安装困难</div>
+      <p class="en"></p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>2024+侧气帘/安全气囊干涉</span><b>7条 / 9.6%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>前段绑带路径占用了新款JL/JLU防滚架侧气帘展开区域。页面提示只能降低误购，无法让已购用户安全安装。</div>
+        <div class="fix"><b>产品本体改善：</b>为2024+开发独立版型：前段取消穿越气囊展开区的中部绑带，改为前横梁/门框外侧低风险锚点；包装和SKU层面拆分“2018-2023”和“2024+”。</div>
+        <div class="priority">P0 安全/适配</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-04-26</span><span>B0GJT77GVM</span><span>3星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R11IA42AI1YHC2/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Be mindful of year model not compatable with 24+ due to new curtain air bags</div>
+      <p class="en">3 stars due to safety concern on specific model years of Jeep wrangler see below for more info This sun shade is a bit of a mixed experience depending on your model year. The big thing to note is a safety concern on 2024+ Wranglers. With the added curtain airbags in the roll bar, the front section straps can interfere with proper airbag deployment. Because of that, I wouldn’t recommend using the front portion on those newer models. Aside from that, the rear section works well. It installs cleanly and does what you’d expect in terms of sun blocking. Build quality is excellent. The material feels durable, and the overall construction is solid. The strap design is also a plus. Using hook-and-loop buckle straps instead of ball-style bungees makes instal...</p>
+      <p class="cn">由于吉普牧马人特定型号年份的安全问题而获得 3 颗星，请参阅下文了解更多信息 根据您的车型年份，这种遮阳罩的体验有点复杂。 值得注意的是 2024+ 牧马人的安全问题。由于翻车保护杆中增加了帘式安全气囊，前部带子可能会干扰安全气囊的正常展开。因此，我不建议在这些较新的型号上使用前部。 除此之外，后部工作良好。它安装干净，并且在防晒方面达到了您所期望的效果。 建造质量非常好。材料感觉耐用，整体结构坚固。 表带设计也是一大亮点。使用钩环带扣带代替球形松紧带，使安装更容易，感觉更安全。 总体而言，质量和设计都很好，但新型号的安装和安全问题值得注意。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">产品体验问题 / 不满意</div>
+      <p class="en">Be mindful of year model not compatable with 24+ due to new curtain air bags. 3 stars due to safety concern on specific model years of Jeep wrangler see below for more info. This sun shade is a bit of a mixed experience depending on your model year. The big thing to note is a safety concern on 2024+ Wranglers. With the added curtain airbags in the roll bar, the front section straps can interfere with proper airbag deployment. Because of that, I wouldn’t recommend using the front portion on those newer models. Aside from that, the rear section works well. It installs cleanly and does what you’d expect in terms of sun blocking. Build quality is excellent. The material feels durable, and the overall construction is solid. The strap design is also a plu...</p>
+      <p class="cn">请注意：由于新增了侧气帘，该产品与2024款及后续车型（24+）不兼容。鉴于Jeep Wrangler特定年款车型存在安全隐患，我给予该产品3星评价——详情请参阅下文。根据您的具体车型年款不同，这款遮阳网的使用体验可能会有些参差不齐。最值得关注的一点是：对于2024款及后续的Wrangler车型，该产品存在安全隐患。由于这些新车型在防滚架内新增了侧气帘，遮阳网前部的固定绑带可能会妨碍气囊的正常弹出。正因如此，我不建议在这些较新的车型上使用该遮阳网的前半部分。除此之外，后半部分的遮阳网表现良好。安装效果整洁服帖，在遮阳挡光方面也能达到预期的效果。产品的做工质量非常出色。材质触感结实耐用，整体结构也十分牢固。其绑带设计也是一大亮点。采用魔术贴搭扣式绑带而非传统的球形弹力绳，不仅使安装过程更加简便，同时也让人感觉固定得更为牢靠。总而言之，这款产品的质量与设计均属上乘，但对于较新的车型而言，其适配性问题及潜在的安全隐患是您在选购时必须留意的重点。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">售前_产品咨询 / 产品规格_功能信息咨询</div>
+      <p class="en">Is this airbag compatible with the 2025+ year models?</p>
+      <p class="cn">这款安全气囊是否兼容 2025 年及以后的车型？</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00105-BK</span><span></span></div>
+      <div class="title">售前_产品咨询 / 产品规格_功能信息咨询</div>
+      <p class="en">The straps appear to covering the curtain airbags. I need 100% confirmation there is zero interference with the curtain airbag deployment?</p>
+      <p class="cn">这些绑带似乎遮挡住了侧气帘。我需要得到 100% 的确认，以确保它们完全不会妨碍侧气帘的展开。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-04</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">售前_产品咨询 / 使用_操作咨询</div>
+      <p class="en">how does this item install on a 2025 without impacting the side airbags? the picture in the listing shows it strapped around the airbag assembly.</p>
+      <p class="cn">这个配件如何安装在2025款车型上而不影响侧气囊？商品图片显示它是用绑带固定在气囊组件上的。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-07</span><span>A3307-00107-BK</span><span>4星</span></div>
+      <div class="title"> / </div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable.Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn"></p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-06</span><span>A3307-00108-BK</span><span>5星</span></div>
+      <div class="title"> / </div>
+      <p class="en">Love this sun shade!It took me about 30 minutes or less to get it on due to roll bar padding and hard sided window frames on a sort top that I had to maneuver around.It’s on and it stays on! I don’t ever take it off. My top fits right over it.Did I say how much I love this sun shade?</p>
+      <p class="cn"></p>
+    </article>
+    
+      </div>
+    </details>
+    
+
+    <details class="theme">
+      <summary><span>与音箱/已有配件/车型附件冲突</span><b>1条 / 1.4%</b></summary>
+      <div class="theme-body">
+        <div class="root"><b>根因判断：</b>车顶网处于防滚架和顶部附件密集区，单一绑带路径容易与音箱、扶手、灯具、软顶机构冲突。</div>
+        <div class="fix"><b>产品本体改善：</b>增加可选锚点和绕行孔位；页面提供兼容性排除图，实物上给3-4个备选穿带位。</div>
+        <div class="priority">P1 兼容</div>
+        
+    <article class="quote">
+      <div class="meta"><b>最新客诉</b><span>2026-05</span><span>A3307-00107-BK</span><span></span></div>
+      <div class="title">产品兼容问题 / 不适配</div>
+      <p class="en">Doent fit or work with current accessories</p>
+      <p class="cn">与当前配件不匹配或无法使用</p>
+    </article>
+    
+      </div>
+    </details>
+    
+    </section>
+
+    <section>
+      <h2>好评仍成立的卖点</h2>
+      <p class="muted">比例口径：最新评论中4-5星评论的好评点多标签命中，模块内比例合计100.0%。这些卖点保留，但不要掩盖结构问题。</p>
+      
+    <details class="theme pos">
+      <summary><span>遮阳降温有效，减少直晒</span><b>24条 / 22.4%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-08</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2OH67DRO444GV/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Fits great….If you take the hard top off first</div>
+      <p class="en">I installed this on my Jeep and I’m really happy with it. Installation is very easy, especially if you already have the factory hard top off. I have seen where people are able to slide these under their factory hard top but you can’t do that with this one. You can install it first and then reinstall your factory hard top over it with no issues though. Everything fit where it was supposed to and the straps hold the shade securely without a bunch of complicated hardware. Strap it on and cinch it up and you are ready to go. The mesh provides great coverage over both the front and rear seats while still letting plenty of air through. It keeps the sun from cooking you and even slows down rain and light showers. It makes driving with the top off much more...</p>
+      <p class="cn">我在我的吉普车上安装了这个，我对此非常满意。安装非常简单，特别是如果您已经安装了工厂硬顶的话。我见过人们可以将它们滑到工厂的硬顶下面，但你不能用这个来做到这一点。您可以先安装它，然后重新安装工厂的硬顶，没有任何问题。一切都符合其应有的位置，带子可以牢固地固定遮阳帘，而无需一堆复杂的硬件。系上它并系紧，您就可以出发了。网布为前排和后排座椅提供了很好的覆盖，同时仍然让充足的空气通过。它可以防止太阳晒伤你，甚至可以减缓降雨和小阵雨的速度。它使敞篷驾驶变得更加舒适，因为您仍然可以获得露天吉普车的感觉，而不会受到阳光直射。这种材料感觉很耐用，贴合度很好，一旦所有东西都拧紧，它在驾驶时就能很好地保持在原位。如果您喜欢开着车顶开吉普车，这是一个很好的补充。五颗星。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2HLCW9WBQRQZQ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Very nice shades! Makes all the difference when stuck in traffic!!</div>
+      <p class="en">This sun shade makes for a very nice addition to my Jeep! They strap on easily and make a big difference, especially when stuck in traffic. But you still get the open Jeep, wind in your hair feeling. For the price, you really can&#x27;t beat it. Highly recommend!!</p>
+      <p class="cn">这款遮阳罩为我的吉普车增添了非常漂亮的元素！它们可以轻松系上并发挥很大作用，尤其是在堵车时。但你仍然能感受到开着吉普车、风吹过头发的感觉。就价格而言，你真的无法击败它。强烈推荐！！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-20</span><span>B0GJT16HBL</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/REF9FGPL32IVL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great for long term use, not ideal for short time use.</div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable. Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn">灯罩本身就像灯罩一样工作。希望不必因为安全气囊而忽略中间的带子。拥有前带需要松开并移动挡风玻璃，这也是不太理想的。 总的来说，对于婴儿床来说，质量、合身性和易用性都是合理的。对于经常顶级的人来说可能是一个不错的选择。对于只是到处去一日游来说，这有点多了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-10</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1LSE97B9ITV54/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great Sun Shade, Challenging Installation</div>
+      <p class="en">Overall, I&#x27;d give this sun shade 4 out of 5 stars. Once installed, it provides nice shade and helps cut down on the heat, but the installation was more difficult than I expected. On my 2025 Jeep Wrangler, I had to remove the windshield screws to feed the front straps through and added extra time to the install. It also doesn&#x27;t sit as taut as I&#x27;d hoped, so there are a few areas that sag slightly. Despite those drawbacks, it does the job well and I&#x27;m happy with it overall.</p>
+      <p class="cn">总的来说，我会给这款防晒霜 4 星（满分 5 星）。安装后，它可以提供良好的遮荫并有助于减少热量，但安装比我预想的要困难。在我的 2025 款吉普牧马人上，我必须拆下挡风玻璃螺丝才能将前带穿过，这增加了安装时间。它也没有像我希望的那样绷紧，所以有一些区域稍微下垂。尽管存在这些缺点，但它的工作效果很好，总体而言我对它很满意。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-07</span><span>B0GJT16HBL</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R26ZK38C18TGF4/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Nice addition for summer jeepin&#x27;</div>
+      <p class="en">These are great sun shades! I feel like they actually do block most of the sun so we don&#x27;t up all baking in the sun when we&#x27;re out on a trail. I love the design on these, and they don&#x27;t make your ride too noisy (any noisier than driving with the tops and windows down).</p>
+      <p class="cn">这些都是很棒的遮阳帘！我觉得它们确实阻挡了大部分阳光，所以当我们外出散步时，我们不会在阳光下晒太阳。我喜欢这些的设计，它们不会让你的骑行太吵（比开着车顶和车窗开车更吵）。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-30</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R260QM38KJUQN8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">must have</div>
+      <p class="en">This fits my 2018 JLU well and was easy to install. It provides great shade while still letting air flow through, making drives much more comfortable on sunny days. The straps hold it securely in place, and it helps reduce wind and road noise. Overall, it&#x27;s a great addition for anyone who enjoys driving with the top off. Budget friendly and very durable!</p>
+      <p class="cn">这很适合我的 2018 年吉林大学，并且易于安装。它提供了良好的遮阳效果，同时仍让空气流通，使在阳光明媚的日子里驾驶更加舒适。带子将其牢固地固定到位，有助于减少风和道路噪音。总的来说，对于喜欢敞篷驾驶的人来说，这是一个很好的补充。预算友好且非常耐用！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-25</span><span>B0GJSP36SB</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1ZASFIXUEQN46/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Much needed shade on a tops off doors off sunny day.</div>
+      <p class="en">Love this sun shade! It took me about 30 minutes or less to get it on due to roll bar padding and hard sided window frames on a sort top that I had to maneuver around. It’s on and it stays on! I don’t ever take it off. My top fits right over it. Did I say how much I love this sun shade?</p>
+      <p class="cn">喜欢这个遮阳罩！ 我花了大约 30 分钟或更短的时间才把它装上，因为顶部有防滚杆衬垫和硬边窗框，我必须在上面移动。 它已开启并保持开启状态！我从来不把它摘下来。我的上衣刚好适合它。 我有说过我有多喜欢这个遮阳罩吗？</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-19</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RJKFO5345SLOA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">The Perfect Open-Air Jeep Upgrade!</div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly. What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in. The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day. Installation was straightforward and comple...</p>
+      <p class="cn">我为我妻子的 2023 款吉普牧马人 Rubicon 选择了这款产品，它很快就成为我们最喜​​欢的吉普配件之一。我们喜欢脱掉上衣跑步，但夏天的阳光可能会很残酷。这款遮阳帘完美解决了这个问题。 我最喜欢的是，我们仍然可以享受自由和露天的感觉，这让拥有吉普车变得如此有趣，同时获得急需的防晒保护。它可以阻挡大量的热量和紫外线，而不会让吉普车感觉封闭。 覆盖范围非常好，延伸到前排和后排座位区域，因此每个人都可以从遮阳中受益。即使在长途驾驶中，车内也能保持明显凉爽，而且我们也不会整天被太阳烤着。 安装非常简单且完全无需工具。集成带系统比我见过的其他一些设计要好得多，因为一切都保持安全和紧密。安装完成后，它看起来很干净，几乎是工厂制造的。 另一个意想不到的好处是减少风振和噪音。您仍然可以获得露天吉普车体验，但对话更容易，在高速公路上行驶时感觉更舒适。 材料的质量也令人印象深刻。它感觉很耐用，合身，到目前为止一直保持良好状态。 如果您喜欢在敞篷状态下驾驶牧马人，但又想在不牺牲吉普车体验的情况下防晒，那么这是一个简单的推荐。 出色的贴合性、出色的紫外线防护、降低的风噪，同时仍让您享受户外的自由。全程五颗星！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RX36FUKGH9T8E/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Game changer for doors-off Jeep rides!</div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt. The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone. The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of...</p>
+      <p class="cn">我们为 2020 款 Jeep 牧马人 JL Rubicon 配备了这套网状遮阳罩（前部 + 后部）。安装花了一些时间，我丈夫一开始在正确拉紧带子时遇到了一些麻烦，但一旦完成，他对它的安全感感到非常满意。 差别是巨大的！我丈夫喜欢关着车门开车，但孩子们（尤其是青少年）常常不停地抱怨狂风吹乱了他们的头发😂。现在安装了这些遮阳帘后，风平静多了，呼啸声也少了很多，而且阳光也被很好地遮挡住了。我和我们的孩子坐在后面，每个人都感觉好多了。 合身性很好，网布看起来很好，拉紧，没有下垂，质量看起来很扎实。我们已经拥有两套来自同一品牌的门外镜子，我们对它们也非常满意，所以我们希望这些色调能够在拉斯维加斯的阳光下保持良好的状态。 强烈推荐给喜欢门外驾驶但想要更舒适体验的牧马人车主！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-21</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R257YRML89M1Y9/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">10 out of 10 worth it</div>
+      <p class="en">This mesh sun shade is an awesome addition for a Wrangler JL 4-Door! It makes a huge difference on sunny days by cutting down heat and glare while still letting fresh air flow through the Jeep. The material feels durable and well-made, and it gives the Jeep a sleek rugged look without needing to remove the hard top completely. Installation is quick and easy with the straps, and it stays secure even while driving at highway speeds.</p>
+      <p class="cn">这款网状遮阳罩是牧马人 JL 4 门车的绝佳补充！在阳光明媚的日子里，它可以减少热量和眩光，同时仍然让新鲜空气流过吉普车，从而产生巨大的变化。这种材料感觉耐用且做工精良，无需完全拆除硬顶即可赋予吉普车时尚坚固的外观。使用带子即可快速轻松地安装，即使在高速公路上行驶时也能保持安全。</p>
+    </article>
+    
+    </details>
+    
+
+    <details class="theme pos">
+      <summary><span>贴合/固定后稳定</span><b>24条 / 22.4%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-08</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2OH67DRO444GV/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Fits great….If you take the hard top off first</div>
+      <p class="en">I installed this on my Jeep and I’m really happy with it. Installation is very easy, especially if you already have the factory hard top off. I have seen where people are able to slide these under their factory hard top but you can’t do that with this one. You can install it first and then reinstall your factory hard top over it with no issues though. Everything fit where it was supposed to and the straps hold the shade securely without a bunch of complicated hardware. Strap it on and cinch it up and you are ready to go. The mesh provides great coverage over both the front and rear seats while still letting plenty of air through. It keeps the sun from cooking you and even slows down rain and light showers. It makes driving with the top off much more...</p>
+      <p class="cn">我在我的吉普车上安装了这个，我对此非常满意。安装非常简单，特别是如果您已经安装了工厂硬顶的话。我见过人们可以将它们滑到工厂的硬顶下面，但你不能用这个来做到这一点。您可以先安装它，然后重新安装工厂的硬顶，没有任何问题。一切都符合其应有的位置，带子可以牢固地固定遮阳帘，而无需一堆复杂的硬件。系上它并系紧，您就可以出发了。网布为前排和后排座椅提供了很好的覆盖，同时仍然让充足的空气通过。它可以防止太阳晒伤你，甚至可以减缓降雨和小阵雨的速度。它使敞篷驾驶变得更加舒适，因为您仍然可以获得露天吉普车的感觉，而不会受到阳光直射。这种材料感觉很耐用，贴合度很好，一旦所有东西都拧紧，它在驾驶时就能很好地保持在原位。如果您喜欢开着车顶开吉普车，这是一个很好的补充。五颗星。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-31</span><span>B0GJSP36SB</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RC446KY3R6JU1/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">good quality, and fits nice with no sagging</div>
+      <p class="en">Rear can stay on with hardtop, but front section has to come off to reinstall freedom panels!</p>
+      <p class="cn">后部可以保留在硬顶上，但前部必须拆下才能重新安装自由面板！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-23</span><span>B0GJSP36SB</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R38S62B03DC8PS/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Nice product</div>
+      <p class="en">Great fit. Only used rear</p>
+      <p class="cn">非常合身。只用过后排</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-20</span><span>B0GJT16HBL</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/REF9FGPL32IVL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great for long term use, not ideal for short time use.</div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable. Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn">灯罩本身就像灯罩一样工作。希望不必因为安全气囊而忽略中间的带子。拥有前带需要松开并移动挡风玻璃，这也是不太理想的。 总的来说，对于婴儿床来说，质量、合身性和易用性都是合理的。对于经常顶级的人来说可能是一个不错的选择。对于只是到处去一日游来说，这有点多了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-30</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R260QM38KJUQN8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">must have</div>
+      <p class="en">This fits my 2018 JLU well and was easy to install. It provides great shade while still letting air flow through, making drives much more comfortable on sunny days. The straps hold it securely in place, and it helps reduce wind and road noise. Overall, it&#x27;s a great addition for anyone who enjoys driving with the top off. Budget friendly and very durable!</p>
+      <p class="cn">这很适合我的 2018 年吉林大学，并且易于安装。它提供了良好的遮阳效果，同时仍让空气流通，使在阳光明媚的日子里驾驶更加舒适。带子将其牢固地固定到位，有助于减少风和道路噪音。总的来说，对于喜欢敞篷驾驶的人来说，这是一个很好的补充。预算友好且非常耐用！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-25</span><span>B0GJSP36SB</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1ZASFIXUEQN46/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Much needed shade on a tops off doors off sunny day.</div>
+      <p class="en">Love this sun shade! It took me about 30 minutes or less to get it on due to roll bar padding and hard sided window frames on a sort top that I had to maneuver around. It’s on and it stays on! I don’t ever take it off. My top fits right over it. Did I say how much I love this sun shade?</p>
+      <p class="cn">喜欢这个遮阳罩！ 我花了大约 30 分钟或更短的时间才把它装上，因为顶部有防滚杆衬垫和硬边窗框，我必须在上面移动。 它已开启并保持开启状态！我从来不把它摘下来。我的上衣刚好适合它。 我有说过我有多喜欢这个遮阳罩吗？</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-19</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RJKFO5345SLOA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">The Perfect Open-Air Jeep Upgrade!</div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly. What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in. The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day. Installation was straightforward and comple...</p>
+      <p class="cn">我为我妻子的 2023 款吉普牧马人 Rubicon 选择了这款产品，它很快就成为我们最喜​​欢的吉普配件之一。我们喜欢脱掉上衣跑步，但夏天的阳光可能会很残酷。这款遮阳帘完美解决了这个问题。 我最喜欢的是，我们仍然可以享受自由和露天的感觉，这让拥有吉普车变得如此有趣，同时获得急需的防晒保护。它可以阻挡大量的热量和紫外线，而不会让吉普车感觉封闭。 覆盖范围非常好，延伸到前排和后排座位区域，因此每个人都可以从遮阳中受益。即使在长途驾驶中，车内也能保持明显凉爽，而且我们也不会整天被太阳烤着。 安装非常简单且完全无需工具。集成带系统比我见过的其他一些设计要好得多，因为一切都保持安全和紧密。安装完成后，它看起来很干净，几乎是工厂制造的。 另一个意想不到的好处是减少风振和噪音。您仍然可以获得露天吉普车体验，但对话更容易，在高速公路上行驶时感觉更舒适。 材料的质量也令人印象深刻。它感觉很耐用，合身，到目前为止一直保持良好状态。 如果您喜欢在敞篷状态下驾驶牧马人，但又想在不牺牲吉普车体验的情况下防晒，那么这是一个简单的推荐。 出色的贴合性、出色的紫外线防护、降低的风噪，同时仍让您享受户外的自由。全程五颗星！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RX36FUKGH9T8E/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Game changer for doors-off Jeep rides!</div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt. The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone. The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of...</p>
+      <p class="cn">我们为 2020 款 Jeep 牧马人 JL Rubicon 配备了这套网状遮阳罩（前部 + 后部）。安装花了一些时间，我丈夫一开始在正确拉紧带子时遇到了一些麻烦，但一旦完成，他对它的安全感感到非常满意。 差别是巨大的！我丈夫喜欢关着车门开车，但孩子们（尤其是青少年）常常不停地抱怨狂风吹乱了他们的头发😂。现在安装了这些遮阳帘后，风平静多了，呼啸声也少了很多，而且阳光也被很好地遮挡住了。我和我们的孩子坐在后面，每个人都感觉好多了。 合身性很好，网布看起来很好，拉紧，没有下垂，质量看起来很扎实。我们已经拥有两套来自同一品牌的门外镜子，我们对它们也非常满意，所以我们希望这些色调能够在拉斯维加斯的阳光下保持良好的状态。 强烈推荐给喜欢门外驾驶但想要更舒适体验的牧马人车主！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-04</span><span>B0GJT16HBL</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R8XDJ7DLRAN60/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Nice fit</div>
+      <p class="en">Love it was a small pain to install but once you figure it out you&#x27;re good it fit my 2026 wrangler</p>
+      <p class="cn">喜欢它，安装起来有点麻烦，但一旦你弄清楚了，它就适合我的 2026 年牧马人</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-01</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3R9JEJ8VP0ZK6/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Decent fit</div>
+      <p class="en">I would STRONGLY suggest buying the style with the bungee cords. I had those for my last Jeep and they were great. These have the sewn on velcro strap and one of them ripped half way off. Other than that, they seem to be off good quality.</p>
+      <p class="cn">我强烈建议购买带有弹力绳的款式。 我为我的最后一辆吉普车准备了这些，它们非常棒。 这些带子缝在尼龙搭扣带上，其中一根撕了一半。 除此之外，它们的质量似乎不错。</p>
+    </article>
+    
+    </details>
+    
+
+    <details class="theme pos">
+      <summary><span>魔术贴替代弹力绳更安全易装</span><b>20条 / 18.7%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-08</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2OH67DRO444GV/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Fits great….If you take the hard top off first</div>
+      <p class="en">I installed this on my Jeep and I’m really happy with it. Installation is very easy, especially if you already have the factory hard top off. I have seen where people are able to slide these under their factory hard top but you can’t do that with this one. You can install it first and then reinstall your factory hard top over it with no issues though. Everything fit where it was supposed to and the straps hold the shade securely without a bunch of complicated hardware. Strap it on and cinch it up and you are ready to go. The mesh provides great coverage over both the front and rear seats while still letting plenty of air through. It keeps the sun from cooking you and even slows down rain and light showers. It makes driving with the top off much more...</p>
+      <p class="cn">我在我的吉普车上安装了这个，我对此非常满意。安装非常简单，特别是如果您已经安装了工厂硬顶的话。我见过人们可以将它们滑到工厂的硬顶下面，但你不能用这个来做到这一点。您可以先安装它，然后重新安装工厂的硬顶，没有任何问题。一切都符合其应有的位置，带子可以牢固地固定遮阳帘，而无需一堆复杂的硬件。系上它并系紧，您就可以出发了。网布为前排和后排座椅提供了很好的覆盖，同时仍然让充足的空气通过。它可以防止太阳晒伤你，甚至可以减缓降雨和小阵雨的速度。它使敞篷驾驶变得更加舒适，因为您仍然可以获得露天吉普车的感觉，而不会受到阳光直射。这种材料感觉很耐用，贴合度很好，一旦所有东西都拧紧，它在驾驶时就能很好地保持在原位。如果您喜欢开着车顶开吉普车，这是一个很好的补充。五颗星。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2HLCW9WBQRQZQ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Very nice shades! Makes all the difference when stuck in traffic!!</div>
+      <p class="en">This sun shade makes for a very nice addition to my Jeep! They strap on easily and make a big difference, especially when stuck in traffic. But you still get the open Jeep, wind in your hair feeling. For the price, you really can&#x27;t beat it. Highly recommend!!</p>
+      <p class="cn">这款遮阳罩为我的吉普车增添了非常漂亮的元素！它们可以轻松系上并发挥很大作用，尤其是在堵车时。但你仍然能感受到开着吉普车、风吹过头发的感觉。就价格而言，你真的无法击败它。强烈推荐！！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-20</span><span>B0GJT16HBL</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/REF9FGPL32IVL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great for long term use, not ideal for short time use.</div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable. Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn">灯罩本身就像灯罩一样工作。希望不必因为安全气囊而忽略中间的带子。拥有前带需要松开并移动挡风玻璃，这也是不太理想的。 总的来说，对于婴儿床来说，质量、合身性和易用性都是合理的。对于经常顶级的人来说可能是一个不错的选择。对于只是到处去一日游来说，这有点多了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-10</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1LSE97B9ITV54/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great Sun Shade, Challenging Installation</div>
+      <p class="en">Overall, I&#x27;d give this sun shade 4 out of 5 stars. Once installed, it provides nice shade and helps cut down on the heat, but the installation was more difficult than I expected. On my 2025 Jeep Wrangler, I had to remove the windshield screws to feed the front straps through and added extra time to the install. It also doesn&#x27;t sit as taut as I&#x27;d hoped, so there are a few areas that sag slightly. Despite those drawbacks, it does the job well and I&#x27;m happy with it overall.</p>
+      <p class="cn">总的来说，我会给这款防晒霜 4 星（满分 5 星）。安装后，它可以提供良好的遮荫并有助于减少热量，但安装比我预想的要困难。在我的 2025 款吉普牧马人上，我必须拆下挡风玻璃螺丝才能将前带穿过，这增加了安装时间。它也没有像我希望的那样绷紧，所以有一些区域稍微下垂。尽管存在这些缺点，但它的工作效果很好，总体而言我对它很满意。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-30</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R260QM38KJUQN8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">must have</div>
+      <p class="en">This fits my 2018 JLU well and was easy to install. It provides great shade while still letting air flow through, making drives much more comfortable on sunny days. The straps hold it securely in place, and it helps reduce wind and road noise. Overall, it&#x27;s a great addition for anyone who enjoys driving with the top off. Budget friendly and very durable!</p>
+      <p class="cn">这很适合我的 2018 年吉林大学，并且易于安装。它提供了良好的遮阳效果，同时仍让空气流通，使在阳光明媚的日子里驾驶更加舒适。带子将其牢固地固定到位，有助于减少风和道路噪音。总的来说，对于喜欢敞篷驾驶的人来说，这是一个很好的补充。预算友好且非常耐用！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-19</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RJKFO5345SLOA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">The Perfect Open-Air Jeep Upgrade!</div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly. What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in. The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day. Installation was straightforward and comple...</p>
+      <p class="cn">我为我妻子的 2023 款吉普牧马人 Rubicon 选择了这款产品，它很快就成为我们最喜​​欢的吉普配件之一。我们喜欢脱掉上衣跑步，但夏天的阳光可能会很残酷。这款遮阳帘完美解决了这个问题。 我最喜欢的是，我们仍然可以享受自由和露天的感觉，这让拥有吉普车变得如此有趣，同时获得急需的防晒保护。它可以阻挡大量的热量和紫外线，而不会让吉普车感觉封闭。 覆盖范围非常好，延伸到前排和后排座位区域，因此每个人都可以从遮阳中受益。即使在长途驾驶中，车内也能保持明显凉爽，而且我们也不会整天被太阳烤着。 安装非常简单且完全无需工具。集成带系统比我见过的其他一些设计要好得多，因为一切都保持安全和紧密。安装完成后，它看起来很干净，几乎是工厂制造的。 另一个意想不到的好处是减少风振和噪音。您仍然可以获得露天吉普车体验，但对话更容易，在高速公路上行驶时感觉更舒适。 材料的质量也令人印象深刻。它感觉很耐用，合身，到目前为止一直保持良好状态。 如果您喜欢在敞篷状态下驾驶牧马人，但又想在不牺牲吉普车体验的情况下防晒，那么这是一个简单的推荐。 出色的贴合性、出色的紫外线防护、降低的风噪，同时仍让您享受户外的自由。全程五颗星！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RX36FUKGH9T8E/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Game changer for doors-off Jeep rides!</div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt. The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone. The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of...</p>
+      <p class="cn">我们为 2020 款 Jeep 牧马人 JL Rubicon 配备了这套网状遮阳罩（前部 + 后部）。安装花了一些时间，我丈夫一开始在正确拉紧带子时遇到了一些麻烦，但一旦完成，他对它的安全感感到非常满意。 差别是巨大的！我丈夫喜欢关着车门开车，但孩子们（尤其是青少年）常常不停地抱怨狂风吹乱了他们的头发😂。现在安装了这些遮阳帘后，风平静多了，呼啸声也少了很多，而且阳光也被很好地遮挡住了。我和我们的孩子坐在后面，每个人都感觉好多了。 合身性很好，网布看起来很好，拉紧，没有下垂，质量看起来很扎实。我们已经拥有两套来自同一品牌的门外镜子，我们对它们也非常满意，所以我们希望这些色调能够在拉斯维加斯的阳光下保持良好的状态。 强烈推荐给喜欢门外驾驶但想要更舒适体验的牧马人车主！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-01</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3R9JEJ8VP0ZK6/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Decent fit</div>
+      <p class="en">I would STRONGLY suggest buying the style with the bungee cords. I had those for my last Jeep and they were great. These have the sewn on velcro strap and one of them ripped half way off. Other than that, they seem to be off good quality.</p>
+      <p class="cn">我强烈建议购买带有弹力绳的款式。 我为我的最后一辆吉普车准备了这些，它们非常棒。 这些带子缝在尼龙搭扣带上，其中一根撕了一半。 除此之外，它们的质量似乎不错。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-21</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R257YRML89M1Y9/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">10 out of 10 worth it</div>
+      <p class="en">This mesh sun shade is an awesome addition for a Wrangler JL 4-Door! It makes a huge difference on sunny days by cutting down heat and glare while still letting fresh air flow through the Jeep. The material feels durable and well-made, and it gives the Jeep a sleek rugged look without needing to remove the hard top completely. Installation is quick and easy with the straps, and it stays secure even while driving at highway speeds.</p>
+      <p class="cn">这款网状遮阳罩是牧马人 JL 4 门车的绝佳补充！在阳光明媚的日子里，它可以减少热量和眩光，同时仍然让新鲜空气流过吉普车，从而产生巨大的变化。这种材料感觉耐用且做工精良，无需完全拆除硬顶即可赋予吉普车时尚坚固的外观。使用带子即可快速轻松地安装，即使在高速公路上行驶时也能保持安全。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-11</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3DEBDET57FJYN/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Velcro straps are the way to go</div>
+      <p class="en">I absolutely love this new mesh top for my Jeep. I prefer the two-piece design because you can run just the front section when removing only the freedom tops. The Velcro straps keep the mesh tight and secure without sliding around on the roll bar. After installing it a couple of times, setup only takes a few minutes. The UV protection is noticeable right away, helping shield you, your passengers, and even pets from the sun while still letting in fresh air. Investing in a quality mesh top like this one makes top-off driving even more enjoyable — perfect for cruising with the wind in your hair.</p>
+      <p class="cn">我非常喜欢我的吉普车的这款新网状上衣。我更喜欢两件式设计，因为在仅拆卸自由顶部时，您可以仅运行前部。尼龙搭扣带可保持网格紧密且固定，不会在防滚架上滑动。安装几次后，设置只需几分钟。 紫外线防护效果立竿见影，有助于保护您、您的乘客甚至宠物免受阳光照射，同时仍能让新鲜空气进入。购买一款像这样的优质网状上衣可以让顶级驾驶变得更加愉快——非常适合在风吹过头发的情况下巡航。</p>
+    </article>
+    
+    </details>
+    
+
+    <details class="theme pos">
+      <summary><span>材质/做工/耐用感好</span><b>19条 / 17.8%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-08</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2OH67DRO444GV/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Fits great….If you take the hard top off first</div>
+      <p class="en">I installed this on my Jeep and I’m really happy with it. Installation is very easy, especially if you already have the factory hard top off. I have seen where people are able to slide these under their factory hard top but you can’t do that with this one. You can install it first and then reinstall your factory hard top over it with no issues though. Everything fit where it was supposed to and the straps hold the shade securely without a bunch of complicated hardware. Strap it on and cinch it up and you are ready to go. The mesh provides great coverage over both the front and rear seats while still letting plenty of air through. It keeps the sun from cooking you and even slows down rain and light showers. It makes driving with the top off much more...</p>
+      <p class="cn">我在我的吉普车上安装了这个，我对此非常满意。安装非常简单，特别是如果您已经安装了工厂硬顶的话。我见过人们可以将它们滑到工厂的硬顶下面，但你不能用这个来做到这一点。您可以先安装它，然后重新安装工厂的硬顶，没有任何问题。一切都符合其应有的位置，带子可以牢固地固定遮阳帘，而无需一堆复杂的硬件。系上它并系紧，您就可以出发了。网布为前排和后排座椅提供了很好的覆盖，同时仍然让充足的空气通过。它可以防止太阳晒伤你，甚至可以减缓降雨和小阵雨的速度。它使敞篷驾驶变得更加舒适，因为您仍然可以获得露天吉普车的感觉，而不会受到阳光直射。这种材料感觉很耐用，贴合度很好，一旦所有东西都拧紧，它在驾驶时就能很好地保持在原位。如果您喜欢开着车顶开吉普车，这是一个很好的补充。五颗星。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-31</span><span>B0GJSP36SB</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RC446KY3R6JU1/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">good quality, and fits nice with no sagging</div>
+      <p class="en">Rear can stay on with hardtop, but front section has to come off to reinstall freedom panels!</p>
+      <p class="cn">后部可以保留在硬顶上，但前部必须拆下才能重新安装自由面板！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-20</span><span>B0GJT16HBL</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/REF9FGPL32IVL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great for long term use, not ideal for short time use.</div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable. Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn">灯罩本身就像灯罩一样工作。希望不必因为安全气囊而忽略中间的带子。拥有前带需要松开并移动挡风玻璃，这也是不太理想的。 总的来说，对于婴儿床来说，质量、合身性和易用性都是合理的。对于经常顶级的人来说可能是一个不错的选择。对于只是到处去一日游来说，这有点多了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-30</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R260QM38KJUQN8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">must have</div>
+      <p class="en">This fits my 2018 JLU well and was easy to install. It provides great shade while still letting air flow through, making drives much more comfortable on sunny days. The straps hold it securely in place, and it helps reduce wind and road noise. Overall, it&#x27;s a great addition for anyone who enjoys driving with the top off. Budget friendly and very durable!</p>
+      <p class="cn">这很适合我的 2018 年吉林大学，并且易于安装。它提供了良好的遮阳效果，同时仍让空气流通，使在阳光明媚的日子里驾驶更加舒适。带子将其牢固地固定到位，有助于减少风和道路噪音。总的来说，对于喜欢敞篷驾驶的人来说，这是一个很好的补充。预算友好且非常耐用！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-19</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RJKFO5345SLOA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">The Perfect Open-Air Jeep Upgrade!</div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly. What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in. The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day. Installation was straightforward and comple...</p>
+      <p class="cn">我为我妻子的 2023 款吉普牧马人 Rubicon 选择了这款产品，它很快就成为我们最喜​​欢的吉普配件之一。我们喜欢脱掉上衣跑步，但夏天的阳光可能会很残酷。这款遮阳帘完美解决了这个问题。 我最喜欢的是，我们仍然可以享受自由和露天的感觉，这让拥有吉普车变得如此有趣，同时获得急需的防晒保护。它可以阻挡大量的热量和紫外线，而不会让吉普车感觉封闭。 覆盖范围非常好，延伸到前排和后排座位区域，因此每个人都可以从遮阳中受益。即使在长途驾驶中，车内也能保持明显凉爽，而且我们也不会整天被太阳烤着。 安装非常简单且完全无需工具。集成带系统比我见过的其他一些设计要好得多，因为一切都保持安全和紧密。安装完成后，它看起来很干净，几乎是工厂制造的。 另一个意想不到的好处是减少风振和噪音。您仍然可以获得露天吉普车体验，但对话更容易，在高速公路上行驶时感觉更舒适。 材料的质量也令人印象深刻。它感觉很耐用，合身，到目前为止一直保持良好状态。 如果您喜欢在敞篷状态下驾驶牧马人，但又想在不牺牲吉普车体验的情况下防晒，那么这是一个简单的推荐。 出色的贴合性、出色的紫外线防护、降低的风噪，同时仍让您享受户外的自由。全程五颗星！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RX36FUKGH9T8E/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Game changer for doors-off Jeep rides!</div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt. The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone. The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of...</p>
+      <p class="cn">我们为 2020 款 Jeep 牧马人 JL Rubicon 配备了这套网状遮阳罩（前部 + 后部）。安装花了一些时间，我丈夫一开始在正确拉紧带子时遇到了一些麻烦，但一旦完成，他对它的安全感感到非常满意。 差别是巨大的！我丈夫喜欢关着车门开车，但孩子们（尤其是青少年）常常不停地抱怨狂风吹乱了他们的头发😂。现在安装了这些遮阳帘后，风平静多了，呼啸声也少了很多，而且阳光也被很好地遮挡住了。我和我们的孩子坐在后面，每个人都感觉好多了。 合身性很好，网布看起来很好，拉紧，没有下垂，质量看起来很扎实。我们已经拥有两套来自同一品牌的门外镜子，我们对它们也非常满意，所以我们希望这些色调能够在拉斯维加斯的阳光下保持良好的状态。 强烈推荐给喜欢门外驾驶但想要更舒适体验的牧马人车主！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-01</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3R9JEJ8VP0ZK6/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Decent fit</div>
+      <p class="en">I would STRONGLY suggest buying the style with the bungee cords. I had those for my last Jeep and they were great. These have the sewn on velcro strap and one of them ripped half way off. Other than that, they seem to be off good quality.</p>
+      <p class="cn">我强烈建议购买带有弹力绳的款式。 我为我的最后一辆吉普车准备了这些，它们非常棒。 这些带子缝在尼龙搭扣带上，其中一根撕了一半。 除此之外，它们的质量似乎不错。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-21</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R257YRML89M1Y9/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">10 out of 10 worth it</div>
+      <p class="en">This mesh sun shade is an awesome addition for a Wrangler JL 4-Door! It makes a huge difference on sunny days by cutting down heat and glare while still letting fresh air flow through the Jeep. The material feels durable and well-made, and it gives the Jeep a sleek rugged look without needing to remove the hard top completely. Installation is quick and easy with the straps, and it stays secure even while driving at highway speeds.</p>
+      <p class="cn">这款网状遮阳罩是牧马人 JL 4 门车的绝佳补充！在阳光明媚的日子里，它可以减少热量和眩光，同时仍然让新鲜空气流过吉普车，从而产生巨大的变化。这种材料感觉耐用且做工精良，无需完全拆除硬顶即可赋予吉普车时尚坚固的外观。使用带子即可快速轻松地安装，即使在高速公路上行驶时也能保持安全。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-11</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3DEBDET57FJYN/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Velcro straps are the way to go</div>
+      <p class="en">I absolutely love this new mesh top for my Jeep. I prefer the two-piece design because you can run just the front section when removing only the freedom tops. The Velcro straps keep the mesh tight and secure without sliding around on the roll bar. After installing it a couple of times, setup only takes a few minutes. The UV protection is noticeable right away, helping shield you, your passengers, and even pets from the sun while still letting in fresh air. Investing in a quality mesh top like this one makes top-off driving even more enjoyable — perfect for cruising with the wind in your hair.</p>
+      <p class="cn">我非常喜欢我的吉普车的这款新网状上衣。我更喜欢两件式设计，因为在仅拆卸自由顶部时，您可以仅运行前部。尼龙搭扣带可保持网格紧密且固定，不会在防滚架上滑动。安装几次后，设置只需几分钟。 紫外线防护效果立竿见影，有助于保护您、您的乘客甚至宠物免受阳光照射，同时仍能让新鲜空气进入。购买一款像这样的优质网状上衣可以让顶级驾驶变得更加愉快——非常适合在风吹过头发的情况下巡航。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-10</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R16R4L78SZH1EP/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Good Jeep sunshade</div>
+      <p class="en">At around $70 for the two-piece set, this mesh sunshade feels reasonably priced for what you get. The material seems well made and durable, and it does a nice job allowing airflow while still blocking out a good amount of sun. Installation was a little trickier than we expected at first, but once we figured it out, it went on pretty easily. One downside is that it doesn’t pull completely tight, so there’s some flapping/noise at highway speeds. It’s not terrible, but definitely noticeable. Overall, it works as intended and has been nice to have for warmer weather, though I’ll probably explore a different option down the road. For now, it gets the job done and the quality seems solid.</p>
+      <p class="cn">两件套售价约为 70 美元，这款网状遮阳伞感觉物有所值。这种材料看起来制作精良且耐用，它在允许空气流通的同时仍然阻挡了大量的阳光。安装比我们一开始预期的要棘手一些，但是一旦我们弄清楚了，安装就很容易了。 一个缺点是它不能完全拉紧，因此在高速公路上行驶时会产生一些拍打声/噪音。这并不可怕，但绝对引人注目。总的来说，它按预期工作，并且在温暖的天气下使用很不错，尽管我可能会在以后探索不同的选择。目前，它已经完成了工作，而且质量看起来很稳定。</p>
+    </article>
+    
+    </details>
+    
+
+    <details class="theme pos">
+      <summary><span>保留敞篷通风感</span><b>14条 / 13.1%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-08</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2OH67DRO444GV/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Fits great….If you take the hard top off first</div>
+      <p class="en">I installed this on my Jeep and I’m really happy with it. Installation is very easy, especially if you already have the factory hard top off. I have seen where people are able to slide these under their factory hard top but you can’t do that with this one. You can install it first and then reinstall your factory hard top over it with no issues though. Everything fit where it was supposed to and the straps hold the shade securely without a bunch of complicated hardware. Strap it on and cinch it up and you are ready to go. The mesh provides great coverage over both the front and rear seats while still letting plenty of air through. It keeps the sun from cooking you and even slows down rain and light showers. It makes driving with the top off much more...</p>
+      <p class="cn">我在我的吉普车上安装了这个，我对此非常满意。安装非常简单，特别是如果您已经安装了工厂硬顶的话。我见过人们可以将它们滑到工厂的硬顶下面，但你不能用这个来做到这一点。您可以先安装它，然后重新安装工厂的硬顶，没有任何问题。一切都符合其应有的位置，带子可以牢固地固定遮阳帘，而无需一堆复杂的硬件。系上它并系紧，您就可以出发了。网布为前排和后排座椅提供了很好的覆盖，同时仍然让充足的空气通过。它可以防止太阳晒伤你，甚至可以减缓降雨和小阵雨的速度。它使敞篷驾驶变得更加舒适，因为您仍然可以获得露天吉普车的感觉，而不会受到阳光直射。这种材料感觉很耐用，贴合度很好，一旦所有东西都拧紧，它在驾驶时就能很好地保持在原位。如果您喜欢开着车顶开吉普车，这是一个很好的补充。五颗星。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2HLCW9WBQRQZQ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Very nice shades! Makes all the difference when stuck in traffic!!</div>
+      <p class="en">This sun shade makes for a very nice addition to my Jeep! They strap on easily and make a big difference, especially when stuck in traffic. But you still get the open Jeep, wind in your hair feeling. For the price, you really can&#x27;t beat it. Highly recommend!!</p>
+      <p class="cn">这款遮阳罩为我的吉普车增添了非常漂亮的元素！它们可以轻松系上并发挥很大作用，尤其是在堵车时。但你仍然能感受到开着吉普车、风吹过头发的感觉。就价格而言，你真的无法击败它。强烈推荐！！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-04</span><span>B0GJSP36SB</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3AF0N9EG9US8Z/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Enjoy your ride</div>
+      <p class="en">Wonderful product. This allows the freedom top to be off and enjoying the ride in your Jeep. The only reason I purchased this product is so I can enjoy riding around stop by Cedar Point amusement Park. Without having a bunch of bird poop in my vehicle. At least this will slow them down on the mess</p>
+      <p class="cn">很棒的产品。这样就可以关闭自由顶篷并享受吉普车的旅程。我购买该产品的唯一原因是我可以在 Cedar Point 游乐园附近享受骑行的乐趣。我的车里没有一堆鸟粪。至少这会让他们减缓混乱的速度</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-30</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R260QM38KJUQN8/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">must have</div>
+      <p class="en">This fits my 2018 JLU well and was easy to install. It provides great shade while still letting air flow through, making drives much more comfortable on sunny days. The straps hold it securely in place, and it helps reduce wind and road noise. Overall, it&#x27;s a great addition for anyone who enjoys driving with the top off. Budget friendly and very durable!</p>
+      <p class="cn">这很适合我的 2018 年吉林大学，并且易于安装。它提供了良好的遮阳效果，同时仍让空气流通，使在阳光明媚的日子里驾驶更加舒适。带子将其牢固地固定到位，有助于减少风和道路噪音。总的来说，对于喜欢敞篷驾驶的人来说，这是一个很好的补充。预算友好且非常耐用！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-25</span><span>B0GJSP36SB</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R1ZASFIXUEQN46/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Much needed shade on a tops off doors off sunny day.</div>
+      <p class="en">Love this sun shade! It took me about 30 minutes or less to get it on due to roll bar padding and hard sided window frames on a sort top that I had to maneuver around. It’s on and it stays on! I don’t ever take it off. My top fits right over it. Did I say how much I love this sun shade?</p>
+      <p class="cn">喜欢这个遮阳罩！ 我花了大约 30 分钟或更短的时间才把它装上，因为顶部有防滚杆衬垫和硬边窗框，我必须在上面移动。 它已开启并保持开启状态！我从来不把它摘下来。我的上衣刚好适合它。 我有说过我有多喜欢这个遮阳罩吗？</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-19</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RJKFO5345SLOA/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">The Perfect Open-Air Jeep Upgrade!</div>
+      <p class="en">I picked this for my wife’s 2023 Jeep Wrangler Rubicon, and it has quickly become one of our favorite Jeep accessories. We love running with the top off, but the summer sun can get brutal. This sun shade solved that problem perfectly. What I love most is that we can still enjoy the freedom and open-air feeling that makes owning a Jeep so much fun while getting much-needed protection from the sun. It blocks a surprising amount of heat and UV rays without making the Jeep feel closed in. The coverage is excellent, extending across both the front and rear seating areas so everyone benefits from the shade. Even on long drives, the interior stays noticeably cooler, and we’re not getting baked by the sun all day. Installation was straightforward and comple...</p>
+      <p class="cn">我为我妻子的 2023 款吉普牧马人 Rubicon 选择了这款产品，它很快就成为我们最喜​​欢的吉普配件之一。我们喜欢脱掉上衣跑步，但夏天的阳光可能会很残酷。这款遮阳帘完美解决了这个问题。 我最喜欢的是，我们仍然可以享受自由和露天的感觉，这让拥有吉普车变得如此有趣，同时获得急需的防晒保护。它可以阻挡大量的热量和紫外线，而不会让吉普车感觉封闭。 覆盖范围非常好，延伸到前排和后排座位区域，因此每个人都可以从遮阳中受益。即使在长途驾驶中，车内也能保持明显凉爽，而且我们也不会整天被太阳烤着。 安装非常简单且完全无需工具。集成带系统比我见过的其他一些设计要好得多，因为一切都保持安全和紧密。安装完成后，它看起来很干净，几乎是工厂制造的。 另一个意想不到的好处是减少风振和噪音。您仍然可以获得露天吉普车体验，但对话更容易，在高速公路上行驶时感觉更舒适。 材料的质量也令人印象深刻。它感觉很耐用，合身，到目前为止一直保持良好状态。 如果您喜欢在敞篷状态下驾驶牧马人，但又想在不牺牲吉普车体验的情况下防晒，那么这是一个简单的推荐。 出色的贴合性、出色的紫外线防护、降低的风噪，同时仍让您享受户外的自由。全程五颗星！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-06-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/RX36FUKGH9T8E/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Game changer for doors-off Jeep rides!</div>
+      <p class="en">We got this mesh sun shade set (front + rear) for our 2020 Jeep Wrangler JL Rubicon. Installation took a bit of time and my husband had some trouble getting the straps tightened properly at first, but once it was done, he was really happy with how secure it felt. The difference is huge! My husband loves driving with the doors off, but the kids (especially the teenagers) used to complain nonstop about the crazy wind messing up their hair 😂. Now with these shades installed, the wind is much calmer, there’s way less howling, and the sun is nicely blocked too. I sit in the back with our toddler and it feels so much better for everyone. The fit is good, the mesh looks nice and taut with no sagging, and the quality seems solid. We already have two sets of...</p>
+      <p class="cn">我们为 2020 款 Jeep 牧马人 JL Rubicon 配备了这套网状遮阳罩（前部 + 后部）。安装花了一些时间，我丈夫一开始在正确拉紧带子时遇到了一些麻烦，但一旦完成，他对它的安全感感到非常满意。 差别是巨大的！我丈夫喜欢关着车门开车，但孩子们（尤其是青少年）常常不停地抱怨狂风吹乱了他们的头发😂。现在安装了这些遮阳帘后，风平静多了，呼啸声也少了很多，而且阳光也被很好地遮挡住了。我和我们的孩子坐在后面，每个人都感觉好多了。 合身性很好，网布看起来很好，拉紧，没有下垂，质量看起来很扎实。我们已经拥有两套来自同一品牌的门外镜子，我们对它们也非常满意，所以我们希望这些色调能够在拉斯维加斯的阳光下保持良好的状态。 强烈推荐给喜欢门外驾驶但想要更舒适体验的牧马人车主！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-11</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3DEBDET57FJYN/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Velcro straps are the way to go</div>
+      <p class="en">I absolutely love this new mesh top for my Jeep. I prefer the two-piece design because you can run just the front section when removing only the freedom tops. The Velcro straps keep the mesh tight and secure without sliding around on the roll bar. After installing it a couple of times, setup only takes a few minutes. The UV protection is noticeable right away, helping shield you, your passengers, and even pets from the sun while still letting in fresh air. Investing in a quality mesh top like this one makes top-off driving even more enjoyable — perfect for cruising with the wind in your hair.</p>
+      <p class="cn">我非常喜欢我的吉普车的这款新网状上衣。我更喜欢两件式设计，因为在仅拆卸自由顶部时，您可以仅运行前部。尼龙搭扣带可保持网格紧密且固定，不会在防滚架上滑动。安装几次后，设置只需几分钟。 紫外线防护效果立竿见影，有助于保护您、您的乘客甚至宠物免受阳光照射，同时仍能让新鲜空气进入。购买一款像这样的优质网状上衣可以让顶级驾驶变得更加愉快——非常适合在风吹过头发的情况下巡航。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-10</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R16R4L78SZH1EP/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Good Jeep sunshade</div>
+      <p class="en">At around $70 for the two-piece set, this mesh sunshade feels reasonably priced for what you get. The material seems well made and durable, and it does a nice job allowing airflow while still blocking out a good amount of sun. Installation was a little trickier than we expected at first, but once we figured it out, it went on pretty easily. One downside is that it doesn’t pull completely tight, so there’s some flapping/noise at highway speeds. It’s not terrible, but definitely noticeable. Overall, it works as intended and has been nice to have for warmer weather, though I’ll probably explore a different option down the road. For now, it gets the job done and the quality seems solid.</p>
+      <p class="cn">两件套售价约为 70 美元，这款网状遮阳伞感觉物有所值。这种材料看起来制作精良且耐用，它在允许空气流通的同时仍然阻挡了大量的阳光。安装比我们一开始预期的要棘手一些，但是一旦我们弄清楚了，安装就很容易了。 一个缺点是它不能完全拉紧，因此在高速公路上行驶时会产生一些拍打声/噪音。这并不可怕，但绝对引人注目。总的来说，它按预期工作，并且在温暖的天气下使用很不错，尽管我可能会在以后探索不同的选择。目前，它已经完成了工作，而且质量看起来很稳定。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-09</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R119NF479RERX7/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Amazing quality sun shade</div>
+      <p class="en">The sun shade comes in a one time use plastic bag that is easy to open and setup. The kit includes a nylon drawstring bag for storage, and the front and rear sun shades. The sun shades fit perfectly on the roll cage of a 2023 Jeep Wrangler 2 door, with the rear fitting a little awkward due to the lack of rear seats. It is intended for the 4 door JLU, but can work with the JL. Notably if you are over 6&#x27; fit will be a little tight, and will likely press down on your head. The quality of the nets is very good. They feature multiple straps with a no slip coating on them, along with a rubberized mesh. The material is very high quality, and the coating is rugged. The stitching and seams are even and do not have any nests or excessive strings hanging off....</p>
+      <p class="cn">遮阳罩装在一次性塑料袋中，易于打开和安装。 该套件包括一个用于存放的尼龙抽绳袋以及前后遮阳帘。 遮阳帘非常适合 2023 款吉普牧马人 2 门的防滚架，但由于没有后排座椅，后部安装有点尴尬。它适用于 4 门 JLU，但也可与 JL 配合使用。 值得注意的是，如果您的身高超过 6 英尺，佩戴会有点紧，并且可能会压迫您的头部。 网的质量非常好。它们具有多个带防滑涂层的带子以及橡胶网。该材料质量非常高，涂层坚固。缝合和接缝均匀，没有任何巢穴或过多的绳子悬挂。 驾驶时噪音水平仍然相当大，因为即使在完全拉紧的情况下，带子和材料也会在风中飘动。在风最大的后方尤其值得注意。 总的来说，就价格而言，这是一款品质优良的遮阳罩，我强烈推荐它的价格。如果您喜欢敞篷，这是介于裸顶和软顶之间的一个很好的中间地带。</p>
+    </article>
+    
+    </details>
+    
+
+    <details class="theme pos">
+      <summary><span>价格/性价比认可</span><b>6条 / 5.6%</b></summary>
+      
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-08-07</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R2HLCW9WBQRQZQ/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Very nice shades! Makes all the difference when stuck in traffic!!</div>
+      <p class="en">This sun shade makes for a very nice addition to my Jeep! They strap on easily and make a big difference, especially when stuck in traffic. But you still get the open Jeep, wind in your hair feeling. For the price, you really can&#x27;t beat it. Highly recommend!!</p>
+      <p class="cn">这款遮阳罩为我的吉普车增添了非常漂亮的元素！它们可以轻松系上并发挥很大作用，尤其是在堵车时。但你仍然能感受到开着吉普车、风吹过头发的感觉。就价格而言，你真的无法击败它。强烈推荐！！</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-07-20</span><span>B0GJT16HBL</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/REF9FGPL32IVL/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Great for long term use, not ideal for short time use.</div>
+      <p class="en">The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable. Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For just throwing on for a day trip here and there, it&#x27;s a bit much.</p>
+      <p class="cn">灯罩本身就像灯罩一样工作。希望不必因为安全气囊而忽略中间的带子。拥有前带需要松开并移动挡风玻璃，这也是不太理想的。 总的来说，对于婴儿床来说，质量、合身性和易用性都是合理的。对于经常顶级的人来说可能是一个不错的选择。对于只是到处去一日游来说，这有点多了。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-10</span><span>B0GJT77GVM</span><span>4星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R16R4L78SZH1EP/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Good Jeep sunshade</div>
+      <p class="en">At around $70 for the two-piece set, this mesh sunshade feels reasonably priced for what you get. The material seems well made and durable, and it does a nice job allowing airflow while still blocking out a good amount of sun. Installation was a little trickier than we expected at first, but once we figured it out, it went on pretty easily. One downside is that it doesn’t pull completely tight, so there’s some flapping/noise at highway speeds. It’s not terrible, but definitely noticeable. Overall, it works as intended and has been nice to have for warmer weather, though I’ll probably explore a different option down the road. For now, it gets the job done and the quality seems solid.</p>
+      <p class="cn">两件套售价约为 70 美元，这款网状遮阳伞感觉物有所值。这种材料看起来制作精良且耐用，它在允许空气流通的同时仍然阻挡了大量的阳光。安装比我们一开始预期的要棘手一些，但是一旦我们弄清楚了，安装就很容易了。 一个缺点是它不能完全拉紧，因此在高速公路上行驶时会产生一些拍打声/噪音。这并不可怕，但绝对引人注目。总的来说，它按预期工作，并且在温暖的天气下使用很不错，尽管我可能会在以后探索不同的选择。目前，它已经完成了工作，而且质量看起来很稳定。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-09</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R119NF479RERX7/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Amazing quality sun shade</div>
+      <p class="en">The sun shade comes in a one time use plastic bag that is easy to open and setup. The kit includes a nylon drawstring bag for storage, and the front and rear sun shades. The sun shades fit perfectly on the roll cage of a 2023 Jeep Wrangler 2 door, with the rear fitting a little awkward due to the lack of rear seats. It is intended for the 4 door JLU, but can work with the JL. Notably if you are over 6&#x27; fit will be a little tight, and will likely press down on your head. The quality of the nets is very good. They feature multiple straps with a no slip coating on them, along with a rubberized mesh. The material is very high quality, and the coating is rugged. The stitching and seams are even and do not have any nests or excessive strings hanging off....</p>
+      <p class="cn">遮阳罩装在一次性塑料袋中，易于打开和安装。 该套件包括一个用于存放的尼龙抽绳袋以及前后遮阳帘。 遮阳帘非常适合 2023 款吉普牧马人 2 门的防滚架，但由于没有后排座椅，后部安装有点尴尬。它适用于 4 门 JLU，但也可与 JL 配合使用。 值得注意的是，如果您的身高超过 6 英尺，佩戴会有点紧，并且可能会压迫您的头部。 网的质量非常好。它们具有多个带防滑涂层的带子以及橡胶网。该材料质量非常高，涂层坚固。缝合和接缝均匀，没有任何巢穴或过多的绳子悬挂。 驾驶时噪音水平仍然相当大，因为即使在完全拉紧的情况下，带子和材料也会在风中飘动。在风最大的后方尤其值得注意。 总的来说，就价格而言，这是一款品质优良的遮阳罩，我强烈推荐它的价格。如果您喜欢敞篷，这是介于裸顶和软顶之间的一个很好的中间地带。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-05-03</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3PA66GLK95008/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Very easy to install and immediately cuts down the heat.</div>
+      <p class="en">I got this Mesh Sun Shade for Wrangler JL 4-Door (2018-2026) – Full Coverage Custom-Fit Integrated No-Slip Straps for Easy Install, UV Blocking, Wind &amp; Noise Reduction(Front &amp; Rear) for my 2023 Jeep Wrangler JL Sahara and I love it! When this is in place with the freedom tops or the entire top off, the shade it provides from the sun is incredible. It is really easy to install and I love the fact that it is two pieces. This can stay on with the panels or top on too which also helps cutting down the heat. It fits perfectly and it is extremely durable. IT also looks great when the top is off! For the price, this is an excellent value and a must have for any Jeep owner.</p>
+      <p class="cn">我为我的 2023 吉普牧马人 JL Sahara 买了这款适用于牧马人 JL 4 门（2018-2026）的网状遮阳罩 - 全覆盖定制集成防滑带，易于安装、阻挡紫外线、防风降噪（前部和后部），我喜欢它！当自由顶篷或整个顶篷关闭时，它提供的阳光遮荫效果令人难以置信。它真的很容易安装，而且我喜欢它是两部分的。这可以与面板或顶部保持在一起，这也有助于减少热量。它非常适合并且非常耐用。当顶部关闭时，它看起来也很棒！就价格而言，这是一个物超所值的产品，是任何 Jeep 车主的必备品。</p>
+    </article>
+    
+
+    <article class="quote">
+      <div class="meta"><b>最新评论</b><span>2026-04-28</span><span>B0GJT77GVM</span><span>5星</span><a href="https://www.amazon.com/portal/customer-reviews/srp/-/R3LY1CSVAPIE9Z/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8" target="_blank" rel="noreferrer">Review</a></div>
+      <div class="title">Adjustable durable shade that was easy to install</div>
+      <p class="en">Sun shade was heavy duty and fit right in with the handles around both pieces for installation. It was adjustable to fit just right, it was stable and looked amazing! The material was durable and was well made to withstand harsh weather and sun beaming down. I enjoyed the air flow it provided for a good value price.</p>
+      <p class="cn">遮阳罩非常耐用，可以与两个部件周围的手柄完美契合，以便安装。它可调节至恰到好处，稳定且看起来令人惊叹！该材料经久耐用，制作精良，可以承受恶劣的天气和阳光照射。我很喜欢它提供的气流，而且价格实惠。</p>
+    </article>
+    
+    </details>
+    
+    </section>
+
+    <section>
+      <h2>外部参照：产品链接、竞品动作与论坛真实用户反馈</h2>
+      <div class="panel">
+        <div class="ref-list">
+          <div class="ref-card">
+            <a href="https://www.amazon.com/JOYTUTUS-Shade-Wrangler-4-Door-2018-2026/dp/B0GJT77GVM/ref=cm_cr_arp_d_product_top?ie=UTF8&th=1" target="_blank" rel="noreferrer">本品 Amazon 页面：JOYTUTUS B0GJT77GVM</a>
+            <p>作为当前产品评论与转化入口，后续改善要回填到主图卖点、A+、视频和QA，但优先级仍应先落在产品本体。</p>
+          </div>
+          <div class="ref-card">
+            <a href="https://www.jtopsusa.com/jeep-mesh-shade-top-comparisons" target="_blank" rel="noreferrer">竞品参照：JtopsUSA Jeep Mesh Shade Top Comparisons</a>
+            <p>可借鉴点：免拆挡风玻璃、快拆压缩扣、重型织带、铝杆支撑、多层周边包边、Freedom Panel锁扣通道、磁吸防鼓包、快拆复装和高速验证。</p>
+          </div>
+          <div class="ref-card">
+            <a href="https://www.jlwranglerforums.com/forum/threads/best-and-easiest-sun-shade.76085/page-3" target="_blank" rel="noreferrer">论坛真实用户：JL Wrangler Forums</a>
+            <p>真实用户评价 JtopsUSA 的核心语言是 full coverage、tight、no leaking gaps、no flapping，并提到高速遇雨时能临时保护到找到停车点。</p>
+          </div>
+        </div>
+        <div class="benchmark"><b>产品经理判断：</b>车顶网的下一轮改善不应只讲“更好安装”，而要把体验目标定义成：全覆盖、边缘无明显漏缝、网面张紧不鼓包、高速不拍打、Freedom Panel/硬顶/软顶可快速复装、卡扣与绑带不伤车漆。论坛用户已经把愿意为之付费的体验说得很清楚。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>已做改善措施与为什么仍不够</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3>已做措施</h3>
+          
+    <article class="quote measure">
+      <div class="meta"><b>Not a good buy</b><span>2026-06-06</span><span>2</span></div>
+      <p class='en'><b>原问题：</b>Installation was a nightmare, nothing like described in description</p>
+      <p class="cn"><b>已做/计划措施：</b>@Weldon、Leah 安装视频改善（开头加全家福、全景图，闪烁加英文标记区分前后，重要点加翻转手势）；链接标题删去“简易安装”；视频前车顶网后面拉紧音箱部分，重点展示 @Leah 视频上传帮助中心</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Decent fit</b><span>2026-06-01</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>I would STRONGLY suggest buying the style with the bungee cords. I had those for my last Jeep and they were great. These have the sewn on velcro strap and one of them ripped half way off. Other than that, they seem to be off good quality.</p>
+      <p class="cn"><b>已做/计划措施：</b>@LucasLu 工厂的车缝问题，毛面和勾面不对齐。返单时，质检端加大抽检比例（50%） @Weldon 看一下卡扣的质检测试，如果没有提议加上</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>If you park your jeep in a garage these are fine.</b><span>2026-05-31</span><span>1</span></div>
+      <p class='en'><b>原问题：</b>I didn’t realize I had to loosen up straps in the front and actually will have to fish the strap every time to put my freedom panels back in. I will have to find something different.</p>
+      <p class="cn"><b>已做/计划措施：</b>@Leah 图片加上一张安装步骤图 A3307-00105-BK、A3307-00107-BK、A3307-00106-BK、A3307-00110-BK</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Straps</b><span>2026-05-25</span><span>3</span></div>
+      <p class='en'><b>原问题：</b>Nothing wrong with product at all that&#x27;s a 5 out of 5. Only problem is I can not open the freedom tops with out having to loosen up quite a few straps. Then have to pull them back tight when you use it.</p>
+      <p class="cn"><b>已做/计划措施：</b>@Leah 五点已经写了适配性，再添加图片，考虑放在A+中</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Good Jeep sunshade</b><span>2026-05-10</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>At around $70 for the two-piece set, this mesh sunshade feels reasonably priced for what you get. The material seems well made and durable, and it does a nice job allowing airflow while still blocking out a good amount of sun. Installation was a little trickier than we expected at first, but once we figured it out, it went on pretty easily. One downside is that it doesn’t pull completely tight, so there’s some flapp...</p>
+      <p class="cn"><b>已做/计划措施：</b>@Weldon 说明书所有警示点放在一起</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Didn&#x27;t work for me but it may work for you</b><span>2026-05-06</span><span>3</span></div>
+      <p class='en'><b>原问题：</b>Can&#x27;t get it fit right also won&#x27;t work with other accessories I already have</p>
+      <p class="cn"><b>已做/计划措施：</b>同第一点</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Noticeable sun protection without blocking airflow</b><span>2026-05-05</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>This sun shade makes a big difference in reducing heat and glare while driving, especially on sunny days. It fits the Wrangler JLU well and installs easily using the built‑in straps without permanent modifications. The mesh still allows airflow, so it doesn’t feel stuffy inside the vehicle. Wind noise is minimal, though there is a slight increase at highway speeds</p>
+      <p class="cn"><b>已做/计划措施：</b>暂无</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Nice</b><span>2026-05-04</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>Excellent shade, made with quality materials and easy to install. This bimini style top keeps the sun off while running without the top. The fit is pretty custom and has adjustability in the lacing to make the fit perfect, even with aftermarket bar speakers installed. The appearance is beachy cruise cool.</p>
+      <p class="cn"><b>已做/计划措施：</b>暂无</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Be mindful of year model not compatable with 24+ due to new curtain air bags</b><span>2026-04-26</span><span>3</span></div>
+      <p class='en'><b>原问题：</b>3 stars due to safety concern on specific model years of Jeep wrangler see below for more info This sun shade is a bit of a mixed experience depending on your model year. The big thing to note is a safety concern on 2024+ Wranglers. With the added curtain airbags in the roll bar, the front section straps can interfere with proper airbag deployment. Because of that, I wouldn’t recommend using the front portion on tho...</p>
+      <p class="cn"><b>已做/计划措施：</b>五点已经写了2024 年及之后配备侧帘式气囊的 JL 车型请注意</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>It is ok</b><span>2026-04-21</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>2022 Mojave. They seem like decent quality overall, I did have quite a bit of trouble getting the material to pull tight. It is not entirely intuitive where exactly to attach to get the proper fit. I wish it was tighter but in trying to pull, one of the plastic clips broke, so be careful how much you pull.</p>
+      <p class="cn"><b>已做/计划措施：</b>=DISPIMG(&quot;ID_5826E70F561842458B13E23477FA168D&quot;,1)</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>I am disappointed.....</b><span>2026-04-21</span><span>4</span></div>
+      <p class='en'><b>原问题：</b>I had high hopes for this sunshade, but there were a couple things that made it disappointing. On the good side, there are no bungees to deal with and the shade does a good job of shielding from the sun. A The big issue for me is that this sunshade is designed to be used without any top and definitely not a soft top and I contacted the manufacturer and they confirmed it. Once I put the shade on and closed my soft to...</p>
+      <p class="cn"><b>已做/计划措施：</b>暂无</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>Listing V2</b><span>-</span><span></span></div>
+      
+      <p class="cn"><b>已做/计划措施：</b>B1需求表: 中英文品名： A3307-00105-BK JL4门 前+后 车顶网 A3307-00107-BK JL4门 前国旗图案+后 车顶网 A3307-00106-BK JL、JT前 车顶网 A3307-00110-BK JT4门 前+后 车顶网 交付格式： JPG 1. 魔术贴替代弹力绳，安装更安全，不会弹伤眼睛 2. 防滑条凸起设计，高速行驶中网面不移位 3. 前+后全覆盖设计，遮阳面积比竞品更广 B1需求表: * 产品介绍： 适用于 2018-2026 Jeep Wrangler JL 4门车型的前+后车顶网遮阳帘套装。采用高密度 PVC 网布材质，有效阻挡紫外线、降低车内温度，同时保持空气流通。创新魔术贴绑带设计替代传统弹力绳，安装更安全牢固；绑带背面配防滑条凸起，高速行驶不移位。前后两片式设计，可根据需要单独使用前片或全套安装。套装含前后车顶网各一片、收纳袋及安装说明书。 B1需求表: * 中文文案描述（必填） （中文翻译便于设计师理解） 防紫外线 &amp; 隔热降温 有效阻挡有害紫外线 车内温度最高可降低约15°C 保持空气流通，减少眩光 安全魔术贴绑带，告别弹力绳 魔术贴绑带替代危险的弹力绳 背面防滑凸条设计，网面牢固不移位 无弹射风险，安装更安全 分步安装指南，参考安装说明书，分为6步展现步骤 无需工具，30分钟内即可完成 前+后全覆盖设计 两片式套装覆盖整个车顶开口 可仅使用前片或整套搭配 覆盖面积远超竞品 包装清单 1. 前车顶网 x1 2. 后车顶网 x1 3. 收纳袋 x1 4. 安装说明书 x1 兼容性： 上面图片展示，对于2024+的JL，为了避开安全气囊，可以将中间绑带松开； 下面图片展示，不兼容软顶、硬顶和Sky One Touch电动车顶 B1需求表: * 设计方案描述 （一张图精确体现一个卖点） 防晒隔热 (核心卖点1) 画面： 分屏对比—— 左侧（无遮阳）：烈日直射车内，仪表盘温度计显示高温，红色调。 右侧（安装后）：车顶网过滤阳光，车内凉爽，蓝色调。 数据标注：温度降低最高达30°F / UV阻隔率。 安全魔术贴 vs 弹力绳 (核心卖点2 — 差异化) 【融入解决措施：突出魔术贴品质，回应客户反馈的车缝/绑带问题】 画面： 左侧（竞品）：弹力绳断裂弹射的危险场景（红色×）。 右侧（我们）：特写魔术贴绑带缠绕防滚架， 放大展示背面防滑凸条纹理（绿色✓）。 文案强调：No Snapping, No Safety Hazards。 安装步骤指南 (打消安装顾虑) 【融入解决措施：清晰区分前后、展示拉紧步骤、回应安装困难差评...</p>
+    </article>
+    
+
+    <article class="quote measure">
+      <div class="meta"><b>视频需求AI生成</b><span>-</span><span></span></div>
+      
+      <p class="cn"><b>已做/计划措施：</b>卖点: 委托人 Leah SKU A3307-00105-BK JL4门 前+后 车顶网 A3307-00107-BK JL4门 前国旗图案+后 车顶网 A3307-00106-BK JL、JT前 车顶网 A3307-00110-BK JT4门 前+后 车顶网 产品经理 Weldon 产品介绍 JL4门 前+后 车顶网（Front &amp; Rear Mesh Sun Shade for Jeep JL） 卖点: 产品卖点 无与伦比的全车顶覆盖和紫外线防护：我们的 Wrangler JL 车顶遮阳篷采用精密切割工艺，拥有更大的表面积，并延伸至边缘，与同类产品相比，提供更卓越的覆盖范围。它能有效阻挡高达 90% 的强烈紫外线，让从前排到后排的每一位乘客免受晒伤和高温的侵袭。 一体式防滑绑带系统——无松散部件：告别脆弱易断、安装麻烦的独立弹力绳。我们先进的系统采用一体式魔术贴绑带，并内置防滑凸起条。 显著降低风噪：享受户外清风，远离喧嚣。全覆盖、紧贴头部的设计形成一道屏障，有效减少风的拍打和噪音。在感受清爽微风的同时，也能清晰地交谈，聆听您喜爱的音乐。 无需工具，安装简便：我们采用一体式绑带系统，免去了您费力整理多根独立绳索的麻烦。包装内含 Wrangler 前后网状遮阳帘、收纳袋和安装说明书，方便您轻松安装。 项目内容 安装、卖点分开两个视频，卖点视频就不用改了，只修改安装视频即可 卖点: 分镜 安装视频脚本 （纯剪辑视频则填写需求时间段） 展示方式 卖点 对应文案 AI配音 文案中文注解 参考 时间 拍摄要求 道具 场景要求 后期要求 卖点: 镜头1 卖点1：防晒隔热 — UV全覆盖 画面：烈日下JL牧马人拆顶驾驶，车内乘客舒适。 数据标注：阻挡高达90%紫外线 对比：有/无车顶网温度差异 拍摄 防晒隔热 Block Up to 90% of Harmful UV Rays Full Coverage Protection Our mesh sun shade blocks up to ninety percent of UV rays, keeping everyone cool from front to rear. 阻挡高达90%紫外线，从前排到后排全面保护。 8-10秒 1.车内阳光效果 2.温度对比数据 3.乘客舒适表情 户外驾驶场景 晴天 卖点: 镜头2 卖点2：一体式防滑魔术贴绑带 画面：特写魔术贴绑带 + 防滑凸条纹理。 对比竞品弹力绳断裂风险。 翻转手势展示拉紧效果。 拍摄 魔术贴安全 Integrated Anti-Slip Velcro Str...</p>
+    </article>
+    
+        </div>
+        <div class="panel">
+          <h3>为什么效果不明显</h3>
+          <ul>
+            <li><b>安装视频只能降低理解成本，不能降低真实安装动作。</b>用户仍要松挡风玻璃、反复穿前带、复装Freedom Panel时再拆带。</li>
+            <li><b>Listing提示只能减少误购，不能消除适配风险。</b>24+气囊和不同顶框/角点差异需要SKU拆分和版型重做。</li>
+            <li><b>质检抽检不能弥补设计余量不足。</b>塑料扣、魔术贴长度、角带受力角度如果本身临界，批量仍会断/短/拉不紧。</li>
+            <li><b>“魔术贴替代弹力绳”方向是对的，但要做成结构系统。</b>需要长粘合区、二次回折、防滑定位和可调锚点，而不仅是换材料。</li>
+            <li><b>竞品优势不是单个零件，而是整套张紧与避让体系。</b>JtopsUSA把快拆扣、重型织带、铝杆、包边、磁吸和Freedom Panel锁扣通道组合在一起，才形成“紧、不漏缝、不拍打、可复装”的用户感知。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>下一版产品本体改善路线</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>优先级</th><th>改什么</th><th>怎么改</th><th>验证方式</th><th>对应问题</th></tr></thead>
+          <tbody>
+            <tr><td>P0</td><td>2024+安全气囊版型拆分</td><td>新增2024+专用前段锚点，避开防滚架气囊区域；老款和新款SKU/包装/标题分离。</td><td>2024/2025/2026 JL实车装配 + 气囊路径红区标识评审。</td><td>气囊干涉、误适配</td></tr>
+            <tr><td>P0</td><td>Freedom Panel/硬顶复装兼容</td><td>前带避开锁扣压合区，增加快拆压缩扣和记忆长度扣；前段可半固定打开；借鉴竞品做锁扣避让开口/通道。</td><td>30次拆装循环，雨天临时复装场景验证；验证Freedom Panel锁扣不用拆整张网也能操作。</td><td>需要反复松带、不能短途使用</td></tr>
+            <tr><td>P0</td><td>前角挂点和张紧结构</td><td>前角增加可调三角补强带/滑动锚点；周边弹性包边和中部横向张紧带；中部加入轻量横向支撑条，减少鼓包和下垂。</td><td>60mph及以上风噪/拍打道路测试，网面下垂量拍照测量；高速巡航后检查边缘漏缝和拍打痕迹。</td><td>下垂、拍打、前角不贴合</td></tr>
+            <tr><td>P0</td><td>卡扣与魔术贴强度</td><td>塑料扣升级POM/尼龙增强或金属D环；魔术贴有效长度+30-50%；受力车缝加固；关键接触点增加软垫/保护片避免磨车漆。</td><td>拉力测试、老化后拉力、100次拆装、批次留样；安装后摇晃/高速测试检查扣具松动与车漆接触点。</td><td>卡扣断、魔术贴短/撕裂、绑带磨漆</td></tr>
+            <tr><td>P0</td><td>全覆盖与边缘无漏缝</td><td>按滚架轮廓重新数字化打版，前挡风玻璃、左右滚架和后部边缘增加连续包边；避免“方形网布靠拉伸补版型”。</td><td>白天强光下车内漏光拍照；雨天/喷水测试边缘漏缝；装硬顶前后检查是否压边。</td><td>遮阳不足、漏缝进风、覆盖面积不达预期</td></tr>
+            <tr><td>P1</td><td>磁吸/防鼓包辅助结构</td><td>在不影响安全气囊和硬顶复装的位置增加磁吸片或低风险定位片，让中部贴合滚架，降低高速鼓包和拍打。</td><td>40/60/75mph分档路测，记录鼓包高度、拍打声音和绑带位移。</td><td>高速鼓包、风噪、网面松</td></tr>
+            <tr><td>P1</td><td>车型版型矩阵</td><td>JK/JKU/JL/JLU/JT/2门/4门分别记录角点距离、前横梁位置、音箱/扶手干涉。</td><td>每SKU实车装配照片归档，页面用装车矩阵。</td><td>JK 2门不适配、图片与实物不一致</td></tr>
+            <tr><td>P1</td><td>安装等级分层</td><td>若无法免拆挡风玻璃，明确标注“强固定版需松螺丝”；同时开发“免拆快装版”。</td><td>新手安装耗时测试，两人/一人场景分开记录。</td><td>安装噩梦、两人操作</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>2026.7-2026.8 原声明细</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>来源</th><th>日期/月</th><th>ASIN/SKU</th><th>星级</th><th>归类</th><th>标题/标签</th><th>英文原声</th><th>中文翻译/备注</th></tr></thead>
+          <tbody><tr><td>1</td><td>最新评论</td><td>2026-08-07</td><td>B0GJSP36SB</td><td>3</td><td>塑料扣/卡扣/魔术贴强度不足</td><td>Plastic buckles are super cheap.</td><td>It fits good but I will understand why they use the cheapest plastic buckles in the world for the straps. I would only imagine they would get lots of returns.</td><td>它很合身，但我会理解为什么他们使用世界上最便宜的塑料带扣作为表带。我只是想象他们会得到很多回报。</td></tr>
+<tr><td>2</td><td>最新评论</td><td>2026-07-29</td><td>B0GJSQHQNF</td><td>1</td><td>版型/角点固定不准，导致不贴合</td><td>Does not fit 2015 JK Jeep Wrangler Sport.</td><td>I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</td><td>我有一辆 2015 款 2 门 JK，应该适合。然而，前角不能正确贴合，因此防护罩会下垂。我不明白你怎么能说它适合 2 门 JK，而它显然不适合。</td></tr>
+<tr><td>3</td><td>最新评论</td><td>2026-07-26</td><td>B0GJSP36SB</td><td>1</td><td>版型/角点固定不准，导致不贴合</td><td>Junk</td><td>Don’t be even bother , it does not fit tight Barely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the most The pics are false Yes it will def provide shade but it means nothing if it’s constantly flapping in the wind</td><td>别担心，它不紧 根本不合适，最重要的带子不能挂在最需要它们的正确位置（每个远角） 图片是假的 是的，它确实会提供遮荫，但如果它不断地在风中拍打，那就毫无意义了</td></tr>
+<tr><td>4</td><td>最新评论</td><td>2026-07-25</td><td>B0GJSM7BSQ</td><td>2</td><td>版型/角点固定不准，导致不贴合</td><td>Needs longer Velcro and tighter mesh area</td><td>Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</td><td>不适合和展示，魔术贴有点短，无法正确贴合，但经过一些修改后就可以了</td></tr>
+<tr><td>5</td><td>最新评论</td><td>2026-07-15</td><td>B0GJT77GVM</td><td>2</td><td>版型/角点固定不准，导致不贴合</td><td>Make sure it fits your Wrangler</td><td>This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</td><td>这不适合 2025 款 Jeep 牧马人。正面没有附着任何东西……已退回</td></tr>
+<tr><td>6</td><td>最新评论</td><td>2026-07-14</td><td>B0GJT77GVM</td><td>2</td><td>网面不够绷紧，下垂/高速拍打</td><td>Not the best</td><td>Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</td><td>不是最合适的。行驶时顶部会下垂并在风中飘动。我已经从这家公司购买了其他商品并且很满意。这次购买并没有那么多。</td></tr>
+<tr><td>7</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>8</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>遮阳效果/覆盖面积未达预期</td><td></td><td></td><td></td></tr>
+<tr><td>9</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td></td><td></td></tr>
+<tr><td>10</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>安装复杂：需拆/松挡风玻璃螺丝、两人操作</td><td>产品安装问题</td><td></td><td></td></tr>
+<tr><td>11</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>12</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>销售问题</td><td></td><td></td></tr>
+<tr><td>13</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td>2</td><td>网面不够绷紧，下垂/高速拍打</td><td>产品兼容问题</td><td>Not the best fit. The top sags and flaps in the wind when driving. I have purchased other items from this company and have been satisfied. Not so much with this purchase.</td><td>不是最好的 | 不太合适。顶部松垮在行驶中晃动。我买过这家公司其他产品都满意。这次不太行。</td></tr>
+<tr><td>14</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td>4</td><td>网面不够绷紧，下垂/高速拍打</td><td></td><td>Overall, I&#x27;d give this sun shade 4 out of 5 stars. Once installed, it provides nice shade and helps cut down on the heat, but the installation was more difficult than I expected. On my 2025 Jeep Wrangler, I had to remove the windshield screws to feed the front straps through and added extra time to the install. It also doesn&#x27;t sit as taut as I&#x27;d hoped, so t...</td><td></td></tr>
+<tr><td>15</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td>2</td><td>版型/角点固定不准，导致不贴合</td><td>AZ退款换货问题</td><td>This does not fit a 2025 Jeep Wrangler. The front doesn’t attach to anything… returned</td><td>确认是否适合你的Wrangler | 这个不适合2025款Jeep Wrangler。前部无法固定任何东西……已退货</td></tr>
+<tr><td>16</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td>-</td><td></td></tr>
+<tr><td>17</td><td>最新客诉</td><td>2026-07</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>18</td><td>最新客诉</td><td>2026-08</td><td>A3307-00105-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td>-</td><td></td></tr>
+<tr><td>19</td><td>最新客诉</td><td>2026-08</td><td>A3307-00105-BK</td><td></td><td>版型/角点固定不准，导致不贴合</td><td>产品兼容问题</td><td>No es para el auto que lo pedi bienen los sinchos cambiados no le quedaron y para devolverlo quieren que yo pague el emvio para poder resibir mi rembolso eso no esta bien</td><td>它不适合我订购时针对的那款车；绑带设计不同，根本装不上。如果要退货，他们竟然要求我自付运费才能拿到退款——这太不合理了。</td></tr>
+<tr><td>20</td><td>最新客诉</td><td>2026-07</td><td>A3307-00106-BK</td><td></td><td>遮阳效果/覆盖面积未达预期</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>21</td><td>最新客诉</td><td>2026-07</td><td>A3307-00106-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td></td><td></td></tr>
+<tr><td>22</td><td>最新客诉</td><td>2026-07</td><td>A3307-00106-BK</td><td></td><td>安装复杂：需拆/松挡风玻璃螺丝、两人操作</td><td>产品安装问题</td><td></td><td></td></tr>
+<tr><td>23</td><td>最新客诉</td><td>2026-07</td><td>A3307-00106-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>24</td><td>最新客诉</td><td>2026-07</td><td>A3307-00106-BK</td><td></td><td>版型/角点固定不准，导致不贴合</td><td>产品体验问题</td><td>Hi, are you sure this fits a 2925 JL Willy&#x27;s? There is nowhere on the front windshield for this to wrap around anywhere on the Jeep. It&#x27;s literally impossible. Can you help with a video or something? I&#x27;ve been at this for an hour and cannot find a solution! Thanks, Ken</td><td>7.10 退款，退货商品。尺寸不合适。</td></tr>
+<tr><td>25</td><td>最新客诉</td><td>2026-08</td><td>A3307-00106-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td>-</td><td></td></tr>
+<tr><td>26</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>买家主观_订单</td><td>-</td><td></td></tr>
+<tr><td>27</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td></td><td></td></tr>
+<tr><td>28</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td></td><td></td></tr>
+<tr><td>29</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>30</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td>4</td><td>2024+侧气帘/安全气囊干涉</td><td></td><td>The shade itself operates like a shade. Would like to have not had to ignore the middle straps because of the airbags. Having the front straps require the windshield to be loosened and moved is also less than desirable.Overall, for the cots, the quality, fit, and ease of use all are reasonable. Probably a good buy for folks with the top of regularly. For ju...</td><td></td></tr>
+<tr><td>31</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td>5</td><td>网面不够绷紧，下垂/高速拍打</td><td></td><td>These are great sun shades! I feel like they actually do block most of the sun so we don&#x27;t up all baking in the sun when we&#x27;re out on a trail. I love the design on these, and they don&#x27;t make your ride too noisy (any noisier than driving with the tops and windows down).</td><td></td></tr>
+<tr><td>32</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>买家主观_价格问题</td><td>refund</td><td>退军人折扣</td></tr>
+<tr><td>33</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>版型/角点固定不准，导致不贴合</td><td>产品兼容问题</td><td>Doesn&#x27;t fit properly.</td><td>不合适。</td></tr>
+<tr><td>34</td><td>最新客诉</td><td>2026-07</td><td>A3307-00107-BK</td><td></td><td>其他/未明确</td><td>买家主观_订单</td><td>Ordering Issue|Ordered wrong item</td><td>订单问题｜订购了错误的商品</td></tr>
+<tr><td>35</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>36</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td></td><td></td><td></td></tr>
+<tr><td>37</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td>产品外观问题</td><td></td><td></td></tr>
+<tr><td>38</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>安装复杂：需拆/松挡风玻璃螺丝、两人操作</td><td>产品安装问题</td><td></td><td></td></tr>
+<tr><td>39</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td></td><td></td><td></td></tr>
+<tr><td>40</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>41</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>其他/未明确</td><td>销售问题</td><td></td><td></td></tr>
+<tr><td>42</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td>1</td><td>版型/角点固定不准，导致不贴合</td><td>产品兼容问题</td><td>Don’t be even bother , it does not fit tightBarely fits at all, most important straps cannot be hooked in the right spots ( in each of the far corners ) where it needs them the mostThe pics are falseYes it will def provide shade but it means nothing if it’s constantly flapping in the wind</td><td>别费心了，它根本不贴身。几乎完全不合身，最重要的带子无法钩在正确的位置（在每个远角），而那里正是最需要它们的地方。图片是假的。是的，它确实能提供遮阳，但如果它一直在风中拍打，那也毫无意义。</td></tr>
+<tr><td>43</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td>5</td><td>其他/未明确</td><td></td><td>Great fit. Only used rear</td><td></td></tr>
+<tr><td>44</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td>4</td><td>硬顶/Freedom Panel/软顶复装不兼容</td><td></td><td>Rear can stay on with hardtop, but front section has to come off to reinstall freedom panels!</td><td></td></tr>
+<tr><td>45</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>遮阳效果/覆盖面积未达预期</td><td>销售问题</td><td>Not as Expected|Cannot have top on while shade is installed|Misleading information</td><td>与预期不符|安装遮阳帘时无法同时安装顶盖|误导性信息</td></tr>
+<tr><td>46</td><td>最新客诉</td><td>2026-07</td><td>A3307-00108-BK</td><td></td><td>硬顶/Freedom Panel/软顶复装不兼容</td><td>产品安装问题</td><td>I absolutely love the concept of the Velcro, but I can’t install my hard top front clips unless I unstrap the straps and then I can’t clip my hardtops unless I take the whole thing off.</td><td>我绝对喜欢魔术贴的概念，但除非解开绑带，否则我无法安装硬顶前夹，而除非把整个东西拆下来，否则我无法扣上硬顶。</td></tr>
+<tr><td>47</td><td>最新客诉</td><td>2026-08</td><td>A3307-00108-BK</td><td></td><td>版型/角点固定不准，导致不贴合</td><td>物流问题</td><td>Brand new jeep shade came broken fitment is also off</td><td>全新的吉普车遮阳篷到货时已损坏，而且尺寸也不合适。</td></tr>
+<tr><td>48</td><td>最新客诉</td><td>2026-07</td><td>A3307-00109-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>49</td><td>最新客诉</td><td>2026-07</td><td>A3307-00109-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>50</td><td>最新客诉</td><td>2026-07</td><td>A3307-00109-BK</td><td>1</td><td>版型/角点固定不准，导致不贴合</td><td>产品兼容问题</td><td>I have a 2-door JK, 2015 which it should fit. However, the front corners do not fit properly and therefor the shield draps down. I do not understand how you can say it fits a 2-door JK when it clearly doesn&#x27;t.</td><td>我有一辆2015年的两门JK，按理说应该适配。然而，前角部分无法正确贴合，因此护板会下垂。我不明白你们怎么能说它适配两门JK，因为显然并不适配。</td></tr>
+<tr><td>51</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>产品体验问题</td><td>-</td><td></td></tr>
+<tr><td>52</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>遮阳效果/覆盖面积未达预期</td><td></td><td></td><td></td></tr>
+<tr><td>53</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td></td><td></td></tr>
+<tr><td>54</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>55</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td>2</td><td>版型/角点固定不准，导致不贴合</td><td>销售问题</td><td>Does not fit as well as displayed and the Velcro is kinda short to fit correctly but after a little modification it fits ok</td><td>不像展示的那样贴合，魔术贴有点短，无法正确固定，但稍作修改后还算合适。</td></tr>
+<tr><td>56</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>网面不够绷紧，下垂/高速拍打</td><td>产品体验问题</td><td>Hello, I would lie to return my order for the Gladiator shade top. I did not know I would have to release my front windshield to install this this part. I do not want to take a chance of creating a rainwater leak at the windshield to install this shade. Please see order number and confirm the return request with a return shipping label. Order JOY#16638 Than...</td><td>7.29 退款 13.5 美元，商品退款比例为 25%。</td></tr>
+<tr><td>57</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>塑料扣/卡扣/魔术贴强度不足</td><td>产品破损问题</td><td>When installing my rear section, I noticed I had a buckle that was already broken. Please advise how to proceed for a replacement.</td><td>在安装后部组件时，我发现其中一个卡扣已经损坏。请告知如何办理更换手续。</td></tr>
+<tr><td>58</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>产品破损问题</td><td>-</td><td></td></tr>
+<tr><td>59</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>产品安装问题</td><td>-</td><td></td></tr>
+<tr><td>60</td><td>最新客诉</td><td>2026-07</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>销售问题</td><td>-</td><td></td></tr>
+<tr><td>61</td><td>最新客诉</td><td>2026-08</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>产品兼容问题</td><td>-</td><td></td></tr>
+<tr><td>62</td><td>最新客诉</td><td>2026-08</td><td>A3307-00110-BK</td><td></td><td>其他/未明确</td><td>客户主观原因</td><td></td><td></td></tr>
+<tr><td>63</td><td>最新客诉</td><td>2026-08</td><td>A3307-00110-BK</td><td></td><td>遮阳效果/覆盖面积未达预期</td><td>产品体验问题</td><td>-</td><td></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
