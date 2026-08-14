@@ -1867,14 +1867,14 @@
     "windowDays": 365,
     "windowStart": "2025-08-14",
     "windowEnd": "2026-08-14",
-    "totalRecords": 646,
-    "recentRecords": 422,
-    "forumRecentRecords": 34,
+    "totalRecords": 622,
+    "recentRecords": 398,
+    "forumRecentRecords": 10,
     "forumTarget": 20,
-    "forumTargetMet": true,
+    "forumTargetMet": false,
     "sourceCounts": {
       "amazon-review": 384,
-      "hackernews": 25,
+      "hackernews": 1,
       "reddit": 9,
       "youtube": 4
     },
@@ -10692,10 +10692,11 @@
       "state": "success",
       "count": 28,
       "latencyMs": 1511,
-      "message": "采集到 28 条近一年 Hacker News 评论。",
+      "message": "采集到 28 条近一年 Hacker News 原始评论；汽车盲点镜语境过滤后 1 条进入证据。",
       "url": "https://hn.algolia.com/api/v1/search_by_date?query=blind+spot+mirror&tags=comment&numericFilters=created_at_i%3E1755150866&hitsPerPage=100",
       "meta": {
-        "windowDays": 365
+        "windowDays": 365,
+        "relevantEvidenceCount": 1
       }
     },
     {
@@ -11345,14 +11346,14 @@
     "statistics": {
       "sourcesSelected": 9,
       "sourcesWithSamples": 5,
-      "rawRecords": 646,
-      "recentRecords": 422,
-      "recentForumRecords": 34,
+      "rawRecords": 622,
+      "recentRecords": 398,
+      "recentForumRecords": 10,
       "opportunitiesWithEvidence": 5,
       "dataGapCount": 5
     },
     "confirmed": [
-      "本次有 422 条带日期的近一年原始记录，论坛口径为 34 条。",
+      "本次有 398 条带日期的近一年原始记录，论坛口径为 10 条。",
       "已形成 5 个有原文支撑的机会点；每个机会都保留来源链接。"
     ],
     "unresolved": [
