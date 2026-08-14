@@ -4,6 +4,10 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 const sourceNames = {
+  sorftime: "Sorftime MCP",
+  "sorftime-asins": "Sorftime ASIN",
+  "sorftime-written-reviews": "Sorftime written reviews",
+  "sorftime-review": "Sorftime written review",
   amazon: "Amazon 商品与评论",
   reddit: "Reddit",
   youtube: "YouTube",
@@ -31,7 +35,7 @@ let currentReport = null;
 let loadingTimer = null;
 let elapsedTimer = null;
 let toastTimer = null;
-const sourceSettingsVersion = "2026-08-03-product-shape-v2";
+const sourceSettingsVersion = "2026-08-13-sorftime-v1";
 
 function escapeHTML(value) {
   return String(value ?? "")
@@ -88,6 +92,24 @@ function showToast(message) {
   toast.classList.add("show");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.append(textarea);
+    textarea.select();
+    const copied = document.execCommand("copy");
+    textarea.remove();
+    return copied;
+  }
 }
 
 function selectedSources() {
@@ -162,6 +184,17 @@ function renderCollectionStatus(report) {
   return `<div class="panel collection-status"><div class="collection-status-head"><div><span class="eyebrow">Evidence coverage</span><h3>本次采集是否达到研究门槛</h3><p>只统计本次公开采集结果；参考报告、估算值和商品评论量不会计入下方数量。</p></div><span class="state-pill ${status.overallTargetMet ? "success" : "limited"}">${status.overallTargetMet ? "全部达标" : "存在数据缺口"}</span></div><div class="collection-grid">${metric("Amazon ASIN 商品", asins)}${metric("Amazon 书面评论", reviews)}${metric("论坛 / 社区样本", forums)}</div><p class="collection-note">搜索页已读取 ${formatNumber(amazon.searchPagesFetched || 0)} 页；评论尝试覆盖 ${formatNumber(amazon.reviewAsinsAttempted || 0)} 个 ASIN。停止原因：${escapeHTML(amazon.stopReason || "未采集")}. 未达标时，机会点只能作为待验证方向。</p></div>`;
 }
 
+function renderSorftimeStatus(report) {
+  const status = report.collectionStatus?.sorftime || report.sorftime || {};
+  const meta = status.meta || {};
+  const state = status.state || "not_selected";
+  const label = state === "action_required" ? "需要重新授权" : state === "success" ? "已完成本地调用" : "未运行";
+  const detail = status.message || (meta.authorization === "failed" ? "Sorftime API key 未通过授权。" : "仅本地服务可调用，GitHub Pages 不执行该来源。");
+  const counts = state === "success" ? `ASIN ${formatNumber(meta.asinCount || 0)} / ${formatNumber(meta.asinTarget || 200)} · 评论 ${formatNumber(meta.reviewCount || 0)} / ${formatNumber(meta.reviewTarget || 400)}` : "不会用估算值替代真实返回";
+  const optional = (meta.optionalToolStatus || []).filter((item) => item.state !== "success").slice(0, 4).map((item) => `${item.tool}：${stateNames[item.state] || item.state}`).join(" · ");
+  return `<div class="panel sorftime-status"><div><span class="eyebrow">Sorftime MCP · Local only</span><h3>${escapeHTML(label)}</h3><p>${escapeHTML(detail)}</p><small>${escapeHTML(counts)}${meta.tools?.length ? ` · 工具：${escapeHTML(meta.tools.join("、"))}` : ""}${optional ? ` · 扩展：${escapeHTML(optional)}` : ""}</small></div><span class="state-pill ${escapeHTML(state)}">${escapeHTML(stateNames[state] || state)}</span></div>`;
+}
+
 function renderExecutive(report) {
   const e = report.executive;
   const signals = report.signals;
@@ -188,6 +221,7 @@ function renderExecutive(report) {
       ${signalItems.map(([label, value, note]) => `<div class="signal-item"><span class="signal-label">${label}</span><div class="signal-value"><strong>${formatNumber(value)}</strong><small>${note}</small></div><div class="mini-track"><i style="width:${Math.max(0, Math.min(100, Number(value) || 0))}%"></i></div></div>`).join("")}
     </div>
     ${renderCollectionStatus(report)}
+    ${renderSorftimeStatus(report)}
     <div class="notice"><span data-icon="info"></span><p><strong>口径：</strong>事实来自当次公开页面与用户工作簿；份额属于工作簿估算；机会、竞争和可行性为模型推断；未抓到的数据明确标为待采集。</p></div>
   </section>`;
 }
@@ -331,7 +365,7 @@ function renderLaunch(report) {
 
 function renderEvidence(report) {
   const seen = new Set();
-  const visibleSources = new Set(["amazon", "reddit", "youtube", "youtube-comments", "news", "google-trends", "bing-images", "hackernews", "stackexchange", "reference-workbook", "seller-sprite"]);
+  const visibleSources = new Set(["amazon", "sorftime", "sorftime-review", "reddit", "youtube", "youtube-comments", "news", "google-trends", "bing-images", "hackernews", "stackexchange", "reference-workbook", "seller-sprite"]);
   const statuses = (report.sourceStatuses || []).filter((item) => visibleSources.has(item.source)).filter((item) => {
     const key = `${item.source}-${item.url}`;
     if (seen.has(key)) return false;
@@ -361,11 +395,13 @@ function renderProductShape(report) {
       const image = httpUrl(item.image);
       return `<li>${image ? `<img src="${escapeHTML(image)}" alt="${escapeHTML(item.title || form.label)}" loading="lazy">` : `<span class="shape-image-placeholder" data-icon="package-search"></span>`}<div><strong>${escapeHTML(item.title || "未命名商品")}</strong><small>${escapeHTML(sourceNames[item.source] || item.source || "公开样本")}</small></div>${linkButton(item.url, "打开形态证据")}</li>`;
     }).join("");
-    return `<article class="shape-card"><header><div><span class="eyebrow">${escapeHTML(form.key || "form")}</span><h3>${escapeHTML(form.label || "未命名形态")}</h3></div><span class="state-pill ${form.status === "observed" ? "success" : "limited"}">${form.status === "observed" ? "已观察" : "未观察到"}</span></header><strong class="shape-count">${formatNumber(form.evidenceCount || 0)} <small>条形态证据</small></strong><p>${form.sources?.length ? `来源：${escapeHTML(form.sources.map((item) => sourceNames[item] || item).join("、"))}` : "当前没有可核验样本，不代表市场不存在。"}</p>${examples ? `<ul class="shape-examples">${examples}</ul>` : ""}</article>`;
+    const statusLabel = form.status === "observed" ? "已确认（≥2 ASIN）" : form.status === "candidate" ? "候选（<2 ASIN）" : "未观察到";
+    const asinMeta = form.asinCount === undefined ? "" : ` · ${formatNumber(form.asinCount)} 个 ASIN`;
+    return `<article class="shape-card"><header><div><span class="eyebrow">${escapeHTML(form.key || "form")}</span><h3>${escapeHTML(form.label || "未命名形态")}</h3></div><span class="state-pill ${form.status === "observed" ? "success" : "limited"}">${statusLabel}</span></header><strong class="shape-count">${formatNumber(form.evidenceCount || 0)} <small>条形态证据${asinMeta}</small></strong><p>${form.sources?.length ? `来源：${escapeHTML(form.sources.map((item) => sourceNames[item] || item).join("、"))}` : "当前没有可核验样本，不代表市场不存在。"}</p>${examples ? `<ul class="shape-examples">${examples}</ul>` : ""}</article>`;
   }).join("");
   return `<section class="report-section" id="product-shape" aria-labelledby="product-shape-title">
     ${sectionTitle("product-shape", "package-search", "产品形态识别", "先根据关键词查询公开商品和视觉样本，再决定后续痛点与机会点的讨论范围")}
-    <div class="panel shape-summary"><div><span class="eyebrow">Resolved product family</span><h3>${escapeHTML(shape.category || report.query || "未识别产品")}</h3><p>${escapeHTML(shape.scope || "没有形态识别结果")}</p></div><div class="shape-summary-stat"><strong>${escapeHTML(shape.primaryForm || "形态待确认")}</strong><span>主导形态候选</span></div><div class="shape-summary-stat"><strong>${formatNumber(shape.sampleCount || 0)}</strong><span>形态样本</span></div></div>
+    <div class="panel shape-summary"><div><span class="eyebrow">Resolved product family</span><h3>${escapeHTML(shape.category || report.query || "未识别产品")}</h3><p>${escapeHTML(shape.scope || "没有形态识别结果")}</p></div><div class="shape-summary-stat"><strong>${escapeHTML(shape.primaryForm || "形态待确认")}</strong><span>主导形态候选</span></div><div class="shape-summary-stat"><strong>${formatNumber(shape.sampleCount || 0)}</strong><span>形态样本</span></div>${shape.dynamic ? `<div class="shape-summary-stat"><strong>${formatNumber(shape.asinCount || 0)}</strong><span>独立 Amazon ASIN</span></div><div class="shape-summary-stat"><strong>${formatNumber(shape.confirmedFormCount || 0)}</strong><span>达到确认门槛的形态</span></div>` : ""}</div>
     <div class="panel shape-method"><span data-icon="info"></span><p><strong>形态证据口径：</strong>${escapeHTML(shape.method || "只使用公开样本；未抓到的形态不会被补写成结论。")}</p></div>
     <div class="shape-grid">${forms || `<div class="panel evidence-empty">当前关键词没有专属形态规则，页面只保留公开样本，等待人工拆分产品形态。</div>`}</div>
   </section>`;
@@ -464,7 +500,7 @@ function renderOpportunityEvidenceAudit(report) {
 
 function renderEvidenceDrivenUsers(report) {
   const summary = report.evidenceSummary || {};
-  const visibleSources = new Set(["amazon", "reddit", "youtube", "youtube-comments", "news", "google-trends", "bing-images", "hackernews", "stackexchange"]);
+  const visibleSources = new Set(["amazon", "sorftime", "sorftime-review", "reddit", "youtube", "youtube-comments", "news", "google-trends", "bing-images", "hackernews", "stackexchange"]);
   const evidence = (report.recentEvidence || []).filter((item) => visibleSources.has(item.source));
   const personas = (report.personas || []).map((item) => {
     const quotes = (item.representativeQuotes || []).map((quote) => `<li><small>${escapeHTML(sourceNames[quote.source] || quote.source)} · ${escapeHTML(quote.date || "日期未知")}</small><p>“${escapeHTML(quote.quote || "") }”</p>${linkButton(quote.url, "打开原文")}</li>`).join("");
@@ -524,6 +560,7 @@ function renderEvidenceDrivenOpportunities(report) {
 
 function renderReport(report) {
   currentReport = report;
+  setActiveNav("#overview");
   const root = $("#reportRoot");
   root.innerHTML = [renderExecutive(report), renderProductShape(report), renderSolutionEvidence(report), renderSolutionEvidenceAudit(report), renderEvidenceDrivenUsers(report), renderEvidenceDrivenOpportunities(report), renderOpportunityEvidenceAudit(report), renderDefinition(report), renderEvidence(report)].join("");
   renderIcons(root);
@@ -718,15 +755,20 @@ function showError(message, retainReport = false) {
 }
 
 function renderEmpty() {
+  setActiveNav("#overview");
   $("#reportRoot").innerHTML = `<div class="empty-state"><div><span data-icon="package-search"></span><h2>暂无洞察报告</h2><p>输入产品名称后，系统将显示本次可验证的数据和未采集项。</p></div></div>`;
   renderIcons($("#reportRoot"));
+}
+
+function setActiveNav(hash) {
+  $$("#reportNav a").forEach((item) => item.classList.toggle("active", item.getAttribute("href") === hash));
 }
 
 function bindNavigation() {
   $("#reportNav").addEventListener("click", (event) => {
     const link = event.target.closest("a");
     if (!link) return;
-    $$("#reportNav a").forEach((item) => item.classList.toggle("active", item === link));
+    setActiveNav(link.getAttribute("href"));
     $(".sidebar").classList.remove("open");
   });
   $("#mobileNavButton").addEventListener("click", () => $(".sidebar").classList.toggle("open"));
