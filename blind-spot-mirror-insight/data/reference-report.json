@@ -693,26 +693,6 @@
             "context": "r/driving",
             "date": "2026-06-05T10:48:37+00:00",
             "linkKind": "论坛/视频原文"
-          },
-          {
-            "title": "Radicle: The Sovereign Forge",
-            "quote": "Sometimes when you’re close to something it’s very hard to describe it because you’ve been looking at it from all angles for so long that when someone else approaches it from a different direction it’s hard to see what blind spots they might have. It’s not crazy to ask people for input and it’s not crazy to say “we’re open to patches if you just want to do it yourself”. For me personally I was (and still am a bit) un",
-            "url": "https://news.ycombinator.com/item?id=46740097",
-            "sourceUrl": "https://news.ycombinator.com/item?id=46740097",
-            "source": "hackernews",
-            "context": "__david__",
-            "date": "2026-01-24T01:11:58+00:00",
-            "linkKind": "论坛/视频原文"
-          },
-          {
-            "title": "Tips for stroke-surviving software engineers",
-            "quote": "It's very rare. I was a migraine sufferer, but this is how that time it was different: - I was under severe stress at work - I woke up with aura, realised it when looking at the mirror, I had only one eye - visual symptoms (aura) didn't go away after 1 hour. That's the limit where you MUST seek medical advice - having \"a migraine\" that day raised my stress level... because work... - symptoms persisted... and after ge",
-            "url": "https://news.ycombinator.com/item?id=45755293",
-            "sourceUrl": "https://news.ycombinator.com/item?id=45755293",
-            "source": "hackernews",
-            "context": "weddpros",
-            "date": "2025-10-30T01:16:14+00:00",
-            "linkKind": "论坛/视频原文"
           }
         ],
         "searchSources": [
@@ -1602,7 +1582,7 @@
     ],
     "productSampleCount": 0,
     "candidateProductSampleCount": 5,
-    "forumLinkCount": 12,
+    "forumLinkCount": 10,
     "groupCount": 5,
     "unresolvedGroupCount": 1,
     "evidenceBackedGroupCount": 5,
