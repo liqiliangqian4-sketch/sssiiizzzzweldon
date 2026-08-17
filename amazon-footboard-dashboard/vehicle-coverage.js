@@ -9,5 +9,5 @@ window.VEHICLE_COVERAGE = [
   { vehicle: "Chevrolet Colorado", marketShare: 0.04305585393756107, marketSalesWan: 370.3442, aliases: ["chevrolet colorado", "colorado"], action: "跟供应商联系，待立项" },
   { vehicle: "Toyota Tundra", marketShare: 0.03654741820047289, marketSalesWan: 314.362, aliases: ["toyota tundra", "tundra"], action: "跟供应商联系，待立项" },
   { vehicle: "Jeep Gladiator", marketShare: 0.032037893558146964, marketSalesWan: 275.5734, aliases: ["jeep gladiator", "gladiator"] },
-  { vehicle: "其余 38 个车型", marketShare: 0.11373124711481442, marketSalesWan: null, aliases: [] },
+  { vehicle: "其他车型 / 未归类", marketShare: 0.11373124711481442, marketSalesWan: null, aliases: [] },
 ];

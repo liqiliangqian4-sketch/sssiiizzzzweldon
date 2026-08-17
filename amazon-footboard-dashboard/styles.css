@@ -251,12 +251,14 @@ h1 em { color: var(--coral); font-style: normal; }
 .coverage-model-band-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; padding: 9px 0; }
 .coverage-model-band-row .mini-market-band { background: rgba(20,125,131,.035); }
 .coverage-product-table { overflow-x: auto; border-top: 1px solid rgba(217,214,207,.72); }
-.coverage-product-grid { display: grid; grid-template-columns: 1.1fr 1.2fr 1.1fr 5fr; gap: 10px; align-items: start; min-width: 760px; }
+.coverage-product-grid { display: grid; grid-template-columns: 1.05fr 1.1fr 1.05fr 4.4fr 1.8fr; gap: 10px; align-items: start; min-width: 940px; }
 .coverage-product-head { padding: 7px 0 5px; color: var(--muted); font-size: 9px; font-weight: 700; }
 .coverage-product-item { padding: 8px 0; border-top: 1px solid rgba(217,214,207,.58); color: var(--ink-soft); font-size: 10px; line-height: 1.4; }
 .coverage-product-gmv { color: var(--teal); font-family: monospace; white-space: nowrap; }
 .coverage-product-gmv small { display: block; margin-top: 2px; color: var(--muted); font-family: inherit; font-size: 9px; }
 .coverage-product-title { min-width: 0; }
+.coverage-product-source { color: var(--teal); line-height: 1.4; }
+.coverage-product-source small { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; }
 .coverage-brand-badge { display: inline-block; margin-left: 3px; color: var(--teal); font-size: 9px; font-weight: 700; }
 .coverage-note { margin: 14px 0 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1f2b45" />
     <title>脚踏类目 · 价格段 × GMV 气泡图</title>
-    <link rel="stylesheet" href="styles.css?v=20260817-layout-order-1" />
+    <link rel="stylesheet" href="styles.css?v=20260817-asin-fitment-final-1" />
   </head>
   <body>
     <div class="app-shell">
@@ -131,9 +131,9 @@
               <p class="section-kicker">01B / MODEL DETAIL</p>
               <h2 id="detail-charts-title">细分车型 × GMV 气泡图</h2>
             </div>
-            <span class="section-caption">按车型、年份、型号拆分 · 右轴标注市场月均 GMV · 折线标注 ASIN 数</span>
+            <span class="section-caption">逐 ASIN 标题核验后按车型拆分 · 右轴标注市场月均 GMV · 折线标注关联 ASIN 数</span>
           </div>
-          <p class="detail-charts-lead">主图保留全量 Joytutus SKU；下方覆盖 10 个市场重点车型，暗色柱形图编码各价格段市场销售额，折线标注市场 ASIN 数，并给出各车型准入建议。</p>
+          <p class="detail-charts-lead">主图保留全量 Joytutus SKU；下方覆盖 10 个市场重点车型，暗色柱形图编码各价格段关联销售额，折线标注标题明确适配该车型的 ASIN 数。多车型兼容 ASIN 会分别计入对应车型，因此 10 张图的 ASIN 数不可相加为全类目 5,001。</p>
           <div class="detail-chart-grid" id="detail-chart-grid"></div>
         </section>
 
@@ -143,7 +143,7 @@
                <p class="section-kicker">05 / VEHICLE COVERAGE</p>
               <h2 id="coverage-title">Joytutus 在市场重点车型的覆盖与明细</h2>
             </div>
-            <span class="section-caption">仪表盘 2026 年车型销售额占比 · 前 10 车型覆盖 88.6% 市场</span>
+            <span class="section-caption">逐 ASIN 核验 Amazon 标题与参数 · 年份/型号占比按 2026.01-06 GMV 计算</span>
           </div>
           <p class="coverage-lead" id="coverage-summary"></p>
           <div class="coverage-table-wrap">
@@ -151,7 +151,7 @@
               <thead>
                 <tr>
                   <th>市场车型</th>
-                  <th>市场销售额占比</th>
+                  <th>车型关联 GMV 占全类目</th>
                   <th>Joytutus ASIN</th>
                   <th>Joytutus 2026 总 GMV</th>
                   <th>Joytutus 车型市占</th>
@@ -161,7 +161,7 @@
               <tbody id="coverage-table-body"></tbody>
             </table>
           </div>
-          <p class="coverage-note">每条 Amazon 链接先按标题与参数打标为车型、年份区间和型号，再按细分汇总；展开后可查看该细分的 ASIN 数、2026 总销售额、月均销售额及链接明细。车型、年份或型号不明确的商品保留在“未明确”组；一个 ASIN 明确适配多个车型时，会分别计入对应车型。</p>
+          <p class="coverage-note">每条 ASIN 先用 Amazon 商品标题核验车型；商品导出中存在 Vehicle Service Type 时同时作为年份、型号和 Cab/Door 的优先依据。细分占比的分母分别为该车型已核验关联 ASIN 数与关联 GMV。标题未明确年份或车身型号的记录单独保留，不使用仪表板宽泛车型标签猜测；一个 ASIN 明确适配多个车型时会分别计入，因此各车型占比不可直接相加。</p>
         </section>
 
         <section class="section band-section" aria-labelledby="band-title">
@@ -191,8 +191,8 @@
 
     <script src="market-data.js"></script>
     <script src="joytutus-data.js?v=20260729-model-detail-1"></script>
-    <script src="market-model-data.js?v=20260730-mini-chart-2"></script>
-    <script src="vehicle-coverage.js?v=20260727-coverage-actions-1"></script>
-    <script src="app.js?v=20260817-layout-order-1"></script>
+    <script src="market-model-data.js?v=20260817-asin-fitment-final-1"></script>
+    <script src="vehicle-coverage.js?v=20260817-asin-fitment-final-1"></script>
+    <script src="app.js?v=20260817-asin-fitment-final-1"></script>
   </body>
 </html>
