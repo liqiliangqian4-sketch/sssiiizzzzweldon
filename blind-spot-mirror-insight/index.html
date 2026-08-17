@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f5f6f4">
+    <title>JOYTUTUS洞察</title>
+    <link rel="stylesheet" href="./styles.css?v=20260803-product-shape-v2">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="JOYTUTUS洞察">
+        <span class="brand-mark" data-icon="package-search"></span>
+        <span>JOYTUTUS洞察</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="service-state"><i></i><span id="serviceLabel">本地引擎</span></span>
+        <button class="icon-btn" id="settingsButton" type="button" title="数据源设置" aria-label="数据源设置">
+          <span data-icon="settings-2"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="报告导航">
+        <nav id="reportNav">
+          <a href="#overview"><span data-icon="layout-dashboard"></span><span>决策总览</span></a>
+          <a href="#solutions"><span data-icon="package-search"></span><span>解决方案与差异</span></a>
+          <a href="#users"><span data-icon="users"></span><span>用户洞察</span></a>
+          <a href="#opportunities"><span data-icon="lightbulb"></span><span>机会优先级</span></a>
+          <a href="#definition"><span data-icon="target"></span><span>产品定义</span></a>
+          <a href="#evidence"><span data-icon="database"></span><span>证据台账</span></a>
+        </nav>
+        <div class="sidebar-foot">
+          <strong>分析口径</strong>
+          <p>页面评分为方向性信号指数，不等同于 Amazon 官方销量或市场规模。</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="query-panel" aria-labelledby="queryTitle">
+          <div class="query-heading">
+            <div>
+              <p class="eyebrow">JOYTUTUS Product Discovery</p>
+              <h1 id="queryTitle">产品机会研究</h1>
+            </div>
+            <div class="query-actions">
+              <button class="secondary-btn" id="referenceButton" type="button"><span data-icon="file-text"></span>参考报告</button>
+              <button class="icon-btn mobile-nav-button" id="mobileNavButton" type="button" title="报告导航" aria-label="报告导航"><span data-icon="menu"></span></button>
+            </div>
+          </div>
+
+          <form id="researchForm">
+            <label class="search-box" for="queryInput">
+              <span data-icon="search"></span>
+              <input id="queryInput" name="query" type="search" autocomplete="off" value="" placeholder="输入中文或英文产品名" required>
+              <button class="primary-btn" id="runButton" type="submit"><span data-icon="search"></span><span>开始洞察</span></button>
+            </label>
+            <div class="form-controls">
+              <label class="field-control">
+                <span>站点</span>
+                <select id="marketSelect" name="market">
+                  <option value="US">美国 US</option>
+                  <option value="DE">德国 DE</option>
+                  <option value="UK">英国 UK</option>
+                  <option value="CA">加拿大 CA</option>
+                </select>
+              </label>
+              <div class="selected-sources" id="selectedSources">9 个公开来源 · 深度模式</div>
+            </div>
+          </form>
+        </section>
+
+        <section class="run-status hidden" id="runStatus" aria-live="polite">
+          <div class="status-heading">
+            <div><span class="spinner" data-icon="loader-circle"></span><strong id="runStatusTitle">正在采集公开数据</strong></div>
+            <span id="runElapsed">00:00</span>
+          </div>
+          <div class="progress-track"><span id="progressFill"></span></div>
+          <div class="source-progress" id="sourceProgress"></div>
+        </section>
+
+        <div class="error-banner hidden" id="errorBanner" role="alert">
+          <span data-icon="triangle-alert"></span>
+          <div><strong>洞察任务未完成</strong><p id="errorText"></p></div>
+          <button class="icon-btn" id="dismissError" type="button" aria-label="关闭"><span data-icon="x"></span></button>
+        </div>
+
+        <div id="reportRoot" class="report-root" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="dialog-head">
+        <div><p class="eyebrow">Collection</p><h2>数据源设置</h2></div>
+        <button class="icon-btn" value="cancel" aria-label="关闭"><span data-icon="x"></span></button>
+      </form>
+      <div class="dialog-body">
+        <div class="source-options" id="sourceOptions">
+          <label><input type="checkbox" value="amazon" checked><span><strong>Amazon 商品与评论</strong><small>先确认产品形态、价格、评分、商品标题和书面评论</small></span></label>
+          <label><input type="checkbox" value="sorftime" checked><span><strong>Sorftime MCP</strong><small>仅本地后端调用：产品搜索、ASIN 详情、书面评论、流量词和趋势；密钥不会进入浏览器或 GitHub Pages</small></span></label>
+          <label><input type="checkbox" value="reddit" checked><span><strong>Reddit</strong><small>真实场景、抱怨与替代方案</small></span></label>
+          <label><input type="checkbox" value="youtube" checked><span><strong>YouTube</strong><small>测评、安装和内容需求</small></span></label>
+          <label><input type="checkbox" value="youtube-comments" checked><span><strong>YouTube 评论</strong><small>公开视频下的用户反馈和安装问题</small></span></label>
+          <label><input type="checkbox" value="news" checked><span><strong>Google News</strong><small>品牌、产品形态和行业时效信号</small></span></label>
+          <label><input type="checkbox" value="google-trends" checked><span><strong>Google Trends</strong><small>过去 12 个月的相对兴趣；不等同于销量</small></span></label>
+          <label><input type="checkbox" value="bing-images" checked><span><strong>Bing Images</strong><small>公开图片结果，用于核对产品外形和安装方式</small></span></label>
+          <label><input type="checkbox" value="hackernews" checked><span><strong>Hacker News 评论</strong><small>公开社区讨论和技术消费信号</small></span></label>
+          <label><input type="checkbox" value="stackexchange" checked><span><strong>Stack Exchange 问答</strong><small>Mechanics / Outdoors 公开问题与回答</small></span></label>
+        </div>
+        <div class="notice"><span data-icon="info"></span><p>统一使用深度模式。只展示能够通过公开页面或公开 API 读取的证据；空数据会记录原因、影响和下一步，不会补写成结论。</p></div>
+      </div>
+      <form method="dialog" class="dialog-actions">
+        <button class="secondary-btn" value="cancel">取消</button>
+        <button class="primary-btn" id="saveSettings" value="default">保存设置</button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./config.js?v=20260803-product-shape-v2"></script>
+    <script type="module" src="./app.js?v=20260803-product-shape-v2"></script>
+  </body>
+</html>

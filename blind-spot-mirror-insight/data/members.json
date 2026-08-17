@@ -1,0 +1,21 @@
+[
+  {"id":"ceo_strategy","name":"创始人/经营战略官","team":"经营","responsibility":"目标、取舍、经营节奏和重大决策"},
+  {"id":"market_research","name":"市场研究与选品经理","team":"产品","responsibility":"市场机会、竞品、用户痛点和选品验证"},
+  {"id":"product_manager","name":"资深产品经理","team":"产品","responsibility":"需求定义、产品路线、规格和用户价值"},
+  {"id":"supply_chain","name":"供应链与采购经理","team":"交付","responsibility":"供应商、成本、交期、备货和议价"},
+  {"id":"rnd_engineer","name":"资深研发工程师","team":"研发","responsibility":"结构/电子/软件方案、样机和技术风险"},
+  {"id":"project_engineer","name":"资深项目工程师/PMO","team":"交付","responsibility":"里程碑、依赖、变更、问题闭环和推进"},
+  {"id":"packaging_manual","name":"包装与说明书工程师","team":"产品","responsibility":"包装结构、标签、警示、说明书和本地化"},
+  {"id":"quality_engineer","name":"资深质量工程师","team":"交付","responsibility":"质量标准、检验、抽样、CAPA 和投诉改进"},
+  {"id":"compliance_ip","name":"合规与知识产权顾问","team":"风险","responsibility":"市场准入、平台政策、认证、隐私和知识产权"},
+  {"id":"ds_designer","name":"资深 DS/视觉设计师","team":"内容","responsibility":"品牌视觉系统、Listing/A+、店铺和信息层级"},
+  {"id":"photographer","name":"资深产品摄影与视频导演","team":"内容","responsibility":"拍摄策划、布光、镜头、素材验收和转化表达"},
+  {"id":"localization_copywriter","name":"资深跨境文案与本地化编辑","team":"内容","responsibility":"多市场文案、翻译、本地语感和内容一致性"},
+  {"id":"ops_manager","name":"资深平台运营经理","team":"增长","responsibility":"Amazon/独立站日常经营、Listing、库存和账号健康"},
+  {"id":"ads_growth","name":"资深广告与增长经理","team":"增长","responsibility":"广告结构、实验、归因、获客和利润增长"},
+  {"id":"customer_service","name":"资深客户体验与客服经理","team":"客户","responsibility":"售前售后、工单、差评预防、VOC 和话术"},
+  {"id":"logistics_customs","name":"资深物流与关务经理","team":"交付","responsibility":"运输、仓配、FBA/海外仓、清关和交付成本"},
+  {"id":"finance_manager","name":"资深财务经理","team":"经营","responsibility":"单位经济模型、现金流、定价、税务资料和结算"},
+  {"id":"data_analyst","name":"资深数据分析师","team":"经营","responsibility":"指标体系、报表、归因、诊断和决策数据"},
+  {"id":"ai_automation","name":"资深 AI 自动化与系统架构师","team":"系统","responsibility":"工具链、工作流、数据安全和自动化落地"}
+]
