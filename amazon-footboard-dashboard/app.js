@@ -266,9 +266,24 @@
   }
 
   function getVehicleEntryAdvice(marketVehicle, products) {
-    if (marketVehicle.isOther) return "其余车型与未归类 ASIN 汇总；用于补足全类目总量，不作为单一车型的开发决策依据。";
+    const source = "来源：仪表板 (脚踏信息).xlsx（2026.01-06 售价、ASIN、GMV）；脚踏 全品类详细信息（广告）.xlsx（Joytutus 产品与 GMV）；Amazon 商品标题 / Vehicle Service Type（车型、年份、型号、Cab/Door）。";
+    if (marketVehicle.isOther) return {
+      decision: "不作为单车型准入依据",
+      rows: [
+        { label: "原因", text: "该图合并其余车型与未归类 ASIN，没有统一的年份、车型平台和安装结构，无法形成可执行的单一产品定义。" },
+        { label: "产品动作", text: "仅用于校验全类目总量；开发优先级应回到已明确车型、年份和型号的细分图判断。" },
+      ],
+      source,
+    };
     const visibleBands = getVisibleMarketBands(marketVehicle.priceBands);
-    if (!visibleBands.length) return "建议：暂无可用价格段市场数据，暂不判断准入。";
+    if (!visibleBands.length) return {
+      decision: "验证价 $200-250",
+      rows: [
+        { label: "决策原因", text: "该车型没有可用于量化的价格段明细，先采用 Joytutus 可执行区间的中段价格验证，不据此扩大首批备货。" },
+        { label: "产品动作", text: "先补齐车型价格、GMV 和竞品 ASIN 数据，再确定年款、Cab/Door 与支架方案。" },
+      ],
+      source,
+    };
     const bandStats = visibleBands.map((band) => {
       const asinCount = Number(band.asinCount) || 0;
       const gmv2026 = Number(band.gmv2026) || 0;
@@ -287,10 +302,24 @@
         bandProducts,
       };
     }).filter((band) => band.asinCount > 0 && band.gmv2026 > 0);
-    if (!bandStats.length) return "切入建议：$200-250；当前车型缺少有效市场数据，建议先按核心价格段验证。";
+    if (!bandStats.length) return {
+      decision: "验证价 $200-250",
+      rows: [
+        { label: "决策原因", text: "该车型现有价格段缺少同时具备 GMV 与关联 ASIN 数的有效记录，因此采用可执行区间中段做小批量验证。" },
+        { label: "产品动作", text: "首批只验证单一年款和 Cab/Door，待真实转化与退货原因稳定后再扩展适配。" },
+      ],
+      source,
+    };
 
     const entryBandStats = bandStats.filter((band) => band.low >= 150 && band.high !== null && band.high <= 300);
-    if (!entryBandStats.length) return "切入建议：$200-250；当前车型在核心价格段缺少有效市场数据，建议先按该价格段验证。";
+    if (!entryBandStats.length) return {
+      decision: "验证价 $200-250",
+      rows: [
+        { label: "决策原因", text: "该车型在 $150-300 可执行区间内没有有效价格段记录；$200-250 作为中段验证价，不代表已确认规模机会。" },
+        { label: "产品动作", text: "先核验同车型竞品售价与安装结构，采用低 SKU、低备货方式测试。" },
+      ],
+      source,
+    };
     const efficiencyValues = entryBandStats.map((band) => band.gmvPerAsin).sort((a, b) => a - b);
     const efficiencyMedian = efficiencyValues[Math.floor(efficiencyValues.length / 2)];
     const totalVehicleAsins = Number(marketVehicle.marketAsinCount) || bandStats.reduce((sum, band) => sum + band.asinCount, 0);
@@ -309,21 +338,73 @@
       })
       .sort((a, b) => b.gapScore - a.gapScore || b.densityAdjustedEfficiency - a.densityAdjustedEfficiency || b.gmv2026 - a.gmv2026)[0];
     const recommendation = candidate || fallbackBand;
-    const productStatus = recommendation.bandProducts.length
-      ? `Joytutus 已开发产品销售额占比仅 ${(recommendation.joytutusShare * 100).toFixed(1)}%`
-      : "当前暂无 Joytutus 产品";
-    const adviceLabel = candidate ? "确认建议" : "切入建议";
+    const vehicleGmv = Number(marketVehicle.marketGmv2026) || bandStats.reduce((sum, band) => sum + band.gmv2026, 0);
+    const bandGmvShare = vehicleGmv ? recommendation.gmv2026 / vehicleGmv : 0;
+    const bandAsinShare = totalVehicleAsins ? recommendation.asinCount / totalVehicleAsins : 0;
+    const efficiencyDelta = efficiencyMedian ? recommendation.gmvPerAsin / efficiencyMedian - 1 : 0;
+    const efficiencyComparison = Math.abs(efficiencyDelta) < 0.005
+      ? "与可执行价格段中位数持平"
+      : `${efficiencyDelta > 0 ? "高于" : "低于"}可执行价格段中位数 ${Math.abs(efficiencyDelta * 100).toFixed(0)}%`;
+    const selectionMethod = candidate
+      ? `达到筛选门槛：GMV/ASIN 不低于中位数、关联 ASIN 不超过 ${formatNumber(asinLimit)} 个，且 Joytutus 为空档或销售额占比不高于 5%`
+      : "按“产品空档优先，其次比较竞争密度折减后的 GMV/ASIN”完成排序";
+
+    const productGap = recommendation.bandProducts.length
+      ? `Joytutus 在该价段有 ${formatNumber(recommendation.bandProducts.length)} 个产品，2026.01-06 GMV ${formatMoney(recommendation.joytutusGmv)}，占该价段市场 GMV ${(recommendation.joytutusShare * 100).toFixed(1)}%。`
+      : "Joytutus 在该车型、该价段为 0 个产品、GMV $0，属于明确的产品组合空档。";
+
     const namedGroups = (marketVehicle.groups || [])
       .filter((group) => Number(group.marketGmv2026) > 0)
-      .sort((a, b) => (Number(b.marketGmv2026) || 0) - (Number(a.marketGmv2026) || 0));
-    const priorityGroup = namedGroups.find((group) => !/not stated|not specified|未明确|未说明/i.test(`${group.yearRange} ${group.model}`)) || namedGroups[0];
-    const fitmentSummary = priorityGroup
-      ? `优先细分 ${priorityGroup.yearRange} · ${priorityGroup.model}（细分总销售额 ${formatMoney(priorityGroup.marketGmv2026)}，${formatNumber(priorityGroup.marketAsinCount)} 个 ASIN）`
-      : `优先细分 ${marketVehicle.vehicle} 主流年款与车型配置`;
-    const productAction = products.length
-      ? "在现有产品基础上补齐该年款/车厢配置，优先做结构或外观差异化"
-      : "建议立项开发该年款/车厢配置，先验证核心结构和适配范围";
-    return `${adviceLabel}：${recommendation.label}；${fitmentSummary}。${productStatus}，${productAction}。`;
+      .map((group) => {
+        const groupBand = (group.priceBands || []).find((band) => Number(band.low) === Number(recommendation.low) && Number(band.high) === Number(recommendation.high));
+        return {
+          ...group,
+          entryBandGmv: Number(groupBand?.gmv2026) || 0,
+          entryBandAsins: Number(groupBand?.asinCount) || 0,
+        };
+      });
+    const specifiedGroups = namedGroups.filter((group) => !/not stated|not specified|未明确|未说明|未注明/i.test(`${group.yearRange} ${group.model}`));
+    const priorityGroup = (specifiedGroups.length ? specifiedGroups : namedGroups)
+      .sort((a, b) => b.entryBandGmv - a.entryBandGmv || (Number(b.marketGmv2026) || 0) - (Number(a.marketGmv2026) || 0))[0];
+    const priorityBandShare = priorityGroup && recommendation.gmv2026
+      ? priorityGroup.entryBandGmv / recommendation.gmv2026
+      : 0;
+    const priorityVehicleShare = priorityGroup && vehicleGmv
+      ? Number(priorityGroup.marketGmv2026) / vehicleGmv
+      : 0;
+    const priorityJoytutusAsins = priorityGroup ? (priorityGroup.joytutusAsins || []) : [];
+    const priorityJoytutusInBand = priorityJoytutusAsins.filter((asin) => recommendation.bandProducts.some((product) => product.asin === asin));
+    const fitmentReason = priorityGroup
+      ? `${priorityGroup.yearRange} · ${priorityGroup.model}；在 ${recommendation.label} 内 GMV ${formatMoney(priorityGroup.entryBandGmv)}，占该价段 ${(priorityBandShare * 100).toFixed(1)}%，${formatNumber(priorityGroup.entryBandAsins)} 个 ASIN；该细分总 GMV ${formatMoney(priorityGroup.marketGmv2026)}，占车型关联 GMV ${(priorityVehicleShare * 100).toFixed(1)}%。`
+      : `${marketVehicle.vehicle} 的年份和型号明细不足，首发前必须补做 Cab/Door 与支架孔位核验。`;
+    const productAction = priorityGroup
+      ? priorityJoytutusInBand.length
+        ? `该细分在推荐价段已有 ${formatNumber(priorityJoytutusInBand.length)} 个 Joytutus ASIN；新品应与现款区分踏面、外形或安装方案，并用单一 Cab/Bracket 组合验证增量。`
+        : priorityJoytutusAsins.length
+          ? `该细分已有 ${formatNumber(priorityJoytutusAsins.length)} 个 Joytutus ASIN，但推荐价段仍为空档；新品应采用独立的价格与外形定位，并用单一 Cab/Bracket 组合验证。`
+          : "该首发细分暂无 Joytutus ASIN；先开发单一 Cab/Bracket 组合，验证转化、安装投诉与退货后，再扩展跨年份兼容。"
+      : "先完成车型适配核验，再用单一 Cab/Bracket 组合小批量验证。";
+
+    return {
+      decision: `切入价 ${recommendation.label}`,
+      rows: [
+        { label: "市场需求", text: `${recommendation.label} 在 2026.01-06 的 GMV 为 ${formatMoney(recommendation.gmv2026)}、月均 ${formatMoney(recommendation.gmv2026 / marketMonths)}，占该车型关联 GMV ${(bandGmvShare * 100).toFixed(1)}%。` },
+        { label: "竞争效率", text: `${formatNumber(recommendation.asinCount)} 个关联 ASIN，占车型关联 ASIN ${(bandAsinShare * 100).toFixed(1)}%；GMV/ASIN 为 ${formatMoney(recommendation.gmvPerAsin)}，${efficiencyComparison}。${selectionMethod}。` },
+        { label: "产品缺口", text: productGap },
+        { label: "首发适配", text: fitmentReason },
+        { label: "产品动作", text: productAction },
+      ],
+      source: `${source} 口径：GMV/ASIN = 价格段 GMV ÷ 关联 ASIN 数；占比均以当前车型或当前价格段为分母。`,
+    };
+  }
+
+  function renderVehicleEntryAdvice(marketVehicle, products) {
+    const advice = getVehicleEntryAdvice(marketVehicle, products);
+    return `<div class="mini-entry-advice">
+      <div class="mini-entry-heading"><strong>准入建议</strong><b>${escapeHtml(advice.decision)}</b></div>
+      <div class="mini-entry-evidence">${advice.rows.map((row) => `<p><b>${escapeHtml(row.label)}</b><span>${escapeHtml(row.text)}</span></p>`).join("")}</div>
+      <p class="mini-entry-source">${escapeHtml(advice.source)}</p>
+    </div>`;
   }
 
   function renderDetailCharts() {
@@ -361,7 +442,7 @@
           ${renderMarketAsinChart(marketVehicle.vehicle, marketVehicle.priceBands)}
           <span class="mini-x-tick mini-x-left">$100</span><span class="mini-x-tick mini-x-center">$250</span><span class="mini-x-tick mini-x-right">$400</span>
         </div>
-        <div class="mini-entry-advice"><strong>准入建议</strong><span>${escapeHtml(getVehicleEntryAdvice(marketVehicle, products))}</span></div>
+        ${renderVehicleEntryAdvice(marketVehicle, products)}
         <div class="mini-chart-legend">${legend}</div>
       </article>`;
     }).join("");

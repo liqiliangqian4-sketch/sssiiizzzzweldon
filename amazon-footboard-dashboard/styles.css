@@ -193,8 +193,15 @@ h1 em { color: var(--coral); font-style: normal; }
 .mini-density-point { fill: var(--paper); stroke: rgba(20,125,131,.72); stroke-width: 2; }
 .mini-density-value, .mini-density-caption-text { fill: rgba(20,125,131,.78); font-family: monospace; font-size: 8px; font-weight: 700; }
 .mini-density-caption-text { font-size: 8px; }
-.mini-entry-advice { display: grid; gap: 3px; margin: 8px 0 0 28px; padding: 7px 0 0 9px; border-top: 1px solid var(--line); border-left: 2px solid var(--coral); color: var(--ink-soft); font-size: 9px; line-height: 1.45; }
-.mini-entry-advice strong { color: var(--coral); font-size: 9px; }
+.mini-entry-advice { display: grid; gap: 7px; margin: 8px 0 0 28px; padding: 8px 0 0 10px; border-top: 1px solid var(--line); border-left: 2px solid var(--coral); color: var(--ink-soft); font-size: 9px; line-height: 1.5; }
+.mini-entry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.mini-entry-heading strong { color: var(--coral); font-size: 9px; }
+.mini-entry-heading b { color: var(--navy); font-family: monospace; font-size: 10px; }
+.mini-entry-evidence { display: grid; gap: 4px; }
+.mini-entry-evidence p { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 7px; margin: 0; }
+.mini-entry-evidence b { color: var(--navy); font-size: 9px; }
+.mini-entry-evidence span { min-width: 0; }
+.mini-entry-source { margin: 1px 0 0; padding-top: 6px; border-top: 1px dotted var(--line); color: var(--muted); font-size: 8px; line-height: 1.55; }
 .mini-key { display: grid; gap: 1px; padding: 0; border: 0; background: transparent; color: var(--ink-soft); text-align: left; cursor: pointer; }
 .mini-key:hover strong, .mini-key:focus-visible strong { color: var(--coral); }
 .mini-key strong { color: var(--teal); font-family: monospace; font-size: 10px; }
@@ -299,6 +306,12 @@ h1 em { color: var(--coral); font-style: normal; }
   .metric-card strong { font-size: 24px; }
   .section-heading { display: block; }
   .detail-chart-grid { grid-template-columns: 1fr; }
+  .mini-entry-advice { font-size: 10px; }
+  .mini-entry-heading strong { font-size: 10px; }
+  .mini-entry-heading b { font-size: 11px; }
+  .mini-entry-evidence p { grid-template-columns: 58px minmax(0, 1fr); }
+  .mini-entry-evidence b { font-size: 10px; }
+  .mini-entry-source { font-size: 9px; }
   .coverage-model-band-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-chart-heading { display: flex; }
   .legend { justify-content: flex-start; margin-top: 13px; gap: 8px 12px; }
