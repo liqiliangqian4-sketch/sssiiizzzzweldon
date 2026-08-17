@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1f2b45" />
     <title>脚踏类目 · 价格段 × GMV 气泡图</title>
-    <link rel="stylesheet" href="styles.css?v=20260731-fitment-rollup-1" />
+    <link rel="stylesheet" href="styles.css?v=20260817-layout-order-1" />
   </head>
   <body>
     <div class="app-shell">
@@ -95,6 +95,36 @@
           <p class="chart-note">图中仅保留已确认标题含 JOYTUTUS 的 11 个金色主图气泡。横轴使用当前商品售价，纵轴按 Joytutus 单品月均 GMV（每 5K 细分），背景色块高度为价格段市场月均 GMV，气泡大小使用 2026 年累计销售额（含税）。</p>
         </section>
 
+        <section class="detail-grid section" aria-label="选中商品详情">
+          <article class="product-detail">
+            <div class="section-heading compact-heading">
+              <div>
+                 <p class="section-kicker">02 / PRODUCT DETAIL</p>
+                <h2>单品画像</h2>
+              </div>
+              <span class="detail-status" id="detail-status">未选择</span>
+            </div>
+            <div class="product-body" id="product-body">
+              <div class="product-placeholder">点击上方主图气泡<br />查看商品主图与运营数据</div>
+            </div>
+          </article>
+
+          <aside class="decision-panel">
+            <div class="section-heading compact-heading">
+              <div>
+                 <p class="section-kicker">03 / WHAT IT SAYS</p>
+                <h2>价格带信号</h2>
+              </div>
+            </div>
+            <div class="decision-copy" id="decision-copy"></div>
+            <div class="trend-block">
+              <div class="trend-heading"><span>月度类目 GMV</span><small>单位：$M</small></div>
+              <svg id="trend-chart" viewBox="0 0 640 150" role="img" aria-label="2023年7月至2026年4月类目月度销售额趋势"></svg>
+              <div class="trend-axis"><span>2023.07</span><span>2024</span><span>2025</span><span>2026.04</span></div>
+            </div>
+          </aside>
+        </section>
+
         <section class="section detail-charts-section" aria-labelledby="detail-charts-title">
           <div class="section-heading compact-heading">
             <div>
@@ -134,36 +164,6 @@
           <p class="coverage-note">每条 Amazon 链接先按标题与参数打标为车型、年份区间和型号，再按细分汇总；展开后可查看该细分的 ASIN 数、2026 总销售额、月均销售额及链接明细。车型、年份或型号不明确的商品保留在“未明确”组；一个 ASIN 明确适配多个车型时，会分别计入对应车型。</p>
         </section>
 
-        <section class="detail-grid section" aria-label="选中商品详情">
-          <article class="product-detail">
-            <div class="section-heading compact-heading">
-              <div>
-                 <p class="section-kicker">02 / PRODUCT DETAIL</p>
-                <h2>单品画像</h2>
-              </div>
-              <span class="detail-status" id="detail-status">未选择</span>
-            </div>
-            <div class="product-body" id="product-body">
-              <div class="product-placeholder">点击上方主图气泡<br />查看商品主图与运营数据</div>
-            </div>
-          </article>
-
-          <aside class="decision-panel">
-            <div class="section-heading compact-heading">
-              <div>
-                 <p class="section-kicker">03 / WHAT IT SAYS</p>
-                <h2>价格带信号</h2>
-              </div>
-            </div>
-            <div class="decision-copy" id="decision-copy"></div>
-            <div class="trend-block">
-              <div class="trend-heading"><span>月度类目 GMV</span><small>单位：$M</small></div>
-              <svg id="trend-chart" viewBox="0 0 640 150" role="img" aria-label="2023年7月至2026年4月类目月度销售额趋势"></svg>
-              <div class="trend-axis"><span>2023.07</span><span>2024</span><span>2025</span><span>2026.04</span></div>
-            </div>
-          </aside>
-        </section>
-
         <section class="section band-section" aria-labelledby="band-title">
           <div class="section-heading compact-heading">
             <div>
@@ -193,6 +193,6 @@
     <script src="joytutus-data.js?v=20260729-model-detail-1"></script>
     <script src="market-model-data.js?v=20260730-mini-chart-2"></script>
     <script src="vehicle-coverage.js?v=20260727-coverage-actions-1"></script>
-    <script src="app.js?v=20260731-fitment-rollup-1"></script>
+    <script src="app.js?v=20260817-layout-order-1"></script>
   </body>
 </html>
