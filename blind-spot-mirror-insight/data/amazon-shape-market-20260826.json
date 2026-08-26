@@ -1,0 +1,313 @@
+{
+  "observedAt": "2026-08-26",
+  "method": {
+    "observedCards": 164,
+    "uniqueAsins": 120,
+    "retainedShapeEvidenceAsins": 47,
+    "shapeClusters": 8,
+    "sources": [
+      "Amazon US Blind Spot Mirrors Best Sellers ranks 1-38 and 51-80",
+      "Amazon US focused searches: oval, rhombus, D-shape and square blind spot mirror"
+    ],
+    "dedupeRule": "相同几何轮廓合并；ABS/铝框/胶材/吸盘/雨眉等只作为功能或材料证据，不重复生成形态卡。OEM贴面与完整替换镜不计入通用形态矩阵。"
+  },
+  "clusters": [
+    {
+      "id": "oval",
+      "nameZh": "椭圆",
+      "nameEn": "Oval / Ellipse",
+      "image": "./assets/oval-ampper.jpg",
+      "status": [],
+      "traction": "高",
+      "verdict": "机会优先",
+      "verdictTone": "opportunity",
+      "summary": "独立品牌与多个子形态均有长期评价积累，价格带清晰；JOYTUTUS 当前已上架和已立项矩阵均未覆盖纯椭圆。",
+      "action": "优先补一款中尺寸纯椭圆，先做无框可调 2 件装；尺寸要避开现有 XL 对主镜的遮挡。",
+      "representative": {
+        "asin": "B082TWL5CR",
+        "title": "Ampper Oval",
+        "price": 6.99,
+        "rating": 4.5,
+        "reviews": 25065,
+        "url": "https://www.amazon.com/dp/B082TWL5CR"
+      },
+      "signals": {
+        "bestRank": null,
+        "maxBought": "200+",
+        "sampleCount": 8,
+        "priceRange": "$5.99-$14.99",
+        "independentFamilies": "至少4个"
+      },
+      "caveat": "LivTee 椭圆子 ASIN 可能共享父体评价；Ampper 25,065 条评价可作为独立需求旁证。",
+      "evidence": [
+        {"asin":"B0GF2VSV6X","price":8.99,"rating":4.6,"reviews":26492,"bought":"200+","note":"Flat Oval；父体评价可能共享","url":"https://www.amazon.com/dp/B0GF2VSV6X"},
+        {"asin":"B082TWL5CR","price":6.99,"rating":4.5,"reviews":25065,"note":"Ampper 独立椭圆样本","url":"https://www.amazon.com/dp/B082TWL5CR"},
+        {"asin":"B082F91C8M","price":7.99,"rating":4.6,"reviews":26489,"bought":"50+","note":"LivTee Oval；父体评价可能共享","url":"https://www.amazon.com/dp/B082F91C8M"},
+        {"asin":"B0G1T6GC16","price":8.99,"rating":4.4,"reviews":23,"note":"Oblong/Oval 新样本","url":"https://www.amazon.com/dp/B0G1T6GC16"},
+        {"asin":"B0H11591Y4","price":5.99,"rating":4.0,"reviews":2,"note":"低价新样本","url":"https://www.amazon.com/dp/B0H11591Y4"},
+        {"asin":"B0C5TBMJC8","price":7.99,"rating":3.6,"reviews":158,"note":"椭圆+吸盘，形态证据保留","url":"https://www.amazon.com/dp/B0C5TBMJC8"},
+        {"asin":"B0CCYDVHR3","price":7.99,"rating":4.0,"reviews":139,"note":"Ampper 椭圆+吸盘","url":"https://www.amazon.com/dp/B0CCYDVHR3"},
+        {"asin":"B09WNZPTF8","price":14.99,"rating":4.4,"reviews":1403,"note":"4件装椭圆，价格上沿","url":"https://www.amazon.com/dp/B09WNZPTF8"}
+      ]
+    },
+    {
+      "id": "d-semi-oval",
+      "nameZh": "D形 / 半椭圆",
+      "nameEn": "D-shape / Semi Oval",
+      "image": "./assets/initiative-d-shape-scene.png",
+      "status": ["已立项"],
+      "traction": "高",
+      "verdict": "已立项，优先验证",
+      "verdictTone": "planned",
+      "summary": "公开月购信号强，但头部商品存在父体评价共享；横向视野和贴合原车镜外沿是核心价值。",
+      "action": "保留立项，样品阶段对比纯椭圆与现有 XL，证明 D 形直边能减少主镜遮挡。",
+      "representative": {
+        "asin": "B0F3CBS7JQ",
+        "title": "LivTee D-Shape",
+        "price": 11.99,
+        "rating": 4.6,
+        "reviews": 26492,
+        "url": "https://www.amazon.com/dp/B0F3CBS7JQ"
+      },
+      "signals": {
+        "bestRank": 4,
+        "maxBought": "3K+*",
+        "sampleCount": 3,
+        "priceRange": "$7.99-$11.99",
+        "independentFamilies": "2个"
+      },
+      "caveat": "3K+ 月购与 26.4K 评价来自 LivTee 变体页；Utopicar 两个 ASIN也可能共享父体评价，不能相加。",
+      "evidence": [
+        {"asin":"B0F3CBS7JQ","price":11.99,"rating":4.6,"reviews":26492,"bought":"3K+*","note":"D形；父体评价可能共享","url":"https://www.amazon.com/dp/B0F3CBS7JQ"},
+        {"asin":"B01J7CC6FS","price":7.99,"rating":4.4,"reviews":28116,"bought":"50+","note":"Semi Oval；Utopicar 商品族","url":"https://www.amazon.com/dp/B01J7CC6FS"},
+        {"asin":"B01N9LNMCN","price":11.97,"rating":4.4,"reviews":28116,"rank":4,"bought":"1K+","note":"Larger Image；与半椭圆同商品族","url":"https://www.amazon.com/dp/B01N9LNMCN"}
+      ]
+    },
+    {
+      "id": "square",
+      "nameZh": "圆角方形",
+      "nameEn": "Rounded Square",
+      "image": "./assets/square.jpg",
+      "status": [],
+      "traction": "中",
+      "verdict": "次级机会",
+      "verdictTone": "test",
+      "summary": "已有两个千评商品族和 100+ 月购新款，但尚未进入本次抽样的 Blind Spot Mirrors Top 80。",
+      "action": "作为低成本补形状项目，小批测试点击率；若不能显著区别圆角矩形，则不扩大库存。",
+      "representative": {
+        "asin": "B0F7HGK6TF",
+        "title": "Rounded Square 2-Pack",
+        "price": 7.49,
+        "rating": 4.6,
+        "reviews": 1600,
+        "url": "https://www.amazon.com/dp/B0F7HGK6TF"
+      },
+      "signals": {
+        "bestRank": null,
+        "maxBought": "100+*",
+        "sampleCount": 6,
+        "priceRange": "$3.99-$7.49",
+        "independentFamilies": "至少2个"
+      },
+      "caveat": "头部新款评价可能来自变体家族；独立 Ampper 方形 1.2K 评价提供旁证，但评分仅 4.1。",
+      "evidence": [
+        {"asin":"B0F7HGK6TF","price":7.49,"rating":4.6,"reviews":1600,"bought":"100+*","note":"新款；评价可能共享","url":"https://www.amazon.com/dp/B0F7HGK6TF"},
+        {"asin":"B01DNT7MHI","price":6.99,"rating":4.1,"reviews":1200,"note":"Ampper Slim Square 独立旁证","url":"https://www.amazon.com/dp/B01DNT7MHI"},
+        {"asin":"B0H3P3LXHJ","price":6.79,"rating":5.0,"reviews":1,"note":"新样本","url":"https://www.amazon.com/dp/B0H3P3LXHJ"},
+        {"asin":"B0F9SMFSJ3","price":4.09,"rating":4.3,"reviews":25,"note":"低价样本","url":"https://www.amazon.com/dp/B0F9SMFSJ3"},
+        {"asin":"B0G69ZN2WL","price":3.99,"rating":5.0,"reviews":3,"note":"低价新样本","url":"https://www.amazon.com/dp/B0G69ZN2WL"},
+        {"asin":"B0GVDGTHBR","price":4.99,"rating":5.0,"reviews":3,"note":"新样本","url":"https://www.amazon.com/dp/B0GVDGTHBR"}
+      ]
+    },
+    {
+      "id": "rhombus",
+      "nameZh": "菱形",
+      "nameEn": "Rhombus",
+      "image": "./assets/rhombus.jpg",
+      "status": ["已立项"],
+      "traction": "中",
+      "verdict": "已立项，小批验证",
+      "verdictTone": "planned",
+      "summary": "细分形态有 600+ 月购公开信号与多个独立品牌，但类目畅销榜代表款仅到 #77，规模弱于主流形态。",
+      "action": "保留立项但控制首单；用主图点击率验证造型偏好，不以共享评价推高销量预期。",
+      "representative": {
+        "asin": "B087CSBRGP",
+        "title": "LivTee Rhombus",
+        "price": 6.99,
+        "rating": 4.6,
+        "reviews": 26400,
+        "url": "https://www.amazon.com/dp/B087CSBRGP"
+      },
+      "signals": {
+        "bestRank": 77,
+        "maxBought": "600+*",
+        "sampleCount": 5,
+        "priceRange": "$6.99-$12.99",
+        "independentFamilies": "至少4个"
+      },
+      "caveat": "LivTee 的 26.4K 评价疑似父体共享；Safe View 898 条、POMFW 707 条和另一 POMFW 628 条是独立旁证。",
+      "evidence": [
+        {"asin":"B087CSBRGP","price":6.99,"rating":4.6,"reviews":26400,"bought":"600+*","note":"立项对标；父体评价疑似共享","url":"https://www.amazon.com/dp/B087CSBRGP"},
+        {"asin":"B0874C9KXK","price":12.99,"rating":4.4,"reviews":898,"bought":"50+","note":"Safe View Rhombus 4000","url":"https://www.amazon.com/dp/B0874C9KXK"},
+        {"asin":"B0CZ9F162C","price":8.99,"rating":4.5,"reviews":25,"note":"Ampper 菱形","url":"https://www.amazon.com/dp/B0CZ9F162C"},
+        {"asin":"B08C2CMLQY","price":7.99,"rating":4.4,"reviews":707,"rank":77,"note":"Best Sellers #77","url":"https://www.amazon.com/dp/B08C2CMLQY"},
+        {"asin":"B083FRB66H","price":7.99,"rating":4.3,"reviews":628,"note":"POMFW 独立样本","url":"https://www.amazon.com/dp/B083FRB66H"}
+      ]
+    },
+    {
+      "id": "round",
+      "nameZh": "圆形",
+      "nameEn": "Round",
+      "image": "./assets/round.jpg",
+      "status": ["已上架"],
+      "traction": "极高",
+      "verdict": "市场有量但已覆盖",
+      "verdictTone": "covered",
+      "summary": "Best Sellers #1，公开月购 6K+；无框、ABS、铝框和防水胶均属于同一圆形，不再拆成新品机会。",
+      "action": "停止新增圆形轮廓，只做现有款成本、胶材、耐久与包装优化。",
+      "representative": {
+        "asin": "B07ZFHF14Q",
+        "title": "LivTee 2-inch Round",
+        "price": 6.99,
+        "rating": 4.6,
+        "reviews": 26492,
+        "url": "https://www.amazon.com/dp/B07ZFHF14Q"
+      },
+      "signals": {
+        "bestRank": 1,
+        "maxBought": "6K+",
+        "sampleCount": 7,
+        "priceRange": "$5.99-$7.99",
+        "independentFamilies": "至少5个"
+      },
+      "joytutus": [{"asin":"B0GVJ8MXN4","price":9.99,"status":"已上架","url":"https://www.amazon.com/dp/B0GVJ8MXN4"}],
+      "caveat": "圆形市场最大，但同质化与价格竞争最强；材料差异应进入功能路线，不重复算形态。",
+      "evidence": [
+        {"asin":"B07ZFHF14Q","price":6.99,"rating":4.6,"reviews":26492,"rank":1,"bought":"6K+","note":"无框圆形头部","url":"https://www.amazon.com/dp/B07ZFHF14Q"},
+        {"asin":"B09BJ1DK9P","price":5.99,"rating":4.4,"reviews":6216,"rank":3,"note":"ABS外壳，归并圆形","url":"https://www.amazon.com/dp/B09BJ1DK9P"},
+        {"asin":"B097Q7QMNT","price":7.99,"rating":4.6,"reviews":1432,"rank":5,"note":"防水胶，归并圆形","url":"https://www.amazon.com/dp/B097Q7QMNT"},
+        {"asin":"B09WP7MLP9","price":6.99,"rating":4.5,"reviews":4509,"rank":6,"bought":"1K+","note":"铝框，归并圆形","url":"https://www.amazon.com/dp/B09WP7MLP9"},
+        {"asin":"B01CV4ANCC","price":6.99,"rating":4.5,"reviews":25065,"rank":10,"note":"Ampper 无框圆形","url":"https://www.amazon.com/dp/B01CV4ANCC"},
+        {"asin":"B08M5F4NY7","price":6.99,"rating":4.5,"reviews":7072,"rank":8,"note":"ABS外壳","url":"https://www.amazon.com/dp/B08M5F4NY7"},
+        {"asin":"B001DKT0DO","price":7.48,"rating":4.6,"reviews":8142,"rank":32,"note":"K Source 可调圆形","url":"https://www.amazon.com/dp/B001DKT0DO"}
+      ]
+    },
+    {
+      "id": "heart",
+      "nameZh": "爱心形",
+      "nameEn": "Heart",
+      "image": "./assets/heart.jpg",
+      "status": ["已上架"],
+      "traction": "高",
+      "verdict": "市场有量但已覆盖",
+      "verdictTone": "covered",
+      "summary": "Best Sellers #2，多个新卖家在 $4.99-$8.99 形成独立需求；审美异形有量，但 JOYTUTUS 已覆盖。",
+      "action": "不再新增同轮廓，以颜色、包装和女性礼赠场景优化现有变体。",
+      "representative": {
+        "asin": "B0DT3LRYZP",
+        "title": "Heart Shaped 2-Pack",
+        "price": 6.99,
+        "rating": 4.6,
+        "reviews": 1616,
+        "url": "https://www.amazon.com/dp/B0DT3LRYZP"
+      },
+      "signals": {
+        "bestRank": 2,
+        "maxBought": "2K+*",
+        "sampleCount": 5,
+        "priceRange": "$4.99-$8.99",
+        "independentFamilies": "至少4个"
+      },
+      "joytutus": [{"asin":"B0GVJ3BQTP","price":9.99,"status":"已上架","url":"https://www.amazon.com/dp/B0GVJ3BQTP"}],
+      "caveat": "2K+ 月购来自 LivTee 变体页，评价可能共享；#2 商品 1,616 条评价和其他独立 ASIN 提供旁证。",
+      "evidence": [
+        {"asin":"B0DT3LRYZP","price":6.99,"rating":4.6,"reviews":1616,"rank":2,"note":"独立头部商品","url":"https://www.amazon.com/dp/B0DT3LRYZP"},
+        {"asin":"B0FHW5SJBT","price":6.99,"rating":4.6,"reviews":26492,"bought":"2K+*","note":"LivTee 变体；评价共享风险","url":"https://www.amazon.com/dp/B0FHW5SJBT"},
+        {"asin":"B0FTLVMFSC","price":4.99,"rating":4.3,"reviews":54,"rank":11,"bought":"600+","note":"低价新款","url":"https://www.amazon.com/dp/B0FTLVMFSC"},
+        {"asin":"B0FQJ82PDK","price":5.90,"rating":4.5,"reviews":111,"rank":34,"bought":"200+","note":"独立新款","url":"https://www.amazon.com/dp/B0FQJ82PDK"},
+        {"asin":"B0F5WRNT6N","price":8.99,"rating":4.6,"reviews":120,"rank":29,"note":"礼赠/女性场景","url":"https://www.amazon.com/dp/B0F5WRNT6N"}
+      ]
+    },
+    {
+      "id": "fan-wedge",
+      "nameZh": "扇形 / 楔形",
+      "nameEn": "Fan / Wedge",
+      "image": "./assets/initiative-wedge-scene.png",
+      "status": ["已上架", "已立项"],
+      "traction": "中高",
+      "verdict": "重复开发风险",
+      "verdictTone": "risk",
+      "summary": "Best Sellers #14，公开月购上限 400+；JOYTUTUS 已上架楔形，同时又立项弧边楔形。",
+      "action": "立项样必须证明视野、遮挡或安装位的可感知差异，否则合并为现有楔形尺寸变体。",
+      "representative": {
+        "asin": "B087F75B23",
+        "title": "LivTee Curved Wedge",
+        "price": 9.99,
+        "rating": 4.5,
+        "reviews": 7400,
+        "url": "https://www.amazon.com/dp/B087F75B23"
+      },
+      "signals": {
+        "bestRank": 14,
+        "maxBought": "400+",
+        "sampleCount": 6,
+        "priceRange": "$4.69-$9.99",
+        "independentFamilies": "至少5个"
+      },
+      "joytutus": [
+        {"asin":"B0GVJ8T99M","price":9.99,"status":"已上架","url":"https://www.amazon.com/dp/B0GVJ8T99M"},
+        {"asin":"B087F75B23","status":"已立项对标","url":"https://www.amazon.com/dp/B087F75B23"}
+      ],
+      "caveat": "弧边、非对称、扇形和楔形在用户视角高度相邻，不能仅凭轮廓微调新增 SKU。",
+      "evidence": [
+        {"asin":"B08S729BX8","price":5.49,"rating":4.4,"reviews":3381,"rank":14,"bought":"400+","note":"Fan 头部","url":"https://www.amazon.com/dp/B08S729BX8"},
+        {"asin":"B09R44HWWC","price":6.99,"rating":4.5,"reviews":1584,"rank":21,"bought":"100+","note":"Big Fan","url":"https://www.amazon.com/dp/B09R44HWWC"},
+        {"asin":"B087F75B23","price":9.99,"rating":4.5,"reviews":7400,"bought":"300+*","note":"弧边楔形立项对标；评价共享风险","url":"https://www.amazon.com/dp/B087F75B23"},
+        {"asin":"B0GCJ8J4TQ","price":5.99,"rating":4.5,"reviews":16,"note":"Fan 新样本","url":"https://www.amazon.com/dp/B0GCJ8J4TQ"},
+        {"asin":"B0FHCXQK6H","price":4.69,"rating":4.2,"reviews":25,"rank":76,"note":"Fan 低价样本","url":"https://www.amazon.com/dp/B0FHCXQK6H"},
+        {"asin":"B0CLY4RVND","price":6.80,"rating":4.1,"reviews":102,"rank":55,"note":"Fan-shaped","url":"https://www.amazon.com/dp/B0CLY4RVND"}
+      ]
+    },
+    {
+      "id": "rectangle-oblong",
+      "nameZh": "圆角矩形 / 长条形",
+      "nameEn": "Rounded Rectangle / Oblong",
+      "image": "./assets/rect-wildauto.jpg",
+      "status": ["已上架", "已立项"],
+      "traction": "高",
+      "verdict": "重复开发风险",
+      "verdictTone": "risk",
+      "summary": "Best Sellers #9，公开月购上限 700+；JOYTUTUS 已有 XL 圆角矩形，又立项长条圆角矩形。",
+      "action": "先做尺寸/视野对照，若新长条款只是降低高度或改圆角，不应作为独立形态立项。",
+      "representative": {
+        "asin": "B0CRL16HZT",
+        "title": "WildAuto Rectangle",
+        "price": 6.59,
+        "rating": 4.4,
+        "reviews": 716,
+        "url": "https://www.amazon.com/dp/B0CRL16HZT"
+      },
+      "signals": {
+        "bestRank": 9,
+        "maxBought": "700+",
+        "sampleCount": 7,
+        "priceRange": "$6.59-$11.99",
+        "independentFamilies": "至少5个"
+      },
+      "joytutus": [
+        {"asin":"B0GVJLKFZD","price":9.99,"status":"已上架","url":"https://www.amazon.com/dp/B0GVJLKFZD"},
+        {"asin":"B09BN3G95V","price":8.99,"status":"已立项对标","url":"https://www.amazon.com/dp/B09BN3G95V"}
+      ],
+      "caveat": "Rectangle、Rounded Rectangle、Wide Rectangle 与 Oblong 统一归并；XL 尺寸卖点不等于新轮廓。",
+      "evidence": [
+        {"asin":"B0CRL16HZT","price":6.59,"rating":4.4,"reviews":716,"rank":9,"bought":"700+","note":"矩形头部","url":"https://www.amazon.com/dp/B0CRL16HZT"},
+        {"asin":"B0777JTJGJ","price":8.99,"rating":4.6,"reviews":3639,"rank":19,"bought":"300+","note":"Amfor Rectangle","url":"https://www.amazon.com/dp/B0777JTJGJ"},
+        {"asin":"B0D6GT4HB5","price":11.99,"rating":4.5,"reviews":7451,"bought":"600+*","note":"XL Rounded Rectangle；评价共享风险","url":"https://www.amazon.com/dp/B0D6GT4HB5"},
+        {"asin":"B0CZ9GKVV9","price":7.99,"rating":4.2,"reviews":96,"rank":61,"note":"Ampper Rectangle","url":"https://www.amazon.com/dp/B0CZ9GKVV9"},
+        {"asin":"B0G1T5JYDW","price":8.99,"rating":4.4,"reviews":23,"rank":79,"note":"Oblong，归并长条形","url":"https://www.amazon.com/dp/B0G1T5JYDW"},
+        {"asin":"B0DKGZYW69","price":7.09,"rating":4.6,"reviews":44,"rank":80,"note":"Framed Rectangle","url":"https://www.amazon.com/dp/B0DKGZYW69"},
+        {"asin":"B09BN3G95V","price":8.99,"rating":4.5,"reviews":7407,"note":"长条矩形立项对标；评价共享风险","url":"https://www.amazon.com/dp/B09BN3G95V"}
+      ]
+    }
+  ]
+}

@@ -11,23 +11,18 @@ const sections = navLinks
 
 renderIcons();
 
-const amazonLinks = [...document.querySelectorAll('a[href^="https://www.amazon.com/"]')];
-amazonLinks.forEach((link) => {
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.title = "在新页面打开 Amazon 商品页";
-  link.addEventListener("click", (event) => {
-    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const productPage = window.open("about:blank", "_blank");
-    if (!productPage) {
-      showToast("浏览器拦截了新页面，请允许此网站打开弹窗");
-      return;
-    }
-    productPage.opener = null;
-    productPage.location.href = link.href;
+function enhanceAmazonLinks(scope = document) {
+  const amazonLinks = [...scope.querySelectorAll('a[href^="https://www.amazon.com/"]')];
+  amazonLinks.forEach((link) => {
+    if (link.dataset.amazonLinkReady === "true") return;
+    link.dataset.amazonLinkReady = "true";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.title = "在新页面打开 Amazon 商品页";
   });
-});
+}
+
+enhanceAmazonLinks();
 
 document.querySelectorAll(".matrix-body > small").forEach((asin) => {
   asin.addEventListener("pointerdown", (event) => event.stopPropagation());
@@ -107,14 +102,15 @@ async function copyText(text) {
 copyButton?.addEventListener("click", async () => {
   const decision = [
     "Blind Spot Mirror 新品判断：GO / 分阶段立项。",
-    "JOYTUTUS 已有圆形、爱心形、楔形和 3.7×2.5 英寸 XL 圆角矩形，4 个子 ASIN 共享父体评价。",
-    "内部《多款盲点镜 对标产品》确认 4 款新开发立项：弧边楔形 B087F75B23、长条矩形 B09BN3G95V、D 形半椭圆 B0F3CBS7JQ、菱形 B087CSBRGP。",
-    "9 月：4 款进入样品与差异验证；楔形/矩形必须证明与已上线楔形/XL 存在可感知的尺寸、视野或场景差异。",
+    "本次观察 164 张 Amazon 商品卡，去重为 120 个 ASIN；保留 47 个形态证据 ASIN，归并为 8 个唯一形态簇。",
+    "首要新品机会是纯椭圆；圆角方形属于次级机会，建议低成本小批测试。",
+    "D 形半椭圆与菱形已立项，继续验证；弧边楔形与长条圆角矩形同时存在已上架/已立项状态，属于重复开发风险。",
+    "圆形和爱心形市场有量但 JOYTUTUS 已上架，不再新增同轮廓；ABS、铝框、防水胶等移入功能/材料路线。",
+    "9 月：先完成楔形/矩形同车 A/B 对比，再决定是否保留独立 SKU；同时补椭圆样品规格。",
     "10 月：车型专配 OEM 贴面，先确认公司 2024 RAM 是 DS Classic 还是 DT 第五代。",
     "11 月：快速差异化只保留粘接可靠包、铝框耐久版和雨天视野组合；定位模板与普通 ABS 包边不算功能。",
     "12 月：评审现有 XL 的视野/粘接优化或中尺寸空白，不重复开发同尺寸 XL。",
-    "对标图尺寸不是最终量产规格；原表未提供内部 SKU、成本、供应商或设计冻结状态。",
-    "评价总数不能直接代替子 ASIN 销量；JOYTUTUS 4 个已上线形状的 101 条评价不得重复计算。",
+    "公开月购、评价和榜位是需求信号，不是精确销量；父体共享数据不得跨子 ASIN 相加。",
   ].join("\n");
 
   try {
@@ -124,6 +120,100 @@ copyButton?.addEventListener("click", async () => {
     showToast("浏览器未允许复制，请手动选择结论");
   }
 });
+
+function formatReviews(value) {
+  if (!Number.isFinite(value)) return "—";
+  if (value >= 1000) return `${(value / 1000).toFixed(value >= 10000 ? 1 : 1)}K`;
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function priceLabel(value) {
+  return Number.isFinite(value) ? `$${value.toFixed(2)}` : "价格待复核";
+}
+
+function statusMarkup(status = []) {
+  if (!status.length) return "";
+  return `<div class="shape-status-stack">${status.map((item) => {
+    const tone = item === "已上架" ? "listed" : "planned";
+    return `<span class="shape-status ${tone}">${item}</span>`;
+  }).join("")}</div>`;
+}
+
+function renderShapeCards(clusters) {
+  const rail = document.querySelector("#shapeRail");
+  if (!rail) return;
+  rail.innerHTML = clusters.map((cluster) => {
+    const representative = cluster.representative;
+    const rankSignal = cluster.signals.bestRank ? `Best Sellers #${cluster.signals.bestRank}` : "未进抽样 Top 80";
+    const boughtSignal = cluster.signals.maxBought ? `${cluster.signals.maxBought} 月购` : "无公开月购";
+    const joytutus = (cluster.joytutus || []).map((item) => {
+      const price = Number.isFinite(item.price) ? ` · ${priceLabel(item.price)}` : "";
+      return `<a href="${item.url}">${item.asin}${price}</a>`;
+    }).join("");
+    return `
+      <article class="shape-card ${cluster.verdictTone}">
+        <div class="shape-media">
+          <a href="${representative.url}" aria-label="打开 ${representative.asin} Amazon 商品页"><img src="${cluster.image}" alt="${cluster.nameZh}盲点镜代表商品"></a>
+          <span class="shape-name">${cluster.nameZh}</span>
+          ${statusMarkup(cluster.status)}
+        </div>
+        <div class="shape-card-body">
+          <div class="shape-card-kicker"><span class="traction traction-${cluster.traction.replace("极", "very-").replace("中高", "mid-high").replace("中", "mid").replace("高", "high")}">${cluster.traction}牵引</span><span>${cluster.signals.sampleCount} 个证据 ASIN</span></div>
+          <h4>${cluster.nameEn}</h4>
+          <a class="shape-representative" href="${representative.url}"><strong>${representative.asin}</strong><span>${priceLabel(representative.price)} · ${representative.rating.toFixed(1)}★ · ${formatReviews(representative.reviews)}</span></a>
+          <div class="shape-signal-grid">
+            <div><span>价格带</span><strong>${cluster.signals.priceRange}</strong></div>
+            <div><span>公开需求</span><strong>${rankSignal}<br>${boughtSignal}</strong></div>
+          </div>
+          <p>${cluster.summary}</p>
+          ${joytutus ? `<div class="shape-joy"><span>JOYTUTUS</span>${joytutus}</div>` : ""}
+          <div class="shape-verdict">${cluster.verdict}</div>
+          <small>${cluster.action}</small>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function renderShapeLedger(clusters) {
+  const ledger = document.querySelector("#shapeLedgerGrid");
+  if (!ledger) return;
+  ledger.innerHTML = clusters.map((cluster) => `
+    <section class="shape-evidence-group">
+      <header><div><strong>${cluster.nameZh}</strong><span>${cluster.verdict}</span></div><b>${cluster.evidence.length} ASIN</b></header>
+      <div class="shape-evidence-list">
+        ${cluster.evidence.map((item) => {
+          const signals = [
+            item.rank ? `#${item.rank}` : "",
+            item.bought ? `${item.bought}月购` : "",
+            Number.isFinite(item.rating) ? `${item.rating.toFixed(1)}★` : "",
+            Number.isFinite(item.reviews) ? formatReviews(item.reviews) : "",
+          ].filter(Boolean).join(" · ");
+          return `<a href="${item.url}"><span><strong>${item.asin}</strong><small>${item.note}</small></span><b>${priceLabel(item.price)}</b><em>${signals || "公开信号有限"}</em></a>`;
+        }).join("")}
+      </div>
+      <p>${cluster.caveat}</p>
+    </section>`).join("");
+}
+
+async function loadShapeMarket() {
+  try {
+    const response = await fetch("./data/amazon-shape-market-20260826.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    renderShapeCards(data.clusters);
+    renderShapeLedger(data.clusters);
+    enhanceAmazonLinks(document.querySelector("#route-shapes"));
+  } catch (error) {
+    const message = "形态数据加载失败，请刷新页面后重试";
+    const rail = document.querySelector("#shapeRail");
+    const ledger = document.querySelector("#shapeLedgerGrid");
+    if (rail) rail.innerHTML = `<p class="shape-loading error">${message}</p>`;
+    if (ledger) ledger.innerHTML = `<p class="shape-loading error">${message}</p>`;
+    console.error(error);
+  }
+}
+
+await loadShapeMarket();
 
 document.querySelectorAll("img").forEach((image) => {
   image.addEventListener(
