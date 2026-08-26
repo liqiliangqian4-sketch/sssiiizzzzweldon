@@ -85,11 +85,12 @@ async function copyText(text) {
 copyButton?.addEventListener("click", async () => {
   const decision = [
     "Blind Spot Mirror 新品判断：GO / 分阶段立项。",
-    "9 月：形状矩阵优先，首发椭圆、半椭圆、横向矩形。",
+    "JOYTUTUS 已有圆形、爱心形、楔形和 3.7×2.5 英寸 XL 圆角矩形，4 个子 ASIN 共享父体评价。",
+    "9 月：形状矩阵优先，首发椭圆与半椭圆；紧凑矩形只有在明显小于现有 XL 时立项，否则改做椭圆铝框版。",
     "10 月：车型专配 OEM 贴面，先确认公司 2024 RAM 是 DS Classic 还是 DT 第五代。",
     "11 月：只做备用 VHB、清洁包、定位模板、铝框/ABS 包边等快速功能。",
-    "12 月：Wide Angle 仅做 Go/No-Go 评审，不作为当前主线。",
-    "菱形/爱心存在父体共享评论风险，不能用评价总数直接代替子 ASIN 销量。",
+    "12 月：评审现有 XL 的视野/粘接优化或中尺寸空白，不重复开发同尺寸 XL。",
+    "评价总数不能直接代替子 ASIN 销量；JOYTUTUS 4 个已做形状的 101 条评价不得重复计算。",
   ].join("\n");
 
   try {
