@@ -13,10 +13,20 @@ renderIcons();
 
 const amazonLinks = [...document.querySelectorAll('a[href^="https://www.amazon.com/"]')];
 amazonLinks.forEach((link) => {
-  // Same-tab navigation works consistently in embedded browsers that block new tabs.
-  link.removeAttribute("target");
-  link.removeAttribute("rel");
-  link.title = "打开 Amazon 商品页（当前页面跳转）";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.title = "在新页面打开 Amazon 商品页";
+  link.addEventListener("click", (event) => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const productPage = window.open("about:blank", "_blank");
+    if (!productPage) {
+      showToast("浏览器拦截了新页面，请允许此网站打开弹窗");
+      return;
+    }
+    productPage.opener = null;
+    productPage.location.href = link.href;
+  });
 });
 
 document.querySelectorAll(".matrix-body > small").forEach((asin) => {
