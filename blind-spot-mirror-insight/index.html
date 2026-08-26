@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f3f5f2">
-    <meta name="description" content="Amazon US 车外 Blind Spot Mirror 120个ASIN去重、8个形态簇、价格证据、JOYTUTUS上架/立项状态与新品机会判断。">
+    <meta name="description" content="Amazon US 车外 Blind Spot Mirror 子体销量50+证据池、形态矩阵、车型专配与JOYTUTUS新品机会判断。">
     <title>JOYTUTUS | 车外盲点镜新品路线</title>
-    <link rel="stylesheet" href="./styles.css?v=20260826-ceo-8">
+    <link rel="stylesheet" href="./styles.css?v=20260826-child50-1">
   </head>
   <body>
     <header class="topbar">
@@ -26,6 +26,7 @@
         <nav>
           <a href="#decision" class="active"><span data-icon="target"></span><span>开发方向</span></a>
           <a href="#market"><span data-icon="chart-no-axes-combined"></span><span>市场证据</span></a>
+          <a href="#threshold"><span data-icon="database"></span><span>50+机会池</span></a>
           <a href="#routes"><span data-icon="list-filter"></span><span>四条路线</span></a>
           <a href="#first-wave"><span data-icon="package-search"></span><span>在研组合</span></a>
           <a href="#timeline"><span data-icon="clock-3"></span><span>项目排期</span></a>
@@ -43,9 +44,9 @@
           <div class="hero-copy">
             <p class="eyebrow">AMAZON US · EXTERIOR AUXILIARY MIRROR</p>
             <h1>车外盲点镜<br>新品开发方向</h1>
-            <p class="hero-summary">本页不预设立项答案，而是用 Amazon 公开样本、现有产品和内部在研项目，依次评审<strong>形状矩阵、车型专配 OEM、快速功能、Wide Angle</strong>四条路线，明确每条路线还缺什么资料、下一步应做什么决策。</p>
+            <p class="hero-summary">本页新增卖家精灵最近30天的<strong>子体销量50+证据池</strong>，用子 ASIN 实际筛选结果补充形状矩阵、车型专配 OEM、快速功能和 Wide Angle 四条路线，明确还能开发什么以及先做哪一项。</p>
             <div class="hero-actions">
-              <a class="primary-action" href="#routes">查看四条开发路线<span data-icon="arrow-up-right"></span></a>
+              <a class="primary-action" href="#threshold">查看50+新品机会<span data-icon="arrow-up-right"></span></a>
               <button class="secondary-action" id="copyDecision" type="button"><span data-icon="copy"></span>复制开发摘要</button>
             </div>
           </div>
@@ -146,6 +147,46 @@
           </div>
         </section>
 
+        <section class="section threshold-section" id="threshold">
+          <div class="section-heading">
+            <div><p class="eyebrow">CHILD SALES 50+ EVIDENCE</p><h2>子体销量达标后，优先做低开发成本的规格创新</h2></div>
+            <p>筛选依据为工作簿 <strong>U列“子体销量”≥50</strong>，不使用会在变体间重复的父体月销量。完整替换镜和车内全景镜单独排除。</p>
+          </div>
+
+          <div class="threshold-metrics" id="thresholdMetrics" aria-label="子体销量50+筛选结果">
+            <article><span>正在读取</span><strong>—</strong><small>达标 ASIN</small></article>
+          </div>
+
+          <div class="threshold-decision">
+            <div><span>优先立项</span><strong>4 片装价值包 + 2.7/3 英寸尺寸梯度</strong></div>
+            <p>二者均可复用现有供应链与镜体能力；F-150 OEM 有溢价但需车型扫描，Clip-on 有需求但结构风险更高。</p>
+          </div>
+
+          <div class="opportunity-grid" id="opportunityGrid">
+            <p class="threshold-loading">正在生成新品机会排序…</p>
+          </div>
+
+          <details class="threshold-ledger" id="thresholdLedger">
+            <summary>
+              <span><strong>展开全部达标 ASIN</strong><small>可按 ASIN、品牌、标题、父体和产品类型检索</small></span>
+              <span data-icon="chevron-right"></span>
+            </summary>
+            <div class="evidence-toolbar">
+              <label><span>搜索</span><input id="evidenceSearch" type="search" placeholder="输入 ASIN / 品牌 / 产品形态" autocomplete="off"></label>
+              <label><span>类型</span><select id="evidenceGroup"><option value="all">全部产品</option><option value="shape">通用形状</option><option value="pack-size">套装/规格</option><option value="oem">车型专配 OEM</option><option value="mount">安装/功能</option></select></label>
+              <p id="evidenceCount" aria-live="polite">正在读取…</p>
+            </div>
+            <div class="evidence-table" role="table" aria-label="子体销量50+ ASIN证据池">
+              <div class="evidence-row evidence-head" role="row"><span>ASIN / 产品</span><span>分类</span><span>子体销量</span><span>价格</span><span>父 ASIN</span></div>
+              <div id="evidenceRows"></div>
+            </div>
+            <details class="excluded-ledger">
+              <summary>查看被排除的非研究范围商品</summary>
+              <div id="excludedRows"></div>
+            </details>
+          </details>
+        </section>
+
         <section class="section routes-section" id="routes">
           <div class="section-heading">
             <div><p class="eyebrow">FOUR DEVELOPMENT ROUTES</p><h2>四条路线分别回答“做什么、凭什么、还缺什么”</h2></div>
@@ -154,7 +195,7 @@
 
           <div class="route-scoreboard">
             <article class="route-score winner"><span>01</span><div><h3>形状矩阵</h3><p>去重形态、看需求、标记已上架/已立项</p></div><strong>决策</strong><small>9 月</small></article>
-            <article class="route-score"><span>02</span><div><h3>车型专配 OEM</h3><p>锁定 RAM / Jeep 年款、车身代号与镜型</p></div><strong>决策</strong><small>10 月</small></article>
+            <article class="route-score"><span>02</span><div><h3>车型专配 OEM</h3><p>推进 RAM / Jeep，并新增 F-150 评估</p></div><strong>决策</strong><small>10 月</small></article>
             <article class="route-score"><span>03</span><div><h3>快速功能</h3><p>只留胶材、铝框耐久、雨天视野三类</p></div><strong>验证</strong><small>11 月</small></article>
             <article class="route-score"><span>04</span><div><h3>Wide Angle</h3><p>判断是独立产品方向，还是通用利益点</p></div><strong>备选</strong><small>12 月</small></article>
           </div>
@@ -239,8 +280,8 @@
               <div class="route-label"><span>路线 02</span><strong>车型壁垒</strong></div>
               <div class="route-summary">
                 <p class="eyebrow">OEM-FIT OVERLAY</p>
-                <h3>车型专配只保留 RAM 与 Jeep，先把年款和镜型分清</h3>
-                <p>专配贴面的价值来自原车轮廓与更低遮挡，不来自“Universal”描述。公司 2024 RAM 可用于扫描，但必须先确认 <strong>DS Classic / DT 第五代</strong>，并排除 towing mirror。</p>
+                <h3>RAM / Jeep 继续推进，F-150 作为新增高客单候选</h3>
+                <p>子体销量50+表中出现 2 个独立 F-150 14th Gen 专配 ASIN，价格约 $26。专配价值来自原车轮廓与更低遮挡；RAM 仍需确认 <strong>DS Classic / DT 第五代</strong>，所有车型都要排除 towing mirror。</p>
               </div>
               <div class="route-decision">
                 <span>立项前必须补齐</span>
@@ -251,7 +292,7 @@
 
             <div class="carousel-shell" data-carousel-shell>
               <div class="carousel-heading">
-                <div><strong>Amazon 车型专配证据</strong><span>4 个 ASIN · 仅保留 RAM 与 Jeep 开发相关样本</span></div>
+                <div><strong>Amazon 车型专配证据</strong><span>6 个 ASIN · RAM / Jeep 在研 + F-150 新增候选</span></div>
                 <div class="carousel-controls">
                   <button type="button" data-carousel-prev title="向左查看" aria-label="向左查看车型专配商品"><span aria-hidden="true">‹</span></button>
                   <button type="button" data-carousel-next title="向右查看" aria-label="向右查看车型专配商品"><span aria-hidden="true">›</span></button>
@@ -262,8 +303,10 @@
                 <a class="route-product-card" href="https://www.amazon.com/dp/B0F5P7TMR2"><div class="route-product-image"><img src="./assets/ram-custom-2009-2024.jpg" alt="RAM 2009-2024 第四代 Classic 专配盲点镜"><span>RAM 4th Gen / Classic</span></div><div class="route-product-body"><div class="product-topline"><strong>B0F5P7TMR2</strong><span>打开 Amazon ↗</span></div><h4>RAM 2009-2024 Custom Fit</h4><div class="route-price"><strong>$25.99</strong><span>当前价</span></div><div class="route-product-fact"><span>需求信号</span><strong>4.8★ · 21 条评价</strong></div><div class="route-product-fact action"><span>需补资料</span><strong>确认不覆盖 DT 第五代</strong></div></div></a>
                 <a class="route-product-card" href="https://www.amazon.com/dp/B083L99QMQ"><div class="route-product-image"><img src="./assets/jeep-jk-oem.jpg" alt="Jeep Wrangler JK 2007-2017 专配盲点镜"><span>Jeep JK</span></div><div class="route-product-body"><div class="product-topline"><strong>B083L99QMQ</strong><span>打开 Amazon ↗</span></div><h4>Wrangler 2007-2017</h4><div class="route-price"><strong>$26.99</strong><span>当前价</span></div><div class="route-product-fact"><span>需求信号</span><strong>4.7★ · 47 条评价</strong></div><div class="route-product-fact action"><span>需补资料</span><strong>左右扫描与边缘装配公差</strong></div></div></a>
                 <a class="route-product-card caution" href="https://www.amazon.com/dp/B0H3V679YR"><div class="route-product-image"><img src="./assets/jeep-fit.jpg" alt="Jeep Wrangler JL Gladiator JT 2018-2026 专配盲点镜"><span>Jeep JL / JT</span></div><div class="route-product-body"><div class="product-topline"><strong>B0H3V679YR</strong><span>打开 Amazon ↗</span></div><h4>Wrangler / Gladiator 2018-2026</h4><div class="route-price"><strong>$19.99</strong><span>当前价</span></div><div class="route-product-fact"><span>需求信号</span><strong>5.0★ · 4 条评价</strong></div><div class="route-product-fact action"><span>需补资料</span><strong>JL/JT 年款与镜片轮廓共用性</strong></div></div></a>
+                <a class="route-product-card proof" href="https://www.amazon.com/dp/B0F571FCPX"><div class="route-product-image"><img src="./assets/opportunity-f150-oem.jpg" alt="Ford F-150 2021-2025 专配盲点镜贴面"><span>F-150 2021-2025</span></div><div class="route-product-body"><div class="product-topline"><strong>B0F571FCPX</strong><span>打开 Amazon ↗</span></div><h4>F-150 Custom Fitted Overlay</h4><div class="route-price"><strong>$25.99</strong><span>当前价</span></div><div class="route-product-fact"><span>子体销量</span><strong>100 · 4.4★ · 58 条评价</strong></div><div class="route-product-fact action"><span>需补资料</span><strong>BLIS/非BLIS与左右镜轮廓</strong></div></div></a>
+                <a class="route-product-card" href="https://www.amazon.com/dp/B0BVW6FXXC"><div class="route-product-image"><img src="./assets/opportunity-f150-oem.jpg" alt="Ford F-150 14代 BLIS 专配盲点镜贴面"><span>F-150 14th Gen / BLIS</span></div><div class="route-product-body"><div class="product-topline"><strong>B0BVW6FXXC</strong><span>打开 Amazon ↗</span></div><h4>NXTGEN Extended View</h4><div class="route-price"><strong>$26.95</strong><span>当前价</span></div><div class="route-product-fact"><span>子体销量</span><strong>50 · 4.2★ · 81 条评价</strong></div><div class="route-product-fact action"><span>需补资料</span><strong>BLIS 图标避让与年款边界</strong></div></div></a>
               </div>
-              <p class="rail-note">车型年款来自商品标题，不替代实车验证。RAM 项目先用 VIN/车身代号确认 DS Classic 与 DT，第五代和 towing mirror 必须单独排除。</p>
+              <p class="rail-note">车型年款来自商品标题，不替代实车验证。F-150 两个样本合计子体销量150，只支持进入扫描评估；RAM、Jeep、F-150 都必须用 VIN、车身代号和原车镜型建立排除表。</p>
             </div>
           </article>
 
@@ -347,6 +390,7 @@
             <div class="portfolio-row" role="row"><strong>Oval</strong><span><b class="status-pill evaluate">待评估</b></span><span>目标尺寸、BOM 成本、与 D 形的差异</span><span>是否转正式立项</span></div>
           </div>
           <div class="portfolio-note"><strong>共用开发底座</strong><span>真实凸面玻璃 + 防飞散背膜 · 预贴 VHB + 备用胶 + 清洁包 · 共享内托</span></div>
+          <div class="portfolio-note candidate"><strong>50+新增候选</strong><span>P0：4片装、2.7/3英寸尺寸梯度 · P1：F-150 OEM、Clip-on · P2：胶囊/Wing/Falcon轮廓去重</span></div>
         </section>
 
         <section class="section timeline-section" id="timeline">
@@ -356,10 +400,10 @@
           </div>
           <div class="timeline-table" role="table" aria-label="2026年9月至12月项目排期">
             <div class="timeline-row timeline-head" role="row"><span>月份</span><span>重点</span><span>当月输出</span><span>决策门</span></div>
-            <div class="timeline-row active" role="row"><strong><b>SEP</b>9 月</strong><span>形状矩阵</span><span>4 款差异 A/B + 椭圆规格/成本包</span><span>去重项目；决定椭圆是否立项</span></div>
-            <div class="timeline-row" role="row"><strong><b>OCT</b>10 月</strong><span>OEM 专配</span><span>RAM DS/DT 确认、左右扫描；Jeep 路线选择</span><span>确认首发车型与适配边界</span></div>
-            <div class="timeline-row" role="row"><strong><b>NOV</b>11 月</strong><span>快速功能</span><span>VHB、铝框、雨天套装样品与测试结果</span><span>选 1-2 项进入小批</span></div>
-            <div class="timeline-row backup" role="row"><strong><b>DEC</b>12 月</strong><span>Wide Angle</span><span>关键词表现 + 实车视野/畸变/遮挡 A/B</span><span>独立新品或仅作为 Listing 利益点</span></div>
+            <div class="timeline-row active" role="row"><strong><b>SEP</b>9 月</strong><span>低成本快启</span><span>4片装利润包 + 2.7/3英寸样品 + 现有4款差异A/B</span><span>确认首个新增 SKU</span></div>
+            <div class="timeline-row" role="row"><strong><b>OCT</b>10 月</strong><span>OEM 专配</span><span>RAM/Jeep边界确认；获取F-150 14代左右原车镜</span><span>决定 F-150 是否进入正式立项</span></div>
+            <div class="timeline-row" role="row"><strong><b>NOV</b>11 月</strong><span>安装功能</span><span>备用胶/清洁包共用方案 + Clip-on 三档夹爪样件</span><span>选免开模套装或结构新品</span></div>
+            <div class="timeline-row backup" role="row"><strong><b>DEC</b>12 月</strong><span>轮廓收敛</span><span>胶囊/Wing/Falcon去重 + Wide Angle实车视野A/B</span><span>只保留一个有可感知差异的方向</span></div>
           </div>
         </section>
 
@@ -387,6 +431,7 @@
               <article><span class="source-grade a">A</span><div><strong>Amazon “wide angle blind spot mirror” 定向搜索</strong><p>单独复核标题、当前价与公开月购，保留 D 形、圆形、矩形、扇形 4 个标题明确包含 Wide Angle 的样本，用于判断该词是独立方向还是利益点层。</p></div><small>访问 2026-08-26</small></article>
               <article><span class="source-grade b">B</span><div><strong>Flapen 市场报告</strong><p>此前用户提供的市场报告，用于市场额、搜索、竞争、评论主题与退货原因判断；跟踪样本为 26 个产品。</p></div><small>快照 2026-08-25</small></article>
               <article><span class="source-grade b">B</span><div><strong>卖家精灵市场报告 + 自定义市场分析</strong><p>本次两份 PDF：100 个 ASIN、最近 30 天；样本月销量约 98,900 件、月销售额约 $996,900。JOYTUTUS 品牌月销量份额 15.66%、月销售额份额 15.62%。均为平台估算，不等同公司财务实绩。</p></div><small>导出 2026-08-26</small></article>
+              <article><span class="source-grade b">B</span><div><strong>卖家精灵 Product Automotive 最近30天明细</strong><p>原表1,284行，以 U列“子体销量”≥50筛得119个子ASIN；按本页车外辅助镜边界排除7个完整替换镜/车内镜后，保留112个ASIN、65个父体。子体销量合计37,150仅用于本次达标样本排序，不等于全市场销量。</p></div><small>文件 762183 · 2026-08-26</small></article>
               <article><span class="source-grade b">B</span><div><strong>JOYTUTUS 变体家族与评论口径</strong><p>圆形、XL 圆角矩形、爱心形和楔形 4 个子 ASIN 属于同一变体家族；4.5★ / 101 条为父体共享评价，不重复计算。</p></div><small>Amazon 公开页面</small></article>
               <article><span class="source-grade a">A</span><div><strong>内部《多款盲点镜 对标产品》</strong><p>工作簿 Sheet1 的 A1:D5 共 4 条立项记录、8 张嵌入图和 4 个 Amazon 对标链接；本页据此新增4款“新开发立项”。尺寸取自参数图，不等于最终量产规格。</p></div><small>文件更新 2026-08-19</small></article>
               <article><span class="source-grade c">C</span><div><strong>内部项目状态与排期</strong><p>4 款“已立项”、椭圆“待评估”及 9-12 月推进顺序均为内部计划；进入采购前仍需成本、利润与资源确认。</p></div><small>计划，不是结果</small></article>
@@ -440,6 +485,6 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./app.js?v=20260826-ceo-8"></script>
+    <script type="module" src="./app.js?v=20260826-child50-1"></script>
   </body>
 </html>

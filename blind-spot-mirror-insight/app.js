@@ -102,8 +102,10 @@ async function copyText(text) {
 copyButton?.addEventListener("click", async () => {
   const decision = [
     "Blind Spot Mirror 新品开发评审分为四条路线。",
+    "子体销量50+证据：原表筛得119个子ASIN，排除7个完整替换镜/车内镜后保留112个、65个父体；筛选使用U列子体销量，不使用重复的父体月销量。",
+    "新增优先级：P0为4片装价值包、2.7/3英寸尺寸梯度和安装保障包；P1为F-150 OEM贴面与免胶Clip-on；胶囊/Wing/Falcon先做轮廓去重。",
     "形状矩阵：164 张 Amazon 商品卡去重为 120 个 ASIN，保留 47 个形态证据 ASIN，归并为 8 个唯一形态；选择未覆盖形态前先排除已上架/已立项重复。",
-    "车型专配 OEM：只保留 RAM 与 Jeep；立项前补齐 DS/DT 车身代号、非拖车镜排除、左右扫描和装配公差。",
+    "车型专配 OEM：RAM与Jeep继续推进，F-150 14th Gen进入扫描评估；立项前补齐车身代号、BLIS/非BLIS、非拖车镜排除、左右扫描和装配公差。",
     "快速功能：只保留备用 VHB + 清洁包、铝框耐久、雨眉/防水膜三项可快速验证方案。",
     "Wide Angle：定向搜索显示该词横跨 D 形、圆形、矩形和扇形，现阶段先作为关键词/利益点层；只有实车视野 A/B 显著领先才转独立新品。",
     "9 月做形状项目去重与椭圆评估，10 月确定 OEM 首发车型，11 月筛选快速功能，12 月完成 Wide Angle Go/No-Go。",
@@ -126,6 +128,19 @@ function formatReviews(value) {
 
 function priceLabel(value) {
   return Number.isFinite(value) ? `$${value.toFixed(2)}` : "价格待复核";
+}
+
+function formatNumber(value) {
+  return Number.isFinite(value) ? new Intl.NumberFormat("en-US").format(value) : "—";
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 function statusMarkup(status = []) {
@@ -215,7 +230,103 @@ async function loadShapeMarket() {
   }
 }
 
-await loadShapeMarket();
+function renderThresholdMetrics(meta) {
+  const metrics = document.querySelector("#thresholdMetrics");
+  if (!metrics) return;
+  metrics.innerHTML = `
+    <article><span>原表达标</span><strong>${formatNumber(meta.rawAsinCount)}</strong><small>U列子体销量 ≥ ${meta.threshold}</small></article>
+    <article><span>研究范围内</span><strong>${formatNumber(meta.inScopeAsinCount)}</strong><small>排除 ${meta.excludedAsinCount} 个非辅助贴片</small></article>
+    <article><span>独立父体</span><strong>${formatNumber(meta.parentAsinCount)}</strong><small>避免只看变体数量</small></article>
+    <article><span>样本子体销量</span><strong>${formatNumber(meta.childSalesSum)}</strong><small>达标样本合计，不是全市场</small></article>
+    <article><span>价格中位数</span><strong>${priceLabel(meta.medianPrice)}</strong><small>112个范围内子ASIN</small></article>`;
+}
+
+function renderOpportunityCards(opportunities) {
+  const grid = document.querySelector("#opportunityGrid");
+  if (!grid) return;
+  grid.innerHTML = opportunities.map((opportunity) => {
+    const evidenceLinks = opportunity.evidence.slice(0, 3).map((item) => `
+      <a href="${escapeHtml(item.url)}"><strong>${escapeHtml(item.asin)}</strong><span>${formatNumber(item.childSales)}件 · ${priceLabel(item.price)}</span></a>`).join("");
+    const remaining = Math.max(0, opportunity.evidence.length - 3);
+    return `
+      <article class="opportunity-card priority-${opportunity.priority.toLowerCase()}">
+        <div class="opportunity-media">
+          <img src="${escapeHtml(opportunity.image)}" alt="${escapeHtml(opportunity.shortTitle)}代表商品">
+          <span>${escapeHtml(opportunity.priority)}</span>
+        </div>
+        <div class="opportunity-body">
+          <div class="opportunity-title"><div><small>${escapeHtml(opportunity.decision)}</small><h3>${escapeHtml(opportunity.title)}</h3></div><b>${formatNumber(opportunity.childSalesSum)}</b></div>
+          <div class="opportunity-facts"><span>${opportunity.asinCount} 个子ASIN</span><span>${opportunity.parentCount} 个父体</span><span>销量合计</span></div>
+          <p>${escapeHtml(opportunity.reason)}</p>
+          <div class="opportunity-action"><span>下一步</span><strong>${escapeHtml(opportunity.nextStep)}</strong></div>
+          <div class="opportunity-evidence">${evidenceLinks}${remaining ? `<span>另有 ${remaining} 个达标 ASIN</span>` : ""}</div>
+          <small class="opportunity-risk">风险：${escapeHtml(opportunity.risk)}</small>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function renderEvidenceRows(products, query = "", group = "all") {
+  const rows = document.querySelector("#evidenceRows");
+  const count = document.querySelector("#evidenceCount");
+  if (!rows || !count) return;
+  const normalized = query.trim().toLowerCase();
+  const filtered = products.filter((product) => {
+    const groupMatches = group === "all" || product.group === group;
+    const haystack = `${product.asin} ${product.parentAsin} ${product.brand} ${product.title} ${product.type}`.toLowerCase();
+    return groupMatches && (!normalized || haystack.includes(normalized));
+  });
+
+  count.textContent = `显示 ${filtered.length} / ${products.length} 个 ASIN`;
+  if (!filtered.length) {
+    rows.innerHTML = '<p class="evidence-empty">没有符合当前筛选条件的 ASIN</p>';
+    return;
+  }
+
+  rows.innerHTML = filtered.map((product) => `
+    <div class="evidence-row" role="row">
+      <span class="evidence-product-cell" data-label="ASIN / 产品"><a href="${escapeHtml(product.url)}"><strong>${escapeHtml(product.asin)}</strong><small>${escapeHtml(product.brand)} · ${escapeHtml(product.title)}</small></a></span>
+      <span data-label="分类"><b>${escapeHtml(product.type)}</b><small>${escapeHtml(product.groupLabel)}</small></span>
+      <span data-label="子体销量"><strong>${formatNumber(product.childSales)}</strong></span>
+      <span data-label="价格"><strong>${priceLabel(product.price)}</strong></span>
+      <span data-label="父 ASIN"><code>${escapeHtml(product.parentAsin)}</code></span>
+    </div>`).join("");
+  enhanceAmazonLinks(rows);
+}
+
+function renderExcludedRows(excluded) {
+  const rows = document.querySelector("#excludedRows");
+  if (!rows) return;
+  rows.innerHTML = excluded.map((item) => `
+    <div><strong>${escapeHtml(item.asin)}</strong><span>子体销量 ${formatNumber(item.childSales)}</span><p>${escapeHtml(item.reason)} · ${escapeHtml(item.title)}</p></div>`).join("");
+}
+
+async function loadThresholdEvidence() {
+  const grid = document.querySelector("#opportunityGrid");
+  try {
+    const response = await fetch("./data/child-sales-50plus-20260826.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    renderThresholdMetrics(data.meta);
+    renderOpportunityCards(data.opportunities);
+    renderEvidenceRows(data.products);
+    renderExcludedRows(data.excluded);
+
+    const search = document.querySelector("#evidenceSearch");
+    const group = document.querySelector("#evidenceGroup");
+    const update = () => renderEvidenceRows(data.products, search?.value || "", group?.value || "all");
+    search?.addEventListener("input", update);
+    group?.addEventListener("change", update);
+    enhanceAmazonLinks(document.querySelector("#threshold"));
+  } catch (error) {
+    if (grid) grid.innerHTML = '<p class="threshold-loading error">50+证据池加载失败，请刷新页面后重试</p>';
+    const count = document.querySelector("#evidenceCount");
+    if (count) count.textContent = "数据加载失败";
+    console.error(error);
+  }
+}
+
+await Promise.all([loadShapeMarket(), loadThresholdEvidence()]);
 
 document.querySelectorAll("img").forEach((image) => {
   image.addEventListener(
