@@ -84,10 +84,12 @@ async function copyText(text) {
 
 copyButton?.addEventListener("click", async () => {
   const decision = [
-    "Blind Spot Mirror 新品判断：GO / 先验证。",
-    "首发优先：低矮可调结构，重点解决角度漂移、曲面粘接和视觉突兀。",
-    "第二阶段：JL/JT 或 RAM 车型专配 OEM 贴面。",
-    "不建议：再做一款无差异通用圆镜；爱心/菱形只作为变体，不作为核心壁垒。",
+    "Blind Spot Mirror 新品判断：GO / 分阶段立项。",
+    "9 月：形状矩阵优先，首发椭圆、半椭圆、横向矩形。",
+    "10 月：车型专配 OEM 贴面，先确认公司 2024 RAM 是 DS Classic 还是 DT 第五代。",
+    "11 月：只做备用 VHB、清洁包、定位模板、铝框/ABS 包边等快速功能。",
+    "12 月：Wide Angle 仅做 Go/No-Go 评审，不作为当前主线。",
+    "菱形/爱心存在父体共享评论风险，不能用评价总数直接代替子 ASIN 销量。",
   ].join("\n");
 
   try {
@@ -109,6 +111,87 @@ document.querySelectorAll("img").forEach((image) => {
     },
     { once: true },
   );
+});
+
+document.querySelectorAll("[data-carousel-shell]").forEach((shell) => {
+  const rail = shell.querySelector("[data-carousel]");
+  const previous = shell.querySelector("[data-carousel-prev]");
+  const next = shell.querySelector("[data-carousel-next]");
+
+  if (!rail) return;
+
+  const updateControls = () => {
+    const maxScroll = Math.max(0, rail.scrollWidth - rail.clientWidth);
+    const atStart = rail.scrollLeft <= 2;
+    const atEnd = rail.scrollLeft >= maxScroll - 2;
+    if (previous) previous.disabled = atStart;
+    if (next) next.disabled = atEnd;
+  };
+
+  const scrollRail = (direction) => {
+    const distance = Math.min(Math.max(rail.clientWidth * 0.82, 280), 720);
+    rail.scrollBy({ left: direction * distance, behavior: "smooth" });
+  };
+
+  previous?.addEventListener("click", () => scrollRail(-1));
+  next?.addEventListener("click", () => scrollRail(1));
+  rail.addEventListener("scroll", updateControls, { passive: true });
+  rail.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      scrollRail(-1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      scrollRail(1);
+    }
+  });
+
+  let dragging = false;
+  let moved = false;
+  let startX = 0;
+  let startScroll = 0;
+
+  rail.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "mouse" || event.button !== 0) return;
+    dragging = true;
+    moved = false;
+    startX = event.clientX;
+    startScroll = rail.scrollLeft;
+    rail.setPointerCapture(event.pointerId);
+  });
+
+  rail.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+    const delta = event.clientX - startX;
+    if (Math.abs(delta) > 5) {
+      moved = true;
+      rail.classList.add("dragging");
+    }
+    rail.scrollLeft = startScroll - delta;
+  });
+
+  const endDrag = (event) => {
+    if (!dragging) return;
+    dragging = false;
+    rail.classList.remove("dragging");
+    if (rail.hasPointerCapture(event.pointerId)) rail.releasePointerCapture(event.pointerId);
+    window.setTimeout(() => { moved = false; }, 0);
+  };
+
+  rail.addEventListener("pointerup", endDrag);
+  rail.addEventListener("pointercancel", endDrag);
+  rail.addEventListener("click", (event) => {
+    if (moved) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }, true);
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(updateControls).observe(rail);
+  }
+  updateControls();
 });
 
 window.addEventListener("resize", () => {
