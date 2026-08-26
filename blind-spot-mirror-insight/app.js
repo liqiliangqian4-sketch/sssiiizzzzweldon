@@ -101,21 +101,18 @@ async function copyText(text) {
 
 copyButton?.addEventListener("click", async () => {
   const decision = [
-    "Blind Spot Mirror 新品判断：GO / 分阶段立项。",
-    "本次观察 164 张 Amazon 商品卡，去重为 120 个 ASIN；保留 47 个形态证据 ASIN，归并为 8 个唯一形态簇。",
-    "首要新品机会是纯椭圆；圆角方形属于次级机会，建议低成本小批测试。",
-    "D 形半椭圆与菱形已立项，继续验证；弧边楔形与长条圆角矩形同时存在已上架/已立项状态，属于重复开发风险。",
-    "圆形和爱心形市场有量但 JOYTUTUS 已上架，不再新增同轮廓；ABS、铝框、防水胶等移入功能/材料路线。",
-    "9 月：先完成楔形/矩形同车 A/B 对比，再决定是否保留独立 SKU；同时补椭圆样品规格。",
-    "10 月：车型专配 OEM 贴面，先确认公司 2024 RAM 是 DS Classic 还是 DT 第五代。",
-    "11 月：快速差异化只保留粘接可靠包、铝框耐久版和雨天视野组合；定位模板与普通 ABS 包边不算功能。",
-    "12 月：评审现有 XL 的视野/粘接优化或中尺寸空白，不重复开发同尺寸 XL。",
+    "Blind Spot Mirror 新品开发评审分为四条路线。",
+    "形状矩阵：164 张 Amazon 商品卡去重为 120 个 ASIN，保留 47 个形态证据 ASIN，归并为 8 个唯一形态；选择未覆盖形态前先排除已上架/已立项重复。",
+    "车型专配 OEM：只保留 RAM 与 Jeep；立项前补齐 DS/DT 车身代号、非拖车镜排除、左右扫描和装配公差。",
+    "快速功能：只保留备用 VHB + 清洁包、铝框耐久、雨眉/防水膜三项可快速验证方案。",
+    "Wide Angle：定向搜索显示该词横跨 D 形、圆形、矩形和扇形，现阶段先作为关键词/利益点层；只有实车视野 A/B 显著领先才转独立新品。",
+    "9 月做形状项目去重与椭圆评估，10 月确定 OEM 首发车型，11 月筛选快速功能，12 月完成 Wide Angle Go/No-Go。",
     "公开月购、评价和榜位是需求信号，不是精确销量；父体共享数据不得跨子 ASIN 相加。",
   ].join("\n");
 
   try {
     await copyText(decision);
-    showToast("核心结论已复制");
+    showToast("开发摘要已复制");
   } catch {
     showToast("浏览器未允许复制，请手动选择结论");
   }
@@ -142,14 +139,23 @@ function statusMarkup(status = []) {
 function renderShapeCards(clusters) {
   const rail = document.querySelector("#shapeRail");
   if (!rail) return;
+  const validationById = {
+    oval: "锁定中尺寸，并验证主镜遮挡",
+    "d-semi-oval": "对比纯椭圆与现有 XL 的视野",
+    square: "验证 CTR 是否高于圆角矩形",
+    rhombus: "小批验证独立点击与转化",
+    round: "只做胶材、成本与包装优化",
+    heart: "只评估颜色与礼赠变体",
+    "fan-wedge": "与现有楔形做同车 A/B 去重",
+    "rectangle-oblong": "与现有 XL / 长条立项去重",
+  };
   rail.innerHTML = clusters.map((cluster) => {
     const representative = cluster.representative;
-    const rankSignal = cluster.signals.bestRank ? `Best Sellers #${cluster.signals.bestRank}` : "未进抽样 Top 80";
-    const boughtSignal = cluster.signals.maxBought ? `${cluster.signals.maxBought} 月购` : "无公开月购";
-    const joytutus = (cluster.joytutus || []).map((item) => {
-      const price = Number.isFinite(item.price) ? ` · ${priceLabel(item.price)}` : "";
-      return `<a href="${item.url}">${item.asin}${price}</a>`;
-    }).join("");
+    const demandSignal = cluster.signals.maxBought
+      ? `${cluster.signals.maxBought} 月购`
+      : cluster.signals.bestRank
+        ? `Best Sellers #${cluster.signals.bestRank}`
+        : `${formatReviews(representative.reviews)} 条评价`;
     return `
       <article class="shape-card ${cluster.verdictTone}">
         <div class="shape-media">
@@ -160,15 +166,11 @@ function renderShapeCards(clusters) {
         <div class="shape-card-body">
           <div class="shape-card-kicker"><span class="traction traction-${cluster.traction.replace("极", "very-").replace("中高", "mid-high").replace("中", "mid").replace("高", "high")}">${cluster.traction}牵引</span><span>${cluster.signals.sampleCount} 个证据 ASIN</span></div>
           <h4>${cluster.nameEn}</h4>
-          <a class="shape-representative" href="${representative.url}"><strong>${representative.asin}</strong><span>${priceLabel(representative.price)} · ${representative.rating.toFixed(1)}★ · ${formatReviews(representative.reviews)}</span></a>
-          <div class="shape-signal-grid">
-            <div><span>价格带</span><strong>${cluster.signals.priceRange}</strong></div>
-            <div><span>公开需求</span><strong>${rankSignal}<br>${boughtSignal}</strong></div>
-          </div>
-          <p>${cluster.summary}</p>
-          ${joytutus ? `<div class="shape-joy"><span>JOYTUTUS</span>${joytutus}</div>` : ""}
+          <a class="shape-representative" href="${representative.url}"><strong>${representative.asin}</strong><span>打开 Amazon ↗</span></a>
+          <div class="shape-price-row"><strong>${priceLabel(representative.price)}</strong><span>当前价</span></div>
+          <div class="shape-compact-fact"><span>需求信号</span><strong>${demandSignal}</strong></div>
+          <div class="shape-compact-fact action"><span>需验证</span><strong>${validationById[cluster.id] || cluster.action}</strong></div>
           <div class="shape-verdict">${cluster.verdict}</div>
-          <small>${cluster.action}</small>
         </div>
       </article>`;
   }).join("");
