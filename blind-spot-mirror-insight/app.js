@@ -11,6 +11,18 @@ const sections = navLinks
 
 renderIcons();
 
+const amazonLinks = [...document.querySelectorAll('a[href^="https://www.amazon.com/"]')];
+amazonLinks.forEach((link) => {
+  // Same-tab navigation works consistently in embedded browsers that block new tabs.
+  link.removeAttribute("target");
+  link.removeAttribute("rel");
+  link.title = "打开 Amazon 商品页（当前页面跳转）";
+});
+
+document.querySelectorAll(".matrix-body > small").forEach((asin) => {
+  asin.addEventListener("pointerdown", (event) => event.stopPropagation());
+});
+
 function setMenu(open) {
   sideNav.classList.toggle("open", open);
   menuButton.setAttribute("aria-expanded", String(open));
@@ -88,7 +100,7 @@ copyButton?.addEventListener("click", async () => {
     "JOYTUTUS 已有圆形、爱心形、楔形和 3.7×2.5 英寸 XL 圆角矩形，4 个子 ASIN 共享父体评价。",
     "9 月：形状矩阵优先，首发椭圆与半椭圆；紧凑矩形只有在明显小于现有 XL 时立项，否则改做椭圆铝框版。",
     "10 月：车型专配 OEM 贴面，先确认公司 2024 RAM 是 DS Classic 还是 DT 第五代。",
-    "11 月：只做备用 VHB、清洁包、定位模板、铝框/ABS 包边等快速功能。",
+    "11 月：快速差异化只保留粘接可靠包、铝框耐久版和雨天视野组合；定位模板与普通 ABS 包边不算功能。",
     "12 月：评审现有 XL 的视野/粘接优化或中尺寸空白，不重复开发同尺寸 XL。",
     "评价总数不能直接代替子 ASIN 销量；JOYTUTUS 4 个已做形状的 101 条评价不得重复计算。",
   ].join("\n");

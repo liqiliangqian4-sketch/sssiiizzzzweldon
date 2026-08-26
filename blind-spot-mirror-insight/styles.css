@@ -2428,8 +2428,13 @@ footer p {
 }
 
 .matrix-body > small::after {
-  content: "↗";
-  margin-left: 4px;
+  content: "打开 Amazon";
+  margin-left: 6px;
+  padding: 1px 5px;
+  color: #fff;
+  background: #175fa8;
+  border-radius: 3px;
+  font-size: 8px;
   text-decoration: none;
 }
 
@@ -2631,7 +2636,7 @@ footer p {
 
 .quick-feature-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   margin: 4px 0 34px;
   background: var(--line);
