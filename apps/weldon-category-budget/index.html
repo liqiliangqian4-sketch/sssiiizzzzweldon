@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f5">
+    <title>Weldon | 2027 三级品类预算</title>
+    <link rel="stylesheet" href="./styles.css?v=20260826-2">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#decision" aria-label="返回决策总览">
+        <span class="brand-mark" data-icon="package-search"></span>
+        <span>WELDON / 2027 CATEGORY BUDGET</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="scope-state"><i></i>产品经理口径</span>
+        <button class="icon-btn" id="copyBrief" type="button" title="复制汇报摘要" aria-label="复制汇报摘要"><span data-icon="copy"></span></button>
+        <button class="icon-btn" id="printPage" type="button" title="打印或导出 PDF" aria-label="打印或导出 PDF"><span data-icon="download"></span></button>
+        <button class="icon-btn mobile-only" id="menuButton" type="button" title="打开导航" aria-label="打开导航"><span data-icon="menu"></span></button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-title">PM CATEGORY REPORT <span>2027</span></div>
+        <nav id="pageNav">
+          <a class="active" href="#decision"><span data-icon="layout-dashboard"></span><span>预算总览</span></a>
+          <a href="#portfolio"><span data-icon="list-filter"></span><span>三级品类情况</span></a>
+          <a href="#blind"><span data-icon="target"></span><span>盲点镜新类目</span></a>
+          <a href="#hitch"><span data-icon="rocket"></span><span>拖车钩脚踏新类目</span></a>
+          <a href="#gates"><span data-icon="shield-check"></span><span>补充与排期</span></a>
+        </nav>
+        <div class="scope-note">
+          <span>Scope</span>
+          <strong>产品经理 = Weldon汪昊</strong>
+          <p>产品专员为 Weldon、但产品经理属于他人的产品全部排除。</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="section decision-section" id="decision">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">PRODUCT MANAGER REPORT / 2026-08-26</p>
+              <h1>Weldon 2027 三级品类预算与品类规划</h1>
+              <p class="lead">仅汇报产品经理为 Weldon汪昊 的产品。重点说明预算完成情况、三级品类结构、预算待补产品和两个新增类目的开发计划。</p>
+            </div>
+          </div>
+
+          <div class="decision-banner">
+            <span class="priority p0">P0</span>
+            <strong>9 月 15 日前补录 $1.111M 产品级预算</strong>
+            <span>脚踏、置物托盘、战术板优先</span>
+          </div>
+
+          <div class="kpi-strip">
+            <article><span>2027 规划 GMV</span><strong>$1.503M</strong><small>19 个产品 / USD</small></article>
+            <article><span>已填预算 GMV</span><strong>$0.393M</strong><small>仅 5 个产品有预算</small></article>
+            <article class="risk"><span>待补预算</span><strong>$1.111M</strong><small>预算录入率 26.1%</small></article>
+            <article><span>未立项产品</span><strong>13</strong><small>需明确继续或停止</small></article>
+          </div>
+
+          <div class="official-budget-strip">
+            <div class="official-label"><span>官方预算目标表</span><strong>RMB 口径</strong><small>与产品级 USD 规划分开展示</small></div>
+            <div><span>美国</span><strong>¥11.161M / ¥5.000M</strong><small class="positive">完成率 223.2%</small></div>
+            <div><span>非美</span><strong>¥1.041M / ¥5.000M</strong><small class="negative">缺口 ¥3.959M · 完成率 20.8%</small></div>
+          </div>
+
+          <div class="decision-grid">
+            <article class="panel category-chart-panel">
+              <div class="panel-heading">
+                <div><span class="eyebrow">CATEGORY BUDGET</span><h2>本人三级品类预算情况</h2></div>
+                <div class="segmented" id="metricToggle" role="group" aria-label="选择指标">
+                  <button class="active" data-metric="plan" type="button">规划</button>
+                  <button data-metric="gap" type="button">待补</button>
+                </div>
+              </div>
+              <div class="category-bars" id="categoryBars"></div>
+            </article>
+
+            <article class="panel decision-list-panel">
+              <div class="panel-heading"><div><span class="eyebrow">PM SUMMARY</span><h2>产品经理汇报结论</h2></div><span data-icon="lightbulb" class="heading-icon"></span></div>
+              <div class="decision-list">
+                <div><span>01</span><p><strong>预算补录优先于新增立项</strong>先让 19 个既有产品形成统一预算口径。</p></div>
+                <div><span>02</span><p><strong>非美不能继续空转</strong>官方非美完成率仅 20.8%，Weldon 明细非美规划仅 $67.6K。</p></div>
+                <div><span>03</span><p><strong>两个新类目单列</strong>盲点镜与拖车钩脚踏不再被镜子/脚踏大类掩盖。</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="portfolio">
+          <div class="section-heading">
+            <div><p class="eyebrow">CATEGORY STATUS</p><h2>三级品类结构、预算与产品状态</h2></div>
+            <div class="filter-tabs" id="categoryFilters" role="group" aria-label="筛选三级品类"></div>
+          </div>
+          <div class="portfolio-summary" id="portfolioSummary"></div>
+          <div class="product-layout">
+            <div class="product-gallery" id="productGallery"></div>
+            <div class="product-table-wrap panel">
+              <table>
+                <thead><tr><th>产品</th><th>区域</th><th>上架</th><th>规划 GMV</th><th>状态</th></tr></thead>
+                <tbody id="productRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section specialty-section" id="blind">
+          <div class="section-heading">
+            <div><p class="eyebrow">NEW CATEGORY / BLIND SPOT MIRROR</p><h2>盲点镜：不再做无差异通用款</h2></div>
+            <span class="state-pill pending">待验证</span>
+          </div>
+          <div class="specialty-grid">
+            <div class="specialty-copy">
+              <p class="specialty-lead">市场有量但通用基础款已成熟。新品必须至少解决一个明确任务：更可靠粘接、更稳定视野，或形成车型专配壁垒。</p>
+              <div class="mini-metrics">
+                <div><span>市场月销额</span><strong>$996.9K</strong></div>
+                <div><span>月销量样本</span><strong>98.9K</strong></div>
+                <div><span>源表 27 年预算</span><strong>$19.8K</strong></div>
+              </div>
+              <div class="route-list">
+                <div><b>P0</b><span><strong>安装保障</strong>备用胶 + 清洁包作为所有新品共用底座。</span></div>
+                <div><b>P0</b><span><strong>F-150 OEM</strong>车型专配第一优先，RAM/Jeep 随后。</span></div>
+                <div><b>P1</b><span><strong>中尺寸椭圆</strong>与 D 形、宽矩形做同车视野 A/B。</span></div>
+                <div><b>STOP</b><span><strong>停止条件</strong>无可感知差异，或增加库存复杂度却不提升转化。</span></div>
+              </div>
+            </div>
+            <div class="image-mosaic blind-mosaic">
+              <figure class="large"><img src="./assets/blind-f150.jpg" alt="F-150 车型专配盲点镜"><figcaption>F-150 OEM｜车型壁垒</figcaption></figure>
+              <figure><img src="./assets/blind-install.jpg" alt="盲点镜安装保障套装"><figcaption>安装保障包</figcaption></figure>
+              <figure><img src="./assets/blind-d-shape.png" alt="D形盲点镜"><figcaption>D-Shape</figcaption></figure>
+              <figure><img src="./assets/blind-clipon.jpg" alt="夹装式盲点镜"><figcaption>Clip-on</figcaption></figure>
+            </div>
+          </div>
+          <div class="source-module-frame blind-source-module">
+            <iframe id="blindRoutesFrame" src="./source/blind/index.html?embed=budget#routes" title="盲点镜四条新品开发路线完整模块" loading="eager"></iframe>
+          </div>
+        </section>
+
+        <section class="section specialty-section" id="hitch">
+          <div class="section-heading">
+            <div><p class="eyebrow">NEW CATEGORY / TOWING HITCH STEP</p><h2>拖车钩脚踏：先统一首发口径</h2></div>
+            <span class="state-pill warning">口径冲突</span>
+          </div>
+          <div class="specialty-grid reverse">
+            <div class="image-mosaic hitch-mosaic">
+              <figure class="large"><img src="./assets/hitch-flagship.png" alt="2英寸拖车钩脚踏装车效果"><figcaption>2in 三合一首发方向</figcaption></figure>
+              <figure><img src="./assets/hitch-source.png" alt="开发大表拖车钩脚踏产品图"><figcaption>开发大表 Row 513</figcaption></figure>
+              <figure><img src="./assets/hitch-reference.png" alt="拖车钩脚踏参考图"><figcaption>结构参考</figcaption></figure>
+            </div>
+            <div class="specialty-copy">
+              <p class="specialty-lead">专项页的 $390.5K 产品池混入了 2028-2029 上架项目，不能直接作为 2027 预算。按真实上架年份重排后，2027 可执行组合为 $131.6K。</p>
+              <div class="conflict-table">
+                <div class="header"><span>口径</span><span>销量</span><span>上架</span><span>GMV</span></div>
+                <div><span>开发大表</span><strong>660</strong><span>2027.03</span><strong>$66.0K</strong></div>
+                <div><span>专项 P0</span><strong>420</strong><span>2027.04</span><strong>$42.0K</strong></div>
+              </div>
+              <div class="route-list compact">
+                <div><b>P0</b><span><strong>2in 三合一</strong>孔位、防晃、承重与配件完整性先过关。</span></div>
+                <div><b>P1</b><span><strong>短双层脚踏</strong>计划 GMV $54.0K，2027.04 上架。</span></div>
+                <div><b>P2</b><span><strong>防盗 D 形环</strong>计划 GMV $35.6K，2027.11 上架。</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="source-module-frame hitch-source-module">
+            <iframe id="hitchPortfolioFrame" src="./source/hitch/index.html?embed=budget#portfolio" title="拖车钩脚踏未来新品开发池完整模块" loading="eager"></iframe>
+          </div>
+        </section>
+
+        <section class="section" id="gates">
+          <div class="section-heading"><div><p class="eyebrow">BUDGET ACTION & TIMELINE</p><h2>预算补充、开发动作与待确认事项</h2></div></div>
+          <div class="gate-grid">
+            <article class="panel"><span class="gate-icon" data-icon="check"></span><h3>预算补充</h3><p>优先补录脚踏 $682.3K、置物托盘 $212.9K、战术板 $129.8K，以及两个新类目预算。</p><strong>Weldon + 运营｜9 月 15 日</strong></article>
+            <article class="panel"><span class="gate-icon" data-icon="shield-check"></span><h3>品类推进</h3><p>已开发产品继续样品与质量闭环；13 个未立项产品逐个确认差异点、预算和上架节点。</p><strong>不满足产品门槛则停止</strong></article>
+            <article class="panel"><span class="gate-icon" data-icon="triangle-alert"></span><h3>领导待确认</h3><p>拖车钩脚踏采用 660 件/3 月还是 420 件/4 月口径；非美预算缺口由哪些品类承担。</p><strong>影响预算和开发资源配置</strong></article>
+          </div>
+
+          <div class="recap panel">
+            <div><span class="eyebrow">PROBLEM RECAP</span><h3>问题统计与复盘</h3></div>
+            <dl>
+              <div><dt>状态</dt><dd>待验证</dd></div>
+              <div><dt>当前判断</dt><dd>既有产品预算未闭环，新品池年度口径不统一。</dd></div>
+              <div><dt>已完成</dt><dd>完成负责人过滤、三级类目拆分、预算缺口测算与专项路线收敛。</dd></div>
+              <div><dt>下一步</dt><dd>Weldon + 运营在 9 月 15 日前完成预算回填和首发口径确认。</dd></div>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="productDialog">
+      <button class="dialog-close" id="closeDialog" type="button" aria-label="关闭"><span data-icon="x"></span></button>
+      <div id="dialogContent"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script type="module" src="./app.js?v=20260826-2"></script>
+  </body>
+</html>
