@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>7款脚踏新品 | 25%利润率立项门槛</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --surface-2: #eef2f5;
+      --text: #18212b;
+      --muted: #5e6b78;
+      --line: #d6dde4;
+      --blue: #1769aa;
+      --blue-soft: #e8f2fb;
+      --green: #19724a;
+      --green-soft: #e7f4ed;
+      --amber: #a25b08;
+      --amber-soft: #fff2dd;
+      --red: #ad2f2f;
+      --red-soft: #fdeaea;
+      --ink-2: #34414e;
+      --shadow: 0 1px 2px rgba(19, 32, 45, 0.06);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.55; }
+    button, input, select { font: inherit; }
+    a { color: var(--blue); }
+    :focus-visible { outline: 3px solid rgba(23, 105, 170, 0.28); outline-offset: 2px; }
+
+    .shell { width: min(1520px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+    .topbar-inner { min-height: 56px; display: flex; align-items: center; gap: 18px; }
+    .brand { font-weight: 700; color: var(--text); white-space: nowrap; }
+    .nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: 13px; padding: 8px 10px; white-space: nowrap; border-radius: 4px; }
+    .nav a:hover { background: var(--surface-2); color: var(--text); }
+
+    main { padding: 22px 0 48px; }
+    .page-head { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(300px, .7fr); gap: 16px; align-items: stretch; }
+    .title-block, .decision-block { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow); padding: 22px; }
+    .eyebrow { margin: 0 0 6px; color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(26px, 4vw, 42px); line-height: 1.18; letter-spacing: 0; }
+    .lede { max-width: 900px; margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; color: var(--muted); font-size: 12px; }
+    .decision-block { border-top: 4px solid var(--amber); }
+    .decision-label { color: var(--muted); font-size: 12px; }
+    .decision-title { margin: 5px 0 8px; font-size: 21px; line-height: 1.35; }
+    .decision-text { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+    .section { margin-top: 28px; scroll-margin-top: 76px; }
+    .section-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 12px; }
+    .section h2 { margin: 0; font-size: 22px; line-height: 1.25; letter-spacing: 0; }
+    .section-sub { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .source-tag { color: var(--muted); font-size: 11px; text-align: right; max-width: 460px; }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+    .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+    .kpi-label { color: var(--muted); font-size: 12px; }
+    .kpi-value { margin-top: 5px; font-size: 28px; font-weight: 750; line-height: 1.15; font-variant-numeric: tabular-nums; }
+    .kpi-note { margin-top: 7px; color: var(--muted); font-size: 11px; }
+    .danger .kpi-value { color: var(--red); }
+    .warning .kpi-value { color: var(--amber); }
+    .good .kpi-value { color: var(--green); }
+
+    .grid-2 { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 12px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; box-shadow: var(--shadow); min-width: 0; }
+    .panel h3 { margin: 0 0 12px; font-size: 16px; }
+    .panel-note { color: var(--muted); font-size: 12px; margin: -5px 0 14px; }
+
+    .margin-chart-scroll { overflow-x: auto; padding-bottom: 68px; }
+    .margin-chart { display: grid; grid-template-columns: repeat(13, minmax(84px, 1fr)); gap: 9px; align-items: end; min-width: 1190px; height: 268px; padding: 22px 8px 76px; position: relative; border-bottom: 1px solid var(--line); }
+    .margin-chart::before { content: "25%目标"; position: absolute; left: 0; right: 0; top: 12px; border-top: 1px dashed var(--green); color: var(--green); font-size: 10px; padding-top: 2px; }
+    .bar-wrap { height: 160px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; position: relative; cursor: help; border-radius: 4px; }
+    .bar-wrap:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+    .bar-wrap:hover .bar, .bar-wrap:focus-visible .bar { filter: brightness(.88); }
+    .bar-value { font-size: 10px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .bar { width: min(30px, 80%); min-height: 3px; background: var(--blue); border-radius: 3px 3px 0 0; }
+    .bar.negative { background: var(--red); border-radius: 0 0 3px 3px; transform: translateY(20px); }
+    .bar-label { position: absolute; bottom: -67px; width: 84px; color: var(--muted); font-size: 9px; line-height: 1.25; text-align: center; overflow-wrap: anywhere; }
+    .bar-label-sku { display: block; color: var(--ink-2); font-size: 9px; font-weight: 700; }
+    .bar-label-name { display: block; margin-top: 2px; }
+    .margin-tooltip { position: fixed; z-index: 80; width: min(360px, calc(100vw - 24px)); padding: 12px 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(24,33,43,.98); color: #f8fafc; box-shadow: 0 12px 30px rgba(10, 18, 28, .22); font-size: 11px; line-height: 1.45; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity .12s ease, transform .12s ease; }
+    .margin-tooltip.is-visible { opacity: 1; transform: translateY(0); }
+    .margin-tooltip-title { display: flex; justify-content: space-between; gap: 12px; align-items: start; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .margin-tooltip-sku { font-weight: 750; color: #fff; }
+    .margin-tooltip-name { margin-top: 2px; color: #c8d3df; font-size: 10px; }
+    .margin-tooltip-month { flex: 0 0 auto; color: #b9e4c9; font-weight: 700; text-align: right; }
+    .margin-tooltip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; }
+    .margin-tooltip-item { display: flex; justify-content: space-between; gap: 8px; }
+    .margin-tooltip-label { color: #afbdca; }
+    .margin-tooltip-value { color: #fff; font-variant-numeric: tabular-nums; text-align: right; }
+    .margin-tooltip-value.emphasis { color: #b9e4c9; font-weight: 750; }
+    @media (max-width: 620px) {
+      .margin-tooltip { width: min(340px, calc(100vw - 20px)); }
+      .margin-tooltip-grid { grid-template-columns: 1fr; }
+    }
+
+    .fact-list { display: grid; gap: 10px; }
+    .fact { border-left: 3px solid var(--blue); padding: 2px 0 2px 12px; }
+    .fact strong { display: block; font-size: 13px; }
+    .fact span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .fact.red { border-color: var(--red); }
+    .fact.amber { border-color: var(--amber); }
+
+    .cost-pool { display: grid; grid-template-columns: repeat(8, minmax(68px, 1fr)); gap: 6px; }
+    .cost-cell { min-height: 96px; padding: 11px 9px; border: 1px solid var(--line); background: var(--surface); border-radius: 5px; }
+    .cost-cell .pct { font-size: 22px; font-weight: 750; color: var(--blue); font-variant-numeric: tabular-nums; }
+    .cost-cell .name { font-size: 11px; color: var(--ink-2); margin-top: 3px; }
+    .cost-cell .rule { font-size: 10px; color: var(--muted); margin-top: 5px; }
+    .cost-cell.target { background: var(--green-soft); border-color: #a8d1bd; }
+    .cost-cell.target .pct { color: var(--green); }
+    .cost-cell.warning { background: var(--red-soft); border-color: #efbcbc; }
+    .cost-cell.warning .pct { color: var(--red); }
+
+    .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { padding: 11px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #edf1f4; color: var(--ink-2); font-weight: 700; white-space: nowrap; }
+    tbody tr:hover { background: #f8fafb; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .product-name { min-width: 215px; font-weight: 650; }
+    .status { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 999px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+    .status.high { color: var(--red); background: var(--red-soft); }
+    .status.medium { color: var(--amber); background: var(--amber-soft); }
+    .status.conditional { color: var(--blue); background: var(--blue-soft); }
+    .recommend { min-width: 220px; color: var(--ink-2); }
+    .small { color: var(--muted); font-size: 10px; }
+
+    .calculator { display: grid; grid-template-columns: minmax(340px, .8fr) minmax(0, 1.2fr); gap: 12px; }
+    .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field label { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+    .field input, .field select { width: 100%; height: 38px; border: 1px solid var(--line); border-radius: 4px; padding: 0 10px; background: white; color: var(--text); }
+    .field.wide { grid-column: 1 / -1; }
+    .calc-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .btn { border: 1px solid var(--line); border-radius: 4px; padding: 7px 10px; background: white; color: var(--ink-2); cursor: pointer; font-size: 12px; }
+    .btn:hover { background: var(--surface-2); }
+    .btn.primary { background: var(--blue); color: white; border-color: var(--blue); }
+    .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .result { padding: 14px; border: 1px solid var(--line); border-radius: 5px; background: #f8fafb; }
+    .result .label { color: var(--muted); font-size: 11px; }
+    .result .value { margin-top: 4px; font-size: 24px; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .profit-track { height: 18px; margin-top: 16px; display: flex; overflow: hidden; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
+    .profit-track span { height: 100%; min-width: 0; transition: width .2s ease; }
+    .profit-track .cost { background: var(--amber); }
+    .profit-track .profit { background: var(--green); }
+    .calc-message { margin-top: 12px; padding: 11px 12px; border-radius: 4px; font-size: 12px; }
+    .calc-message.pass { color: var(--green); background: var(--green-soft); border: 1px solid #b8d9c8; }
+    .calc-message.fail { color: var(--red); background: var(--red-soft); border: 1px solid #efbcbc; }
+    .breakdown { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; font-size: 11px; }
+    .breakdown div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 4px; border-bottom: 1px dotted var(--line); }
+    .breakdown span:first-child { color: var(--muted); }
+
+    .sheet-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .sheet-toolbar p { margin: 0; color: var(--muted); font-size: 11px; }
+    .sheet-table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); box-shadow: var(--shadow); }
+    .sheet-table { min-width: 3260px; table-layout: fixed; font-size: 10px; }
+    .sheet-table th, .sheet-table td { padding: 6px 5px; text-align: center; vertical-align: middle; }
+    .sheet-table thead tr:first-child th { font-size: 12px; color: #10202f; border-right: 1px solid rgba(24,33,43,.18); }
+    .sheet-table thead tr:nth-child(2) th { font-size: 10px; white-space: normal; line-height: 1.25; }
+    .sheet-table .group-product { background: #ef4444; color: white !important; }
+    .sheet-table .group-money, .sheet-table .group-commission, .sheet-table .group-ad { background: #19a8d8; }
+    .sheet-table .group-weight, .sheet-table .group-cost, .sheet-table .group-fba { background: #8ca5bd; }
+    .sheet-table .group-cm { background: #9ac0df; }
+    .sheet-table .group-inch { background: #ffda71; }
+    .sheet-table .group-freight { background: #cbd4de; }
+    .sheet-table .group-storage { background: #8bd04d; }
+    .sheet-table .group-refund { background: #c9d5e2; }
+    .sheet-table .group-promo { background: #e4c2dc; }
+    .sheet-table .group-profit { background: #9dd7b0; }
+    .sheet-table .group-margin { background: #65be8b; }
+    .sheet-table .group-settings { background: #b9c2cc; }
+    .sheet-table .product-cell { position: sticky; left: 0; z-index: 3; background: white; text-align: left; font-weight: 700; width: 220px; min-width: 220px; }
+    .sheet-table thead .product-cell { z-index: 4; background: #ef4444; color: white; text-align: center; }
+    .sheet-table input, .sheet-table select { width: 72px; min-height: 30px; border: 1px solid #c9d2da; border-radius: 3px; background: #fff; padding: 3px 5px; text-align: right; font-size: 10px; }
+    .sheet-table input[readonly] { background: #eef2f5; color: #334155; font-weight: 700; cursor: not-allowed; }
+    .sheet-table select { width: 74px; text-align: left; }
+    .sheet-table .computed { display: block; min-width: 64px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .sheet-table .profit-positive { color: var(--green); font-weight: 700; }
+    .sheet-table .profit-negative { color: var(--red); font-weight: 700; }
+    .sheet-table .primary-result { background: var(--green-soft); }
+    .sheet-table .reset-row { width: 30px; height: 30px; border: 1px solid var(--line); background: white; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .sheet-notes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+    .sheet-note { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; padding: 10px; font-size: 11px; }
+    .sheet-note strong { display: block; margin-bottom: 3px; }
+    .sheet-note span { color: var(--muted); }
+
+    .gate-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .gate { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--blue); border-radius: 6px; padding: 15px; box-shadow: var(--shadow); }
+    .gate h3 { margin: 0 0 7px; font-size: 14px; }
+    .gate p { margin: 0; color: var(--muted); font-size: 11px; }
+    .gate .owner { margin-top: 10px; font-size: 11px; color: var(--ink-2); }
+    .gate.stop { border-top-color: var(--red); }
+
+    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+    .phase { padding: 16px; border-right: 1px solid var(--line); }
+    .phase:last-child { border-right: 0; }
+    .phase .time { color: var(--blue); font-weight: 700; font-size: 12px; }
+    .phase h3 { margin: 4px 0 6px; font-size: 14px; }
+    .phase p { margin: 0; color: var(--muted); font-size: 11px; }
+
+    .evidence { margin-top: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; }
+    .evidence summary { cursor: pointer; padding: 13px 16px; font-size: 12px; font-weight: 700; }
+    .evidence-inner { border-top: 1px solid var(--line); padding: 14px; }
+    .evidence img { display: block; width: 100%; max-height: 760px; object-fit: contain; background: #edf1f4; }
+    .evidence figcaption { margin-top: 8px; color: var(--muted); font-size: 10px; }
+    .source-list { display: grid; gap: 8px; }
+    .source-item { padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; font-size: 12px; }
+    .source-item strong { display: block; }
+    .source-item span { display: block; color: var(--muted); margin-top: 3px; }
+    .footer { margin-top: 28px; padding: 18px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+
+    @media (max-width: 1100px) {
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+      .cost-pool { grid-template-columns: repeat(4, 1fr); }
+      .gate-grid { grid-template-columns: repeat(2, 1fr); }
+      .calculator { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 20px, 1520px); }
+      .topbar-inner { align-items: flex-start; flex-direction: column; gap: 3px; padding: 8px 0; }
+      .nav { width: 100%; }
+      main { padding-top: 12px; }
+      .page-head, .grid-2 { grid-template-columns: 1fr; }
+      .title-block, .decision-block { padding: 17px; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .cost-pool { grid-template-columns: repeat(2, 1fr); }
+      .gate-grid, .timeline { grid-template-columns: 1fr; }
+      .phase { border-right: 0; border-bottom: 1px solid var(--line); }
+      .phase:last-child { border-bottom: 0; }
+      .control-grid, .result-grid, .breakdown { grid-template-columns: 1fr; }
+      .sheet-notes { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .source-tag { text-align: left; }
+      .margin-chart { gap: 7px; }
+      .bar-value { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">脚踏新品立项仪表板</div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#decision">结论</a>
+        <a href="#history">老品证据</a>
+        <a href="#limits">费率红线</a>
+        <a href="#products">7款产品</a>
+        <a href="#calculator">模板利润核算</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="page-head" id="decision">
+      <div class="title-block">
+        <p class="eyebrow">Amazon US · 2027新品预算立项</p>
+        <h1>售价固定，按2026 FBA尾程费重算7款脚踏利润</h1>
+        <p class="lede">采用参考实验台的 Amazon 2026 非服装费率后，27kg箱规的FBA尾程费由$34.38重算为$44.07，22kg箱规由$30.09重算为$44.57。当前7款海运散货利润率均未达到25%，升级款24.95%最接近目标。</p>
+        <div class="meta">
+          <span>主责：资深平台运营经理</span>
+          <span>评审：财务、供应链、物流</span>
+          <span>汇率假设：USD/CNY 6.8</span>
+          <span>版本：2026-09-18</span>
+        </div>
+      </div>
+      <aside class="decision-block">
+        <div class="decision-label">FBA新口径复核结论</div>
+        <div class="decision-title">7款当前均未达到25%</div>
+        <p class="decision-text">佣金12%、广告5%、退款5%、汇损1.5%、促销0%保持不变。应用新FBA公式后，加权贡献利润率为21.53%，预算贡献利润约$70,381；需继续降低货值、FBA计费重或退款损失。</p>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="kpi-grid">
+        <div class="kpi danger"><div class="kpi-label">老品汇总利润率</div><div class="kpi-value">10.74%</div><div class="kpi-note">当前汇总口径；最佳月份峰值见下方</div></div>
+        <div class="kpi"><div class="kpi-label">源表成本输入</div><div class="kpi-value">¥513</div><div class="kpi-note">7款当前均使用同一未税价格</div></div>
+        <div class="kpi"><div class="kpi-label">源表包装输入</div><div class="kpi-value">27kg</div><div class="kpi-note">215×28×18cm，体积0.108m³</div></div>
+        <div class="kpi danger"><div class="kpi-label">重算加权利润率</div><div class="kpi-value">21.53%</div><div class="kpi-note">低于25%目标3.47个百分点</div></div>
+        <div class="kpi warning"><div class="kpi-label">预算贡献利润</div><div class="kpi-value">$70.38k</div><div class="kpi-note">1,410件预算销量对应的贡献利润</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="history">
+      <div class="section-head">
+        <div><h2>老品基准与源表现状</h2><p class="section-sub">老品利润率中位数10.22%，说明需要同时控制货值、履约和退款。下方现状利润按源表统一输入与利润模板公式重算。</p></div>
+        <div class="source-tag">来源：仪表板 (1).xlsx「历史费率明细」；按月销售额与盈利能力额重算</div>
+      </div>
+      <div class="panel margin-panel">
+        <h3>13个历史 SKU 销售毛利润率（最佳月份）</h3>
+        <p class="panel-note">每个 SKU 取历史费率明细中最高的有效月份；利润率按盈利能力额 ÷ 销售额（含税）重算，空值和无穷值不参与。柱高为相对高度，负值向下标红。</p>
+        <div class="margin-chart-scroll">
+          <div class="margin-chart" id="marginChart" aria-label="13个历史SKU最佳月份销售毛利润率"></div>
+        </div>
+        <div class="margin-tooltip" id="marginTooltip" role="tooltip" aria-hidden="true"></div>
+      </div>
+      <details class="evidence">
+        <summary>展开查看原仪表板证据截图</summary>
+        <div class="evidence-inner">
+          <figure>
+            <img src="assets/dashboard.jpeg" alt="脚踏老品仪表板原始截图">
+            <figcaption>截图仅用于追溯显示值。原Excel没有可读取的行级BI数据；被裁切或模糊的字段不做确定性解读。</figcaption>
+          </figure>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="limits">
+      <div class="section-head">
+        <div><h2>固定售价下的共同费用控制线</h2><p class="section-sub">佣金、运营费率、退款和汇损先统一，采购、箱规、头程、FBA和促销额度再按售价档分配。</p></div>
+        <div class="source-tag">利润公式沿用新品利润测算模板；物流按海运散货1430元/m³和模板FBA公式计算</div>
+      </div>
+      <div class="cost-pool" aria-label="费用率红线">
+        <div class="cost-cell"><div class="pct">12%</div><div class="name">Amazon佣金</div><div class="rule">利润模板参数</div></div>
+        <div class="cost-cell"><div class="pct">5%</div><div class="name">广告费率</div><div class="rule">7款新品统一控制值</div></div>
+        <div class="cost-cell"><div class="pct">≤5%</div><div class="name">退款净损失</div><div class="rule">模板8%压降3个百分点</div></div>
+        <div class="cost-cell"><div class="pct">1.5%</div><div class="name">汇损</div><div class="rule">利润模板参数</div></div>
+        <div class="cost-cell"><div class="pct">0%</div><div class="name">促销折扣</div><div class="rule">7款新品统一不计促销</div></div>
+        <div class="cost-cell"><div class="pct">¥360–513</div><div class="name">产品 + 包装</div><div class="rule">按售价档分别冻结</div></div>
+        <div class="cost-cell"><div class="pct">$44.07–44.57</div><div class="name">FBA履约</div><div class="rule">2026费率，含售价档与续重</div></div>
+        <div class="cost-cell warning"><div class="pct">19.15–24.95%</div><div class="name">重算贡献利润率</div><div class="rule">海运散货口径，当前均未达25%</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div><h2>每一款产品距25%还有多少</h2><p class="section-sub">“现状利润率”保留源表旧口径；“重算利润率”采用 Amazon 2026 FBA尾程费、广告5%、退款5%、促销0%，运营价格不变。</p></div>
+        <div class="source-tag">目标销量1,410件；GMV $326,835.90；重算贡献利润约$70,381</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>产品</th><th class="num">固定售价</th><th class="num">预算销量</th><th class="num">源表现状利润率</th><th class="num">目标产品成本</th><th>目标重量 / 箱规</th><th class="num">头程</th><th class="num">FBA</th><th class="num">广告费率</th><th class="num">退款</th><th class="num">促销</th><th class="num">重算利润率</th><th>25%缺口与执行重点</th>
+            </tr>
+          </thead>
+          <tbody id="productRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="section-head">
+        <div><h2>逐款利润核算表</h2><p class="section-sub">完全按利润模板的字段维度展开。运营售价锁定，其余输入可修改；销售额、英寸尺寸、运输费、费用金额、利润和利润率实时更新。</p></div>
+        <div class="source-tag">默认以海运散货利润率作为主判断；四种运输方式同时保留</div>
+      </div>
+      <div class="sheet-toolbar">
+        <p>计算币种：费用与利润为CNY；售价、FBA操作费为USD。数量默认1，用于单件利润核算。</p>
+        <button class="btn" type="button" id="resetAllRows">恢复全部目标输入</button>
+      </div>
+      <div class="sheet-table-wrap">
+        <table class="sheet-table" aria-label="7款脚踏利润核算表">
+          <thead>
+            <tr>
+              <th class="group-product product-cell" rowspan="2">产品</th>
+              <th class="group-money" colspan="3">金额 $</th>
+              <th class="group-weight" colspan="2">重量</th>
+              <th class="group-cm" colspan="3">尺寸（CM）</th>
+              <th class="group-inch" colspan="3">尺寸（Inch）</th>
+              <th class="group-cost" colspan="2">成本 ¥</th>
+              <th class="group-commission" colspan="2">佣金 ¥</th>
+              <th class="group-freight" colspan="4">头程费用 ¥</th>
+              <th class="group-fba" rowspan="2">FBA操作费 $<br>尾程</th>
+              <th class="group-ad" colspan="2">广告费用 ¥</th>
+              <th class="group-storage" colspan="2">仓储费 ¥</th>
+              <th class="group-refund" colspan="2">退款 ¥</th>
+              <th class="group-promo" colspan="2">促销折扣 ¥</th>
+              <th class="group-profit" colspan="4">利润 ¥</th>
+              <th class="group-margin" colspan="4">利润率 %</th>
+              <th class="group-settings" colspan="2">设置</th>
+              <th class="group-settings" rowspan="2">恢复</th>
+            </tr>
+            <tr>
+              <th>数量</th><th>单价 $</th><th>销售额 $</th>
+              <th>KG</th><th>磅</th>
+              <th>长</th><th>宽</th><th>高</th>
+              <th>长</th><th>宽</th><th>高</th>
+              <th>单价</th><th>总成本</th>
+              <th>费率 %</th><th>佣金</th>
+              <th>快递<br>68/KG</th><th>空运<br>61/KG</th><th>海运快递<br>15/KG</th><th>海运散货<br>1430/方</th>
+              <th>广告费比 %</th><th>广告费</th>
+              <th>时间段</th><th>月仓储费</th>
+              <th>退款率 %</th><th>退款额</th>
+              <th>折扣 %</th><th>折扣额</th>
+              <th>DHL</th><th>空运</th><th>海运快递</th><th>海运散货</th>
+              <th>DHL</th><th>空运</th><th>海运快递</th><th>海运散货</th>
+              <th>汇率</th><th>汇损 %</th>
+            </tr>
+          </thead>
+          <tbody id="profitSheetRows"></tbody>
+        </table>
+      </div>
+      <div class="sheet-notes">
+        <div class="sheet-note"><strong>头程计费重</strong><span>快递、空运和海运快递取实际重量与体积重（长×宽×高÷5000）的较大值。</span></div>
+        <div class="sheet-note"><strong>FBA操作费</strong><span>按<a href="https://liqiliangqian4-sketch.github.io/sssiiizzzzweldon/" target="_blank" rel="noopener">参考实验台</a>的 Amazon 2026 非服装费率重算：计费重取实重与体积重较大值，并结合尺寸分段和售价档位。</span></div>
+        <div class="sheet-note"><strong>仓储费</strong><span>按1–9月/10–12月、标准件/大件的模板费率自动计算，并乘以数量。</span></div>
+        <div class="sheet-note"><strong>促销处理</strong><span>促销百分比自动生成折扣金额，并在净销售额中扣减一次，避免百分比与金额重复扣减。</span></div>
+      </div>
+    </section>
+
+    <footer class="footer">利润率 = 各运输方式利润 ÷ 促销后销售额。头程与仓储字段来自“产品名 亚马逊产品利润测算表.xlsm”；FBA尾程费采用用户提供的2026费率实验台公式，读取日期2026-09-18。</footer>
+  </main>
+
+  <script>
+    const marginChartData = [
+      { sku: 'A3302-00306-BK', name: '名称未在历史导出表保留', margin: 29.94, month: '2026-03', sales: 29948.5571, profit: 8965.3207, units: 144, asp: 207.9760909722, refundRate: 0.0273789718, inboundRate: 0.0831928056, platformFeeRate: 0.3152330828, commissionRate: 0.1208804835, promoRate: 0.0023702711, deliveryRate: 0.1888878379, storageRate: 0.0063668315, onsiteAdsRate: 0.0649588104, offsiteAdsRate: 0 },
+      { sku: 'A1329-00504-BK', name: '名称未在历史导出表保留', margin: 28.31, month: '2026-06', sales: 10193.111, profit: 2885.6942, units: 49, asp: 208.0226734694, refundRate: 0, inboundRate: 0.0773487602, platformFeeRate: 0.3340118206, commissionRate: 0.1205679950, promoRate: 0.0046746474, deliveryRate: 0.2075165055, storageRate: 0.0084673523, onsiteAdsRate: 0.0377173562, offsiteAdsRate: 0 },
+      { sku: 'A3302-00308-BK', name: '名称未在历史导出表保留', margin: 22.45, month: '2026-04', sales: 10919.6074, profit: 2451.5903, units: 39, asp: 279.9899333333, refundRate: 0.0256410226, inboundRate: 0.0661824168, platformFeeRate: 0.3208640128, commissionRate: 0.1208270157, promoRate: 0.0104831241, deliveryRate: 0.1949994606, storageRate: 0.0063475708, onsiteAdsRate: 0.0881232557, offsiteAdsRate: 0 },
+      { sku: 'A1333-00001-BK', name: 'JL 脚踏升级款', margin: 19.52, month: '2026-05', sales: 5759.7605, profit: 1124.2629, units: 24, asp: 239.9900208333, refundRate: 0, inboundRate: 0.1230994828, platformFeeRate: 0.3501973099, commissionRate: 0.1203793801, promoRate: 0.0051853545, deliveryRate: 0.2137528510, storageRate: -0.0028812225, onsiteAdsRate: 0.0852543331, offsiteAdsRate: 0 },
+      { sku: 'A1329-00503-BK', name: '名称未在历史导出表保留', margin: 16.60, month: '2026-08', sales: 12678.0715, profit: 2104.8997, units: 61, asp: 207.8372377049, refundRate: 0.0496897340, inboundRate: 0.0953805499, platformFeeRate: 0.3700413760, commissionRate: 0.1219236492, promoRate: 0.0052724423, deliveryRate: 0.2163647234, storageRate: 0.0381360397, onsiteAdsRate: 0.0718664482, offsiteAdsRate: 0 },
+      { sku: 'A1333-00003-BK-FBM', name: 'JK 脚踏升级款（FBM）', margin: 13.88, month: '2026-09', sales: 1439.92, profit: 199.8974, units: 8, asp: 179.99, refundRate: 0, inboundRate: 0.2144984263, platformFeeRate: 0.2559188184, commissionRate: 0.1207369566, promoRate: 0.0060485999, deliveryRate: 0.1337504162, storageRate: 0, onsiteAdsRate: 0.0725469803, offsiteAdsRate: 0 },
+      { sku: 'A1333-00004-BK-FBM', name: 'JT 脚踏升级款（FBM）', margin: 5.21, month: '2026-04', sales: 4199.787, profit: 218.6881, units: 21, asp: 199.9898571429, refundRate: 0.0523812041, inboundRate: 0.1226626058, platformFeeRate: 0.3120049064, commissionRate: 0.1216955959, promoRate: 0.0051716194, deliveryRate: 0.1892211054, storageRate: 0, onsiteAdsRate: 0.1366496740, offsiteAdsRate: 0 },
+      { sku: 'A1333-00006-BK-FBM', name: 'JL 脚踏基础款（FBM）', margin: 4.97, month: '2026-09', sales: 4239.79, profit: 210.7293, units: 21, asp: 201.8947619048, refundRate: 0.0094344295, inboundRate: 0.1383869771, platformFeeRate: 0.2649295417, commissionRate: 0.1207381499, promoRate: 0.0060067362, deliveryRate: 0.1427563327, storageRate: 0, onsiteAdsRate: 0.2165548916, offsiteAdsRate: 0 },
+      { sku: 'A1333-00009-BK-FBM', name: 'Silverado 19-25 升级款（FBM）', margin: 1.07, month: '2026-07', sales: 27322.7482, profit: 291.8553, units: 125, asp: 218.5819856, refundRate: 0.0488215384, inboundRate: 0.1457015073, platformFeeRate: 0.3276234499, commissionRate: 0.1216735601, promoRate: 0.0040339244, deliveryRate: 0.1890902967, storageRate: 0.0107477918, onsiteAdsRate: 0.1613550030, offsiteAdsRate: 0 },
+      { sku: 'A1333-00007-BK', name: 'RAM 19-25 双层双踏板款', margin: -0.26, month: '2026-04', sales: 2799.8986, profit: -7.1669, units: 10, asp: 279.98986, refundRate: 0, inboundRate: 0.0910474267, platformFeeRate: 0.3783520598, commissionRate: 0.1203396529, promoRate: 0.0027904939, deliveryRate: 0.2213225562, storageRate: 0.0356609065, onsiteAdsRate: 0.2503791521, offsiteAdsRate: 0 },
+      { sku: 'A1333-00005-BK-FBM', name: 'JT 脚踏双层双踏板款（FBM）', margin: -1.60, month: '2026-06', sales: 8347.08, profit: -133.163, units: 42, asp: 198.74, refundRate: 0.0503146370, inboundRate: 0.1533888715, platformFeeRate: 0.3659637589, commissionRate: 0.1207447464, promoRate: 0.0008504411, deliveryRate: 0.2398880283, storageRate: 0, onsiteAdsRate: 0.1111414015, offsiteAdsRate: 0 },
+      { sku: 'A1333-00008-BK', name: 'Silverado 19-25 基础款', margin: -1.87, month: '2026-05', sales: 2987.3793, profit: -55.9005, units: 12, asp: 248.948275, refundRate: 0, inboundRate: 0.0923271688, platformFeeRate: 0.4656889169, commissionRate: 0.1202325074, promoRate: 0.0018884780, deliveryRate: 0.3143945224, storageRate: 0.0297392021, onsiteAdsRate: 0.1760429833, offsiteAdsRate: 0 },
+      { sku: 'A1333-00010-BK-FBM', name: 'RAM 09-18 脚踏升级款（FBM）', margin: -11.16, month: '2026-04', sales: 10929.4183, profit: -1220.2094, units: 58, asp: 188.4382465517, refundRate: 0.2406220192, inboundRate: 0.115524961995, platformFeeRate: 0.4250303768, commissionRate: 0.1280814671, promoRate: 0.0027905511, deliveryRate: 0.2955930362, storageRate: 0, onsiteAdsRate: 0.1206158789, offsiteAdsRate: 0 }
+    ];
+    const products = [
+      { id: 'ram-dual', name: '09-18 RAM1500 双台阶侧杠', price: 269.99, units: 150, baseline: 23.39, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 23.04, advice: '距25%约¥36/件；优先把实际重量降至50lb以内，或从货值与退款中等额降本。' },
+      { id: 'tundra-new-basic', name: 'Tundra 2021+ 脚踏 基础款', price: 199.99, units: 210, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；当前FBA受超大尺寸0–50lb档影响，需要缩短最长边或继续降低货值。' },
+      { id: 'tundra-new-upgrade', name: 'Tundra 2021+ 脚踏 升级款', price: 279.99, units: 170, baseline: 25.17, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 24.95, advice: '距25%约¥1/件；冻结促销0%，通过包装或采购微降本即可关闭缺口。' },
+      { id: 'a1333', name: 'A1333-00005-BK 降本款', price: 249.99, units: 305, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；优先减重跨入≤50lb档，并继续推动支架、紧固件与包装降本。' },
+      { id: 'ram-basic', name: '2009-2018 RAM 1500 Crew Cab 基础款', price: 199.99, units: 290, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；缩短最长边跨档的同时，车型适配和包装防损用于控制退款。' },
+      { id: 'colorado-basic', name: '2015-2026 Chevy Colorado/GMC Canyon Crew Cab 基础款', price: 199.99, units: 175, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；FBA跨档与跨年份车型退款必须同时改善，单控广告不足以达标。' },
+      { id: 'tundra-old-basic', name: '2007-2021 Toyota Tundra Crew Cab 基础款', price: 249.99, units: 110, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；目标是实际重≤50lb，并从货值、包装和退款中关闭剩余缺口。' }
+    ];
+    const fmtMoney = v => '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtCny = v => '¥' + Math.round(v).toLocaleString('zh-CN');
+    const fmtCny2 = v => '¥' + Number(v).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtPct = v => Number(v * 100).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+    const marginTooltip = document.getElementById('marginTooltip');
+    const tooltipFields = [
+      ['销售额（含税）', item => fmtCny2(item.sales)],
+      ['销量', item => Number(item.units).toLocaleString('zh-CN')],
+      ['客单价', item => fmtCny2(item.asp)],
+      ['盈利能力额', item => fmtCny2(item.profit)],
+      ['销售毛利润率', item => item.margin.toFixed(2) + '%', true],
+      ['退款率', item => fmtPct(item.refundRate)],
+      ['产品头程成本率', item => fmtPct(item.inboundRate)],
+      ['平台费用率', item => fmtPct(item.platformFeeRate)],
+      ['平台佣金率', item => fmtPct(item.commissionRate)],
+      ['平台促销费率', item => fmtPct(item.promoRate)],
+      ['销售配送费率', item => fmtPct(item.deliveryRate)],
+      ['仓储费率', item => fmtPct(item.storageRate)],
+      ['站内广告费率', item => fmtPct(item.onsiteAdsRate)],
+      ['站外广告费率', item => fmtPct(item.offsiteAdsRate)]
+    ];
+
+    function renderMarginTooltip(item) {
+      const fields = tooltipFields.map(([label, format, emphasis]) => `<div class="margin-tooltip-item"><span class="margin-tooltip-label">${label}</span><span class="margin-tooltip-value${emphasis ? ' emphasis' : ''}">${format(item)}</span></div>`).join('');
+      marginTooltip.innerHTML = `<div class="margin-tooltip-title"><div><div class="margin-tooltip-sku">${item.sku}</div><div class="margin-tooltip-name">${item.name}</div></div><div class="margin-tooltip-month">最佳月份<br>${item.month}</div></div><div class="margin-tooltip-grid">${fields}</div>`;
+    }
+
+    function placeMarginTooltip(event, wrap) {
+      const rect = wrap.getBoundingClientRect();
+      const anchorX = typeof event?.clientX === 'number' ? event.clientX : rect.left + rect.width / 2;
+      const anchorY = typeof event?.clientY === 'number' ? event.clientY : rect.top;
+      marginTooltip.style.left = '0px';
+      marginTooltip.style.top = '0px';
+      const tooltipRect = marginTooltip.getBoundingClientRect();
+      const gap = 14;
+      let left = anchorX + gap;
+      let top = anchorY + gap;
+      if (left + tooltipRect.width > window.innerWidth - 10) left = anchorX - tooltipRect.width - gap;
+      if (top + tooltipRect.height > window.innerHeight - 10) top = (typeof event?.clientY === 'number' ? event.clientY : rect.bottom) - tooltipRect.height - gap;
+      left = Math.max(10, Math.min(left, window.innerWidth - tooltipRect.width - 10));
+      top = Math.max(10, Math.min(top, window.innerHeight - tooltipRect.height - 10));
+      marginTooltip.style.left = `${left}px`;
+      marginTooltip.style.top = `${top}px`;
+    }
+
+    function showMarginTooltip(item, wrap, event) {
+      renderMarginTooltip(item);
+      marginTooltip.setAttribute('aria-hidden', 'false');
+      marginTooltip.classList.add('is-visible');
+      placeMarginTooltip(event, wrap);
+    }
+
+    function hideMarginTooltip() {
+      marginTooltip.classList.remove('is-visible');
+      marginTooltip.setAttribute('aria-hidden', 'true');
+    }
+
+    const chart = document.getElementById('marginChart');
+    marginChartData.forEach(item => {
+      const wrap = document.createElement('div');
+      wrap.className = 'bar-wrap';
+      wrap.tabIndex = 0;
+      wrap.setAttribute('role', 'img');
+      wrap.setAttribute('aria-describedby', 'marginTooltip');
+      wrap.setAttribute('aria-label', `${item.sku}，${item.name}，最佳月份 ${item.month}，销售毛利润率 ${item.margin.toFixed(2)}%`);
+      const valueEl = document.createElement('div');
+      valueEl.className = 'bar-value';
+      valueEl.textContent = item.margin.toFixed(2) + '%';
+      const bar = document.createElement('div');
+      bar.className = 'bar' + (item.margin < 0 ? ' negative' : '');
+      bar.style.height = Math.max(3, Math.min(150, Math.abs(item.margin) / 40 * 150)) + 'px';
+      const label = document.createElement('div');
+      label.className = 'bar-label';
+      label.innerHTML = `<span class="bar-label-sku">${item.sku}</span><span class="bar-label-name">${item.name}</span>`;
+      wrap.append(valueEl, bar, label);
+      wrap.addEventListener('mouseenter', event => showMarginTooltip(item, wrap, event));
+      wrap.addEventListener('mousemove', event => {
+        if (marginTooltip.classList.contains('is-visible')) placeMarginTooltip(event, wrap);
+      });
+      wrap.addEventListener('mouseleave', hideMarginTooltip);
+      wrap.addEventListener('focus', event => showMarginTooltip(item, wrap, event));
+      wrap.addEventListener('blur', hideMarginTooltip);
+      chart.appendChild(wrap);
+    });
+
+    const rows = document.getElementById('productRows');
+    products.forEach(p => {
+      const tr = document.createElement('tr');
+      const costChange = (p.targetCost / 513 - 1) * 100;
+      tr.innerHTML = `<td class="product-name">${p.name}</td><td class="num">${fmtMoney(p.price)}</td><td class="num">${p.units.toLocaleString('zh-CN')}</td><td class="num"><span class="status ${p.baseline >= 25 ? 'conditional' : 'high'}">${p.baseline.toFixed(2)}%</span></td><td class="num">${fmtCny(p.targetCost)}<div class="small">较¥513 ${costChange === 0 ? '不变' : costChange.toFixed(1) + '%'}</div></td><td>${p.weight}kg<div class="small">${p.dims}</div></td><td class="num">${fmtCny(p.inboundCny)}<div class="small">${fmtMoney(p.inboundCny / 6.8)}</div></td><td class="num">${fmtMoney(p.fba)}</td><td class="num">${p.tacos}%</td><td class="num">≤${p.refund}%</td><td class="num">${p.promo}%</td><td class="num"><span class="status conditional">${p.targetMargin.toFixed(2)}%</span></td><td class="recommend">${p.advice}</td>`;
+      rows.appendChild(tr);
+    });
+
+    const profitSheetRows = document.getElementById('profitSheetRows');
+    const defaultsById = new Map();
+    const numberFormat = new Intl.NumberFormat('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const pctFormat = new Intl.NumberFormat('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    function parseDims(value) {
+      const matches = String(value).match(/[\d.]+/g) || [];
+      return {
+        lengthCm: Number(matches[0]) || 0,
+        widthCm: Number(matches[1]) || 0,
+        heightCm: Number(matches[2]) || 0
+      };
+    }
+
+    function rowDefaults(product) {
+      return {
+        quantity: 1,
+        price: product.price,
+        weightKg: product.weight,
+        ...parseDims(product.dims),
+        unitCostCny: product.targetCost,
+        commissionRate: 12,
+        adRate: product.tacos,
+        storagePeriod: '1-9月',
+        refundRate: product.refund,
+        promoRate: product.promo,
+        fx: 6.8,
+        fxLoss: 1.5
+      };
+    }
+
+    function inputCell(field, value, step = '0.01', attributes = '') {
+      return `<td><input type="number" min="0" step="${step}" data-field="${field}" value="${value}" ${attributes}></td>`;
+    }
+
+    function outputCell(field, extraClass = '') {
+      return `<td class="${extraClass}"><span class="computed" data-output="${field}">0.00</span></td>`;
+    }
+
+    function buildProfitRow(product) {
+      const d = rowDefaults(product);
+      defaultsById.set(product.id, d);
+      const tr = document.createElement('tr');
+      tr.dataset.productId = product.id;
+      tr.innerHTML = `
+        <td class="product-cell">${product.name}<div class="small">运营定价保持不变</div></td>
+        ${inputCell('quantity', d.quantity, '1')}
+        ${inputCell('price', d.price, '0.01', 'readonly aria-readonly="true" title="运营固定售价"')}
+        ${outputCell('salesUsd')}
+        ${inputCell('weightKg', d.weightKg, '0.1')}
+        ${outputCell('weightLb')}
+        ${inputCell('lengthCm', d.lengthCm, '0.1')}
+        ${inputCell('widthCm', d.widthCm, '0.1')}
+        ${inputCell('heightCm', d.heightCm, '0.1')}
+        ${outputCell('lengthIn')}
+        ${outputCell('widthIn')}
+        ${outputCell('heightIn')}
+        ${inputCell('unitCostCny', d.unitCostCny)}
+        ${outputCell('totalCostCny')}
+        ${inputCell('commissionRate', d.commissionRate, '0.1')}
+        ${outputCell('commissionCny')}
+        ${outputCell('courierCny')}
+        ${outputCell('airCny')}
+        ${outputCell('seaExpressCny')}
+        ${outputCell('seaLclCny')}
+        ${outputCell('fbaUsd')}
+        ${inputCell('adRate', d.adRate, '0.01')}
+        ${outputCell('adCny')}
+        <td><select data-field="storagePeriod"><option value="1-9月">1-9月</option><option value="10-12月">10-12月</option></select></td>
+        ${outputCell('storageCny')}
+        ${inputCell('refundRate', d.refundRate, '0.1')}
+        ${outputCell('refundCny')}
+        ${inputCell('promoRate', d.promoRate, '0.1')}
+        ${outputCell('promoCny')}
+        ${outputCell('profitCourierCny')}
+        ${outputCell('profitAirCny')}
+        ${outputCell('profitSeaExpressCny')}
+        ${outputCell('profitSeaLclCny', 'primary-result')}
+        ${outputCell('marginCourier')}
+        ${outputCell('marginAir')}
+        ${outputCell('marginSeaExpress')}
+        ${outputCell('marginSeaLcl', 'primary-result')}
+        ${inputCell('fx', d.fx, '0.01')}
+        ${inputCell('fxLoss', d.fxLoss, '0.1')}
+        <td><button class="reset-row" type="button" data-reset-row aria-label="恢复${product.name}默认输入" title="恢复该行">↺</button></td>`;
+      return tr;
+    }
+
+    function getRowNumber(row, field) {
+      const control = row.querySelector(`[data-field="${field}"]`);
+      return Math.max(0, Number(control?.value) || 0);
+    }
+
+    function setOutput(row, field, value, type = 'number') {
+      const target = row.querySelector(`[data-output="${field}"]`);
+      if (!target) return;
+      target.textContent = type === 'percent' ? `${pctFormat.format(value)}%` : numberFormat.format(value);
+      target.classList.remove('profit-positive', 'profit-negative');
+      if (field.startsWith('margin')) {
+        target.classList.add(value >= 25 ? 'profit-positive' : 'profit-negative');
+      } else if (field.startsWith('profit')) {
+        target.classList.add(value >= 0 ? 'profit-positive' : 'profit-negative');
+      }
+    }
+
+    // number, segment, max lb, continuation start/step/rate, base fee by price tier.
+    const fba2026Rows = [
+      [1,'small_standard',0.125,0,0,0,2.43,3.32,3.58], [2,'small_standard',0.25,0,0,0,2.49,3.42,3.68],
+      [3,'small_standard',0.375,0,0,0,2.56,3.45,3.71], [4,'small_standard',0.5,0,0,0,2.66,3.54,3.80],
+      [5,'small_standard',0.625,0,0,0,2.77,3.68,3.94], [6,'small_standard',0.75,0,0,0,2.82,3.78,4.04],
+      [7,'small_standard',0.875,0,0,0,2.92,3.91,4.17], [8,'small_standard',1,0,0,0,2.95,3.96,4.22],
+      [9,'large_standard',0.25,0,0,0,2.91,3.73,3.99], [10,'large_standard',0.5,0,0,0,3.13,3.95,4.21],
+      [11,'large_standard',0.75,0,0,0,3.38,4.20,4.46], [12,'large_standard',1,0,0,0,3.78,4.60,4.86],
+      [13,'large_standard',1.25,0,0,0,4.22,5.04,5.30], [14,'large_standard',1.5,0,0,0,4.60,5.42,5.68],
+      [15,'large_standard',1.75,0,0,0,4.75,5.57,5.83], [16,'large_standard',2,0,0,0,5.00,5.82,6.08],
+      [17,'large_standard',2.25,0,0,0,5.10,5.92,6.18], [18,'large_standard',2.5,0,0,0,5.28,6.10,6.36],
+      [19,'large_standard',2.75,0,0,0,5.44,6.26,6.52], [20,'large_standard',3,0,0,0,5.85,6.67,6.93],
+      [21,'large_standard',20,3,0.25,0.08,6.15,6.97,7.23],
+      [22,'small_oversize',50,1,1,0.38,6.78,7.55,7.55],
+      [23,'large_oversize',50,1,1,0.38,8.58,9.35,9.35],
+      [24,'oversize_0_50',50,1,1,0.38,25.56,26.33,26.33],
+      [25,'special_0_50',50,1,1,0.38,42.56,43.33,43.33],
+      [26,'oversize_50_70',70,51,1,0.75,36.55,37.32,37.32],
+      [27,'special_50_70',70,51,1,0.75,57.55,58.32,58.32],
+      [28,'oversize_70_150',150,71,1,0.75,50.55,51.32,51.32],
+      [29,'special_70_150',150,71,1,0.75,75.55,76.32,76.32],
+      [30,'oversize_150_plus',Infinity,151,1,0.19,194.18,194.95,194.95]
+    ];
+
+    function classifyFba2026(billableLb, edgesIn) {
+      const [longest, second, shortest] = edgesIn;
+      const lengthAndGirth = longest + 2 * (second + shortest);
+      if (billableLb <= 1 && longest <= 15 && second <= 12 && shortest <= 0.75) return 'small_standard';
+      if (billableLb < 20 - 1e-9 && longest <= 18 && second <= 14 && shortest <= 8) return 'large_standard';
+      if (billableLb <= 50 && longest <= 37 && second <= 28 && shortest <= 20 && lengthAndGirth <= 130) return 'small_oversize';
+      if (billableLb <= 50 && longest <= 59 && second <= 33 && shortest <= 33 && lengthAndGirth <= 130) return 'large_oversize';
+      if (billableLb <= 50 && longest <= 96 && lengthAndGirth <= 130) return 'oversize_0_50';
+      if (billableLb <= 50) return 'special_0_50';
+      if (billableLb <= 70 && longest <= 96 && lengthAndGirth <= 130) return 'oversize_50_70';
+      if (billableLb <= 70) return 'special_50_70';
+      if (billableLb <= 150 && longest <= 96 && lengthAndGirth <= 130) return 'oversize_70_150';
+      if (billableLb <= 150) return 'special_70_150';
+      return 'oversize_150_plus';
+    }
+
+    function fbaFeeUsd(price, weightKg, lengthCm, widthCm, heightCm) {
+      const edgesIn = [lengthCm, widthCm, heightCm].map(value => value / 2.54).sort((a, b) => b - a);
+      const actualLb = weightKg * 2.20462262185;
+      const volumeLb = edgesIn.reduce((product, value) => product * value, 1) / 139;
+      const billableLb = Math.max(actualLb, volumeLb);
+      const segment = classifyFba2026(billableLb, edgesIn);
+      const rate = fba2026Rows.find(row => row[1] === segment && billableLb <= row[2] + 1e-9);
+      if (!rate) return 0;
+      const priceColumn = price < 10 ? 6 : price <= 50 ? 7 : 8;
+      const continuationUnits = rate[4] > 0 ? Math.ceil(Math.max(0, billableLb - rate[3]) / rate[4]) : 0;
+      return rate[priceColumn] + continuationUnits * rate[5];
+    }
+
+    function calculateProfitRow(row) {
+      const quantity = getRowNumber(row, 'quantity');
+      const price = getRowNumber(row, 'price');
+      const weightKg = getRowNumber(row, 'weightKg');
+      const lengthCm = getRowNumber(row, 'lengthCm');
+      const widthCm = getRowNumber(row, 'widthCm');
+      const heightCm = getRowNumber(row, 'heightCm');
+      const unitCostCny = getRowNumber(row, 'unitCostCny');
+      const commissionRate = getRowNumber(row, 'commissionRate');
+      const adRate = getRowNumber(row, 'adRate');
+      const refundRate = getRowNumber(row, 'refundRate');
+      const promoRate = getRowNumber(row, 'promoRate');
+      const fx = Math.max(0.01, getRowNumber(row, 'fx'));
+      const fxLoss = getRowNumber(row, 'fxLoss');
+      const storagePeriod = row.querySelector('[data-field="storagePeriod"]')?.value || '1-9月';
+
+      const salesUsd = quantity * price;
+      const promoUsd = salesUsd * promoRate / 100;
+      const netSalesUsd = Math.max(0, salesUsd - promoUsd);
+      const netSalesCny = netSalesUsd * fx;
+      const realizedSalesCny = netSalesCny * (1 - fxLoss / 100);
+      const weightLb = weightKg * 2.2046226;
+      const lengthIn = lengthCm * 0.3937008;
+      const widthIn = widthCm * 0.3937008;
+      const heightIn = heightCm * 0.3937008;
+      const volumeM3 = lengthCm * widthCm * heightCm / 1000000;
+      const volumeWeightKg = lengthCm * widthCm * heightCm / 5000;
+      const chargeableKg = Math.max(weightKg, volumeWeightKg) * quantity;
+      const totalCostCny = unitCostCny * quantity;
+      const commissionCny = netSalesUsd * commissionRate / 100 * fx;
+      const courierCny = chargeableKg * 68;
+      const airCny = chargeableKg * 61;
+      const seaExpressCny = chargeableKg * 15;
+      const seaLclCny = volumeM3 * 1430 * quantity;
+      const fbaUsd = fbaFeeUsd(price, weightKg, lengthCm, widthCm, heightCm);
+      const fbaCny = fbaUsd * fx * quantity;
+      const adCny = netSalesUsd * adRate / 100 * fx;
+      const cubicFeet = lengthIn * widthIn * heightIn * 0.0005787;
+      const oversizeStorage = weightLb > 20 || lengthIn > 18 || widthIn > 14 || heightIn > 8;
+      const storageRateUsd = storagePeriod === '10-12月'
+        ? (oversizeStorage ? 1.20 : 2.40)
+        : (oversizeStorage ? 0.53 : 0.83);
+      const storageCny = cubicFeet * storageRateUsd * fx * quantity;
+      const refundCny = netSalesUsd * refundRate / 100 * fx;
+      const promoCny = promoUsd * fx;
+      const commonCosts = commissionCny + fbaCny + totalCostCny + adCny + storageCny + refundCny;
+      const profits = {
+        profitCourierCny: realizedSalesCny - commonCosts - courierCny,
+        profitAirCny: realizedSalesCny - commonCosts - airCny,
+        profitSeaExpressCny: realizedSalesCny - commonCosts - seaExpressCny,
+        profitSeaLclCny: realizedSalesCny - commonCosts - seaLclCny
+      };
+      const marginBase = netSalesCny;
+
+      setOutput(row, 'salesUsd', salesUsd);
+      setOutput(row, 'weightLb', weightLb);
+      setOutput(row, 'lengthIn', lengthIn);
+      setOutput(row, 'widthIn', widthIn);
+      setOutput(row, 'heightIn', heightIn);
+      setOutput(row, 'totalCostCny', totalCostCny);
+      setOutput(row, 'commissionCny', commissionCny);
+      setOutput(row, 'courierCny', courierCny);
+      setOutput(row, 'airCny', airCny);
+      setOutput(row, 'seaExpressCny', seaExpressCny);
+      setOutput(row, 'seaLclCny', seaLclCny);
+      setOutput(row, 'fbaUsd', fbaUsd);
+      setOutput(row, 'adCny', adCny);
+      setOutput(row, 'storageCny', storageCny);
+      setOutput(row, 'refundCny', refundCny);
+      setOutput(row, 'promoCny', promoCny);
+      Object.entries(profits).forEach(([field, value]) => setOutput(row, field, value));
+      setOutput(row, 'marginCourier', marginBase > 0 ? profits.profitCourierCny / marginBase * 100 : 0, 'percent');
+      setOutput(row, 'marginAir', marginBase > 0 ? profits.profitAirCny / marginBase * 100 : 0, 'percent');
+      setOutput(row, 'marginSeaExpress', marginBase > 0 ? profits.profitSeaExpressCny / marginBase * 100 : 0, 'percent');
+      setOutput(row, 'marginSeaLcl', marginBase > 0 ? profits.profitSeaLclCny / marginBase * 100 : 0, 'percent');
+    }
+
+    function restoreRow(row) {
+      const defaults = defaultsById.get(row.dataset.productId);
+      if (!defaults) return;
+      Object.entries(defaults).forEach(([field, value]) => {
+        const control = row.querySelector(`[data-field="${field}"]`);
+        if (control) control.value = value;
+      });
+      calculateProfitRow(row);
+    }
+
+    products.forEach(product => profitSheetRows.appendChild(buildProfitRow(product)));
+    profitSheetRows.querySelectorAll('tr').forEach(calculateProfitRow);
+    profitSheetRows.addEventListener('input', event => {
+      const row = event.target.closest('tr');
+      if (row) calculateProfitRow(row);
+    });
+    profitSheetRows.addEventListener('change', event => {
+      const row = event.target.closest('tr');
+      if (row) calculateProfitRow(row);
+    });
+    profitSheetRows.addEventListener('click', event => {
+      const button = event.target.closest('[data-reset-row]');
+      if (button) restoreRow(button.closest('tr'));
+    });
+    document.getElementById('resetAllRows').addEventListener('click', () => {
+      profitSheetRows.querySelectorAll('tr').forEach(restoreRow);
+    });
+  </script>
+</body>
+</html>
