@@ -97,9 +97,50 @@
     .margin-tooltip-label { color: #afbdca; }
     .margin-tooltip-value { color: #fff; font-variant-numeric: tabular-nums; text-align: right; }
     .margin-tooltip-value.emphasis { color: #b9e4c9; font-weight: 750; }
+    .history-monthly-panel { margin-top: 12px; }
+    .history-monthly-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-bottom: 12px; }
+    .history-monthly-head h3 { margin: 0; }
+    .history-monthly-source { color: var(--muted); font-size: 11px; text-align: right; }
+    .history-monthly-list { display: grid; gap: 8px; }
+    .sku-monthly { border: 1px solid var(--line); border-radius: 5px; background: #fbfcfd; overflow: hidden; }
+    .sku-monthly[open] { background: var(--surface); }
+    .sku-monthly > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; padding: 11px 13px; list-style-position: inside; }
+    .sku-monthly > summary:hover { background: var(--surface-2); }
+    .sku-summary-title { min-width: 190px; }
+    .sku-summary-title strong { display: block; color: var(--ink-2); font-size: 12px; }
+    .sku-summary-title span { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+    .sku-summary-main { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .sku-summary-main .summary-chip { padding: 4px 7px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink-2); font-size: 10px; font-variant-numeric: tabular-nums; }
+    .summary-chip strong { color: var(--blue); font-size: 11px; }
+    .summary-chip.positive strong { color: var(--green); }
+    .summary-chip.negative strong { color: var(--red); }
+    .sku-monthly-body { border-top: 1px solid var(--line); padding: 12px; }
+    .sku-monthly-summary { display: grid; grid-template-columns: repeat(6, minmax(110px, 1fr)); gap: 7px; margin-bottom: 10px; }
+    .sku-monthly-stat { padding: 8px 9px; border: 1px solid var(--line); border-radius: 4px; background: #f8fafb; min-width: 0; }
+    .sku-monthly-stat span { display: block; color: var(--muted); font-size: 10px; }
+    .sku-monthly-stat strong { display: block; margin-top: 3px; color: var(--ink-2); font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sku-monthly-stat strong.positive { color: var(--green); }
+    .sku-monthly-stat strong.negative { color: var(--red); }
+    .sku-monthly-stat small { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
+    .sku-monthly-note { margin: 0 0 9px; padding: 8px 9px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--ink-2); font-size: 11px; }
+    .history-monthly-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
+    .history-monthly-table { min-width: 1510px; font-size: 10px; }
+    .history-monthly-table th, .history-monthly-table td { padding: 7px 8px; white-space: nowrap; }
+    .history-monthly-table th { position: sticky; top: 0; z-index: 1; }
+    .history-monthly-table .num { text-align: right; }
+    .history-monthly-table tr.best-row td { background: var(--green-soft); }
+    .history-monthly-table tr.invalid-row td { color: #9aa6b2; background: #f7f8f9; }
+    .history-monthly-table tr.negative-row td.margin-cell { color: var(--red); font-weight: 700; }
+    .history-monthly-table tr.best-row td.margin-cell { color: var(--green); font-weight: 750; }
+    .history-monthly-empty { padding: 14px; border: 1px dashed var(--line); color: var(--muted); font-size: 12px; }
     @media (max-width: 620px) {
       .margin-tooltip { width: min(340px, calc(100vw - 20px)); }
       .margin-tooltip-grid { grid-template-columns: 1fr; }
+      .history-monthly-head { align-items: flex-start; flex-direction: column; }
+      .history-monthly-source { text-align: left; }
+      .sku-monthly > summary { align-items: flex-start; flex-direction: column; }
+      .sku-summary-main { justify-content: flex-start; }
+      .sku-monthly-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     .fact-list { display: grid; gap: 10px; }
@@ -127,6 +168,8 @@
     tbody tr:last-child td { border-bottom: 0; }
     .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
     .product-name { min-width: 215px; font-weight: 650; }
+    .benchmark-link { display: inline-block; margin-top: 3px; color: var(--blue); font-size: 10px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+    .benchmark-link:hover, .benchmark-link:focus-visible { text-decoration: underline; }
     .status { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 999px; font-size: 10px; font-weight: 700; white-space: nowrap; }
     .status.high { color: var(--red); background: var(--red-soft); }
     .status.medium { color: var(--amber); background: var(--amber-soft); }
@@ -161,7 +204,9 @@
     .sheet-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
     .sheet-toolbar p { margin: 0; color: var(--muted); font-size: 11px; }
     .sheet-table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); box-shadow: var(--shadow); }
-    .sheet-table { min-width: 3260px; table-layout: fixed; font-size: 10px; }
+    .sheet-table { min-width: 3262px; table-layout: fixed; font-size: 10px; }
+    .sheet-table .sheet-col-product { width: 220px; }
+    .sheet-table .sheet-col-data { width: 78px; }
     .sheet-table th, .sheet-table td { padding: 6px 5px; text-align: center; vertical-align: middle; }
     .sheet-table thead tr:first-child th { font-size: 12px; color: #10202f; border-right: 1px solid rgba(24,33,43,.18); }
     .sheet-table thead tr:nth-child(2) th { font-size: 10px; white-space: normal; line-height: 1.25; }
@@ -187,6 +232,35 @@
     .sheet-table .profit-negative { color: var(--red); font-weight: 700; }
     .sheet-table .primary-result { background: var(--green-soft); }
     .sheet-table .reset-row { width: 30px; height: 30px; border: 1px solid var(--line); background: white; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .sheet-table .breakdown-toggle { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; padding: 3px 6px; border: 1px solid #c9d2da; border-radius: 3px; background: #f8fafb; color: var(--blue); cursor: pointer; font-size: 10px; font-weight: 700; }
+    .sheet-table .breakdown-toggle:hover { background: var(--blue-soft); }
+    .sheet-table .breakdown-toggle .arrow { display: inline-block; width: 10px; transition: transform .15s ease; }
+    .sheet-table .breakdown-toggle[aria-expanded="true"] .arrow { transform: rotate(90deg); }
+    .sheet-table .cost-breakdown-row[hidden] { display: none; }
+    .sheet-table .cost-breakdown-cell { padding: 4px 0; text-align: left; background: #f8fafb; border-bottom: 1px solid var(--line); overflow-x: hidden; }
+    /* Match the 40-column profit table so each cost share sits under its source column. */
+    .cost-breakdown { width: 3262px; min-width: 3262px; display: grid; grid-template-columns: 220px repeat(39, 78px); grid-template-rows: 62px; align-items: stretch; }
+    .cost-breakdown-heading { grid-column: 1 / span 12; grid-row: 1; display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 5px 8px; color: var(--ink-2); font-weight: 750; font-size: 11px; border-right: 1px solid #d7e0e8; }
+    .cost-breakdown-heading .hint { color: var(--muted); font-weight: 400; font-size: 9px; line-height: 1.2; white-space: normal; }
+    .cost-breakdown-summary { display: flex; flex-wrap: nowrap; gap: 6px; margin-top: 3px; color: var(--muted); font-size: 9px; overflow: hidden; }
+    .cost-breakdown-summary > span { flex: 0 0 auto; white-space: nowrap; }
+    .cost-breakdown-summary strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .cost-breakdown-item { align-self: stretch; min-width: 0; padding: 7px 6px; border: 1px solid #d7e0e8; border-radius: 3px; background: white; overflow: hidden; }
+    .cost-breakdown-item[data-breakdown-item="product"] { grid-column: 13 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="commission"] { grid-column: 15 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="inbound"] { grid-column: 17 / span 4; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="fba"] { grid-column: 21 / span 1; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="ad"] { grid-column: 22 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="storage"] { grid-column: 24 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="refund"] { grid-column: 26 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="promo"] { grid-column: 28 / span 2; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="total"] { grid-column: 30 / span 4; grid-row: 1; }
+    .cost-breakdown-item[data-breakdown-item="fxLoss"] { grid-column: 38 / span 2; grid-row: 1; }
+    .cost-breakdown-item .value { color: var(--blue); font-size: 14px; font-weight: 750; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .cost-breakdown-item .label { margin-top: 2px; color: var(--ink-2); font-size: 10px; line-height: 1.2; white-space: normal; }
+    .cost-breakdown-item .amount { margin-top: 2px; color: var(--muted); font-size: 9px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .cost-breakdown-item.total { background: #eef6fb; border-color: #b7d4e6; }
+    .cost-breakdown-item.total .value { color: var(--ink); }
     .sheet-notes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
     .sheet-note { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; padding: 10px; font-size: 11px; }
     .sheet-note strong { display: block; margin-bottom: 3px; }
@@ -301,6 +375,18 @@
         </div>
         <div class="margin-tooltip" id="marginTooltip" role="tooltip" aria-hidden="true"></div>
       </div>
+      <div class="panel history-monthly-panel" id="historyMonthlyPanel">
+        <div class="history-monthly-head">
+          <div>
+            <h3>13个历史 SKU 月度销售与利润指标</h3>
+            <p class="panel-note">按 SKU 展开查看销售月份。月度销售毛利润率 = 盈利能力额 ÷ 销售额（含税）；无销售额或盈利能力额的月份显示“—”，不按 0% 参与比较。</p>
+          </div>
+          <div class="history-monthly-source">来源：仪表板 (1).xlsx「历史费率明细」；展示页面当前图表采用的账户分组</div>
+        </div>
+        <div class="history-monthly-list" id="historyMonthlyList">
+          <div class="history-monthly-empty">正在读取历史月度数据…</div>
+        </div>
+      </div>
       <details class="evidence">
         <summary>展开查看原仪表板证据截图</summary>
         <div class="evidence-inner">
@@ -357,6 +443,10 @@
       </div>
       <div class="sheet-table-wrap">
         <table class="sheet-table" aria-label="7款脚踏利润核算表">
+          <colgroup>
+            <col class="sheet-col-product">
+            <col span="39" class="sheet-col-data">
+          </colgroup>
           <thead>
             <tr>
               <th class="group-product product-cell" rowspan="2">产品</th>
@@ -425,18 +515,19 @@
       { sku: 'A1333-00010-BK-FBM', name: 'RAM 09-18 脚踏升级款（FBM）', margin: -11.16, month: '2026-04', sales: 10929.4183, profit: -1220.2094, units: 58, asp: 188.4382465517, refundRate: 0.2406220192, inboundRate: 0.115524961995, platformFeeRate: 0.4250303768, commissionRate: 0.1280814671, promoRate: 0.0027905511, deliveryRate: 0.2955930362, storageRate: 0, onsiteAdsRate: 0.1206158789, offsiteAdsRate: 0 }
     ];
     const products = [
-      { id: 'ram-dual', name: '09-18 RAM1500 双台阶侧杠', price: 269.99, units: 150, baseline: 23.39, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 23.04, advice: '距25%约¥36/件；优先把实际重量降至50lb以内，或从货值与退款中等额降本。' },
-      { id: 'tundra-new-basic', name: 'Tundra 2021+ 脚踏 基础款', price: 199.99, units: 210, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；当前FBA受超大尺寸0–50lb档影响，需要缩短最长边或继续降低货值。' },
-      { id: 'tundra-new-upgrade', name: 'Tundra 2021+ 脚踏 升级款', price: 279.99, units: 170, baseline: 25.17, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 24.95, advice: '距25%约¥1/件；冻结促销0%，通过包装或采购微降本即可关闭缺口。' },
-      { id: 'a1333', name: 'A1333-00005-BK 降本款', price: 249.99, units: 305, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；优先减重跨入≤50lb档，并继续推动支架、紧固件与包装降本。' },
-      { id: 'ram-basic', name: '2009-2018 RAM 1500 Crew Cab 基础款', price: 199.99, units: 290, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；缩短最长边跨档的同时，车型适配和包装防损用于控制退款。' },
-      { id: 'colorado-basic', name: '2015-2026 Chevy Colorado/GMC Canyon Crew Cab 基础款', price: 199.99, units: 175, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；FBA跨档与跨年份车型退款必须同时改善，单控广告不足以达标。' },
-      { id: 'tundra-old-basic', name: '2007-2021 Toyota Tundra Crew Cab 基础款', price: 249.99, units: 110, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；目标是实际重≤50lb，并从货值、包装和退款中关闭剩余缺口。' }
+      { id: 'ram-dual', name: '09-18 RAM1500 双台阶侧杠', benchmarkAsin: 'B0D6KG6RYX', price: 269.99, units: 150, baseline: 23.39, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 23.04, advice: '距25%约¥36/件；优先把实际重量降至50lb以内，或从货值与退款中等额降本。' },
+      { id: 'tundra-new-basic', name: 'Tundra 2021+ 脚踏 基础款', benchmarkAsin: 'B0FGDR8VM9', price: 199.99, units: 210, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；当前FBA受超大尺寸0–50lb档影响，需要缩短最长边或继续降低货值。' },
+      { id: 'tundra-new-upgrade', name: 'Tundra 2021+ 脚踏 升级款', benchmarkAsin: 'B0DFPXHPNP', price: 279.99, units: 170, baseline: 25.17, targetCost: 513, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 24.95, advice: '距25%约¥1/件；冻结促销0%，通过包装或采购微降本即可关闭缺口。' },
+      { id: 'a1333', name: 'A1333-00005-BK 降本款', benchmarkAsin: 'B0G394CR16', price: 249.99, units: 305, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；优先减重跨入≤50lb档，并继续推动支架、紧固件与包装降本。' },
+      { id: 'ram-basic', name: '2009-2018 RAM 1500 Crew Cab 基础款', benchmarkAsin: 'B0D6KG6RYX', price: 199.99, units: 290, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；缩短最长边跨档的同时，车型适配和包装防损用于控制退款。' },
+      { id: 'colorado-basic', name: '2015-2026 Chevy Colorado/GMC Canyon Crew Cab 基础款', benchmarkAsin: 'B0FGDNP49X', price: 199.99, units: 175, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；FBA跨档与跨年份车型退款必须同时改善，单控广告不足以达标。' },
+      { id: 'tundra-old-basic', name: '2007-2021 Toyota Tundra Crew Cab 基础款', benchmarkAsin: 'B0FGDPJH55', price: 249.99, units: 110, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；目标是实际重≤50lb，并从货值、包装和退款中关闭剩余缺口。' }
     ];
     const fmtMoney = v => '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const fmtCny = v => '¥' + Math.round(v).toLocaleString('zh-CN');
     const fmtCny2 = v => '¥' + Number(v).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const fmtPct = v => Number(v * 100).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+    const benchmarkLink = product => `<a class="benchmark-link" href="https://www.amazon.com/dp/${product.benchmarkAsin}" target="_blank" rel="noopener noreferrer" title="Amazon 对标商品 ${product.benchmarkAsin}" aria-label="打开${product.name}的 Amazon 对标商品 ${product.benchmarkAsin}">对标 ↗</a>`;
     const marginTooltip = document.getElementById('marginTooltip');
     const tooltipFields = [
       ['销售额（含税）', item => fmtCny2(item.sales)],
@@ -518,11 +609,134 @@
       chart.appendChild(wrap);
     });
 
+    const historyMoney = value => value == null ? '—' : fmtCny2(value);
+    const historyUnits = value => value == null ? '—' : Number(value).toLocaleString('zh-CN', { maximumFractionDigits: 0 });
+    const historyRate = value => value == null ? '—' : fmtPct(value);
+    const historySafe = value => String(value ?? '—').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+    function historyValidMonths(record) {
+      return (record.months || []).filter(month => month.valid && Number.isFinite(month.margin));
+    }
+
+    function historyAverage(months, key) {
+      const values = months.map(month => Number(month[key])).filter(Number.isFinite);
+      return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+    }
+
+    function historyTrend(months) {
+      if (months.length < 2) return '有效月份不足';
+      const first = months[0].margin;
+      const last = months[months.length - 1].margin;
+      const delta = last - first;
+      if (delta >= 0.03) return '改善';
+      if (delta <= -0.03) return '下降';
+      return '波动/基本稳定';
+    }
+
+    function historyPressure(months) {
+      const fields = [
+        ['平台费用率', 'platformFeeRate'],
+        ['销售配送费率', 'deliveryRate'],
+        ['站内广告费率', 'onsiteAdsRate'],
+        ['产品头程成本率', 'inboundRate'],
+        ['退款率', 'refundRate']
+      ];
+      return fields.map(([label, key]) => ({ label, value: historyAverage(months, key) }))
+        .filter(item => item.value != null)
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 2)
+        .map(item => `${item.label} ${historyRate(item.value)}`)
+        .join('、') || '有效费率不足';
+    }
+
+    function renderHistoryMonthly(records) {
+      const host = document.getElementById('historyMonthlyList');
+      if (!host) return;
+      if (!records.length) {
+        host.innerHTML = '<div class="history-monthly-empty">未找到可展示的历史 SKU 月度数据。</div>';
+        return;
+      }
+      const columns = [
+        ['销售额（含税）', month => historyMoney(month.sales), 'num'],
+        ['销量', month => historyUnits(month.units), 'num'],
+        ['客单价', month => historyMoney(month.asp), 'num'],
+        ['盈利能力额', month => historyMoney(month.profit), 'num'],
+        ['销售毛利润率', month => historyRate(month.margin), 'num margin-cell'],
+        ['产品头程成本率', month => historyRate(month.inboundRate), 'num'],
+        ['平台费用率', month => historyRate(month.platformFeeRate), 'num'],
+        ['平台佣金率', month => historyRate(month.commissionRate), 'num'],
+        ['平台促销费率', month => historyRate(month.promoRate), 'num'],
+        ['销售配送费率', month => historyRate(month.deliveryRate), 'num'],
+        ['仓储费率', month => historyRate(month.storageRate), 'num'],
+        ['退款率', month => historyRate(month.refundRate), 'num'],
+        ['站内广告费率', month => historyRate(month.onsiteAdsRate), 'num'],
+        ['站外广告费率', month => historyRate(month.offsiteAdsRate), 'num']
+      ];
+      host.innerHTML = records.map((record, index) => {
+        const valid = historyValidMonths(record);
+        const best = valid.length ? valid.reduce((current, month) => month.margin > current.margin ? month : current) : null;
+        const worst = valid.length ? valid.reduce((current, month) => month.margin < current.margin ? month : current) : null;
+        const salesPeak = valid.length ? valid.reduce((current, month) => month.sales > current.sales ? month : current) : null;
+        const unitsPeak = valid.length ? valid.reduce((current, month) => month.units > current.units ? month : current) : null;
+        const targetMonths = valid.filter(month => month.margin >= 0.25).length;
+        const trend = historyTrend(valid);
+        const bestClass = best && best.margin >= 0 ? 'positive' : 'negative';
+        const trendClass = trend === '改善' ? 'positive' : trend === '下降' ? 'negative' : '';
+        const tableRows = (record.months || []).map(month => {
+          const rowClass = !month.valid ? 'invalid-row' : best && month.month === best.month ? 'best-row' : month.margin < 0 ? 'negative-row' : '';
+          const cells = columns.map(([, format, className]) => `<td class="${className}">${format(month)}</td>`).join('');
+          return `<tr class="${rowClass}"><td>${historySafe(month.month)}</td>${cells}</tr>`;
+        }).join('');
+        return `<details class="sku-monthly"${index === 0 ? ' open' : ''}>
+          <summary>
+            <div class="sku-summary-title"><strong>${historySafe(record.sku)}</strong><span>${historySafe(record.name)}</span></div>
+            <div class="sku-summary-main">
+              <span class="summary-chip ${bestClass}">最佳月份 <strong>${best ? historyRate(best.margin) : '—'}</strong> · ${best ? historySafe(best.month) : '—'}</span>
+              <span class="summary-chip">有效月份 <strong>${valid.length}</strong></span>
+              <span class="summary-chip">达标月份 <strong>${targetMonths}</strong></span>
+              <span class="summary-chip ${trendClass}">趋势 <strong>${trend}</strong></span>
+            </div>
+          </summary>
+          <div class="sku-monthly-body">
+            <div class="sku-monthly-summary">
+              <div class="sku-monthly-stat"><span>最佳月份</span><strong class="${bestClass}">${best ? historyRate(best.margin) : '—'}</strong><small>${best ? historySafe(best.month) : '无有效数据'}</small></div>
+              <div class="sku-monthly-stat"><span>最差月份</span><strong class="${worst && worst.margin < 0 ? 'negative' : ''}">${worst ? historyRate(worst.margin) : '—'}</strong><small>${worst ? historySafe(worst.month) : '无有效数据'}</small></div>
+              <div class="sku-monthly-stat"><span>销售额最高月份</span><strong>${salesPeak ? historyMoney(salesPeak.sales) : '—'}</strong><small>${salesPeak ? historySafe(salesPeak.month) : '无有效数据'}</small></div>
+              <div class="sku-monthly-stat"><span>销量最高月份</span><strong>${unitsPeak ? historyUnits(unitsPeak.units) : '—'}</strong><small>${unitsPeak ? historySafe(unitsPeak.month) : '无有效数据'}</small></div>
+              <div class="sku-monthly-stat"><span>利润率范围</span><strong>${valid.length ? `${historyRate(worst.margin)} 至 ${historyRate(best.margin)}` : '—'}</strong><small>${valid.length} 个有效月份</small></div>
+              <div class="sku-monthly-stat"><span>主要费率压力项</span><strong title="${historySafe(historyPressure(valid))}">${historySafe(historyPressure(valid))}</strong><small>有效月份均值排序</small></div>
+            </div>
+            <p class="sku-monthly-note">描述性判断：${valid.length ? `该 SKU 在 ${historySafe(valid[0].month)} 至 ${historySafe(valid[valid.length - 1].month)} 有 ${valid.length} 个有效销售月份；月度利润率趋势为“${trend}”，不能单独据此推断销量与利润率的因果关系。` : '当前没有可用于比较的有效销售月份。'}</p>
+            <div class="history-monthly-table-wrap">
+              <table class="history-monthly-table" aria-label="${historySafe(record.sku)}月度销售与利润指标">
+                <thead><tr><th>月份</th>${columns.map(([label]) => `<th class="num">${label}</th>`).join('')}</tr></thead>
+                <tbody>${tableRows}</tbody>
+              </table>
+            </div>
+          </div>
+        </details>`;
+      }).join('');
+    }
+
+    async function loadHistoryMonthly() {
+      const host = document.getElementById('historyMonthlyList');
+      try {
+        const response = await fetch('history-monthly.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const records = await response.json();
+        renderHistoryMonthly(records);
+      } catch (error) {
+        if (host) host.innerHTML = `<div class="history-monthly-empty">历史月度数据读取失败：${historySafe(error.message)}。请通过本地网页服务打开此页面。</div>`;
+      }
+    }
+
+    loadHistoryMonthly();
+
     const rows = document.getElementById('productRows');
     products.forEach(p => {
       const tr = document.createElement('tr');
       const costChange = (p.targetCost / 513 - 1) * 100;
-      tr.innerHTML = `<td class="product-name">${p.name}</td><td class="num">${fmtMoney(p.price)}</td><td class="num">${p.units.toLocaleString('zh-CN')}</td><td class="num"><span class="status ${p.baseline >= 25 ? 'conditional' : 'high'}">${p.baseline.toFixed(2)}%</span></td><td class="num">${fmtCny(p.targetCost)}<div class="small">较¥513 ${costChange === 0 ? '不变' : costChange.toFixed(1) + '%'}</div></td><td>${p.weight}kg<div class="small">${p.dims}</div></td><td class="num">${fmtCny(p.inboundCny)}<div class="small">${fmtMoney(p.inboundCny / 6.8)}</div></td><td class="num">${fmtMoney(p.fba)}</td><td class="num">${p.tacos}%</td><td class="num">≤${p.refund}%</td><td class="num">${p.promo}%</td><td class="num"><span class="status conditional">${p.targetMargin.toFixed(2)}%</span></td><td class="recommend">${p.advice}</td>`;
+      tr.innerHTML = `<td class="product-name">${p.name}<br>${benchmarkLink(p)}</td><td class="num">${fmtMoney(p.price)}</td><td class="num">${p.units.toLocaleString('zh-CN')}</td><td class="num"><span class="status ${p.baseline >= 25 ? 'conditional' : 'high'}">${p.baseline.toFixed(2)}%</span></td><td class="num">${fmtCny(p.targetCost)}<div class="small">较¥513 ${costChange === 0 ? '不变' : costChange.toFixed(1) + '%'}</div></td><td>${p.weight}kg<div class="small">${p.dims}</div></td><td class="num">${fmtCny(p.inboundCny)}<div class="small">${fmtMoney(p.inboundCny / 6.8)}</div></td><td class="num">${fmtMoney(p.fba)}</td><td class="num">${p.tacos}%</td><td class="num">≤${p.refund}%</td><td class="num">${p.promo}%</td><td class="num"><span class="status conditional">${p.targetMargin.toFixed(2)}%</span></td><td class="recommend">${p.advice}</td>`;
       rows.appendChild(tr);
     });
 
@@ -565,13 +779,57 @@
       return `<td class="${extraClass}"><span class="computed" data-output="${field}">0.00</span></td>`;
     }
 
+    function breakdownItem(key, label) {
+      return `<div class="cost-breakdown-item" data-breakdown-item="${key}">
+        <div class="value" data-breakdown-pct="${key}">0.00%</div>
+        <div class="label">${label}</div>
+        <div class="amount" data-breakdown-amount="${key}">¥0.00</div>
+      </div>`;
+    }
+
+    function buildBreakdownRow(product) {
+      const detail = document.createElement('tr');
+      detail.className = 'cost-breakdown-row';
+      detail.dataset.breakdownFor = product.id;
+      detail.hidden = true;
+      detail.innerHTML = `<td class="cost-breakdown-cell" colspan="40">
+        <div class="cost-breakdown" aria-label="${product.name}总成本占比">
+          <div class="cost-breakdown-heading">
+            <span>总成本构成占比</span>
+            <span class="hint">海运散货口径；每项金额 ÷ 原价销售额（售价 × 数量 × 汇率）。</span>
+            <div class="cost-breakdown-summary">
+              <span>原价销售额 <strong data-breakdown-summary="grossSales">¥0.00</strong></span>
+              <span>总成本 <strong data-breakdown-summary="totalCost">¥0.00</strong></span>
+              <span>成本/售价 <strong data-breakdown-summary="costToSales">0.00%</strong></span>
+              <span>利润 <strong data-breakdown-summary="profit">¥0.00</strong></span>
+            </div>
+          </div>
+          ${breakdownItem('product', '产品货值')}
+          ${breakdownItem('commission', 'Amazon佣金')}
+          ${breakdownItem('inbound', '海运散货头程')}
+          ${breakdownItem('fba', 'FBA尾程')}
+          ${breakdownItem('ad', '广告费用')}
+          ${breakdownItem('storage', '仓储费用')}
+          ${breakdownItem('refund', '退款损失')}
+          ${breakdownItem('promo', '促销折扣')}
+          <div class="cost-breakdown-item total" data-breakdown-item="total">
+            <div class="value" data-breakdown-pct="total">0.00%</div>
+            <div class="label">总成本</div>
+            <div class="amount" data-breakdown-amount="total">¥0.00</div>
+          </div>
+          ${breakdownItem('fxLoss', '汇损')}
+        </div>
+      </td>`;
+      return detail;
+    }
+
     function buildProfitRow(product) {
       const d = rowDefaults(product);
       defaultsById.set(product.id, d);
       const tr = document.createElement('tr');
       tr.dataset.productId = product.id;
       tr.innerHTML = `
-        <td class="product-cell">${product.name}<div class="small">运营定价保持不变</div></td>
+        <td class="product-cell">${product.name}<div class="small">运营定价保持不变 · ${benchmarkLink(product)}</div><button class="breakdown-toggle" type="button" data-toggle-breakdown aria-expanded="false" aria-controls="breakdown-${product.id}"><span class="arrow" aria-hidden="true">▸</span><span>成本占比</span></button></td>
         ${inputCell('quantity', d.quantity, '1')}
         ${inputCell('price', d.price, '0.01', 'readonly aria-readonly="true" title="运营固定售价"')}
         ${outputCell('salesUsd')}
@@ -611,6 +869,9 @@
         ${inputCell('fx', d.fx, '0.01')}
         ${inputCell('fxLoss', d.fxLoss, '0.1')}
         <td><button class="reset-row" type="button" data-reset-row aria-label="恢复${product.name}默认输入" title="恢复该行">↺</button></td>`;
+      const detail = buildBreakdownRow(product);
+      detail.id = `breakdown-${product.id}`;
+      tr._breakdownRow = detail;
       return tr;
     }
 
@@ -629,6 +890,34 @@
       } else if (field.startsWith('profit')) {
         target.classList.add(value >= 0 ? 'profit-positive' : 'profit-negative');
       }
+    }
+
+    function setBreakdownValue(row, key, amount, grossSalesCny) {
+      const detail = row._breakdownRow;
+      if (!detail) return;
+      const pct = grossSalesCny > 0 ? amount / grossSalesCny * 100 : 0;
+      const pctNode = detail.querySelector(`[data-breakdown-pct="${key}"]`);
+      const amountNode = detail.querySelector(`[data-breakdown-amount="${key}"]`);
+      if (pctNode) pctNode.textContent = `${pctFormat.format(pct)}%`;
+      if (amountNode) amountNode.textContent = `¥${numberFormat.format(amount)}`;
+    }
+
+    function updateCostBreakdown(row, values) {
+      const detail = row._breakdownRow;
+      if (!detail) return;
+      const totalCost = values.product + values.commission + values.inbound + values.fba + values.ad + values.storage + values.refund + values.promo + values.fxLoss;
+      const summary = (key, value, prefix = '') => {
+        const node = detail.querySelector(`[data-breakdown-summary="${key}"]`);
+        if (node) node.textContent = prefix + (key === 'costToSales' ? `${pctFormat.format(value)}%` : numberFormat.format(value));
+      };
+      summary('grossSales', values.grossSalesCny, '¥');
+      summary('totalCost', totalCost, '¥');
+      summary('costToSales', values.grossSalesCny > 0 ? totalCost / values.grossSalesCny * 100 : 0);
+      summary('profit', values.profit, '¥');
+      Object.entries(values).forEach(([key, value]) => {
+        if (['product', 'commission', 'inbound', 'fba', 'ad', 'storage', 'refund', 'promo', 'fxLoss'].includes(key)) setBreakdownValue(row, key, value, values.grossSalesCny);
+      });
+      setBreakdownValue(row, 'total', totalCost, values.grossSalesCny);
     }
 
     // number, segment, max lb, continuation start/step/rate, base fee by price tier.
@@ -701,6 +990,7 @@
       const storagePeriod = row.querySelector('[data-field="storagePeriod"]')?.value || '1-9月';
 
       const salesUsd = quantity * price;
+      const grossSalesCny = salesUsd * fx;
       const promoUsd = salesUsd * promoRate / 100;
       const netSalesUsd = Math.max(0, salesUsd - promoUsd);
       const netSalesCny = netSalesUsd * fx;
@@ -729,6 +1019,7 @@
       const storageCny = cubicFeet * storageRateUsd * fx * quantity;
       const refundCny = netSalesUsd * refundRate / 100 * fx;
       const promoCny = promoUsd * fx;
+      const fxLossCny = netSalesCny * fxLoss / 100;
       const commonCosts = commissionCny + fbaCny + totalCostCny + adCny + storageCny + refundCny;
       const profits = {
         profitCourierCny: realizedSalesCny - commonCosts - courierCny,
@@ -737,6 +1028,20 @@
         profitSeaLclCny: realizedSalesCny - commonCosts - seaLclCny
       };
       const marginBase = netSalesCny;
+
+      updateCostBreakdown(row, {
+        product: totalCostCny,
+        commission: commissionCny,
+        inbound: seaLclCny,
+        fba: fbaCny,
+        ad: adCny,
+        storage: storageCny,
+        refund: refundCny,
+        promo: promoCny,
+        fxLoss: fxLossCny,
+        grossSalesCny,
+        profit: profits.profitSeaLclCny
+      });
 
       setOutput(row, 'salesUsd', salesUsd);
       setOutput(row, 'weightLb', weightLb);
@@ -771,7 +1076,11 @@
       calculateProfitRow(row);
     }
 
-    products.forEach(product => profitSheetRows.appendChild(buildProfitRow(product)));
+    products.forEach(product => {
+      const row = buildProfitRow(product);
+      profitSheetRows.appendChild(row);
+      profitSheetRows.appendChild(row._breakdownRow);
+    });
     profitSheetRows.querySelectorAll('tr').forEach(calculateProfitRow);
     profitSheetRows.addEventListener('input', event => {
       const row = event.target.closest('tr');
@@ -784,6 +1093,15 @@
     profitSheetRows.addEventListener('click', event => {
       const button = event.target.closest('[data-reset-row]');
       if (button) restoreRow(button.closest('tr'));
+      const toggle = event.target.closest('[data-toggle-breakdown]');
+      if (toggle) {
+        const row = toggle.closest('tr');
+        const detail = row?._breakdownRow;
+        if (!detail) return;
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        detail.hidden = expanded;
+      }
     });
     document.getElementById('resetAllRows').addEventListener('click', () => {
       profitSheetRows.querySelectorAll('tr').forEach(restoreRow);
