@@ -193,12 +193,46 @@
     .product-name { min-width: 215px; font-weight: 650; }
     .benchmark-link { display: inline-block; margin-top: 3px; color: var(--blue); font-size: 10px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; }
     .benchmark-link:hover, .benchmark-link:focus-visible { text-decoration: underline; }
+    .product-evidence-toggle { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; padding: 3px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface-2); color: var(--ink-2); cursor: pointer; font-size: 10px; line-height: 1.2; }
+    .product-evidence-toggle:hover, .product-evidence-toggle:focus-visible { border-color: var(--blue); color: var(--blue); }
+    .product-evidence-toggle .arrow { display: inline-block; transition: transform .15s ease; }
+    .product-evidence-toggle[aria-expanded="true"] .arrow { transform: rotate(90deg); }
+    .product-detail-row[hidden] { display: none; }
+    .product-detail-cell { padding: 0 !important; background: #f8fafb; }
+    .product-evidence { display: grid; grid-template-columns: minmax(340px, 1.1fr) minmax(330px, 1fr); gap: 16px; padding: 14px; border-top: 1px solid var(--line); }
+    .product-evidence-shot { min-width: 0; margin: 0; padding: 8px; border: 1px solid var(--line); border-radius: 5px; background: #fff; }
+    .product-evidence-shot img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #fff; }
+    .product-evidence-shot figcaption { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .product-evidence-placeholder { display: grid; min-height: 210px; place-items: center; padding: 18px; border: 1px dashed #c7d0d9; color: var(--muted); background: #f4f6f8; text-align: center; font-size: 12px; line-height: 1.5; }
+    .product-evidence-placeholder strong { display: block; color: var(--ink-2); font-size: 13px; }
+    .product-evidence-meta { min-width: 0; }
+    .product-evidence-meta h4 { margin: 0 0 4px; color: var(--ink-2); font-size: 14px; line-height: 1.35; }
+    .product-evidence-subtitle { margin: 0 0 11px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .product-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+    .product-evidence-stat { min-width: 0; padding: 8px 9px; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+    .product-evidence-stat span { display: block; color: var(--muted); font-size: 10px; }
+    .product-evidence-stat strong { display: block; margin-top: 3px; color: var(--ink-2); font-size: 13px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+    .product-evidence-stat.sales-verified { border-color: #efbcbc; background: var(--red-soft); }
+    .product-evidence-stat.sales-verified strong { color: var(--red); }
+    .product-evidence-stat.sales-unavailable strong { color: var(--muted); font-size: 11px; }
+    .product-evidence-source { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 11px; padding-top: 9px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+    .product-evidence-source a { color: var(--blue); font-weight: 650; text-decoration: none; }
+    .product-evidence-source a:hover, .product-evidence-source a:focus-visible { text-decoration: underline; }
+    .product-evidence-note { margin: 10px 0 0; padding: 8px 9px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--ink-2); font-size: 10px; line-height: 1.45; }
+    .product-evidence-note.warning { border-left-color: var(--amber); background: var(--amber-soft); }
+    .budget-sales-flag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 5px; border: 1px solid #efbcbc; border-radius: 3px; color: var(--red); background: var(--red-soft); font-weight: 750; }
+    .budget-sales-flag small { font-size: 9px; font-weight: 700; white-space: nowrap; }
     .status { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 999px; font-size: 10px; font-weight: 700; white-space: nowrap; }
     .status.high { color: var(--red); background: var(--red-soft); }
     .status.medium { color: var(--amber); background: var(--amber-soft); }
     .status.conditional { color: var(--blue); background: var(--blue-soft); }
     .recommend { min-width: 220px; color: var(--ink-2); }
     .small { color: var(--muted); font-size: 10px; }
+    @media (max-width: 760px) {
+      .product-evidence { grid-template-columns: 1fr; gap: 10px; }
+      .product-evidence-shot img { max-height: 300px; }
+      .product-evidence-grid { grid-template-columns: 1fr 1fr; }
+    }
 
     .calculator { display: grid; grid-template-columns: minmax(340px, .8fr) minmax(0, 1.2fr); gap: 12px; }
     .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -550,6 +584,45 @@
       { id: 'colorado-basic', name: '2015-2026 Chevy Colorado/GMC Canyon Crew Cab 基础款', benchmarkAsin: 'B0FGDNP49X', price: 199.99, units: 175, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；FBA跨档与跨年份车型退款必须同时改善，单控广告不足以达标。' },
       { id: 'tundra-old-basic', name: '2007-2021 Toyota Tundra Crew Cab 基础款', benchmarkAsin: 'B0FGDPJH55', price: 249.99, units: 110, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；目标是实际重≤50lb，并从货值、包装和退款中关闭剩余缺口。' }
     ];
+    const benchmarkEvidence = Object.freeze({
+      B0D6KG6RYX: {
+        title: 'YZONA Running Boards for 2009–2026 Dodge Ram 1500/2500/3500',
+        price: '$269.99', rating: '4.4 / 5', reviews: '1,064',
+        salesBadge: '50+ bought in past month', salesVerified: true,
+        screenshot: 'assets/benchmarks/B0D6KG6RYX-amazon-page.jpg',
+        note: '截图为 2026-09-23 访问 Amazon 商品页时的可见状态；“50+ bought in past month”是平台区间标识，不是精确销量。'
+      },
+      B0FGDR8VM9: {
+        title: 'SOENBOO Running Boards for Tundra Crew Cab',
+        price: '$198.99', rating: '4.4 / 5', reviews: '305', salesBadge: '50+ bought in past month', salesVerified: true,
+        image: 'assets/benchmarks/B0FGDR8VM9-amazon-product.jpg',
+        note: '访问 Amazon 商品页快照时可见“50+ bought in past month”；这是平台区间标识，不是精确销量。当前保留 Amazon 主图，不将其冒充页面截图。'
+      },
+      B0DFPXHPNP: {
+        title: 'YZONA Side Steps Compatible with Tundra 2021–2026',
+        price: '$269.99', rating: '4.4 / 5', reviews: '1,064', salesBadge: null,
+        image: 'assets/benchmarks/B0DFPXHPNP-amazon-product.jpg',
+        note: '访问快照未见可验证的公开销量标识；不得将其解释为 0。当前保留 Amazon 主图，销量需以 Seller Central 或品牌后台复核。'
+      },
+      B0G394CR16: {
+        title: 'Amazon 页面标题当前显示为 JOYTUTUS Running Boards for Gladiator JT 4 Door 2020–2026',
+        price: '$209.99', rating: '4.4 / 5', reviews: '16', salesBadge: null,
+        image: 'assets/benchmarks/B0G394CR16-amazon-product.jpg',
+        note: '访问快照未见可验证的公开销量标识；且页面标题与 A1333-00005-BK 新品名称不完全一致，立项前需复核对标链接。当前保留 Amazon 主图。'
+      },
+      B0FGDNP49X: {
+        title: 'SOENBOO Running Boards for Colorado/Canyon Crew Cab',
+        price: '$198.99', rating: '4.4 / 5', reviews: '305', salesBadge: '50+ bought in past month', salesVerified: true,
+        image: 'assets/benchmarks/B0FGDNP49X-amazon-product.jpg',
+        note: '访问 Amazon 商品页快照时可见“50+ bought in past month”；这是平台区间标识，不是精确销量。当前保留 Amazon 主图，不将其冒充页面截图。'
+      },
+      B0FGDPJH55: {
+        title: 'SOENBOO Running Boards for Toyota Tundra Crew Cab',
+        price: '$198.99', rating: '4.1 / 5', reviews: '111', salesBadge: null,
+        image: 'assets/benchmarks/B0FGDPJH55-amazon-product.jpg',
+        note: '访问快照未见可验证的公开销量标识；不得将其解释为 0。当前保留 Amazon 主图，销量需以 Seller Central 或品牌后台复核。'
+      }
+    });
     const skuStatusMeta = Object.freeze({
       'A1333-00010-BK': { label: '清货淘汰', tone: 'clearance' },
       'A1333-00009-BK': { label: '清货淘汰', tone: 'clearance' },
@@ -881,11 +954,71 @@
     loadHistoryMonthly();
 
     const rows = document.getElementById('productRows');
+    const budgetPriorityIds = new Set();
+    let budgetPriorityTotal = 0;
+    [...products].sort((a, b) => b.units - a.units).some(product => {
+      budgetPriorityIds.add(product.id);
+      budgetPriorityTotal += product.units;
+      return budgetPriorityTotal / products.reduce((sum, item) => sum + item.units, 0) >= 0.69;
+    });
+    const budgetSalesMarkup = product => budgetPriorityIds.has(product.id)
+      ? `<span class="budget-sales-flag priority" title="预算销量重点：按预算销量降序累计覆盖约70%">${product.units.toLocaleString('zh-CN')}<small>销量重点</small></span>`
+      : `<span title="预算销量">${product.units.toLocaleString('zh-CN')}</span>`;
+    function buildProductEvidenceRow(product) {
+      const evidence = benchmarkEvidence[product.benchmarkAsin] || {};
+      const detail = document.createElement('tr');
+      detail.className = 'product-detail-row';
+      detail.dataset.productEvidenceFor = product.id;
+      detail.hidden = true;
+      const imagePath = evidence.screenshot || evidence.image;
+      const imageCaption = evidence.screenshot
+        ? '已采集的 Amazon 商品页截图；截图日期：2026-09-23。'
+        : evidence.image
+          ? 'Amazon 商品主图（非页面截图）；图片来源为对应 ASIN 商品页，访问日：2026-09-23。'
+          : '';
+      const screenshot = imagePath
+        ? `<figure class="product-evidence-shot"><img src="${historySafe(imagePath)}" alt="${historySafe(product.benchmarkAsin)} Amazon 对标商品图片"><figcaption>${historySafe(imageCaption)}</figcaption></figure>`
+        : `<div class="product-evidence-placeholder"><div><strong>图片证据未采集</strong><span>当前仅保留链接与已核对字段，不用占位图伪造竞品视觉。</span></div></div>`;
+      const salesClass = evidence.salesVerified ? 'sales-verified' : 'sales-unavailable';
+      const salesValue = evidence.salesBadge || '未显示可验证销量标识';
+      detail.id = `product-evidence-${product.id}`;
+      detail.innerHTML = `<td class="product-detail-cell" colspan="13">
+        <div class="product-evidence" aria-label="${historySafe(product.name)}竞品证据">
+          ${screenshot}
+          <div class="product-evidence-meta">
+            <h4>${historySafe(evidence.title || 'Amazon 对标商品')}</h4>
+            <p class="product-evidence-subtitle">对标 ASIN：<strong>${historySafe(product.benchmarkAsin)}</strong> · 页面信息按访问快照记录，不替代后台销售数据。</p>
+            <div class="product-evidence-grid">
+              <div class="product-evidence-stat"><span>页面价格</span><strong>${historySafe(evidence.price || '未采集')}</strong></div>
+              <div class="product-evidence-stat"><span>星级</span><strong>${historySafe(evidence.rating || '未采集')}</strong></div>
+              <div class="product-evidence-stat"><span>评论数</span><strong>${historySafe(evidence.reviews || '未采集')}</strong></div>
+              <div class="product-evidence-stat ${salesClass}"><span>公开销量标识</span><strong>${historySafe(salesValue)}</strong></div>
+            </div>
+            <div class="product-evidence-source"><span>来源：</span>${benchmarkLink(product)}<span>访问日：2026-09-23</span></div>
+            <p class="product-evidence-note ${evidence.salesVerified ? '' : 'warning'}">${historySafe(evidence.note || '暂无可验证页面证据。')}</p>
+          </div>
+        </div>
+      </td>`;
+      return detail;
+    }
+
     products.forEach(p => {
       const tr = document.createElement('tr');
       const costChange = (p.targetCost / 513 - 1) * 100;
-      tr.innerHTML = `<td class="product-name">${p.name}<br>${benchmarkLink(p)}</td><td class="num">${fmtMoney(p.price)}</td><td class="num">${p.units.toLocaleString('zh-CN')}</td><td class="num"><span class="status ${p.baseline >= 25 ? 'conditional' : 'high'}">${p.baseline.toFixed(2)}%</span></td><td class="num">${fmtCny(p.targetCost)}<div class="small">较¥513 ${costChange === 0 ? '不变' : costChange.toFixed(1) + '%'}</div></td><td>${p.weight}kg<div class="small">${p.dims}</div></td><td class="num">${fmtCny(p.inboundCny)}<div class="small">${fmtMoney(p.inboundCny / 6.8)}</div></td><td class="num">${fmtMoney(p.fba)}</td><td class="num">${p.tacos}%</td><td class="num">≤${p.refund}%</td><td class="num">${p.promo}%</td><td class="num"><span class="status conditional">${p.targetMargin.toFixed(2)}%</span></td><td class="recommend">${p.advice}</td>`;
+      tr.dataset.productId = p.id;
+      tr.innerHTML = `<td class="product-name"><div>${p.name}</div><div>${benchmarkLink(p)}</div><button class="product-evidence-toggle" type="button" data-toggle-product-evidence aria-expanded="false" aria-controls="product-evidence-${p.id}"><span class="arrow" aria-hidden="true">▸</span><span>竞品证据</span></button></td><td class="num">${fmtMoney(p.price)}</td><td class="num">${budgetSalesMarkup(p)}</td><td class="num"><span class="status ${p.baseline >= 25 ? 'conditional' : 'high'}">${p.baseline.toFixed(2)}%</span></td><td class="num">${fmtCny(p.targetCost)}<div class="small">较¥513 ${costChange === 0 ? '不变' : costChange.toFixed(1) + '%'}</div></td><td>${p.weight}kg<div class="small">${p.dims}</div></td><td class="num">${fmtCny(p.inboundCny)}<div class="small">${fmtMoney(p.inboundCny / 6.8)}</div></td><td class="num">${fmtMoney(p.fba)}</td><td class="num">${p.tacos}%</td><td class="num">≤${p.refund}%</td><td class="num">${p.promo}%</td><td class="num"><span class="status conditional">${p.targetMargin.toFixed(2)}%</span></td><td class="recommend">${p.advice}</td>`;
       rows.appendChild(tr);
+      rows.appendChild(buildProductEvidenceRow(p));
+    });
+
+    rows.addEventListener('click', event => {
+      const toggle = event.target.closest('[data-toggle-product-evidence]');
+      if (!toggle) return;
+      const detail = document.getElementById(toggle.getAttribute('aria-controls'));
+      if (!detail) return;
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      detail.hidden = expanded;
     });
 
     const profitSheetRows = document.getElementById('profitSheetRows');
