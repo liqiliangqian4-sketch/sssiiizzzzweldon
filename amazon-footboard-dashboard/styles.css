@@ -215,9 +215,10 @@ h1 em { color: var(--coral); font-style: normal; }
 .coverage-table th { padding: 11px 10px; color: var(--muted); font-size: 10px; font-weight: 700; text-align: left; letter-spacing: 0.03em; }
 .coverage-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: middle; }
 .coverage-table tr:last-child td { border-bottom: 0; }
-.coverage-table td strong { color: var(--navy); }
+.coverage-table > tbody > tr:not(.coverage-detail-row) > td strong { color: var(--navy); }
 .coverage-table tr.is-covered td:first-child strong { color: var(--teal); }
 .coverage-table tr.is-gap td:first-child strong, .coverage-table tr.is-gap .coverage-status { color: var(--coral); }
+.coverage-table tr.is-replace:not(.coverage-detail-row) td:first-child strong, .coverage-table tr.is-replace:not(.coverage-detail-row) .coverage-replace-status { color: var(--coral); }
 .coverage-table tr.is-tail td { color: var(--muted); }
 .coverage-share { display: flex; align-items: center; gap: 8px; min-width: 150px; }
 .coverage-share-track { width: 108px; height: 7px; background: #e6e4dd; }
@@ -228,6 +229,7 @@ h1 em { color: var(--coral); font-style: normal; }
 .coverage-separator { color: var(--muted); }
 .coverage-empty { color: var(--muted); font-size: 11px; }
 .coverage-status { font-size: 11px; font-weight: 700; white-space: nowrap; }
+.coverage-replace-status { display: block; margin-top: 3px; font-size: 10px; font-weight: 800; white-space: nowrap; }
 .coverage-brand-share { color: var(--teal) !important; font-family: monospace; font-weight: 700; white-space: nowrap; }
 .coverage-toggle { display: flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .coverage-toggle strong { color: var(--navy); }
@@ -242,6 +244,47 @@ h1 em { color: var(--coral); font-style: normal; }
 .coverage-detail-asin:hover { color: var(--coral); text-decoration: underline; }
 .coverage-detail-empty { padding: 12px 0 2px; color: var(--muted); font-size: 11px; }
 .coverage-model-shell { border-top: 1px solid var(--line); }
+.coverage-subhead { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; padding: 13px 0 9px; }
+.coverage-subhead > div { min-width: 0; }
+.coverage-subhead strong { display: block; color: var(--navy); font-size: 12px; }
+.coverage-subhead span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.coverage-subhead > small { flex: 0 0 auto; color: var(--teal); font-family: monospace; font-size: 9px; white-space: nowrap; }
+.fitment-top4 { padding-bottom: 4px; }
+.fitment-bars { border-top: 1px solid rgba(217,214,207,.78); }
+.fitment-bar-item { display: grid; grid-template-columns: 32px minmax(260px, 1fr) 124px auto; gap: 13px; align-items: center; padding: 11px 0; border-bottom: 1px solid rgba(217,214,207,.62); }
+.fitment-rank { color: var(--coral); font-family: monospace; font-size: 10px; font-weight: 800; }
+.fitment-bar-copy { min-width: 0; }
+.fitment-bar-copy > strong { display: block; overflow-wrap: anywhere; color: var(--navy); font-family: monospace; font-size: 10px; }
+.fitment-bar-copy > span { display: block; margin-top: 2px; overflow-wrap: anywhere; color: var(--ink-soft); font-size: 10px; line-height: 1.35; }
+.fitment-bar-track { width: 100%; height: 7px; margin-top: 7px; background: #e6e4dd; }
+.fitment-bar-track i { display: block; height: 100%; background: var(--teal); }
+.fitment-bar-value { text-align: right; }
+.fitment-bar-value strong { display: block; color: var(--navy); font-family: monospace; font-size: 11px; }
+.fitment-bar-value span { display: block; margin-top: 3px; color: var(--muted); font-family: monospace; font-size: 9px; white-space: nowrap; }
+.fitment-source-list { grid-column: 1 / -1; padding: 3px 0 8px 45px; }
+.portfolio-panel { padding: 5px 0 2px; border-top: 1px solid var(--line); }
+.launched-product-list { border-top: 1px solid rgba(217,214,207,.78); }
+.launched-product-item { display: grid; grid-template-columns: minmax(190px, 1.05fr) minmax(260px, 2.2fr) 122px; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(217,214,207,.62); color: var(--ink-soft); font-size: 10px; }
+.launched-product-item > div { display: flex; align-items: center; gap: 7px; }
+.launched-product-item > span { line-height: 1.4; }
+.launched-product-item.is-clearance { background: linear-gradient(90deg, rgba(231,92,56,.045), transparent 72%); }
+.launched-product-action { display: block; margin-top: 3px; color: var(--coral); font-size: 9px; }
+.launched-product-item > strong { color: var(--teal); font-family: monospace; font-size: 11px; text-align: right; white-space: nowrap; }
+.launched-product-item > strong small { display: block; margin-top: 2px; color: var(--muted); font-family: inherit; font-size: 8px; font-weight: 500; }
+.portfolio-badge { display: inline-block; padding: 2px 5px; border: 1px solid currentColor; font-size: 8px; font-weight: 800; line-height: 1; white-space: nowrap; }
+.portfolio-badge.is-live { color: var(--teal); }
+.portfolio-badge.is-clearance { color: var(--coral); }
+.portfolio-empty { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 0; border-top: 1px solid rgba(217,214,207,.78); border-bottom: 1px solid rgba(217,214,207,.62); }
+.portfolio-empty strong { color: var(--coral); font-size: 11px; }
+.portfolio-empty span { color: var(--muted); font-size: 10px; }
+.clearance-panel { margin-top: 12px; padding: 11px 12px; border-left: 3px solid var(--coral); background: rgba(231,92,56,.045); }
+.clearance-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 7px; }
+.clearance-heading strong { color: var(--coral); font-size: 11px; }
+.clearance-heading span { color: var(--muted); font-size: 9px; }
+.clearance-item { display: grid; grid-template-columns: 118px minmax(190px, 1fr) auto 132px; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid rgba(231,92,56,.16); color: var(--ink-soft); font-size: 10px; }
+.clearance-item > strong { color: var(--coral); font-size: 10px; text-align: right; }
+.clearance-ident { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.portfolio-sku { color: var(--navy); font-family: monospace; font-weight: 700; }
 .coverage-model-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; min-width: 0; }
 .coverage-model-head { padding: 7px 0 6px; color: var(--muted); font-size: 9px; font-weight: 700; }
 .coverage-model-item { padding: 9px 0; border-top: 1px solid rgba(217,214,207,.72); color: var(--ink-soft); font-size: 11px; }
@@ -290,6 +333,10 @@ h1 em { color: var(--coral); font-style: normal; }
   .detail-grid { grid-template-columns: 1fr; }
   .detail-chart-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .coverage-model-band-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fitment-bar-item { grid-template-columns: 28px minmax(220px, 1fr) 112px; }
+  .fitment-bar-item .coverage-model-toggle { grid-column: 2 / 4; justify-self: start; }
+  .fitment-source-list { padding-left: 41px; }
+  .launched-product-item { grid-template-columns: minmax(170px, 1fr) minmax(230px, 1.8fr) 112px; }
   .plot { height: 520px; }
 }
 
@@ -313,6 +360,11 @@ h1 em { color: var(--coral); font-style: normal; }
   .mini-entry-evidence b { font-size: 10px; }
   .mini-entry-source { font-size: 9px; }
   .coverage-model-band-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .coverage-subhead { align-items: flex-start; }
+  .fitment-bar-item { grid-template-columns: 25px minmax(205px, 1fr) 102px; gap: 9px; }
+  .fitment-bar-value span { white-space: normal; }
+  .launched-product-item { grid-template-columns: minmax(170px, .9fr) minmax(220px, 1.4fr) 105px; }
+  .clearance-item { grid-template-columns: 112px minmax(170px, 1fr) auto 120px; }
   .detail-chart-heading { display: flex; }
   .legend { justify-content: flex-start; margin-top: 13px; gap: 8px 12px; }
   .legend span { white-space: normal; }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1f2b45" />
     <title>脚踏类目 · 价格段 × GMV 气泡图</title>
-    <link rel="stylesheet" href="styles.css?v=20260817-pm-rationale-1" />
+    <link rel="stylesheet" href="styles.css?v=20260923-fitment-rollup-2" />
   </head>
   <body>
     <div class="app-shell">
@@ -143,7 +143,7 @@
                <p class="section-kicker">05 / VEHICLE COVERAGE</p>
               <h2 id="coverage-title">Joytutus 在市场重点车型的覆盖与明细</h2>
             </div>
-            <span class="section-caption">逐 ASIN 核验 Amazon 标题与参数 · 年份/型号占比按 2026.01-06 GMV 计算</span>
+            <span class="section-caption">展开车型查看有 GMV 的前四大年份/型号 · 同区列出 Joytutus 已上市产品与清货补位状态</span>
           </div>
           <p class="coverage-lead" id="coverage-summary"></p>
           <div class="coverage-table-wrap">
@@ -152,16 +152,16 @@
                 <tr>
                   <th>市场车型</th>
                   <th>车型关联 GMV 占全类目</th>
-                  <th>Joytutus ASIN</th>
-                  <th>Joytutus 2026 总 GMV</th>
-                  <th>Joytutus 车型市占</th>
+                  <th>运营清单 ASIN</th>
+                  <th>运营清单 2026 总 GMV</th>
+                  <th>运营清单车型市占</th>
                   <th>推进状态</th>
                 </tr>
               </thead>
               <tbody id="coverage-table-body"></tbody>
             </table>
           </div>
-          <p class="coverage-note">每条 ASIN 先用 Amazon 商品标题核验车型；商品导出中存在 Vehicle Service Type 时同时作为年份、型号和 Cab/Door 的优先依据。细分占比的分母分别为该车型已核验关联 ASIN 数与关联 GMV。标题未明确年份或车身型号的记录单独保留，不使用仪表板宽泛车型标签猜测；一个 ASIN 明确适配多个车型时会分别计入，因此各车型占比不可直接相加。</p>
+          <p class="coverage-note">每条 ASIN 先用 Amazon 商品标题核验车型；商品导出中存在 Vehicle Service Type 时同时作为年份、型号和 Cab/Door 的优先依据。年份/型号前四按 2026.01-06 GMV 排序，不等同销量件数；年份或型号未明确的分组不进入前四。表格 GMV 与市占只汇总运营清单，展开后的已上市产品会补充车型市场快照独有 ASIN，并逐条标明来源，不把两套数据无提示混算。一个 ASIN 明确适配多个车型时会分别计入，因此各车型占比不可直接相加。清货淘汰是内部 SKU 生命周期状态，不自动代表对应 Amazon ASIN 已下架。</p>
         </section>
 
         <section class="section band-section" aria-labelledby="band-title">
@@ -192,7 +192,7 @@
     <script src="market-data.js"></script>
     <script src="joytutus-data.js?v=20260817-amazon-price-1"></script>
     <script src="market-model-data.js?v=20260817-asin-fitment-final-1"></script>
-    <script src="vehicle-coverage.js?v=20260817-asin-fitment-final-1"></script>
-    <script src="app.js?v=20260817-pm-rationale-1"></script>
+    <script src="vehicle-coverage.js?v=20260923-fitment-rollup-2"></script>
+    <script src="app.js?v=20260923-fitment-rollup-2"></script>
   </body>
 </html>
