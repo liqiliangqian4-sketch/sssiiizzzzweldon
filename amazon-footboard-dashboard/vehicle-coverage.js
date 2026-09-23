@@ -39,6 +39,7 @@ window.VEHICLE_COVERAGE = [
     aliases: ["jeep gladiator", "gladiator"],
     clearanceProducts: [
       { sku: "A1333-00004-BK", asin: "B0G394WQTW", name: "JT 脚踏升级款", action: "需要补位再开发" },
+      { sku: "A1333-00005-BK-FBM", name: "JT 脚踏双层双踏板款（FBM）", action: "需要补位再开发；公开 ASIN 待绑定" },
     ],
   },
   { vehicle: "其他车型 / 未归类", marketShare: 0.11373124711481442, marketSalesWan: null, aliases: [] },

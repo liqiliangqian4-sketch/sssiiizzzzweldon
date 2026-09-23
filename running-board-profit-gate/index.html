@@ -346,6 +346,67 @@
     .source-item { padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; font-size: 12px; }
     .source-item strong { display: block; }
     .source-item span { display: block; color: var(--muted); margin-top: 3px; }
+
+    .fitment-summary-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-bottom: 12px; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+    .fitment-summary-cell { min-width: 0; padding: 13px 14px; border-right: 1px solid var(--line); }
+    .fitment-summary-cell:last-child { border-right: 0; }
+    .fitment-summary-cell span { display: block; color: var(--muted); font-size: 10px; }
+    .fitment-summary-cell strong { display: block; margin-top: 2px; color: var(--text); font-size: 19px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+    .fitment-summary-cell.is-alert strong { color: var(--red); }
+    .fitment-audit { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 12px; margin-bottom: 12px; }
+    .fitment-audit-main, .fitment-audit-rule { padding: 14px 16px; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 6px; background: var(--surface); }
+    .fitment-audit-main strong, .fitment-audit-rule strong { display: block; margin-bottom: 4px; font-size: 12px; }
+    .fitment-audit-main p, .fitment-audit-rule p { margin: 0; color: var(--muted); font-size: 11px; }
+    .fitment-audit-main b { color: var(--red); }
+    .fitment-audit-rule { border-left-color: var(--amber); }
+    .fitment-list { display: grid; gap: 8px; }
+    .fitment-vehicle { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+    .fitment-vehicle > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(180px, 1.1fr) minmax(150px, .8fr) minmax(150px, .8fr) minmax(180px, 1fr) minmax(150px, .8fr); align-items: center; gap: 12px; min-height: 62px; padding: 11px 14px; }
+    .fitment-vehicle > summary::-webkit-details-marker { display: none; }
+    .fitment-vehicle > summary:hover { background: #f8fafb; }
+    .fitment-vehicle[open] > summary { background: #f2f7fb; border-bottom: 1px solid var(--line); }
+    .fitment-vehicle-name { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .fitment-chevron { flex: 0 0 auto; color: var(--blue); font-size: 20px; line-height: 1; transform: rotate(0deg); transition: transform .15s ease; }
+    .fitment-vehicle[open] .fitment-chevron { transform: rotate(90deg); }
+    .fitment-vehicle-name strong { min-width: 0; font-size: 13px; overflow-wrap: anywhere; }
+    .fitment-summary-stat { min-width: 0; }
+    .fitment-summary-stat span { display: block; color: var(--muted); font-size: 9px; }
+    .fitment-summary-stat strong { display: block; margin-top: 2px; font-size: 11px; line-height: 1.35; overflow-wrap: anywhere; }
+    .fitment-status { display: inline-flex; width: fit-content; align-items: center; min-height: 22px; padding: 2px 7px; border-radius: 3px; background: var(--blue-soft); color: var(--blue); font-size: 10px; font-weight: 700; }
+    .fitment-status.replace { background: var(--red-soft); color: var(--red); }
+    .fitment-status.planned { background: var(--amber-soft); color: var(--amber); }
+    .fitment-detail { padding: 15px; }
+    .fitment-decision { margin: 0 0 14px; padding: 10px 12px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--ink-2); font-size: 11px; }
+    .fitment-decision.replace { border-left-color: var(--red); background: var(--red-soft); }
+    .fitment-subhead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+    .fitment-subhead strong { font-size: 12px; }
+    .fitment-subhead span { color: var(--muted); font-size: 9px; }
+    .fitment-bars { display: grid; gap: 7px; }
+    .fitment-bar { display: grid; grid-template-columns: 28px minmax(0, 1fr) minmax(155px, .28fr); align-items: center; gap: 10px; }
+    .fitment-rank { color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+    .fitment-bar-copy { min-width: 0; }
+    .fitment-bar-copy strong, .fitment-bar-copy span { display: block; overflow-wrap: anywhere; }
+    .fitment-bar-copy strong { font-size: 11px; }
+    .fitment-bar-copy span { color: var(--muted); font-size: 9px; }
+    .fitment-track { height: 7px; margin-top: 5px; background: #e4eaf0; overflow: hidden; }
+    .fitment-track i { display: block; height: 100%; background: var(--blue); }
+    .fitment-bar:first-child .fitment-track i { background: var(--green); }
+    .fitment-bar-value { text-align: right; font-variant-numeric: tabular-nums; }
+    .fitment-bar-value strong, .fitment-bar-value span { display: block; }
+    .fitment-bar-value strong { font-size: 11px; }
+    .fitment-bar-value span { color: var(--muted); font-size: 9px; }
+    .fitment-portfolio { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 14px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .fitment-product-list, .fitment-plan-list { display: grid; gap: 6px; }
+    .fitment-product, .fitment-plan { display: grid; grid-template-columns: minmax(110px, .45fr) minmax(0, 1fr) auto; align-items: center; gap: 9px; padding: 7px 0; border-bottom: 1px solid #e8edf1; font-size: 10px; }
+    .fitment-product:last-child, .fitment-plan:last-child { border-bottom: 0; }
+    .fitment-product a { font-weight: 700; text-decoration: none; }
+    .fitment-product span, .fitment-plan span { color: var(--muted); overflow-wrap: anywhere; }
+    .fitment-product strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .fitment-product.is-clearance { color: var(--red); }
+    .fitment-product.is-clearance span { color: var(--red); }
+    .fitment-empty { padding: 8px 0; color: var(--muted); font-size: 10px; }
+    .fitment-boundary-note { margin-top: 12px; padding: 10px 12px; background: var(--amber-soft); color: #6d430b; font-size: 10px; }
+    .fitment-source-note { margin: 12px 0 0; color: var(--muted); font-size: 10px; }
     .footer { margin-top: 28px; padding: 18px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 
     @media (max-width: 1100px) {
@@ -353,6 +414,11 @@
       .cost-pool { grid-template-columns: repeat(4, 1fr); }
       .gate-grid { grid-template-columns: repeat(2, 1fr); }
       .calculator { grid-template-columns: 1fr; }
+      .fitment-summary-strip { grid-template-columns: repeat(3, 1fr); }
+      .fitment-summary-cell:nth-child(3) { border-right: 0; }
+      .fitment-summary-cell:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .fitment-vehicle > summary { grid-template-columns: minmax(190px, 1fr) repeat(2, minmax(130px, .7fr)); }
+      .fitment-vehicle > summary .fitment-summary-stat:nth-of-type(3), .fitment-vehicle > summary .fitment-summary-stat:nth-of-type(4) { display: none; }
     }
     @media (max-width: 760px) {
       .shell { width: min(100% - 20px, 1520px); }
@@ -372,6 +438,19 @@
       .source-tag { text-align: left; }
       .margin-chart { gap: 7px; }
       .bar-value { font-size: 9px; }
+      .fitment-summary-strip { grid-template-columns: 1fr 1fr; }
+      .fitment-summary-cell, .fitment-summary-cell:nth-child(3) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .fitment-summary-cell:nth-child(even) { border-right: 0; }
+      .fitment-summary-cell:nth-last-child(-n+2) { border-bottom: 0; }
+      .fitment-audit { grid-template-columns: 1fr; }
+      .fitment-vehicle > summary { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+      .fitment-vehicle > summary .fitment-summary-stat { display: none; }
+      .fitment-vehicle > summary .fitment-summary-stat:last-child { display: block; text-align: right; }
+      .fitment-bar { grid-template-columns: 24px minmax(0, 1fr); align-items: start; }
+      .fitment-bar-value { grid-column: 2; text-align: left; }
+      .fitment-portfolio { grid-template-columns: 1fr; }
+      .fitment-product, .fitment-plan { grid-template-columns: 1fr; gap: 2px; }
+      .fitment-product strong { white-space: normal; }
     }
   </style>
 </head>
@@ -385,6 +464,7 @@
         <a href="#limits">费率红线</a>
         <a href="#products">7款产品</a>
         <a href="#calculator">模板利润核算</a>
+        <a href="#fitment-conclusion">车型结论</a>
       </nav>
     </div>
   </header>
@@ -556,9 +636,21 @@
       </div>
     </section>
 
+    <section class="section" id="fitment-conclusion">
+      <div class="section-head">
+        <div><h2>最终结论 · 重点车型覆盖与年份矩阵</h2><p class="section-sub">把类目车型数据与当前产品组合放到同一视图：先看每个车型有量的前四大年份 / 型号，再看已上市、清货补位和7款新品的覆盖关系。</p></div>
+        <div class="source-tag">车型矩阵 GMV：2026.01-06；GMV不等同销量；同一ASIN可跨车型计入</div>
+      </div>
+      <div class="fitment-summary-strip" id="fitmentSummary"></div>
+      <div class="fitment-audit" id="fitmentAudit"></div>
+      <div class="fitment-list" id="fitmentVehicleList"></div>
+      <p class="fitment-source-note">来源：Amazon 脚踏类目车型明细与 Joytutus 运营清单。车型、年份、Cab/Door 以逐 ASIN 商品标题及可用 Vehicle Service Type 核验；51条页面不可用记录不参与车型分组。<a href="../amazon-footboard-dashboard/?v=20260923-fitment-rollup-3#coverage-title" target="_blank" rel="noopener">查看源车型仪表板 ↗</a></p>
+    </section>
+
     <footer class="footer">利润率 = 各运输方式利润 ÷ 促销后销售额。头程与仓储字段来自“产品名 亚马逊产品利润测算表.xlsm”；FBA尾程费采用用户提供的2026费率实验台公式，读取日期2026-09-18。</footer>
   </main>
 
+  <script src="fitment-conclusion-data.js?v=20260923-fitment-rollup-3"></script>
   <script>
     const marginChartData = [
       { sku: 'A3302-00306-BK', name: '牧马人JL踏板', margin: 29.94, month: '2026-03', sales: 29948.5571, profit: 8965.3207, units: 144, asp: 207.9760909722, refundRate: 0.0273789718, inboundRate: 0.0831928056, platformFeeRate: 0.3152330828, commissionRate: 0.1208804835, promoRate: 0.0023702711, deliveryRate: 0.1888878379, storageRate: 0.0063668315, onsiteAdsRate: 0.0649588104, offsiteAdsRate: 0 },
@@ -1391,6 +1483,126 @@
     document.getElementById('resetAllRows').addEventListener('click', () => {
       profitSheetRows.querySelectorAll('tr').forEach(restoreRow);
     });
+
+    function renderFitmentConclusion() {
+      const snapshot = window.FITMENT_CONCLUSION;
+      const summary = document.getElementById('fitmentSummary');
+      const audit = document.getElementById('fitmentAudit');
+      const list = document.getElementById('fitmentVehicleList');
+      if (!snapshot || !summary || !audit || !list) return;
+
+      const escape = value => String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+      const usd = value => '$' + Number(value || 0).toLocaleString('en-US', { maximumFractionDigits: 0 });
+      const usdCompact = value => {
+        const amount = Number(value || 0);
+        if (amount >= 1000000) return '$' + (amount / 1000000).toFixed(2) + 'M';
+        if (amount >= 1000) return '$' + (amount / 1000).toFixed(2) + 'K';
+        return '$' + amount.toFixed(0);
+      };
+      const pct = value => (Number(value || 0) * 100).toFixed(1) + '%';
+      const meta = snapshot.meta;
+
+      summary.innerHTML = [
+        ['已核验 ASIN', Number(meta.verifiedAsins).toLocaleString('zh-CN'), false],
+        ['核验率', pct(meta.verificationRate), false],
+        ['未解析记录', Number(meta.unresolvedAsins).toLocaleString('zh-CN'), false],
+        ['重点车型', meta.focusVehicles + ' 个', false],
+        ['现有产品覆盖', meta.coveredVehicles + ' 个 · ' + pct(meta.coveredShareOfFocus), false],
+        ['清货补位', meta.clearanceSkus + ' SKU · ' + meta.replacementVehicleRows + ' 车型', true]
+      ].map(([label, value, alert]) => `<div class="fitment-summary-cell${alert ? ' is-alert' : ''}"><span>${escape(label)}</span><strong>${escape(value)}</strong></div>`).join('');
+
+      const gmc = meta.gmcAudit;
+      audit.innerHTML = `
+        <div class="fitment-audit-main">
+          <strong>年份矩阵复核结论</strong>
+          <p>GMC Sierra 红框两行已归并为 <b>${escape(gmc.canonicalLabel)}</b>：${gmc.asinCount} 个唯一 ASIN、${usd(gmc.gmv2026)}，占该车型关联 GMV ${pct(gmc.vehicleShare)}。原宽泛年份组中 ${gmc.explicitEvidenceAsins} 个 ASIN（${usd(gmc.explicitEvidenceGmv)}，${pct(gmc.explicitEvidenceShare)}）有标题或参数双年款证据；余下 ${gmc.broadBoundaryAsins} 个（${usd(gmc.broadBoundaryGmv)}）标记为适配边界待复核。</p>
+        </div>
+        <div class="fitment-audit-rule">
+          <strong>归并边界</strong>
+          <p>${escape(meta.normalization)} Chevrolet Silverado 同平台修正后为 155 个 ASIN、${usd(12470205)}、车型内占比 59.1%。</p>
+        </div>`;
+
+      list.innerHTML = snapshot.vehicles.map((vehicle, vehicleIndex) => {
+        const launched = vehicle.launched || [];
+        const clearance = vehicle.clearance || [];
+        const planned = vehicle.planned || [];
+        const hasClearance = clearance.length > 0 || launched.some(product => product[4] === '清货淘汰');
+        const launchedGmv = launched.reduce((total, product) => total + Number(product[3] || 0), 0);
+        let statusLabel = vehicle.action || '待推进';
+        let statusClass = planned.length ? 'planned' : '';
+        if (launched.length) statusLabel = '已有产品覆盖';
+        if (hasClearance) {
+          statusLabel = '需要补位再开发';
+          statusClass = 'replace';
+        }
+        const top = vehicle.top4[0];
+        const decision = hasClearance
+          ? `该车型已有产品，但清货状态形成补位缺口。补位规格优先覆盖“${top[0]} · ${top[1]}”，该组占车型关联 GMV ${pct(top[2] / vehicle.marketGmv2026)}。`
+          : planned.length
+            ? `本页7款新品已关联到该车型。首轮适配与样件验证应优先覆盖“${top[0]} · ${top[1]}”，该组占车型关联 GMV ${pct(top[2] / vehicle.marketGmv2026)}。`
+            : `当前没有已上市 Joytutus ASIN或本页7款新品关联。若推进开发，先验证“${top[0]} · ${top[1]}”，该组占车型关联 GMV ${pct(top[2] / vehicle.marketGmv2026)}。`;
+        const maxGmv = Math.max(...vehicle.top4.map(group => Number(group[2]) || 0), 1);
+        const bars = vehicle.top4.map((group, index) => {
+          const [years, model, gmv, asinCount] = group;
+          const share = Number(gmv) / Number(vehicle.marketGmv2026 || 1);
+          return `<div class="fitment-bar">
+            <span class="fitment-rank">${String(index + 1).padStart(2, '0')}</span>
+            <div class="fitment-bar-copy"><strong>${escape(years)}</strong><span>${escape(model)}</span><div class="fitment-track" aria-hidden="true"><i style="width:${Math.max(3, Number(gmv) / maxGmv * 100).toFixed(1)}%"></i></div></div>
+            <div class="fitment-bar-value"><strong>${usd(gmv)}</strong><span>${pct(share)} · ${Number(asinCount).toLocaleString('zh-CN')} ASIN</span></div>
+          </div>`;
+        }).join('');
+        const currentProducts = launched.length
+          ? launched.map(product => {
+              const [asin, years, model, gmv, status, sku] = product;
+              const isClearance = status === '清货淘汰';
+              return `<div class="fitment-product${isClearance ? ' is-clearance' : ''}">
+                <a href="https://www.amazon.com/dp/${escape(asin)}" target="_blank" rel="noopener">${escape(asin)} ↗</a>
+                <span>${escape(years)} · ${escape(model)}${sku ? ` · ${escape(sku)}` : ''}</span>
+                <strong>${usdCompact(gmv)} · ${escape(status)}</strong>
+              </div>`;
+            }).join('')
+          : '<div class="fitment-empty">暂无已上市 Joytutus ASIN。</div>';
+        const plans = planned.length
+          ? planned.map(name => `<div class="fitment-plan"><strong>7款新品关联</strong><span>${escape(name)}</span></div>`).join('')
+          : `<div class="fitment-empty">本页7款新品暂无直接关联；${escape(vehicle.action || '按市场优先级决定是否立项')}。</div>`;
+        const clearanceRows = clearance.length
+          ? `<div class="fitment-subhead" style="margin-top:10px"><strong>清货缺口</strong><span>${clearance.length} 个 SKU</span></div>${clearance.map(item => {
+              const [sku, asin, name, action] = item;
+              return `<div class="fitment-plan"><strong style="color:var(--red)">${escape(sku)}</strong><span>${escape(name)} · ${escape(action)}${asin ? ` · ${escape(asin)}` : ''}</span></div>`;
+            }).join('')}`
+          : '';
+        const boundaryNote = vehicle.vehicle === 'GMC Sierra'
+          ? `<div class="fitment-boundary-note">适配边界：合并组中仍有 ${gmc.broadBoundaryAsins} 个宽泛描述 ASIN，需要在样件、安装量规和车型清单中再次确认；不得据此扩展到不同 Cab、Classic、LD 或 Limited。</div>`
+          : '';
+
+        return `<details class="fitment-vehicle"${vehicleIndex === 0 ? ' open' : ''}>
+          <summary>
+            <div class="fitment-vehicle-name"><span class="fitment-chevron" aria-hidden="true">›</span><strong>${escape(vehicle.vehicle)}</strong></div>
+            <div class="fitment-summary-stat"><span>车型关联 GMV</span><strong>${usdCompact(vehicle.marketGmv2026)} · ${pct(vehicle.marketShare)}</strong></div>
+            <div class="fitment-summary-stat"><span>现有覆盖</span><strong>${launched.length ? `${launched.length} ASIN · ${usdCompact(launchedGmv)}` : '暂无 ASIN'}</strong></div>
+            <div class="fitment-summary-stat"><span>本页7款新品</span><strong>${planned.length ? `${planned.length} 款关联` : '无直接关联'}</strong></div>
+            <div class="fitment-summary-stat"><span>推进状态</span><strong class="fitment-status ${statusClass}">${escape(statusLabel)}</strong></div>
+          </summary>
+          <div class="fitment-detail">
+            <p class="fitment-decision${hasClearance ? ' replace' : ''}">${escape(decision)}</p>
+            <div class="fitment-subhead"><strong>有 GMV 的前四大年份 / 型号</strong><span>条形仅在当前车型内部比较 · ${escape(meta.period)}</span></div>
+            <div class="fitment-bars">${bars}</div>
+            ${boundaryNote}
+            <div class="fitment-portfolio">
+              <div><div class="fitment-subhead"><strong>Joytutus 已上市产品</strong><span>${launched.length} 个 ASIN</span></div><div class="fitment-product-list">${currentProducts}</div></div>
+              <div><div class="fitment-subhead"><strong>新品与补位动作</strong><span>不虚构未绑定 ASIN</span></div><div class="fitment-plan-list">${plans}${clearanceRows}</div></div>
+            </div>
+          </div>
+        </details>`;
+      }).join('');
+    }
+
+    renderFitmentConclusion();
   </script>
 </body>
 </html>

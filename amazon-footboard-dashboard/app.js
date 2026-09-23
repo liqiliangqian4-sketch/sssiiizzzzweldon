@@ -503,6 +503,7 @@
 
   function rollupFitmentGroups(groups) {
     const ambiguous = /not stated|not specified|未明确|未说明|未注明/i;
+    const sharedSilveradoSierraCrewCab = "1500 + 2500/3500 hd · crew cab";
     const rollups = new Map();
     (groups || []).forEach((group) => {
       const yearRange = String(group.yearRange || "").trim();
@@ -514,32 +515,44 @@
         .map((part) => part.trim())
         .filter(Boolean)
         .sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
-      const displayYears = normalizedYears.join(" / ");
+      let displayYears = normalizedYears.join(" / ");
+      const normalizedModel = model.toLowerCase();
+      if (
+        normalizedModel === sharedSilveradoSierraCrewCab
+        && (displayYears === "2019-2026" || displayYears === "2019-2026 / 2020-2026")
+      ) {
+        displayYears = "2019-2026 / 2020-2026";
+      }
       const key = `${displayYears.toLowerCase()}|${model.toLowerCase()}`;
       if (!rollups.has(key)) {
         rollups.set(key, {
           yearRange: displayYears,
           model,
-          marketGmv2026: 0,
-          marketAsinCount: 0,
+          fallbackMarketGmv2026: 0,
+          fallbackMarketAsinCount: 0,
           productsByAsin: new Map(),
           joytutusAsins: new Set(),
         });
       }
       const rollup = rollups.get(key);
-      rollup.marketGmv2026 += groupGmv;
-      rollup.marketAsinCount += Number(group.marketAsinCount) || 0;
+      rollup.fallbackMarketGmv2026 += groupGmv;
+      rollup.fallbackMarketAsinCount += Number(group.marketAsinCount) || 0;
       (group.products || []).forEach((product) => rollup.productsByAsin.set(product.asin, product));
       (group.joytutusAsins || []).forEach((asin) => rollup.joytutusAsins.add(asin));
     });
-    return Array.from(rollups.values()).map((group) => ({
-      yearRange: group.yearRange,
-      model: group.model,
-      marketGmv2026: group.marketGmv2026,
-      marketAsinCount: group.marketAsinCount,
-      products: Array.from(group.productsByAsin.values()),
-      joytutusAsins: Array.from(group.joytutusAsins),
-    }));
+    return Array.from(rollups.values()).map((group) => {
+      const products = Array.from(group.productsByAsin.values());
+      return {
+        yearRange: group.yearRange,
+        model: group.model,
+        marketGmv2026: products.length
+          ? products.reduce((sum, product) => sum + (Number(product.gmv2026) || 0), 0)
+          : group.fallbackMarketGmv2026,
+        marketAsinCount: products.length || group.fallbackMarketAsinCount,
+        products,
+        joytutusAsins: Array.from(group.joytutusAsins),
+      };
+    });
   }
 
   function renderTopFitmentGroups(row, marketVehicle) {
@@ -580,12 +593,17 @@
   }
 
   function renderLaunchedProducts(row, launchedProducts) {
-    const rowClearanceByAsin = new Map((row.clearanceProducts || []).filter((product) => product.asin).map((product) => [product.asin, product]));
+    const rowClearanceProducts = row.clearanceProducts || [];
+    const rowClearanceByAsin = new Map(rowClearanceProducts.filter((product) => product.asin).map((product) => [product.asin, product]));
+    const clearanceProductsBySku = new Map(rowClearanceProducts.filter((product) => product.sku).map((product) => [product.sku, product]));
     launchedProducts.forEach((product) => {
       const globalClearance = clearanceByAsin.get(product.asin);
-      if (globalClearance) rowClearanceByAsin.set(product.asin, globalClearance);
+      if (globalClearance) {
+        rowClearanceByAsin.set(product.asin, globalClearance);
+        clearanceProductsBySku.set(globalClearance.sku, globalClearance);
+      }
     });
-    const clearanceProducts = Array.from(rowClearanceByAsin.values());
+    const clearanceProducts = Array.from(clearanceProductsBySku.values());
     const launched = launchedProducts.length
       ? `<div class="launched-product-list">${launchedProducts.map((product) => {
         const clearanceProduct = rowClearanceByAsin.get(product.asin);
@@ -688,7 +706,10 @@
     const unresolved = Number(vehicleModelMarket.meta?.unresolvedCatalogAsinCount) || 0;
     const totalDetail = verified + unresolved;
     const verificationRate = totalDetail ? verified / totalDetail : 0;
-    const replacementSkuCount = new Set(Array.from(clearanceByAsin.values()).map((product) => product.sku)).size;
+    const replacementSkuCount = new Set(vehicleCoverage
+      .flatMap((row) => row.clearanceProducts || [])
+      .map((product) => product.sku)
+      .filter(Boolean)).size;
     document.getElementById("coverage-summary").innerHTML = `已按 ASIN 核验 Amazon 商品标题与参数 <strong>${formatNumber(verified)} 条</strong>，核验率 <strong>${(verificationRate * 100).toFixed(1)}%</strong>；其余 <strong>${formatNumber(unresolved)} 条</strong>页面不可用，未纳入车型、年份和型号占比。重点 10 个车型中，Joytutus 现有产品对应 <strong>${coveredRows.length} 个</strong>，覆盖这些重点车型关联 GMV 的 <strong>${(focusCoverageRate * 100).toFixed(1)}%</strong>；<strong>${replacementSkuCount} 个清货 SKU</strong>关联 <strong>${replacementRows.length} 个车型</strong>，需要补位再开发。展开车型可查看有 GMV 的前四大年份 / 型号与已上市产品。`;
   }
 
