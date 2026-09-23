@@ -607,8 +607,9 @@
       B0G394CR16: {
         title: 'Amazon 页面标题当前显示为 JOYTUTUS Running Boards for Gladiator JT 4 Door 2020–2026',
         price: '$209.99', rating: '4.4 / 5', reviews: '16', salesBadge: null,
-        image: 'assets/benchmarks/B0G394CR16-amazon-product.jpg',
-        note: '访问快照未见可验证的公开销量标识；且页面标题与 A1333-00005-BK 新品名称不完全一致，立项前需复核对标链接。当前保留 Amazon 主图。'
+        image: 'assets/benchmarks/A1333-00005-BK-sales-chart.png',
+        caption: '用户提供的 A1333-00005-BK 月度销量截图；统计区间为 2025-09-22 至 2026-09-22。',
+        note: '左侧为用户提供的内部销量报表；右侧 Amazon 页面字段仅用于竞品链接核对，内部销量不等同于该 ASIN 的公开销量。页面标题与新品名称不完全一致，立项前仍需复核链接。'
       },
       B0FGDNP49X: {
         title: 'SOENBOO Running Boards for Colorado/Canyon Crew Cab',
@@ -971,13 +972,15 @@
       detail.dataset.productEvidenceFor = product.id;
       detail.hidden = true;
       const imagePath = evidence.screenshot || evidence.image;
-      const imageCaption = evidence.screenshot
-        ? '已采集的 Amazon 商品页截图；截图日期：2026-09-23。'
-        : evidence.image
-          ? 'Amazon 商品主图（非页面截图）；图片来源为对应 ASIN 商品页，访问日：2026-09-23。'
-          : '';
+      const imageCaption = evidence.caption || (
+        evidence.screenshot
+          ? '已采集的 Amazon 商品页截图；截图日期：2026-09-23。'
+          : evidence.image
+            ? 'Amazon 商品主图（非页面截图）；图片来源为对应 ASIN 商品页，访问日：2026-09-23。'
+            : ''
+      );
       const screenshot = imagePath
-        ? `<figure class="product-evidence-shot"><img src="${historySafe(imagePath)}" alt="${historySafe(product.benchmarkAsin)} Amazon 对标商品图片"><figcaption>${historySafe(imageCaption)}</figcaption></figure>`
+        ? `<figure class="product-evidence-shot"><img src="${historySafe(imagePath)}" alt="${historySafe(product.name)} 对标与销量证据图片"><figcaption>${historySafe(imageCaption)}</figcaption></figure>`
         : `<div class="product-evidence-placeholder"><div><strong>图片证据未采集</strong><span>当前仅保留链接与已核对字段，不用占位图伪造竞品视觉。</span></div></div>`;
       const salesClass = evidence.salesVerified ? 'sales-verified' : 'sales-unavailable';
       const salesValue = evidence.salesBadge || '未显示可验证销量标识';
