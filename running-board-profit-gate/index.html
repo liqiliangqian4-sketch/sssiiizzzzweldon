@@ -86,6 +86,7 @@
     .bar-label { position: absolute; bottom: -67px; width: 84px; color: var(--muted); font-size: 9px; line-height: 1.25; text-align: center; overflow-wrap: anywhere; }
     .bar-label-sku { display: block; color: var(--ink-2); font-size: 9px; font-weight: 700; }
     .bar-label-name { display: block; margin-top: 2px; }
+    .bar-label-status { display: inline-block; margin-top: 4px; padding: 2px 4px; border-radius: 3px; font-size: 8px; font-weight: 700; line-height: 1.1; }
     .margin-tooltip { position: fixed; z-index: 80; width: min(360px, calc(100vw - 24px)); padding: 12px 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(24,33,43,.98); color: #f8fafc; box-shadow: 0 12px 30px rgba(10, 18, 28, .22); font-size: 11px; line-height: 1.45; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity .12s ease, transform .12s ease; }
     .margin-tooltip.is-visible { opacity: 1; transform: translateY(0); }
     .margin-tooltip-title { display: flex; justify-content: space-between; gap: 12px; align-items: start; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.16); }
@@ -109,6 +110,17 @@
     .sku-summary-title { min-width: 190px; }
     .sku-summary-title strong { display: block; color: var(--ink-2); font-size: 12px; }
     .sku-summary-title span { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+    .sku-status-badge { display: inline-block; margin-left: 6px; padding: 2px 5px; border: 1px solid currentColor; border-radius: 3px; font-size: 9px; font-weight: 700; vertical-align: 1px; white-space: nowrap; }
+    .sku-status-badge.clearance { color: var(--red); background: var(--red-soft); }
+    .sku-status-badge.dimension { color: var(--amber); background: var(--amber-soft); }
+    .sku-status-panel { margin-bottom: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: #fbfcfd; }
+    .sku-status-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .sku-status-panel-head strong { color: var(--ink-2); font-size: 12px; }
+    .sku-status-panel-head span { color: var(--muted); font-size: 10px; }
+    .sku-status-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 10px; }
+    .sku-status-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 6px 7px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); font-size: 10px; }
+    .sku-status-item code { color: var(--ink-2); font-family: inherit; font-weight: 700; white-space: nowrap; }
+    .sku-status-item small { color: var(--muted); text-align: right; white-space: nowrap; }
     .sku-summary-main { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
     .sku-summary-main .summary-chip { padding: 4px 7px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink-2); font-size: 10px; font-variant-numeric: tabular-nums; }
     .summary-chip strong { color: var(--blue); font-size: 11px; }
@@ -141,6 +153,8 @@
       .sku-monthly > summary { align-items: flex-start; flex-direction: column; }
       .sku-summary-main { justify-content: flex-start; }
       .sku-monthly-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sku-status-list { grid-template-columns: 1fr; }
+      .sku-status-panel-head { align-items: flex-start; flex-direction: column; gap: 3px; }
     }
 
     .fact-list { display: grid; gap: 10px; }
@@ -383,6 +397,10 @@
           </div>
           <div class="history-monthly-source">来源：仪表板 (1).xlsx「历史费率明细」；展示页面当前图表采用的账户分组</div>
         </div>
+        <div class="sku-status-panel" id="skuStatusPanel">
+          <div class="sku-status-panel-head"><strong>指定 SKU 状态标识</strong><span>按基础 SKU 匹配；月度数据缺失时只显示状态，不补造指标</span></div>
+          <div class="sku-status-list" id="skuStatusList"></div>
+        </div>
         <div class="history-monthly-list" id="historyMonthlyList">
           <div class="history-monthly-empty">正在读取历史月度数据…</div>
         </div>
@@ -523,6 +541,26 @@
       { id: 'colorado-basic', name: '2015-2026 Chevy Colorado/GMC Canyon Crew Cab 基础款', benchmarkAsin: 'B0FGDNP49X', price: 199.99, units: 175, baseline: 5.94, targetCost: 360, weight: 22, dims: '200×25×15cm', inboundCny: 107.25, fba: 44.57, storage: 1.40, tacos: 5, refund: 5, promo: 0, targetMargin: 19.15, advice: '距25%约¥80/件；FBA跨档与跨年份车型退款必须同时改善，单控广告不足以达标。' },
       { id: 'tundra-old-basic', name: '2007-2021 Toyota Tundra Crew Cab 基础款', benchmarkAsin: 'B0FGDPJH55', price: 249.99, units: 110, baseline: 19.40, targetCost: 450, weight: 27, dims: '215×28×18cm', inboundCny: 154.95, fba: 44.07, storage: 2.03, tacos: 5, refund: 5, promo: 0, targetMargin: 22.47, advice: '距25%约¥43/件；目标是实际重≤50lb，并从货值、包装和退款中关闭剩余缺口。' }
     ];
+    const skuStatusMeta = Object.freeze({
+      'A1333-00010-BK': { label: '清货淘汰', tone: 'clearance' },
+      'A1333-00009-BK': { label: '清货淘汰', tone: 'clearance' },
+      'A1333-00004-BK': { label: '清货淘汰', tone: 'clearance' },
+      'A1333-00002-BK': { label: '清货淘汰', tone: 'clearance' },
+      'A1333-00001-BK': { label: '尺寸优化', tone: 'dimension' },
+      'A1333-00007-BK': { label: '尺寸优化', tone: 'dimension' },
+      'A1333-00008-BK': { label: '尺寸优化', tone: 'dimension' },
+      'A1333-00012-BK': { label: '尺寸优化', tone: 'dimension' }
+    });
+    const skuBase = value => String(value ?? '').replace(/-FBM$/, '');
+    const skuStatus = value => skuStatusMeta[skuBase(value)] || null;
+    const skuStatusBadge = value => {
+      const status = skuStatus(value);
+      return status ? `<span class="sku-status-badge ${status.tone}">${status.label}</span>` : '';
+    };
+    const skuStatusText = value => {
+      const status = skuStatus(value);
+      return status ? status.label : '';
+    };
     const fmtMoney = v => '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const fmtCny = v => '¥' + Math.round(v).toLocaleString('zh-CN');
     const fmtCny2 = v => '¥' + Number(v).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -548,7 +586,7 @@
 
     function renderMarginTooltip(item) {
       const fields = tooltipFields.map(([label, format, emphasis]) => `<div class="margin-tooltip-item"><span class="margin-tooltip-label">${label}</span><span class="margin-tooltip-value${emphasis ? ' emphasis' : ''}">${format(item)}</span></div>`).join('');
-      marginTooltip.innerHTML = `<div class="margin-tooltip-title"><div><div class="margin-tooltip-sku">${item.sku}</div><div class="margin-tooltip-name">${item.name}</div></div><div class="margin-tooltip-month">最佳月份<br>${item.month}</div></div><div class="margin-tooltip-grid">${fields}</div>`;
+      marginTooltip.innerHTML = `<div class="margin-tooltip-title"><div><div class="margin-tooltip-sku">${item.sku}${skuStatusBadge(item.sku)}</div><div class="margin-tooltip-name">${item.name}</div></div><div class="margin-tooltip-month">最佳月份<br>${item.month}</div></div><div class="margin-tooltip-grid">${fields}</div>`;
     }
 
     function placeMarginTooltip(event, wrap) {
@@ -588,7 +626,7 @@
       wrap.tabIndex = 0;
       wrap.setAttribute('role', 'img');
       wrap.setAttribute('aria-describedby', 'marginTooltip');
-      wrap.setAttribute('aria-label', `${item.sku}，${item.name}，最佳月份 ${item.month}，销售毛利润率 ${item.margin.toFixed(2)}%`);
+      wrap.setAttribute('aria-label', `${item.sku}${skuStatusText(item.sku) ? `，状态 ${skuStatusText(item.sku)}` : ''}，${item.name}，最佳月份 ${item.month}，销售毛利润率 ${item.margin.toFixed(2)}%`);
       const valueEl = document.createElement('div');
       valueEl.className = 'bar-value';
       valueEl.textContent = item.margin.toFixed(2) + '%';
@@ -597,7 +635,7 @@
       bar.style.height = Math.max(3, Math.min(150, Math.abs(item.margin) / 40 * 150)) + 'px';
       const label = document.createElement('div');
       label.className = 'bar-label';
-      label.innerHTML = `<span class="bar-label-sku">${item.sku}</span><span class="bar-label-name">${item.name}</span>`;
+      label.innerHTML = `<span class="bar-label-sku">${item.sku}</span><span class="bar-label-name">${item.name}</span>${skuStatusBadge(item.sku)}`;
       wrap.append(valueEl, bar, label);
       wrap.addEventListener('mouseenter', event => showMarginTooltip(item, wrap, event));
       wrap.addEventListener('mousemove', event => {
@@ -649,9 +687,20 @@
         .join('、') || '有效费率不足';
     }
 
+    function renderSkuStatusPanel(records) {
+      const host = document.getElementById('skuStatusList');
+      if (!host) return;
+      const recordBases = new Set((records || []).map(record => skuBase(record.sku)));
+      host.innerHTML = Object.entries(skuStatusMeta).map(([sku]) => {
+        const hasMonthly = recordBases.has(sku);
+        return `<div class="sku-status-item"><div><code>${historySafe(sku)}</code>${skuStatusBadge(sku)}</div><small>${hasMonthly ? '已纳入月度卡片' : '当前历史费率明细未纳入'}</small></div>`;
+      }).join('');
+    }
+
     function renderHistoryMonthly(records) {
       const host = document.getElementById('historyMonthlyList');
       if (!host) return;
+      renderSkuStatusPanel(records);
       if (!records.length) {
         host.innerHTML = '<div class="history-monthly-empty">未找到可展示的历史 SKU 月度数据。</div>';
         return;
@@ -689,7 +738,7 @@
         }).join('');
         return `<details class="sku-monthly"${index === 0 ? ' open' : ''}>
           <summary>
-            <div class="sku-summary-title"><strong>${historySafe(record.sku)}</strong><span>${historySafe(record.name)}</span></div>
+            <div class="sku-summary-title"><strong>${historySafe(record.sku)}${skuStatusBadge(record.sku)}</strong><span>${historySafe(record.name)}</span></div>
             <div class="sku-summary-main">
               <span class="summary-chip ${bestClass}">最佳月份 <strong>${best ? historyRate(best.margin) : '—'}</strong> · ${best ? historySafe(best.month) : '—'}</span>
               <span class="summary-chip">有效月份 <strong>${valid.length}</strong></span>
