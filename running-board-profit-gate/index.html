@@ -135,6 +135,14 @@
     .sku-monthly-stat strong.negative { color: var(--red); }
     .sku-monthly-stat small { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
     .sku-monthly-note { margin: 0 0 9px; padding: 8px 9px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--ink-2); font-size: 11px; }
+    .sku-monthly-conclusion { margin: 0 0 10px; padding: 10px 11px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--ink-2); font-size: 11px; line-height: 1.5; }
+    .sku-monthly-conclusion.clearance { border-left-color: var(--red); background: var(--red-soft); }
+    .sku-monthly-conclusion.dimension { border-left-color: var(--amber); background: var(--amber-soft); }
+    .sku-monthly-conclusion-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+    .sku-monthly-conclusion-head strong { font-size: 12px; }
+    .sku-monthly-conclusion-head span { color: var(--muted); font-size: 10px; }
+    .sku-monthly-conclusion p { margin: 4px 0 0; }
+    .sku-monthly-conclusion p strong { color: var(--ink-2); }
     .history-monthly-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
     .history-monthly-table { min-width: 1510px; font-size: 10px; }
     .history-monthly-table th, .history-monthly-table td { padding: 7px 8px; white-space: nowrap; }
@@ -155,6 +163,7 @@
       .sku-monthly-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .sku-status-list { grid-template-columns: 1fr; }
       .sku-status-panel-head { align-items: flex-start; flex-direction: column; gap: 3px; }
+      .sku-monthly-conclusion-head { align-items: flex-start; flex-direction: column; gap: 2px; }
     }
 
     .fact-list { display: grid; gap: 10px; }
@@ -687,6 +696,95 @@
         .join('、') || '有效费率不足';
     }
 
+    function historyWeightedAverage(months, key) {
+      let weighted = 0;
+      let salesTotal = 0;
+      (months || []).forEach(month => {
+        const value = Number(month[key]);
+        const sales = Number(month.sales);
+        if (Number.isFinite(value) && Number.isFinite(sales) && sales > 0) {
+          weighted += value * sales;
+          salesTotal += sales;
+        }
+      });
+      return salesTotal > 0 ? weighted / salesTotal : null;
+    }
+
+    function historyWeightedMargin(months) {
+      const salesTotal = (months || []).reduce((sum, month) => sum + (Number.isFinite(Number(month.sales)) && Number(month.sales) > 0 ? Number(month.sales) : 0), 0);
+      const profitTotal = (months || []).reduce((sum, month) => sum + (Number.isFinite(Number(month.profit)) ? Number(month.profit) : 0), 0);
+      return salesTotal > 0 ? profitTotal / salesTotal : null;
+    }
+
+    function historyDeltaText(value) {
+      if (!Number.isFinite(value)) return '—';
+      return `${value >= 0 ? '+' : ''}${(value * 100).toFixed(1)}%`;
+    }
+
+    function historyPressureWeighted(months) {
+      const fields = [
+        ['平台费用率', 'platformFeeRate'],
+        ['销售配送费率', 'deliveryRate'],
+        ['站内广告费率', 'onsiteAdsRate'],
+        ['产品头程成本率', 'inboundRate'],
+        ['退款率', 'refundRate']
+      ];
+      return fields.map(([label, key]) => ({ label, value: historyWeightedAverage(months, key) }))
+        .filter(item => item.value != null)
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 2)
+        .map(item => `${item.label} ${historyRate(item.value)}`)
+        .join('、') || '有效费率不足';
+    }
+
+    const historyProductActions = Object.freeze({
+      'A3302-00306-BK': '主力款，优先保量；复盘销量峰值月未达标的费用组合，先压平台与履约费率，再把近几个月利润率稳定到25%以上。',
+      'A1329-00504-BK': '需求在增长但盈利不稳定；优先检查适配/质量导致的退款，降低履约和广告依赖，复现达标月的费用组合后再扩量。',
+      'A3302-00308-BK': '有一定出货规模但始终低于25%；先降广告依赖、改善自然转化，并同步压缩履约与头程成本，再决定是否放量。',
+      'A1333-00001-BK': '尺寸优化：先核对低销量月份的退款与费率异常，再验证包装、计费重和安装适配；未关闭履约与退货问题前不扩大备货。',
+      'A1329-00503-BK': '销量可做但利润天花板偏低；优先降低广告与退款，复核平台费和包裹尺寸，完成成本/转化优化后再放量。',
+      'A1333-00003-BK': 'FBM经济性明显失效且销量回落；暂停扩量，先复盘履约方式、广告和平台费用，不能显著降低综合费率就停止投入。',
+      'A1333-00004-BK': '清货淘汰：销量峰值后回落且仅有1个月微利；不建议继续投入，除非重做履约与投放成本并用新样验证。',
+      'A1333-00006-BK': '有真实需求和出货规模，但当前每件仍亏；优先切换/重算履约方式、压广告和头程，保留观察窗口，不直接扩大库存。',
+      'A1333-00009-BK': '清货淘汰：曾出现销量峰值但利润快速恶化；暂停投放和补货，先复核平台、履约、广告归因与包装尺寸。',
+      'A1333-00007-BK': '尺寸优化：平台与配送费率偏高且未出现正利润月；优先重做双层结构、包装尺寸和计费重，再判断是否恢复放量。',
+      'A1333-00005-BK': '双层款持续亏损；先核实低销量月份的广告与库存费用分摊，完成履约和投放重算前不应继续靠加投放救量。',
+      'A1333-00008-BK': '尺寸优化：销量回落且费用结构偏重；优先重做尺寸/包装以降低平台与履约费率，并验证退货原因后再决定去留。',
+      'A1333-00010-BK': '清货淘汰：仅2个有效销售月且两月均亏；优先排查适配/质量导致的退款与FBM配送，根因未修复前暂停扩量。'
+    });
+
+    function historyConclusion(record, valid, best, worst, salesPeak, unitsPeak, targetMonths) {
+      const status = skuStatus(record.sku);
+      const tone = status ? status.tone : '';
+      if (!valid.length) {
+        return `<div class="sku-monthly-conclusion ${tone}"><div class="sku-monthly-conclusion-head"><strong>产品经理结论</strong><span>无有效销售月份</span></div><p><strong>销售证据：</strong>当前没有可用于比较的有效销售月份，无法判断需求规模、利润趋势或是否达到25%目标。</p><p><strong>动作建议：</strong>${status ? `${historySafe(status.label)}状态先保留；` : ''}先补齐销售、退款、履约和广告明细，再进行产品去留判断，不补造利润数据。</p></div>`;
+      }
+      const totalSales = valid.reduce((sum, month) => sum + (Number.isFinite(Number(month.sales)) ? Number(month.sales) : 0), 0);
+      const totalUnits = valid.reduce((sum, month) => sum + (Number.isFinite(Number(month.units)) ? Number(month.units) : 0), 0);
+      const weightedMargin = historyWeightedMargin(valid);
+      const first = valid[0];
+      const last = valid[valid.length - 1];
+      const salesDelta = Number(first.sales) > 0 ? Number(last.sales) / Number(first.sales) - 1 : null;
+      const unitsDelta = Number(first.units) > 0 ? Number(last.units) / Number(first.units) - 1 : null;
+      const salesDirection = valid.length < 3 ? '样本不足' : salesDelta >= 0.25 ? `首末有效月上升${historyDeltaText(salesDelta)}` : salesDelta <= -0.25 ? `首末有效月下降${historyDeltaText(Math.abs(salesDelta) * -1)}` : '首末有效月变化有限';
+      const positiveMonths = valid.filter(month => month.margin >= 0).length;
+      const pressure = historyPressureWeighted(valid);
+      const defaultAction = weightedMargin != null && weightedMargin >= 0 ? '先围绕主要费率压力项做小规模验证，连续两个月转正且接近25%后再扩大备货。' : '先做成本、履约和投放结构重构，当前不建议仅凭销量增长扩大备货。';
+      const action = historyProductActions[skuBase(record.sku)] || defaultAction;
+      const profitEvidence = best && best.margin >= 0.25
+        ? `已${targetMonths}个月达到25%目标，最佳月为${historySafe(best.month)} ${historyRate(best.margin)}；最近有效月为${historySafe(last.month)} ${historyRate(last.margin)}，需确认达标组合能否复现。`
+        : best && best.margin >= 0
+          ? `有${positiveMonths}/${valid.length}个有效月盈利，但最佳月仅${historyRate(best.margin)}（${historySafe(best.month)}），尚未达到25%目标。`
+          : `有效月份全部亏损，最佳月仍为${historyRate(best ? best.margin : null)}（${historySafe(best ? best.month : '—')}），尚未形成可复制的盈利月份。`;
+      return `<div class="sku-monthly-conclusion ${tone}">
+        <div class="sku-monthly-conclusion-head"><strong>产品经理结论${status ? ` · ${historySafe(status.label)}` : ''}</strong><span>基于${valid.length}个有效销售月份</span></div>
+        <p><strong>销售证据：</strong>累计销售额${historyMoney(totalSales)}、销量${historyUnits(totalUnits)}件；销售额峰值为${historySafe(salesPeak.month)} ${historyMoney(salesPeak.sales)}，销量峰值为${historySafe(unitsPeak.month)} ${historyUnits(unitsPeak.units)}件；${salesDirection}（销量${historyDeltaText(unitsDelta)}）。</p>
+        <p><strong>利润证据：</strong>按销售额加权毛利润率${historyRate(weightedMargin)}；${profitEvidence}</p>
+        <p><strong>主要压力：</strong>${historySafe(pressure)}。</p>
+        <p><strong>动作建议：</strong>${historySafe(action)}</p>
+      </div>`;
+    }
+
     function renderSkuStatusPanel(records) {
       const host = document.getElementById('skuStatusList');
       if (!host) return;
@@ -755,7 +853,8 @@
               <div class="sku-monthly-stat"><span>利润率范围</span><strong>${valid.length ? `${historyRate(worst.margin)} 至 ${historyRate(best.margin)}` : '—'}</strong><small>${valid.length} 个有效月份</small></div>
               <div class="sku-monthly-stat"><span>主要费率压力项</span><strong title="${historySafe(historyPressure(valid))}">${historySafe(historyPressure(valid))}</strong><small>有效月份均值排序</small></div>
             </div>
-            <p class="sku-monthly-note">描述性判断：${valid.length ? `该 SKU 在 ${historySafe(valid[0].month)} 至 ${historySafe(valid[valid.length - 1].month)} 有 ${valid.length} 个有效销售月份；月度利润率趋势为“${trend}”，不能单独据此推断销量与利润率的因果关系。` : '当前没有可用于比较的有效销售月份。'}</p>
+            ${historyConclusion(record, valid, best, worst, salesPeak, unitsPeak, targetMonths)}
+            <p class="sku-monthly-note">数据提示：月度利润率趋势为“${trend}”，不能单独据此推断销量与利润率的因果关系；低销量月份的异常费率需结合原始账单复核。</p>
             <div class="history-monthly-table-wrap">
               <table class="history-monthly-table" aria-label="${historySafe(record.sku)}月度销售与利润指标">
                 <thead><tr><th>月份</th>${columns.map(([label]) => `<th class="num">${label}</th>`).join('')}</tr></thead>
