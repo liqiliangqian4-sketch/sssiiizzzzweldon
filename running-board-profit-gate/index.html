@@ -502,7 +502,7 @@
     <section class="section" id="history">
       <div class="section-head">
         <div><h2>老品基准与源表现状</h2><p class="section-sub">老品利润率中位数10.22%，说明需要同时控制货值、履约和退款。下方现状利润按源表统一输入与利润模板公式重算。</p></div>
-        <div class="source-tag">来源：仪表板 (1).xlsx「历史费率明细」；按月销售额与盈利能力额重算</div>
+        <div class="source-tag">来源：仪表板 (1).xlsx「历史费率明细」；金额单位：USD；按月销售额与盈利能力额重算</div>
       </div>
       <div class="panel margin-panel">
         <h3>13个历史 SKU 销售毛利润率（最佳月份）</h3>
@@ -518,7 +518,7 @@
             <h3>13个历史 SKU 月度销售与利润指标</h3>
             <p class="panel-note">按 SKU 展开查看销售月份。月度销售毛利润率 = 盈利能力额 ÷ 销售额（含税）；无销售额或盈利能力额的月份显示“—”，不按 0% 参与比较。</p>
           </div>
-          <div class="history-monthly-source">来源：仪表板 (1).xlsx「历史费率明细」；展示页面当前图表采用的账户分组</div>
+          <div class="history-monthly-source">来源：仪表板 (1).xlsx「历史费率明细」；金额单位：USD；展示页面当前图表采用的账户分组</div>
         </div>
         <div class="sku-status-panel" id="skuStatusPanel">
           <div class="sku-status-panel-head"><strong>指定 SKU 状态标识</strong><span>按基础 SKU 匹配；月度数据缺失时只显示状态，不补造指标</span></div>
@@ -737,17 +737,20 @@
       const status = skuStatus(value);
       return status ? status.label : '';
     };
-    const fmtMoney = v => '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtMoney = v => {
+      const amount = Number(v);
+      const formatted = Math.abs(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      return `${amount < 0 ? '-' : ''}$${formatted}`;
+    };
     const fmtCny = v => '¥' + Math.round(v).toLocaleString('zh-CN');
-    const fmtCny2 = v => '¥' + Number(v).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const fmtPct = v => Number(v * 100).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
     const benchmarkLink = product => `<a class="benchmark-link" href="https://www.amazon.com/dp/${product.benchmarkAsin}" target="_blank" rel="noopener noreferrer" title="Amazon 对标商品 ${product.benchmarkAsin}" aria-label="打开${product.name}的 Amazon 对标商品 ${product.benchmarkAsin}">对标 ↗</a>`;
     const marginTooltip = document.getElementById('marginTooltip');
     const tooltipFields = [
-      ['销售额（含税）', item => fmtCny2(item.sales)],
+      ['销售额（含税，USD）', item => fmtMoney(item.sales)],
       ['销量', item => Number(item.units).toLocaleString('zh-CN')],
-      ['客单价', item => fmtCny2(item.asp)],
-      ['盈利能力额', item => fmtCny2(item.profit)],
+      ['客单价（USD）', item => fmtMoney(item.asp)],
+      ['盈利能力额（USD）', item => fmtMoney(item.profit)],
       ['销售毛利润率', item => item.margin.toFixed(2) + '%', true],
       ['退款率', item => fmtPct(item.refundRate)],
       ['产品头程成本率', item => fmtPct(item.inboundRate)],
@@ -823,7 +826,7 @@
       chart.appendChild(wrap);
     });
 
-    const historyMoney = value => value == null ? '—' : fmtCny2(value);
+    const historyMoney = value => value == null ? '—' : fmtMoney(value);
     const historyUnits = value => value == null ? '—' : Number(value).toLocaleString('zh-CN', { maximumFractionDigits: 0 });
     const historyRate = value => value == null ? '—' : fmtPct(value);
     const historySafe = value => String(value ?? '—').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -971,10 +974,10 @@
         return;
       }
       const columns = [
-        ['销售额（含税）', month => historyMoney(month.sales), 'num'],
+        ['销售额（含税，USD）', month => historyMoney(month.sales), 'num'],
         ['销量', month => historyUnits(month.units), 'num'],
-        ['客单价', month => historyMoney(month.asp), 'num'],
-        ['盈利能力额', month => historyMoney(month.profit), 'num'],
+        ['客单价（USD）', month => historyMoney(month.asp), 'num'],
+        ['盈利能力额（USD）', month => historyMoney(month.profit), 'num'],
         ['销售毛利润率', month => historyRate(month.margin), 'num margin-cell'],
         ['产品头程成本率', month => historyRate(month.inboundRate), 'num'],
         ['平台费用率', month => historyRate(month.platformFeeRate), 'num'],
